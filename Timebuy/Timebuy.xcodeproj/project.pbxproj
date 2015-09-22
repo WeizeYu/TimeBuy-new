@@ -57,6 +57,16 @@
 		70860C1A1BB041AF00E54EEF /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860BF91BB041AF00E54EEF /* UIView+WebCacheOperation.m */; };
 		70860C1B1BB041AF00E54EEF /* userConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860BFC1BB041AF00E54EEF /* userConfiguration.m */; };
 		70860C1C1BB041AF00E54EEF /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860BFF1BB041AF00E54EEF /* VPImageCropperViewController.m */; };
+		70860C241BB1664100E54EEF /* homeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860C221BB1664100E54EEF /* homeRootViewController.m */; };
+		70860C251BB1664100E54EEF /* homeRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C231BB1664100E54EEF /* homeRootViewController.xib */; };
+		70860C2D1BB1669200E54EEF /* findingsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860C2B1BB1669200E54EEF /* findingsRootViewController.m */; };
+		70860C2E1BB1669200E54EEF /* findingsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C2C1BB1669200E54EEF /* findingsRootViewController.xib */; };
+		70860C321BB166A200E54EEF /* newsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860C301BB166A200E54EEF /* newsRootViewController.m */; };
+		70860C331BB166A200E54EEF /* newsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C311BB166A200E54EEF /* newsRootViewController.xib */; };
+		70860C3C1BB16D2000E54EEF /* homeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860C3A1BB16D2000E54EEF /* homeDetailsViewController.m */; };
+		70860C3D1BB16D2000E54EEF /* homeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C3B1BB16D2000E54EEF /* homeDetailsViewController.xib */; };
+		70860C411BB18B9300E54EEF /* profilesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */; };
+		70860C421BB18B9300E54EEF /* profilesRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C401BB18B9300E54EEF /* profilesRootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +167,21 @@
 		70860BFC1BB041AF00E54EEF /* userConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userConfiguration.m; sourceTree = "<group>"; };
 		70860BFE1BB041AF00E54EEF /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		70860BFF1BB041AF00E54EEF /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		70860C211BB1664100E54EEF /* homeRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeRootViewController.h; sourceTree = "<group>"; };
+		70860C221BB1664100E54EEF /* homeRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeRootViewController.m; sourceTree = "<group>"; };
+		70860C231BB1664100E54EEF /* homeRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeRootViewController.xib; sourceTree = "<group>"; };
+		70860C2A1BB1669200E54EEF /* findingsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findingsRootViewController.h; sourceTree = "<group>"; };
+		70860C2B1BB1669200E54EEF /* findingsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = findingsRootViewController.m; sourceTree = "<group>"; };
+		70860C2C1BB1669200E54EEF /* findingsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = findingsRootViewController.xib; sourceTree = "<group>"; };
+		70860C2F1BB166A200E54EEF /* newsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsRootViewController.h; sourceTree = "<group>"; };
+		70860C301BB166A200E54EEF /* newsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsRootViewController.m; sourceTree = "<group>"; };
+		70860C311BB166A200E54EEF /* newsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newsRootViewController.xib; sourceTree = "<group>"; };
+		70860C391BB16D2000E54EEF /* homeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeDetailsViewController.h; sourceTree = "<group>"; };
+		70860C3A1BB16D2000E54EEF /* homeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeDetailsViewController.m; sourceTree = "<group>"; };
+		70860C3B1BB16D2000E54EEF /* homeDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeDetailsViewController.xib; sourceTree = "<group>"; };
+		70860C3E1BB18B9300E54EEF /* profilesRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profilesRootViewController.h; sourceTree = "<group>"; };
+		70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profilesRootViewController.m; sourceTree = "<group>"; };
+		70860C401BB18B9300E54EEF /* profilesRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profilesRootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +246,10 @@
 				70860B971BB036AE00E54EEF /* tabbar_mainbtn@2x.png */,
 				70860B771BB01CF100E54EEF /* Images.xcassets */,
 				70860B791BB01CF100E54EEF /* LaunchScreen.xib */,
+				70860C1E1BB1660A00E54EEF /* home */,
+				70860C291BB1667600E54EEF /* findings */,
+				70860C1F1BB1660A00E54EEF /* news */,
+				70860C201BB1660A00E54EEF /* profiles */,
 				70860B6A1BB01CF100E54EEF /* Supporting Files */,
 			);
 			path = Timebuy;
@@ -386,6 +415,49 @@
 			path = VPImageCropper;
 			sourceTree = "<group>";
 		};
+		70860C1E1BB1660A00E54EEF /* home */ = {
+			isa = PBXGroup;
+			children = (
+				70860C211BB1664100E54EEF /* homeRootViewController.h */,
+				70860C221BB1664100E54EEF /* homeRootViewController.m */,
+				70860C231BB1664100E54EEF /* homeRootViewController.xib */,
+				70860C391BB16D2000E54EEF /* homeDetailsViewController.h */,
+				70860C3A1BB16D2000E54EEF /* homeDetailsViewController.m */,
+				70860C3B1BB16D2000E54EEF /* homeDetailsViewController.xib */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		70860C1F1BB1660A00E54EEF /* news */ = {
+			isa = PBXGroup;
+			children = (
+				70860C2F1BB166A200E54EEF /* newsRootViewController.h */,
+				70860C301BB166A200E54EEF /* newsRootViewController.m */,
+				70860C311BB166A200E54EEF /* newsRootViewController.xib */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		70860C201BB1660A00E54EEF /* profiles */ = {
+			isa = PBXGroup;
+			children = (
+				70860C3E1BB18B9300E54EEF /* profilesRootViewController.h */,
+				70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */,
+				70860C401BB18B9300E54EEF /* profilesRootViewController.xib */,
+			);
+			path = profiles;
+			sourceTree = "<group>";
+		};
+		70860C291BB1667600E54EEF /* findings */ = {
+			isa = PBXGroup;
+			children = (
+				70860C2A1BB1669200E54EEF /* findingsRootViewController.h */,
+				70860C2B1BB1669200E54EEF /* findingsRootViewController.m */,
+				70860C2C1BB1669200E54EEF /* findingsRootViewController.xib */,
+			);
+			path = findings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,10 +538,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70860C3D1BB16D2000E54EEF /* homeDetailsViewController.xib in Resources */,
 				70860BBC1BB0407D00E54EEF /* AMap.bundle in Resources */,
 				70860B981BB036AE00E54EEF /* tabbar_mainbtn@2x.png in Resources */,
+				70860C2E1BB1669200E54EEF /* findingsRootViewController.xib in Resources */,
+				70860C331BB166A200E54EEF /* newsRootViewController.xib in Resources */,
 				70860B761BB01CF100E54EEF /* Main.storyboard in Resources */,
+				70860C251BB1664100E54EEF /* homeRootViewController.xib in Resources */,
 				70860B7B1BB01CF100E54EEF /* LaunchScreen.xib in Resources */,
+				70860C421BB18B9300E54EEF /* profilesRootViewController.xib in Resources */,
 				70860B781BB01CF100E54EEF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,17 +583,22 @@
 				70860C151BB041AF00E54EEF /* UIImage+GIF.m in Sources */,
 				70860C141BB041AF00E54EEF /* UIButton+WebCache.m in Sources */,
 				70860C081BB041AF00E54EEF /* AFURLSessionManager.m in Sources */,
+				70860C321BB166A200E54EEF /* newsRootViewController.m in Sources */,
 				70860C131BB041AF00E54EEF /* SDWebImagePrefetcher.m in Sources */,
 				70860C0F1BB041AF00E54EEF /* SDWebImageDecoder.m in Sources */,
 				70860C0D1BB041AF00E54EEF /* SDImageCache.m in Sources */,
+				70860C411BB18B9300E54EEF /* profilesRootViewController.m in Sources */,
 				70860C0E1BB041AF00E54EEF /* SDWebImageCompat.m in Sources */,
 				70860C1A1BB041AF00E54EEF /* UIView+WebCacheOperation.m in Sources */,
+				70860C3C1BB16D2000E54EEF /* homeDetailsViewController.m in Sources */,
 				70860B701BB01CF100E54EEF /* AppDelegate.m in Sources */,
 				70860C091BB041AF00E54EEF /* KLCPopup.m in Sources */,
 				70860C1B1BB041AF00E54EEF /* userConfiguration.m in Sources */,
 				70860C111BB041AF00E54EEF /* SDWebImageDownloaderOperation.m in Sources */,
 				70860B6D1BB01CF100E54EEF /* main.m in Sources */,
+				70860C2D1BB1669200E54EEF /* findingsRootViewController.m in Sources */,
 				70860C1C1BB041AF00E54EEF /* VPImageCropperViewController.m in Sources */,
+				70860C241BB1664100E54EEF /* homeRootViewController.m in Sources */,
 				70860C191BB041AF00E54EEF /* UIImageView+WebCache.m in Sources */,
 				70860C181BB041AF00E54EEF /* UIImageView+HighlightedWebCache.m in Sources */,
 				70860C0A1BB041AF00E54EEF /* MBProgressHUD.m in Sources */,
@@ -724,6 +806,7 @@
 				70860B8C1BB01CF100E54EEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70860B8D1BB01CF100E54EEF /* Build configuration list for PBXNativeTarget "TimebuyTests" */ = {
 			isa = XCConfigurationList;
@@ -732,6 +815,7 @@
 				70860B8F1BB01CF100E54EEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

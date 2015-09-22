@@ -17,32 +17,48 @@
 @synthesize button;
 @synthesize myTabBar;
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    //self.hidesBottomBarWhenPushed = YES;
+    //NSLog(@"Hello tabbarVC");
+    //NSLog(@"tabvc = %@",self);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIViewController *vc1 = [[UIViewController alloc] init];
+    homeRootViewController *vc1 = [[homeRootViewController alloc] init];
     vc1.view.backgroundColor = [UIColor redColor];
-    vc1.tabBarItem.title = @"拾贝";
+    //vc1.tabBarItem.title = @"拾贝";
     
-    UIViewController *vc2 = [[UIViewController alloc] init];
+    findingsRootViewController *vc2 = [[findingsRootViewController alloc] init];
     vc2.view.backgroundColor = [UIColor blueColor];
-    vc2.tabBarItem.title = @"发现";
+    //vc2.tabBarItem.title = @"发现";
     
     vc3 = [[UIViewController alloc] init];
     vc3.view.backgroundColor = [UIColor blackColor];
     //vc3.tabBarItem.title = @"789";
     
-    UIViewController *vc4 = [[UIViewController alloc] init];
+    newsRootViewController *vc4 = [[newsRootViewController alloc] init];
     vc4.view.backgroundColor = [UIColor greenColor];
-    vc4.tabBarItem.title = @"动态";
+    //vc4.tabBarItem.title = @"动态";
     
-    UIViewController *vc5 = [[UIViewController alloc] init];
+    profilesRootViewController *vc5 = [[profilesRootViewController alloc] init];
     vc5.view.backgroundColor = [UIColor orangeColor];
-    vc5.tabBarItem.title = @"我的";
+    //vc5.tabBarItem.title = @"我的";
     
-    self.viewControllers = @[vc1,vc2,vc3,vc4,vc5];
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    nav1.tabBarItem.title = @"拾贝";
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+    nav2.tabBarItem.title = @"发现";
+    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+    nav4.tabBarItem.title = @"动态";
+    UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
+    nav5.tabBarItem.title = @"我的";
+    
+    self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
     
     [self setup];
     
@@ -81,7 +97,6 @@
     
     //  这个比较恶心  去掉选中button时候的阴影
     button.adjustsImageWhenHighlighted=NO;
-    
     
     /*
      *  核心代码：设置button的center 和 tabBar的 center 做对齐操作， 同时做出相对的上浮
