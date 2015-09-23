@@ -59,7 +59,6 @@
     nav5.tabBarItem.title = @"我的";
     
     self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
-    
     [self setup];
     
     [MAMapServices sharedServices].apiKey = @"06e1f602e5424ae76f6448a12da20739";

@@ -67,6 +67,8 @@
 		70860C3D1BB16D2000E54EEF /* homeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C3B1BB16D2000E54EEF /* homeDetailsViewController.xib */; };
 		70860C411BB18B9300E54EEF /* profilesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */; };
 		70860C421BB18B9300E54EEF /* profilesRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70860C401BB18B9300E54EEF /* profilesRootViewController.xib */; };
+		7385835D1BB2E21600E06534 /* waitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7385835B1BB2E21600E06534 /* waitTableViewCell.m */; };
+		7385835E1BB2E21600E06534 /* waitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7385835C1BB2E21600E06534 /* waitTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,9 @@
 		70860C3E1BB18B9300E54EEF /* profilesRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profilesRootViewController.h; sourceTree = "<group>"; };
 		70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profilesRootViewController.m; sourceTree = "<group>"; };
 		70860C401BB18B9300E54EEF /* profilesRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profilesRootViewController.xib; sourceTree = "<group>"; };
+		7385835A1BB2E21600E06534 /* waitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waitTableViewCell.h; sourceTree = "<group>"; };
+		7385835B1BB2E21600E06534 /* waitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waitTableViewCell.m; sourceTree = "<group>"; };
+		7385835C1BB2E21600E06534 /* waitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = waitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +446,7 @@
 		70860C201BB1660A00E54EEF /* profiles */ = {
 			isa = PBXGroup;
 			children = (
+				738583581BB2D3AF00E06534 /* ProfilesDetailTableViewCells */,
 				70860C3E1BB18B9300E54EEF /* profilesRootViewController.h */,
 				70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */,
 				70860C401BB18B9300E54EEF /* profilesRootViewController.xib */,
@@ -456,6 +462,24 @@
 				70860C2C1BB1669200E54EEF /* findingsRootViewController.xib */,
 			);
 			path = findings;
+			sourceTree = "<group>";
+		};
+		738583581BB2D3AF00E06534 /* ProfilesDetailTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				738583591BB2E1EE00E06534 /* 等待中cell */,
+			);
+			name = ProfilesDetailTableViewCells;
+			sourceTree = "<group>";
+		};
+		738583591BB2E1EE00E06534 /* 等待中cell */ = {
+			isa = PBXGroup;
+			children = (
+				7385835A1BB2E21600E06534 /* waitTableViewCell.h */,
+				7385835B1BB2E21600E06534 /* waitTableViewCell.m */,
+				7385835C1BB2E21600E06534 /* waitTableViewCell.xib */,
+			);
+			name = "等待中cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70860C3D1BB16D2000E54EEF /* homeDetailsViewController.xib in Resources */,
+				7385835E1BB2E21600E06534 /* waitTableViewCell.xib in Resources */,
 				70860BBC1BB0407D00E54EEF /* AMap.bundle in Resources */,
 				70860B981BB036AE00E54EEF /* tabbar_mainbtn@2x.png in Resources */,
 				70860C2E1BB1669200E54EEF /* findingsRootViewController.xib in Resources */,
@@ -569,6 +594,7 @@
 				70860C171BB041AF00E54EEF /* UIImage+WebP.m in Sources */,
 				70860C001BB041AF00E54EEF /* AFHTTPRequestOperation.m in Sources */,
 				70860C121BB041AF00E54EEF /* SDWebImageManager.m in Sources */,
+				7385835D1BB2E21600E06534 /* waitTableViewCell.m in Sources */,
 				70860B9B1BB03A4600E54EEF /* myTabBarViewController.m in Sources */,
 				70860C011BB041AF00E54EEF /* AFHTTPRequestOperationManager.m in Sources */,
 				70860C031BB041AF00E54EEF /* AFNetworkReachabilityManager.m in Sources */,
@@ -732,6 +758,7 @@
 					"$(PROJECT_DIR)/Timebuy",
 				);
 				INFOPLIST_FILE = Timebuy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -747,6 +774,7 @@
 					"$(PROJECT_DIR)/Timebuy",
 				);
 				INFOPLIST_FILE = Timebuy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
