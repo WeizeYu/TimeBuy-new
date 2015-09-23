@@ -27,14 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     homeRootViewController *vc1 = [[homeRootViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor redColor];
+    vc1.view.backgroundColor = [UIColor whiteColor];
     //vc1.tabBarItem.title = @"拾贝";
     
     findingsRootViewController *vc2 = [[findingsRootViewController alloc] init];
-    vc2.view.backgroundColor = [UIColor blueColor];
+    vc2.view.backgroundColor = [UIColor whiteColor];
     //vc2.tabBarItem.title = @"发现";
     
     vc3 = [[UIViewController alloc] init];
@@ -42,11 +45,11 @@
     //vc3.tabBarItem.title = @"789";
     
     newsRootViewController *vc4 = [[newsRootViewController alloc] init];
-    vc4.view.backgroundColor = [UIColor greenColor];
+    vc4.view.backgroundColor = [UIColor whiteColor];
     //vc4.tabBarItem.title = @"动态";
     
     profilesRootViewController *vc5 = [[profilesRootViewController alloc] init];
-    vc5.view.backgroundColor = [UIColor orangeColor];
+    vc5.view.backgroundColor = [UIColor whiteColor];
     //vc5.tabBarItem.title = @"我的";
     
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];
@@ -58,11 +61,21 @@
     UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
     nav5.tabBarItem.title = @"我的";
     
+    [nav1.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav1.navigationBar.translucent = NO;
+    
+    [nav2.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav2.navigationBar.translucent = NO;
+    
+    [nav4.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav4.navigationBar.translucent = NO;
+    
+    [nav5.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav5.navigationBar.translucent = NO;
+    
     self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
     
     [self setup];
-    
-    [MAMapServices sharedServices].apiKey = @"06e1f602e5424ae76f6448a12da20739";
     
 }
 
@@ -119,6 +132,10 @@
     NSLog(@"press center");
     //self.selectedIndex=2;
     //button.selected=YES;
+    
+    locationViewController *locationVC = [[locationViewController alloc] init];
+    [self presentViewController:locationVC animated:YES completion:nil];
+    
 }
 
 #pragma mark- TabBar Delegate
