@@ -19,6 +19,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = NO;
@@ -32,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     UIBarButtonItem *registerButton = [[UIBarButtonItem alloc] initWithTitle:@"进入" style:UIBarButtonItemStylePlain target:self action:@selector(enter:)];
     self.navigationItem.rightBarButtonItem = registerButton;
     //self.navigationItem.rightBarButtonItem.enabled = NO;
