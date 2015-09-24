@@ -43,6 +43,7 @@
         cell.contentView.frame = cell.bounds;
         cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         cell = [[[NSBundle mainBundle] loadNibNamed:@"waitTableViewCell" owner:self options:nil] lastObject];
+        
     }
     // Configure the cell.
     return cell;

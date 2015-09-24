@@ -1,14 +1,14 @@
 //
-//  waitTableViewCell.m
+//  ingBigTableViewCell.m
 //  Timebuy
 //
 //  Created by yuweize on 15/9/24.
 //  Copyright (c) 2015年 com.CraftDream. All rights reserved.
 //
 
-#import "waitTableViewCell.h"
+#import "ingBigTableViewCell.h"
 
-@implementation waitTableViewCell
+@implementation ingBigTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

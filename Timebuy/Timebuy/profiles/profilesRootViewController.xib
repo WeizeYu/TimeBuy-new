@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="pVg-nr-0Vo">
-                    <rect key="frame" x="0.0" y="76" width="375" height="29"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                     <segments>
@@ -30,8 +30,8 @@
                     </segments>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </segmentedControl>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-Ar-23H">
-                    <rect key="frame" x="0.0" y="105" width="375" height="667"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-Ar-23H">
+                    <rect key="frame" x="0.0" y="29" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="667" id="SDY-5a-m1e"/>
@@ -41,12 +41,12 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="nNa-Ar-23H" firstAttribute="top" secondItem="pVg-nr-0Vo" secondAttribute="bottom" constant="1" id="2Te-f5-1BU"/>
+                <constraint firstItem="pVg-nr-0Vo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4PF-7b-kRm"/>
                 <constraint firstItem="nNa-Ar-23H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E98-4f-yWB"/>
                 <constraint firstItem="nNa-Ar-23H" firstAttribute="top" secondItem="pVg-nr-0Vo" secondAttribute="bottom" constant="1" id="Hdw-9Q-dCt"/>
                 <constraint firstItem="pVg-nr-0Vo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jg1-Sw-A54"/>
                 <constraint firstAttribute="trailing" secondItem="pVg-nr-0Vo" secondAttribute="trailing" id="drF-X5-izB"/>
                 <constraint firstAttribute="trailing" secondItem="nNa-Ar-23H" secondAttribute="trailing" id="gJh-ga-3Re"/>
-                <constraint firstItem="pVg-nr-0Vo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="yIX-NS-mOv"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>

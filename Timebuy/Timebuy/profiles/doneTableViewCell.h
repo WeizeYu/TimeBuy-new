@@ -1,5 +1,5 @@
 //
-//  waitTableViewCell.h
+//  doneTableViewCell.h
 //  Timebuy
 //
 //  Created by yuweize on 15/9/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface waitTableViewCell : UITableViewCell
+@interface doneTableViewCell : UITableViewCell
 
 @end
