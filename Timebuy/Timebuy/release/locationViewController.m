@@ -133,7 +133,6 @@
     
 }
 
-
 //点击空白处收起键盘
 -(void)viewTapped:(UITapGestureRecognizer*)tapGr
 {
