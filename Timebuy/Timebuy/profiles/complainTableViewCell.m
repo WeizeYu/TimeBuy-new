@@ -1,19 +1,19 @@
 //
-//  doneBigTableViewCell.m
+//  complainTableViewCell.m
 //  Timebuy
 //
-//  Created by yuweize on 15/9/24.
+//  Created by yuweize on 15/9/25.
 //  Copyright (c) 2015年 com.CraftDream. All rights reserved.
 //
 
-#import "doneBigTableViewCell.h"
+#import "complainTableViewCell.h"
 
-@implementation doneBigTableViewCell
+@implementation complainTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
 }
--(void)setData:(NSMutableDictionary *)doneDic{
+-(void)setData:(NSMutableDictionary *)complainDic{
     
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

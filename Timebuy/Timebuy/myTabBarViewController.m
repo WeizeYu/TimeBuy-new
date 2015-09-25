@@ -63,6 +63,7 @@
     
     [nav1.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
     nav1.navigationBar.translucent = NO;
+
     
     [nav2.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
     nav2.navigationBar.translucent = NO;
@@ -74,9 +75,18 @@
     nav5.navigationBar.translucent = NO;
     
     self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
-    [self setup];
     
-}
+    [nav2.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav2.navigationBar.translucent = NO;
+        [nav4.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav4.navigationBar.translucent = NO;
+    
+    [nav5.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    nav5.navigationBar.translucent = NO;
+    
+    self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
+    [self setup];
+    }
 
 #pragma mark- setup
 -(void)setup

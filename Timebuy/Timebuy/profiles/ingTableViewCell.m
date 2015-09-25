@@ -19,5 +19,7 @@
 
     // Configure the view for the selected state
 }
-
+-(void)setData:(NSMutableDictionary *)ingDic{
+    
+}
 @end

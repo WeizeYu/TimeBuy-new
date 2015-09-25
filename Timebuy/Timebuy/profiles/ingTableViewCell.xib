@@ -147,6 +147,14 @@
                     <constraint firstItem="tOD-VH-3ko" firstAttribute="top" secondItem="N50-LF-0xE" secondAttribute="bottom" constant="8" id="xfO-GJ-wn7"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="N50-LF-0xE" id="bwL-ud-hAO"/>
+                <outlet property="headImage" destination="BaG-xg-dg9" id="zGz-Qp-aMJ"/>
+                <outlet property="money" destination="XJO-qe-dtw" id="DUL-cG-dSi"/>
+                <outlet property="time" destination="8Nq-m3-WzS" id="mMa-bd-BcG"/>
+                <outlet property="where" destination="tOD-VH-3ko" id="7GY-bT-YIO"/>
+                <outlet property="workTime" destination="EIk-IB-z0J" id="Qwi-0I-hCS"/>
+            </connections>
             <point key="canvasLocation" x="220.5" y="357"/>
         </tableViewCell>
     </objects>

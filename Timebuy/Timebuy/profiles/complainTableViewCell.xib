@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="L4I-w0-EGv" customClass="complainTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L4I-w0-EGv" id="j5A-R3-dVc">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月25号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW5-l3-SRp">
+                        <rect key="frame" x="14" y="8" width="64" height="8"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="dFk-i8-N2g"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我想要找个人帮我拿快递，快递在东合公寓的西十三" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyX-LS-bWg">
+                        <rect key="frame" x="14" y="25" width="276" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="Iwl-2o-IJT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="处理中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Y2-QBd">
+                        <rect key="frame" x="313" y="10" width="39" height="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dingwei1.png" translatesAutoresizingMaskIntoConstraints="NO" id="RTm-Zb-qqK">
+                        <rect key="frame" x="14" y="44" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="JUs-vX-1BV"/>
+                            <constraint firstAttribute="width" constant="10" id="pad-TY-2LP"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a5h-dL-5Oz">
+                        <rect key="frame" x="0.0" y="61" width="363" height="1"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="yh2-qa-cia"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twZ-d4-lnM">
+                        <rect key="frame" x="272" y="67" width="82" height="26"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="82" id="5r6-X5-OdX"/>
+                            <constraint firstAttribute="height" constant="26" id="8IJ-X5-oYc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="我要申诉">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东合公寓三区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-ba-3Nb">
+                        <rect key="frame" x="25" y="45" width="54" height="9"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="9" id="z60-2L-fHQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="a5h-dL-5Oz" secondAttribute="trailing" id="3ws-rM-Ub1"/>
+                    <constraint firstItem="XW5-l3-SRp" firstAttribute="top" secondItem="j5A-R3-dVc" secondAttribute="top" constant="8" id="GFX-oH-0xR"/>
+                    <constraint firstItem="F4e-ba-3Nb" firstAttribute="leading" secondItem="RTm-Zb-qqK" secondAttribute="trailing" constant="1" id="IEI-KA-nEu"/>
+                    <constraint firstItem="a5h-dL-5Oz" firstAttribute="leading" secondItem="j5A-R3-dVc" secondAttribute="leading" id="IxR-yd-ofb"/>
+                    <constraint firstAttribute="trailing" secondItem="twZ-d4-lnM" secondAttribute="trailing" constant="9" id="MTu-iu-ptc"/>
+                    <constraint firstItem="GyX-LS-bWg" firstAttribute="top" secondItem="XW5-l3-SRp" secondAttribute="bottom" constant="9" id="Pmk-dA-GCk"/>
+                    <constraint firstItem="RTm-Zb-qqK" firstAttribute="top" secondItem="GyX-LS-bWg" secondAttribute="bottom" constant="7" id="S0u-Gn-kki"/>
+                    <constraint firstAttribute="bottom" secondItem="twZ-d4-lnM" secondAttribute="bottom" constant="3" id="Xov-i8-SBy"/>
+                    <constraint firstItem="XW5-l3-SRp" firstAttribute="leading" secondItem="j5A-R3-dVc" secondAttribute="leading" constant="14" id="ZGF-v6-0Ca"/>
+                    <constraint firstItem="RTm-Zb-qqK" firstAttribute="leading" secondItem="j5A-R3-dVc" secondAttribute="leading" constant="14" id="idI-mn-i5X"/>
+                    <constraint firstItem="a5h-dL-5Oz" firstAttribute="top" secondItem="F4e-ba-3Nb" secondAttribute="bottom" constant="7" id="li2-qn-9FU"/>
+                    <constraint firstItem="GyX-LS-bWg" firstAttribute="leading" secondItem="j5A-R3-dVc" secondAttribute="leading" constant="14" id="rCQ-RV-s7o"/>
+                    <constraint firstItem="F4e-ba-3Nb" firstAttribute="top" secondItem="GyX-LS-bWg" secondAttribute="bottom" constant="8" id="zIx-FW-8Wf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="GyX-LS-bWg" id="HPi-Wo-wBX"/>
+                <outlet property="time" destination="XW5-l3-SRp" id="UV6-Sr-6na"/>
+                <outlet property="where" destination="F4e-ba-3Nb" id="HsK-Xp-Bat"/>
+            </connections>
+            <point key="canvasLocation" x="220.5" y="357"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dingwei1.png" width="266" height="266"/>
+    </resources>
+</document>

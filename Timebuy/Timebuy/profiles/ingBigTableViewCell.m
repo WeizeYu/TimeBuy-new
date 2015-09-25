@@ -13,7 +13,9 @@
 - (void)awakeFromNib {
     // Initialization code
 }
-
+-(void)setData:(NSMutableDictionary *)ingDic{
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

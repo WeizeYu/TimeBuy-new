@@ -191,6 +191,19 @@
                     <constraint firstItem="Zf4-oK-rGU" firstAttribute="top" secondItem="v5l-Ld-YMF" secondAttribute="bottom" constant="128" id="uaw-ZB-UAe"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="ehO-Vf-exK" id="aNY-Kk-lI0"/>
+                <outlet property="headImage" destination="snW-dh-Heu" id="rXa-1U-FQa"/>
+                <outlet property="money" destination="IVA-XA-EXn" id="fNB-MG-EM2"/>
+                <outlet property="share" destination="0ru-UR-YES" id="xf9-h0-Ljz"/>
+                <outlet property="shouImage2" destination="aQy-6s-FcF" id="QM8-dz-y8H"/>
+                <outlet property="showImage" destination="cbT-0K-nqQ" id="UCU-7v-VM5"/>
+                <outlet property="showImage2" destination="aQy-6s-FcF" id="ZdW-kM-RVH"/>
+                <outlet property="time" destination="U1O-wa-57s" id="tBX-SQ-f8p"/>
+                <outlet property="where" destination="cS9-1c-Aa5" id="886-qk-Pw9"/>
+                <outlet property="workTime" destination="cpG-cF-syh" id="J22-AS-61N"/>
+                <outlet property="zan" destination="Zf4-oK-rGU" id="rHp-YM-R5H"/>
+            </connections>
             <point key="canvasLocation" x="220.5" y="357"/>
         </tableViewCell>
     </objects>

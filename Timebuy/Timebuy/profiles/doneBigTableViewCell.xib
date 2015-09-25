@@ -130,6 +130,17 @@
                     <constraint firstAttribute="trailing" secondItem="KQT-Bu-ZdY" secondAttribute="trailing" constant="11" id="yKv-Ry-bJ1"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="JPB-Q6-bJT" id="QBi-DF-o0V"/>
+                <outlet property="headImage" destination="51w-eF-X7Z" id="hqs-gb-COK"/>
+                <outlet property="money" destination="KtE-yN-bog" id="Es3-pG-WCW"/>
+                <outlet property="shouImage2" destination="ahM-Gf-ddm" id="Kuo-NL-80u"/>
+                <outlet property="showImage" destination="fN3-Oy-UAb" id="rMb-ii-ldp"/>
+                <outlet property="showImage2" destination="ahM-Gf-ddm" id="Otp-An-m9C"/>
+                <outlet property="time" destination="WEK-la-JQD" id="0uv-Xm-9xh"/>
+                <outlet property="where" destination="J4h-aP-CVn" id="pro-30-7pA"/>
+                <outlet property="workTime" destination="dBV-0Q-ilG" id="iwU-ZH-3qj"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

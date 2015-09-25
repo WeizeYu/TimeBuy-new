@@ -173,6 +173,16 @@
                     <constraint firstItem="R6Y-Am-uGB" firstAttribute="leading" secondItem="a6p-G6-fXQ" secondAttribute="trailing" constant="1" id="z9D-D8-agN"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="E5M-e8-0ob" id="uuA-Zm-sZv"/>
+                <outlet property="headImage" destination="sud-it-PMY" id="tUx-bH-Caa"/>
+                <outlet property="money" destination="Dua-7v-OCF" id="uEF-CW-MKc"/>
+                <outlet property="share" destination="q6J-VM-Gef" id="17o-Yr-oT2"/>
+                <outlet property="time" destination="mmC-TB-eez" id="LYM-14-Nea"/>
+                <outlet property="where" destination="nlA-fB-Vp2" id="ScK-Yd-eW2"/>
+                <outlet property="workTime" destination="FMU-JH-hqC" id="Hk3-iE-fvS"/>
+                <outlet property="zan" destination="R6Y-Am-uGB" id="rBo-H4-K8E"/>
+            </connections>
             <point key="canvasLocation" x="220.5" y="357"/>
         </tableViewCell>
     </objects>

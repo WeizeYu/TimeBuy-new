@@ -132,6 +132,14 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="0J2-6x-jL8" id="r6F-ha-rI4"/>
+                <outlet property="headImage" destination="NBI-VY-WwQ" id="KR5-Ko-nNy"/>
+                <outlet property="money" destination="cHb-oo-lFU" id="go6-G5-OdA"/>
+                <outlet property="time" destination="q9Y-aD-JX9" id="MPb-ua-qYl"/>
+                <outlet property="where" destination="Eej-rx-rs1" id="cdi-dG-8aV"/>
+                <outlet property="workTime" destination="nW0-nH-jkW" id="fKN-FM-1KL"/>
+            </connections>
             <point key="canvasLocation" x="220.5" y="357"/>
         </tableViewCell>
     </objects>
