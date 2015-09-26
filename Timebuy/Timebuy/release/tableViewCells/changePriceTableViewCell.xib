@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="changePriceTableViewCell" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="changePriceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3f-Ch-DaF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Z3f-Ch-DaF" secondAttribute="bottom" constant="-6" id="59S-94-ObS"/>
+                    <constraint firstItem="Z3f-Ch-DaF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hc8-lG-C19"/>
+                    <constraint firstAttribute="trailing" secondItem="Z3f-Ch-DaF" secondAttribute="trailing" id="Rpa-39-Ofp"/>
+                    <constraint firstItem="Z3f-Ch-DaF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TYt-Bc-byo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroudView" destination="Z3f-Ch-DaF" id="YVK-cv-ab4"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

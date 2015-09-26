@@ -19,6 +19,9 @@
 @interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate>
 {
     UIViewController *vc3;
+    
+    NSString *getState;
+    NSString *getLocation;
 }
 
 @property (strong, nonatomic) UITabBar *myTabBar;

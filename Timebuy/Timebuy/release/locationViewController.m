@@ -47,7 +47,7 @@
     [[[[placeSearchBar.subviews objectAtIndex:0] subviews] objectAtIndex:0] removeFromSuperview];
     [placeSearchBar setBackgroundColor:[UIColor clearColor]];
     placeSearchBar.delegate = self;
-
+    
     [myMapView addSubview:placeSearchBar];
     
     search = [[AMapSearchAPI alloc] init];
@@ -75,15 +75,22 @@
     
 }
 
-
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
+                                                        object:self
+                                                      userInfo:@{@"state":@"0"}];
 }
 
 #pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     NSLog(@"begin");
+    
+    if ([searchBar.text isEqualToString:@""]) {
+        NSLog(@"Hello");
+    }
     
     //searchPlaceTableView.hidden = NO;
     shadowView.hidden = NO;
@@ -113,6 +120,15 @@
     }
     
     return YES;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    //NSLog(@"searchText = %@", searchBar.text);
+    if ([searchBar.text isEqualToString:@""]) {
+        searchPlaceTableView.hidden = YES;
+    }
+    
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -157,15 +173,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (searchPlaceTableView.hidden == YES) {
-        NSLog(@"place table view");
+        //NSLog(@"place table view");
         return [POIArray count];
     } else {
-        NSLog(@"search place table view");
+        //NSLog(@"search place table view");
         return [tipsResultArray count];
     }
     
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -219,6 +234,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [placeSearchBar resignFirstResponder];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (searchPlaceTableView.hidden == YES) {
+        
+        AMapPOI *poi = (AMapPOI *)[POIArray objectAtIndex:indexPath.row];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
+                                                            object:self
+                                                          userInfo:@{@"state":@"1",@"location":poi.name}];
+        
+    } else {
+        
+        AMapTip *tip = (AMapTip *)[tipsResultArray objectAtIndex:indexPath.row];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
+                                                            object:self
+                                                          userInfo:@{@"state":@"1",@"location":tip.name}];
+        
+    }
+    
 }
 
 #pragma mark - MAMapViewDelegate
@@ -233,6 +269,7 @@
     regeo.requireExtension = YES;
     
     [search AMapReGoecodeSearch:regeo];
+    
 }
 
 #pragma mark - AMapSearchDelegate

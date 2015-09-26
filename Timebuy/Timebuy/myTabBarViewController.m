@@ -85,7 +85,23 @@
     
     self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
     [self setup];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recLocation:) name:@"passLocation" object:nil];
+}
+
+- (void)recLocation:(NSNotification *)notification
+{
+    NSDictionary *getDic = [notification userInfo];
+    getState = [getDic objectForKey:@"state"];
+    
+    
+    if ([getState isEqualToString:@"1"]) {
+        getLocation = [getDic objectForKey:@"location"];
+        
+        releaseMainViewController *releaseMainVC = [[releaseMainViewController alloc] init];
+        [self presentViewController:releaseMainVC animated:YES completion:nil];
     }
+}
 
 #pragma mark- setup
 -(void)setup
