@@ -47,7 +47,7 @@
     [[[[placeSearchBar.subviews objectAtIndex:0] subviews] objectAtIndex:0] removeFromSuperview];
     [placeSearchBar setBackgroundColor:[UIColor clearColor]];
     placeSearchBar.delegate = self;
-    
+
     [myMapView addSubview:placeSearchBar];
     
     search = [[AMapSearchAPI alloc] init];
@@ -74,6 +74,7 @@
     searchPlaceTableView.hidden = YES;
     
 }
+
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -165,6 +166,7 @@
     
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 58.0f;
@@ -231,7 +233,6 @@
     regeo.requireExtension = YES;
     
     [search AMapReGoecodeSearch:regeo];
-    
 }
 
 #pragma mark - AMapSearchDelegate

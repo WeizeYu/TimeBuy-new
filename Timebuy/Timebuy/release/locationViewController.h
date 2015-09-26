@@ -24,7 +24,7 @@
     NSString *searchStr;
     
     UITapGestureRecognizer *_tapGr;
-    
+
 }
 
 @property (strong, nonatomic) IBOutlet UISearchBar *placeSearchBar;
