@@ -14,7 +14,7 @@
 #import "newsRootViewController.h"
 #import "profilesRootViewController.h"
 #import "locationViewController.h"
-#import "releaseMainViewController.h"
+#import "releaseRootViewController.h"
 
 @interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate>
 {

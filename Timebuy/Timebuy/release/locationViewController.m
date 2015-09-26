@@ -61,6 +61,13 @@
     [self.view addSubview:shadowView];
     shadowView.hidden = YES;
     
+    transition = [CATransition animation];
+    transition.delegate = self;
+    transition.duration = 0.2f;
+    transition.timingFunction = UIViewAnimationCurveEaseInOut;
+    transition.type = kCATransitionFade;
+    //[shadowView.layer addAnimation:transition forKey:nil];
+    
     _tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     _tapGr.cancelsTouchesInView = NO;
     _tapGr.numberOfTapsRequired = 1;
@@ -78,9 +85,6 @@
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
-                                                        object:self
-                                                      userInfo:@{@"state":@"0"}];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -94,6 +98,7 @@
     
     //searchPlaceTableView.hidden = NO;
     shadowView.hidden = NO;
+    [shadowView.layer addAnimation:transition forKey:nil];
     
     [placeSearchBar setTintColor:[UIColor whiteColor]];
     [placeSearchBar setBackgroundColor:[UIColor whiteColor]];

@@ -12,4 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *priceTextField;
 @property (strong, nonatomic) NSString *price;
+@property (strong, nonatomic) IBOutlet UIButton *confirmButton;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
+
 @end

@@ -87,6 +87,7 @@
     [self setup];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recLocation:) name:@"passLocation" object:nil];
+    
 }
 
 - (void)recLocation:(NSNotification *)notification
@@ -94,11 +95,10 @@
     NSDictionary *getDic = [notification userInfo];
     getState = [getDic objectForKey:@"state"];
     
-    
     if ([getState isEqualToString:@"1"]) {
         getLocation = [getDic objectForKey:@"location"];
         
-        releaseMainViewController *releaseMainVC = [[releaseMainViewController alloc] init];
+        releaseRootViewController *releaseMainVC = [[releaseRootViewController alloc] init];
         [self presentViewController:releaseMainVC animated:YES completion:nil];
     }
 }
@@ -157,9 +157,12 @@
     //self.selectedIndex=2;
     //button.selected=YES;
     
-    locationViewController *locationVC = [[locationViewController alloc] init];
-    [self presentViewController:locationVC animated:YES completion:nil];
     
+    //locationViewController *locationVC = [[locationViewController alloc] init];
+    //[self presentViewController:locationVC animated:YES completion:nil];
+    
+    releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
+    [self presentViewController:releaseRootVC animated:YES completion:nil];
 }
 
 #pragma mark- TabBar Delegate

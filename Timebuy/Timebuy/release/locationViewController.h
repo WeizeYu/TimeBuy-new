@@ -25,6 +25,8 @@
     
     UITapGestureRecognizer *_tapGr;
     
+    CATransition *transition;
+    
 }
 
 @property (strong, nonatomic) IBOutlet UISearchBar *placeSearchBar;

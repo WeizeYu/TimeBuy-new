@@ -15,67 +15,112 @@
 @implementation selectTimeViewController
 
 @synthesize startTimeTextField,endTimeTextField,datePicker;
+@synthesize confirmButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:20.0f], NSFontAttributeName, nil];
-    self.navigationItem.title = @"修改时间";
-    
-    UIBarButtonItem *registerButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
-    self.navigationItem.rightBarButtonItem = registerButton;
-    self.navigationItem.rightBarButtonItem.enabled = NO;
     
     startTimeTextField.delegate = self;
     endTimeTextField.delegate = self;
+    
+    startTimeDate = [[NSDate alloc] init];
     
     flag = 0;
     
     [startTimeTextField addTarget:self action:@selector(startTimeEvent:) forControlEvents:UIControlEventTouchDown];
     [endTimeTextField addTarget:self action:@selector(endTimeEvent:) forControlEvents:UIControlEventTouchDown];
     
+    //[startTimeTextField becomeFirstResponder];
+    
+    shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    shadowView.backgroundColor = [UIColor blackColor];
+    shadowView.alpha = 0.3f;
+    [self.view addSubview:shadowView];
+    shadowView.hidden = YES;
+    
+    UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actiondo:)];
+    
+    [shadowView addGestureRecognizer:tapGesture];
+    
+    transition1 = [CATransition animation];
+    transition1.delegate = self;
+    transition1.duration = 0.2f;
+    transition1.timingFunction = UIViewAnimationCurveEaseInOut;
+    transition1.type = kCATransitionMoveIn;
+    transition1.subtype = kCATransitionFromTop;
+    
+    transition2 = [CATransition animation];
+    transition2.delegate = self;
+    transition2.duration = 0.2f;
+    transition2.timingFunction = UIViewAnimationCurveEaseInOut;
+    transition2.type = kCATransitionFade;
+    
+    
 }
 
-- (void)save:(id)sender {
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSString *timeStr = [NSString stringWithFormat:@"%@-%@", startTimeTextField.text,endTimeTextField.text];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
                                                         object:self
-                                                      userInfo:@{@"type":@"time",@"value":startTimeTextField.text,
-                                                                 @"value2":endTimeTextField.text}];
+                                                      userInfo:@{@"type":@"time",@"value":timeStr}];
     
 }
 
 - (void)dateChanged:(id)sender {
     
-    UITextField *curTextField = (UITextField *)sender;
-    
     UIDatePicker* control = (UIDatePicker*)sender;
-    NSDate* date = control.date;
-    NSLog(@"%ld",(long)curTextField.tag);
+    controlDate = control.date;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *curDateTime = [formatter stringFromDate:date];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
+    NSString *curDateTime = [formatter stringFromDate:controlDate];
     
     if (flag == 1) {
         startTimeTextField.text = curDateTime;
+        startTimeDate = controlDate;
         
     } else if (flag == 2) {
         endTimeTextField.text = curDateTime;
     }
     
     if (![startTimeTextField.text isEqualToString:@""] && ![endTimeTextField.text isEqualToString:@""]) {
-        self.navigationItem.rightBarButtonItem.enabled = YES;
+        confirmButton.enabled = YES;
     } else {
-        self.navigationItem.rightBarButtonItem.enabled = NO;
+        confirmButton.enabled = NO;
     }
     
 }
 
+
+//点击阴影取消事件
+-(void)Actiondo:(id)sender{
+    shadowView.hidden = YES;
+    //[shadowView removeFromSuperview];
+    [datePicker removeFromSuperview];
+}
+
 - (void)startTimeEvent:(id)sender {
     NSLog(@"start");
+    
+    shadowView.hidden = NO;
+    [self.view addSubview:shadowView];
+    
+    NSDate* date = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
+    NSString *curDateTime = [formatter stringFromDate:date];
+    
+    startTimeTextField.text = curDateTime;
     
     flag = 1;
     
@@ -85,7 +130,7 @@
         }
     }
     
-    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275, [UIScreen mainScreen].bounds.size.width, 275)];
+    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275 + 64, [UIScreen mainScreen].bounds.size.width, 275)];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
     datePicker.minuteInterval = 30;
     datePicker.backgroundColor = [UIColor whiteColor];
@@ -93,10 +138,16 @@
     datePicker.minimumDate = minDate;
     [datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged ];
     [self.view addSubview:datePicker];
+    
+    [[datePicker layer] addAnimation:transition1 forKey:nil];
+    [[shadowView layer] addAnimation:transition2 forKey:nil];
 }
 
 - (void)endTimeEvent:(id)sender {
-    NSLog(@"start");
+    NSLog(@"end");
+    
+    shadowView.hidden = NO;
+    //[self.view addSubview:shadowView];
     
     flag = 2;
     
@@ -106,14 +157,22 @@
         }
     }
     
-    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275, [UIScreen mainScreen].bounds.size.width, 275)];
+    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275 + 64, [UIScreen mainScreen].bounds.size.width, 275)];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
     datePicker.minuteInterval = 30;
     datePicker.backgroundColor = [UIColor whiteColor];
-    NSDate *minDate = [NSDate date];
-    datePicker.minimumDate = minDate;
+    if ([startTimeTextField.text isEqualToString:@""]) {
+        NSDate *minDate = [NSDate date];
+        datePicker.minimumDate = minDate;
+    } else {
+        NSDate *minDate = startTimeDate;
+        datePicker.minimumDate = minDate;
+    }
     [datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged ];
     [self.view addSubview:datePicker];
+    
+    [[datePicker layer] addAnimation:transition1 forKey:nil];
+    [[shadowView layer] addAnimation:transition2 forKey:nil];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
@@ -128,6 +187,31 @@
     [alert show];
 }
 
+- (BOOL)compareDate:(NSString *)oldTime withTargetTime:(NSString *)newTime
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm"]; //设置日期格式
+    NSDate *oldDate = [dateFormatter dateFromString:oldTime];
+    NSDate *newDate = [dateFormatter dateFromString:newTime];  //开始日期，将NSString转为NSDate
+
+    //NSDate *r = [today earlierDate:newDate];//返回较早的那个日期
+    NSDate *r = [oldDate laterDate:newDate];  //返回较晚的那个日期
+    
+    if([oldDate isEqualToDate:newDate]) {
+        NSLog(@"日期相同");
+    }else{
+        if([r isEqualToDate:newDate]) {
+            NSLog(@"未过期");
+            return YES;
+            // [self.myPayedOrders addObject:ar];
+        }else{
+            NSLog(@"已过期");
+            return NO;
+            // [self.myFinishedOrders addObject:ar];
+        }
+    }
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -39,16 +39,6 @@
                         <action selector="cancel:" destination="-1" eventType="touchUpInside" id="vaZ-WM-Lih"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间定位" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM6-GS-ba3">
-                    <rect key="frame" x="113" y="29" width="94" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="6uQ-gf-qEf"/>
-                        <constraint firstAttribute="width" constant="94" id="zyi-l7-jLs"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KgY-Jd-IEG">
                     <rect key="frame" x="0.0" y="304" width="320" height="314"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,12 +63,22 @@
                         <constraint firstAttribute="height" constant="240" id="l97-wI-Rh3"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事件定位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM6-GS-ba3">
+                    <rect key="frame" x="113" y="28" width="94" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="6uQ-gf-qEf"/>
+                        <constraint firstAttribute="width" constant="94" id="zyi-l7-jLs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jBn-fU-V5q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1SV-c1-kDM"/>
                 <constraint firstItem="21V-dC-DpG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7BC-W5-Qy9"/>
-                <constraint firstItem="RM6-GS-ba3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="9ax-Ss-AR8"/>
+                <constraint firstItem="RM6-GS-ba3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="9ax-Ss-AR8"/>
                 <constraint firstItem="KgY-Jd-IEG" firstAttribute="top" secondItem="21V-dC-DpG" secondAttribute="bottom" id="DTm-YQ-aVB"/>
                 <constraint firstItem="6ei-IB-q7i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GKt-Qu-NzR"/>
                 <constraint firstItem="KgY-Jd-IEG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UGr-Hf-Hkx"/>

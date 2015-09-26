@@ -1,24 +1,34 @@
 //
-//  placeViewController.m
-//  TimeBuy
+//  labelsViewController.m
+//  Timebuy
 //
-//  Created by Mr.OJ on 15/9/2.
-//  Copyright (c) 2015年 Mr.OJ. All rights reserved.
+//  Created by CraftDream on 15/9/26.
+//  Copyright (c) 2015年 com.CraftDream. All rights reserved.
 //
 
-#import "placeViewController.h"
+#import "labelsViewController.h"
 
-@interface placeViewController ()
+@interface labelsViewController ()
 
 @end
 
-@implementation placeViewController
+@implementation labelsViewController
 
-@synthesize place;
+@synthesize confirmButton;
+@synthesize choosedButton1,choosedButton2;
+@synthesize candidateButton1,candidateButton2,candidateButton3,candidateButton4;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {

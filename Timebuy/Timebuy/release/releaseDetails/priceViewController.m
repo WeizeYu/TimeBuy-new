@@ -16,6 +16,7 @@
 
 @synthesize priceTextField;
 @synthesize price;
+@synthesize confirmButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,25 +24,30 @@
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:20.0f], NSFontAttributeName, nil];
     self.navigationItem.title = @"修改金额";
     
-    priceTextField.text = price;
+    //priceTextField.text = price;
     priceTextField.delegate = self;
     
-    UIBarButtonItem *registerButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
-    self.navigationItem.rightBarButtonItem = registerButton;
-    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
-- (void)save:(id)sender {
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
     
     //[self checkNum:priceTextField.text];
-    if ([self checkNum:priceTextField.text]) {
-        [self.navigationController popViewControllerAnimated:YES];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
-                                                            object:self
-                                                          userInfo:@{@"type":@"price",@"value":priceTextField.text}];
+    if ([priceTextField.text isEqualToString:@"0.0"]) {
+        [self showErrorWithTitle:@"" WithMessage:@"请输入大于0元的金额"];
     } else {
-        [self showErrorWithTitle:@"修改失败" WithMessage:@"请输入正确的价格"];
+        if ([self checkNum:priceTextField.text]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
+                                                                object:self
+                                                              userInfo:@{@"type":@"price",@"value":priceTextField.text}];
+        } else {
+            [self showErrorWithTitle:@"修改失败" WithMessage:@"请输入正确的价格"];
+        }
     }
     
 }
@@ -52,18 +58,26 @@
     
     [textField resignFirstResponder];
     
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
-                                                        object:self
-                                                      userInfo:@{@"type":@"price",@"value":priceTextField.text}];
+    if ([priceTextField.text isEqualToString:@"0.0"]) {
+        [self showErrorWithTitle:@"" WithMessage:@"请输入大于0元的金额"];
+    } else {
+        if ([self checkNum:priceTextField.text]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
+                                                                object:self
+                                                              userInfo:@{@"type":@"price",@"value":priceTextField.text}];
+        } else {
+            [self showErrorWithTitle:@"修改失败" WithMessage:@"请输入正确的价格"];
+        }
+    }
     
     return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    self.navigationItem.rightBarButtonItem.enabled = YES;
+    confirmButton.enabled = YES;
 }
 
 // 点击编辑区以外的地方 取消键盘
