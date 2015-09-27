@@ -11,6 +11,7 @@
 @implementation releaseDetailsTableViewCell
 
 @synthesize detailsTextView;
+@synthesize placeholderLabel;
 @synthesize addButton;
 @synthesize imageView1;
 @synthesize imageView2;
@@ -19,6 +20,9 @@
 - (void)awakeFromNib {
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    detailsTextView.delegate = self;
+    
     detailsTextView.tag = 2;
 }
 
@@ -41,7 +45,17 @@
 #pragma mark - TextView delegate
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    
+}
 
+- (void)textViewDidChange:(UITextView *)textView
+{
+    //NSLog(@"text = %@",textView.text);
+    if (textView.text.length == 0) {
+        placeholderLabel.text = @"内容、要求，注明确切地点";
+    } else {
+        placeholderLabel.text = @"";
+    }
 }
 
 // 点击编辑区以外的地方 取消键盘

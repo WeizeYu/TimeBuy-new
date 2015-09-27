@@ -29,6 +29,8 @@
     CGFloat *latitude;
     CGFloat *longtitude;
     NSString *timeStr;
+    NSString *startTime;
+    NSString *endTime;
     NSString *priceStr;
     NSString *phoneStr;
     NSString *label;

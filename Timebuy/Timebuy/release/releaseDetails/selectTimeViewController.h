@@ -19,6 +19,7 @@
     
     NSDate* controlDate;
     NSDate* startTimeDate;
+    NSDate* endTimeDate;
 
 }
 

@@ -67,11 +67,17 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    NSString *timeStr = [NSString stringWithFormat:@"%@-%@", startTimeTextField.text,endTimeTextField.text];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd HH:mm"]; //设置日期格式
+    
+    NSString *timeStr = [NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:startTimeDate],[dateFormatter stringFromDate:endTimeDate]];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
                                                         object:self
-                                                      userInfo:@{@"type":@"time",@"value":timeStr}];
+                                                      userInfo:@{@"type":@"time",
+                                                                 @"value":timeStr,
+                                                                 @"startTime":startTimeTextField.text,
+                                                                 @"endTime":endTimeTextField.text}];
     
 }
 
@@ -90,6 +96,7 @@
         
     } else if (flag == 2) {
         endTimeTextField.text = curDateTime;
+        endTimeDate = controlDate;
     }
     
     if (![startTimeTextField.text isEqualToString:@""] && ![endTimeTextField.text isEqualToString:@""]) {
@@ -132,7 +139,7 @@
     
     datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275 + 64, [UIScreen mainScreen].bounds.size.width, 275)];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-    datePicker.minuteInterval = 30;
+    datePicker.minuteInterval = 10;
     datePicker.backgroundColor = [UIColor whiteColor];
     NSDate *minDate = [NSDate date];
     datePicker.minimumDate = minDate;
@@ -159,7 +166,7 @@
     
     datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275 + 64, [UIScreen mainScreen].bounds.size.width, 275)];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-    datePicker.minuteInterval = 30;
+    datePicker.minuteInterval = 10;
     datePicker.backgroundColor = [UIColor whiteColor];
     if ([startTimeTextField.text isEqualToString:@""]) {
         NSDate *minDate = [NSDate date];
@@ -187,6 +194,7 @@
     [alert show];
 }
 
+//时间先后比较
 - (BOOL)compareDate:(NSString *)oldTime withTargetTime:(NSString *)newTime
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

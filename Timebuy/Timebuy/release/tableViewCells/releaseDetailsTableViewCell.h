@@ -11,6 +11,7 @@
 @interface releaseDetailsTableViewCell : UITableViewCell<UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *detailsTextView;
+@property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (strong, nonatomic) IBOutlet UIButton *addButton;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView1;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView2;
