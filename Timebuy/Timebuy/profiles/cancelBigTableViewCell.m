@@ -24,7 +24,7 @@
     self.share.text=[cancelDic objectForKey:@"share"];
     NSArray *allimage=[cancelDic objectForKey:@"pics"];
     [self.showImage setImage:[UIImage imageNamed:[allimage objectAtIndex:0]]];
-    [self.shouImage2 setImage:[UIImage imageNamed:[allimage objectAtIndex:0]]];
+    [self.showImage2 setImage:[UIImage imageNamed:[allimage objectAtIndex:0]]];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
