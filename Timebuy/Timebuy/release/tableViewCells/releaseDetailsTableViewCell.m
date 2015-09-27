@@ -16,6 +16,7 @@
 @synthesize imageView1;
 @synthesize imageView2;
 @synthesize placeButton;
+@synthesize photPicker;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -24,6 +25,9 @@
     detailsTextView.delegate = self;
     
     detailsTextView.tag = 2;
+    
+    self.photPicker = [[PhotoPicker alloc] init];
+    photPicker.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -34,7 +38,10 @@
 
 - (IBAction)addImage:(id)sender
 {
+    NSLog(@"Hello");
     
+    [self.photPicker openMenu];
+    [self.photPicker setBigImage:false];
 }
 
 - (IBAction)location:(id)sender
@@ -58,11 +65,31 @@
     }
 }
 
+- (void)getImageUrl:(NSArray *)imageArray
+{
+    NSLog(@"get image");
+}
+
+#pragma mark - photoView delegate
+- (void)addPicker:(UIImagePickerController *)picker {
+    [self.viewController presentViewController:picker animated:YES completion:nil];
+}
+
 // 点击编辑区以外的地方 取消键盘
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (![detailsTextView isExclusiveTouch]) {
         [detailsTextView resignFirstResponder];
     }
+}
+
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;  
 }
 
 @end
