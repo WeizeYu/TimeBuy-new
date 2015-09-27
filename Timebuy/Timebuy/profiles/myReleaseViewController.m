@@ -20,13 +20,24 @@
 
 @interface myReleaseViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *releasetableview;
-@property (strong, nonatomic) IBOutlet UIButton *button;
 @property (strong, nonatomic) IBOutlet UIView *releaseRootview;
 @property (strong, nonatomic) IBOutlet UIView *backView;
+@property (strong, nonatomic) IBOutlet UIButton *button0;
+@property (strong, nonatomic) IBOutlet UIButton *button2;
+@property (strong, nonatomic) IBOutlet UIButton *button3;
+@property (strong, nonatomic) IBOutlet UIButton *button4;
+@property (strong, nonatomic) IBOutlet UIButton *button5;
+@property (nonatomic) NSArray *lightArray;
+@property (strong, nonatomic) IBOutlet UIImageView *light0;
+@property (strong, nonatomic) IBOutlet UIImageView *light1;
+@property (strong, nonatomic) IBOutlet UIImageView *light2;
+@property (strong, nonatomic) IBOutlet UIImageView *light3;
+@property (strong, nonatomic) IBOutlet UIImageView *light4;
+@property (nonatomic) UISwipeGestureRecognizer *rightTap;
+@property (nonatomic) UISwipeGestureRecognizer *leftTap;
+@property (nonatomic) NSInteger pageTag;
 #pragma -----------------------tableview的字典数组----------------------------
 @property (nonatomic) NSMutableDictionary *dataSourceDic;
-@property (nonatomic) NSMutableArray *heightArray;
-@property (nonatomic) UISwipeGestureRecognizer *singleTap1;
 #pragma -----------------------5个segment的字典数组----------------------------
 @property (nonatomic) NSMutableDictionary *ingSourceDic;//进行中
 @property (nonatomic) NSMutableDictionary *waitSourceDic;//等待中
@@ -36,7 +47,60 @@
 @end
 
 @implementation myReleaseViewController
-- (IBAction)click:(id)sender {
+#pragma ----------------------------tableview数据初始化--------------------------------
+-(void)createData:(NSInteger) buttonTag{
+    
+}
+#pragma ----------------------------segment 图标移动----------------------------------
+-(void) showlight{
+    int i=0;
+    for(UIImageView *object in _lightArray)
+    {
+        if(_pageTag==i)
+        {
+            object.hidden=false;
+            i++;
+            continue;
+        }
+        object.hidden=true;
+        i++;
+    }
+}
+#pragma ----------------------------segment click------------------------------------
+-(IBAction)buttonClick:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    NSInteger tag = button.tag;
+    if(tag==_pageTag)
+    {
+        return;
+    }
+    switch (tag) {
+        case 1:
+            [self createData:tag];
+            break;
+        case 2:
+            [self createData:tag];
+            break;
+        case 3:
+            [self createData:tag];
+            break;
+        case 4:
+            [self createData:tag];
+            break;
+        case 5:
+            [self createData:tag];
+            break;
+    }
+}
+#pragma -----------------------------手势左右移动------------------------------------
+-(void)right{
+    _pageTag++;
+    NSLog(@"%ld",(long)_pageTag);
+    if(_pageTag>4)
+    {
+        _pageTag--;
+        return;
+    }
     CATransition *animation = [CATransition animation];
     animation.delegate = self;
     animation.duration = kDuration;
@@ -49,25 +113,51 @@
     //[UIView setAnimationDidStopSelector:@selector(animationFinished:)];
     [UIView commitAnimations];
     //[_backView addGestureRecognizer:_singleTap1];
+    [self showlight];
+
+    [self.view addSubview:_backView];
+    [self.releasetableview reloadData];
+}
+-(void)left{
+    _pageTag--;
+    NSLog(@"%ld",(long)_pageTag);
+    if(_pageTag<0)
+    {
+        _pageTag++;
+        return;
+    }
+    CATransition *animation = [CATransition animation];
+    animation.delegate = self;
+    animation.duration = kDuration;
+    animation.timingFunction = UIViewAnimationCurveEaseInOut;
+    animation.type = kCATransitionPush;
+    animation.subtype = kCATransitionFromLeft;
+    [[self.backView layer] addAnimation:animation forKey:@"animation"];
+    [UIView setAnimationDelegate:self];
+    // 动画完毕后调用某个方法
+    //[UIView setAnimationDidStopSelector:@selector(animationFinished:)];
+    [UIView commitAnimations];
+    [self showlight];
     [self.view addSubview:_backView];
     [self.releasetableview reloadData];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self createData];
+    _pageTag=0;
+    _lightArray=[[NSArray alloc]initWithObjects:_light0,_light1,_light2,_light3,_light4, nil];
+    [self showlight];
     self.releasetableview.delegate=self;
     self.releasetableview.dataSource=self;
     //设置view的点击手势
     _backView.userInteractionEnabled = YES;
-    _singleTap1 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(click:)];
-    _singleTap1.direction=UISwipeGestureRecognizerDirectionLeft;
-    [_backView addGestureRecognizer:_singleTap1];
+    _rightTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(right)];
+    _rightTap.direction=UISwipeGestureRecognizerDirectionLeft;
+    [_backView addGestureRecognizer:_rightTap];
+    _leftTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(left)];
+    _leftTap.direction=UISwipeGestureRecognizerDirectionRight;
+    [_backView addGestureRecognizer:_leftTap];
     // Do any additional setup after loading the view from its nib.
-}
-
-#pragma ----------------------------tableview数据初始化--------------------------------
--(void)createData{
-    
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
