@@ -177,6 +177,7 @@
                 <outlet property="content" destination="6CA-JK-KtE" id="7ys-Fb-c1X"/>
                 <outlet property="headImage" destination="eJg-Ab-LdM" id="118-IX-r4x"/>
                 <outlet property="money" destination="XJT-GM-7fE" id="kR6-2J-zKO"/>
+                <outlet property="refaButton" destination="vk3-2Y-kfO" id="Jg8-CZ-LA7"/>
                 <outlet property="share" destination="yne-1T-Pcx" id="BuZ-jV-ur6"/>
                 <outlet property="time" destination="wNX-wS-rxg" id="4iq-0q-V23"/>
                 <outlet property="where" destination="vqv-Og-udy" id="laJ-ZF-VUz"/>

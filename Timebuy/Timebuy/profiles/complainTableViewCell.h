@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *time;
 @property (strong, nonatomic) IBOutlet UILabel *content;
 @property (strong, nonatomic) IBOutlet UILabel *where;
+@property (strong, nonatomic) IBOutlet UIButton *commitButton;
 -(void)setData:(NSMutableDictionary *)complainDic;
 @end

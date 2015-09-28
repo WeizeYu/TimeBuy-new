@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.refaButton.layer setCornerRadius:3];
 }
 -(void)setData:(NSMutableDictionary *)cancelDic{
     self.time.text=[cancelDic objectForKey:@"starttime"];

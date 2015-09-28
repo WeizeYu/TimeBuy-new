@@ -11,7 +11,15 @@
 @implementation complainTableViewCell
 
 - (void)awakeFromNib {
+    [self.commitButton.layer setCornerRadius:3];
     // Initialization code
+}
+- (IBAction)commitButtonClick:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您确定要取消申诉吗？" message:@"" delegate:self cancelButtonTitle:@"取消"  otherButtonTitles:nil ];
+    // optional - add more buttons:
+    [alert addButtonWithTitle:@"确定"];
+    [alert show];
+
 }
 -(void)setData:(NSMutableDictionary *)complainDic{
     

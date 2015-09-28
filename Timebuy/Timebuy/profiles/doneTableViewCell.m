@@ -11,6 +11,7 @@
 @implementation doneTableViewCell
 
 - (void)awakeFromNib {
+    [self.doneButton.layer setCornerRadius:3];
     // Initialization code
 }
 -(void)setData:(NSMutableDictionary *)doneDic{

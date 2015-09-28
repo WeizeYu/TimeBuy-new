@@ -86,6 +86,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="callClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7IH-nO-rQq"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZx-ov-5OT">
                         <rect key="frame" x="180" y="75" width="82" height="26"/>
@@ -99,6 +102,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="sureClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MEL-2s-CjG"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQY-PQ-ZWN">
                         <rect key="frame" x="272" y="75" width="82" height="26"/>
@@ -112,6 +118,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="commitClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CNO-Wk-ktX"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东合公寓三区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOD-VH-3ko">
                         <rect key="frame" x="29" y="57" width="54" height="9"/>
@@ -148,8 +157,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="callButton" destination="6LU-xp-bNc" id="P2X-hG-uLh"/>
+                <outlet property="commitButton" destination="iQY-PQ-ZWN" id="KcC-cy-9Bu"/>
                 <outlet property="content" destination="N50-LF-0xE" id="bwL-ud-hAO"/>
                 <outlet property="headImage" destination="BaG-xg-dg9" id="zGz-Qp-aMJ"/>
+                <outlet property="makesureButton" destination="SZx-ov-5OT" id="c6S-J9-3PP"/>
                 <outlet property="money" destination="XJO-qe-dtw" id="DUL-cG-dSi"/>
                 <outlet property="time" destination="8Nq-m3-WzS" id="mMa-bd-BcG"/>
                 <outlet property="where" destination="tOD-VH-3ko" id="7GY-bT-YIO"/>

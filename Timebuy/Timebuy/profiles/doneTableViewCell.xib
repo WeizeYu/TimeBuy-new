@@ -134,6 +134,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="content" destination="0J2-6x-jL8" id="r6F-ha-rI4"/>
+                <outlet property="doneButton" destination="R7z-of-iOv" id="q1Y-9R-Fwg"/>
                 <outlet property="headImage" destination="NBI-VY-WwQ" id="KR5-Ko-nNy"/>
                 <outlet property="money" destination="cHb-oo-lFU" id="go6-G5-OdA"/>
                 <outlet property="time" destination="q9Y-aD-JX9" id="MPb-ua-qYl"/>

@@ -17,5 +17,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *where;
 @property (strong, nonatomic) IBOutlet UIImageView *showImage;
 @property (strong, nonatomic) IBOutlet UIImageView *showImage2;
+@property (strong, nonatomic) IBOutlet UIButton *callButton;
+@property (strong, nonatomic) IBOutlet UIButton *makesureButton;
+@property (strong, nonatomic) IBOutlet UIButton *commitButton;
 -(void)setData:(NSMutableDictionary *)ingDic;
 @end

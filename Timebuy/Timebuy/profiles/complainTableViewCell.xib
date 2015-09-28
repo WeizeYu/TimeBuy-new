@@ -64,6 +64,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="commitButtonClick:" destination="L4I-w0-EGv" eventType="touchUpInside" id="yNl-M6-nYS"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东合公寓三区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-ba-3Nb">
                         <rect key="frame" x="25" y="45" width="54" height="9"/>
@@ -92,6 +95,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="commitButton" destination="twZ-d4-lnM" id="afC-SG-zrv"/>
                 <outlet property="content" destination="GyX-LS-bWg" id="HPi-Wo-wBX"/>
                 <outlet property="time" destination="XW5-l3-SRp" id="UV6-Sr-6na"/>
                 <outlet property="where" destination="F4e-ba-3Nb" id="HsK-Xp-Bat"/>

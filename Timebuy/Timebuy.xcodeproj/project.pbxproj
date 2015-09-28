@@ -227,6 +227,8 @@
 		7323503F1BB5696F00C9E325 /* cancelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7323503D1BB5696F00C9E325 /* cancelTableViewCell.xib */; };
 		732350431BB5698700C9E325 /* cancelBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350411BB5698700C9E325 /* cancelBigTableViewCell.m */; };
 		732350441BB5698700C9E325 /* cancelBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732350421BB5698700C9E325 /* cancelBigTableViewCell.xib */; };
+		736E13DF1BB97ED500882CCE /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 736E13DE1BB97ED500882CCE /* down.png */; };
+		736E13E11BB97EDF00882CCE /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 736E13E01BB97EDF00882CCE /* up.png */; };
 		7385835D1BB2E21600E06534 /* ingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7385835B1BB2E21600E06534 /* ingTableViewCell.m */; };
 		7385835E1BB2E21600E06534 /* ingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7385835C1BB2E21600E06534 /* ingTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -515,6 +517,8 @@
 		732350401BB5698700C9E325 /* cancelBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cancelBigTableViewCell.h; sourceTree = "<group>"; };
 		732350411BB5698700C9E325 /* cancelBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cancelBigTableViewCell.m; sourceTree = "<group>"; };
 		732350421BB5698700C9E325 /* cancelBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cancelBigTableViewCell.xib; sourceTree = "<group>"; };
+		736E13DE1BB97ED500882CCE /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		736E13E01BB97EDF00882CCE /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		7385835A1BB2E21600E06534 /* ingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingTableViewCell.h; sourceTree = "<group>"; };
 		7385835B1BB2E21600E06534 /* ingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingTableViewCell.m; sourceTree = "<group>"; };
 		7385835C1BB2E21600E06534 /* ingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingTableViewCell.xib; sourceTree = "<group>"; };
@@ -577,6 +581,8 @@
 		70535EDD1BB2B7FE00091EE6 /* button */ = {
 			isa = PBXGroup;
 			children = (
+				736E13E01BB97EDF00882CCE /* up.png */,
+				736E13DE1BB97ED500882CCE /* down.png */,
 				70535EDE1BB2B7FE00091EE6 /* addImg.png */,
 				70535EDF1BB2B7FE00091EE6 /* addImg@2x.png */,
 				70535EE01BB2B7FE00091EE6 /* addImg@3x.png */,
@@ -1204,6 +1210,7 @@
 				70535FC11BB2B7FE00091EE6 /* 7-140223103130591@3x.png in Resources */,
 				70535F821BB2B7FE00091EE6 /* logo@2x.png in Resources */,
 				70535FB91BB2B7FE00091EE6 /* 背景@3x.png in Resources */,
+				736E13E11BB97EDF00882CCE /* up.png in Resources */,
 				70535FA91BB2B7FE00091EE6 /* 支付宝1@2x.png in Resources */,
 				70860B761BB01CF100E54EEF /* Main.storyboard in Resources */,
 				7323503A1BB5677200C9E325 /* complainTableViewCell.xib in Resources */,
@@ -1238,6 +1245,7 @@
 				70535FD61BB2B7FE00091EE6 /* tuichudenglu@2x.png in Resources */,
 				70E587B31BB2DD8B00915DD6 /* location1@2x.png in Resources */,
 				70535FBC1BB2B7FE00091EE6 /* 附近的人1@2x.png in Resources */,
+				736E13DF1BB97ED500882CCE /* down.png in Resources */,
 				70535F751BB2B7FE00091EE6 /* 栏@3x.png in Resources */,
 				70535FCE1BB2B7FE00091EE6 /* hewomenliaoliao.png in Resources */,
 				70535F811BB2B7FE00091EE6 /* logo200x56-01.png in Resources */,
