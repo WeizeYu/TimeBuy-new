@@ -8,19 +8,27 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoPicker.h"
+#import "NFXIntroViewController.h"
+
+#import "locationViewController.h"
 
 @interface releaseDetailsTableViewCell : UITableViewCell<UITextViewDelegate,photoPickerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *detailsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
-@property (strong, nonatomic) IBOutlet UIButton *addButton;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView1;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView2;
+@property (strong, nonatomic) IBOutlet UIButton *image1Button;
+@property (strong, nonatomic) IBOutlet UIButton *image2Button;
+@property (strong, nonatomic) IBOutlet UIButton *image3Button;
+
+@property (strong, nonatomic) NSMutableArray *getImageArray;
+
 @property (weak, nonatomic) IBOutlet UIButton *placeButton;
 
 @property (strong, nonatomic) PhotoPicker *photPicker;
 
-- (IBAction)addImage:(id)sender;
+- (IBAction)tapImage1:(id)sender;
+- (IBAction)tapImage2:(id)sender;
+- (IBAction)tapImage3:(id)sender;
 - (IBAction)location:(id)sender;
 
 @end

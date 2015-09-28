@@ -83,7 +83,8 @@
 //打开相册，可以多选
 -(void)localPhoto{
     ZYQAssetPickerController *picker = [[ZYQAssetPickerController alloc]init];
-    picker.maximumNumberOfSelection = 9;
+    //修改可以选择最大图片的位置
+    picker.maximumNumberOfSelection = 3;
     picker.assetsFilter = [ALAssetsFilter allPhotos];
     picker.showEmptyGroups = NO;
     picker.delegate = self;

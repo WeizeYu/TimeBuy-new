@@ -12,15 +12,19 @@
 
 @synthesize detailsTextView;
 @synthesize placeholderLabel;
-@synthesize addButton;
-@synthesize imageView1;
-@synthesize imageView2;
+@synthesize image1Button;
+@synthesize image2Button;
+@synthesize image3Button;
 @synthesize placeButton;
 @synthesize photPicker;
+
+@synthesize getImageArray;
 
 - (void)awakeFromNib {
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    getImageArray = [[NSMutableArray alloc] init];
     
     detailsTextView.delegate = self;
     
@@ -28,6 +32,11 @@
     
     self.photPicker = [[PhotoPicker alloc] init];
     photPicker.delegate = self;
+    
+    image1Button.enabled = YES;
+    image2Button.enabled = NO;
+    image3Button.enabled = NO;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -36,17 +45,70 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)addImage:(id)sender
+- (IBAction)tapImage1:(id)sender
 {
-    NSLog(@"Hello");
-    
-    [self.photPicker openMenu];
-    [self.photPicker setBigImage:false];
+    if (getImageArray.count == 0) {
+        self.photPicker.curImgNum = 0;
+        [self.photPicker openMenu];
+        [self.photPicker setBigImage:false];
+        
+    } else{
+        NSMutableArray *imageArray = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < getImageArray.count; i ++) {
+            ALAsset *asset = getImageArray[i];
+            [imageArray addObject:[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage]];
+        }
+        
+        
+        NFXIntroViewController *vc = [[NFXIntroViewController alloc] initWithViews:imageArray withTag:1];
+        [self.viewController presentViewController:vc animated:true completion:nil];
+    }
 }
 
+- (IBAction)tapImage2:(id)sender
+{
+    if (getImageArray.count == 1) {
+        self.photPicker.curImgNum = 1;
+        [self.photPicker openMenu];
+        [self.photPicker setBigImage:false];
+    } else {
+        NSMutableArray *imageArray = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < getImageArray.count; i ++) {
+            ALAsset *asset = getImageArray[i];
+            [imageArray addObject:[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage]];
+        }
+        
+        
+        NFXIntroViewController *vc = [[NFXIntroViewController alloc] initWithViews:imageArray withTag:1];
+        [self.viewController presentViewController:vc animated:true completion:nil];
+    }
+}
+
+- (IBAction)tapImage3:(id)sender
+{
+    if (getImageArray.count == 2) {
+        self.photPicker.curImgNum = 2;
+        [self.photPicker openMenu];
+        [self.photPicker setBigImage:false];
+    } else {
+        NSMutableArray *imageArray = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < getImageArray.count; i ++) {
+            ALAsset *asset = getImageArray[i];
+            [imageArray addObject:[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage]];
+        }
+        
+        
+        NFXIntroViewController *vc = [[NFXIntroViewController alloc] initWithViews:imageArray withTag:1];
+        [self.viewController presentViewController:vc animated:true completion:nil];
+    }
+}
+
+//进入定位
 - (IBAction)location:(id)sender
 {
+    locationViewController *locationVC = [[locationViewController alloc] init];
     
+    [self.viewController presentViewController:locationVC animated:YES completion:nil];
 }
 
 #pragma mark - TextView delegate
@@ -67,7 +129,64 @@
 
 - (void)getImageUrl:(NSArray *)imageArray
 {
-    NSLog(@"get image");
+    //NSLog(@"get image");
+    //NSLog(@"image array = %@",imageArray);
+    [getImageArray addObjectsFromArray:imageArray];
+    NSInteger imageNum = getImageArray.count;
+    
+    switch (imageNum) {
+        case 0:
+        {
+            [image1Button setImage:[UIImage imageNamed:@"addImg"] forState:UIControlStateNormal];
+            [image2Button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+            [image3Button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+            image1Button.enabled = YES;
+            image2Button.enabled = NO;
+            image3Button.enabled = NO;
+            break;
+        }
+        case 1:
+        {
+            ALAsset *asset1 = getImageArray[0];
+            [image1Button setImage:[UIImage imageWithCGImage:asset1.defaultRepresentation.fullResolutionImage] forState:UIControlStateNormal];
+            [image2Button setImage:[UIImage imageNamed:@"addImg"] forState:UIControlStateNormal];
+            [image3Button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+            image1Button.enabled = YES;
+            image2Button.enabled = YES;
+            image3Button.enabled = NO;
+            break;
+        }
+        case 2:
+        {
+            ALAsset *asset1 = getImageArray[0];
+            ALAsset *asset2 = getImageArray[1];
+            [image1Button setImage:[UIImage imageWithCGImage:asset1.defaultRepresentation.fullResolutionImage] forState:UIControlStateNormal];
+            [image2Button setImage:[UIImage imageWithCGImage:asset2.defaultRepresentation.fullResolutionImage] forState:UIControlStateNormal];
+            [image3Button setImage:[UIImage imageNamed:@"addImg"] forState:UIControlStateNormal];
+            image1Button.enabled = YES;
+            image2Button.enabled = YES;
+            image3Button.enabled = YES;
+            break;
+        }
+        case 3:
+        {
+            ALAsset *asset1 = getImageArray[0];
+            ALAsset *asset2 = getImageArray[1];
+            ALAsset *asset3 = getImageArray[2];
+            
+            [image1Button setImage:[UIImage imageWithCGImage:asset1.defaultRepresentation.fullResolutionImage] forState:UIControlStateNormal];
+            [image2Button setImage:[UIImage imageWithCGImage:asset2.defaultRepresentation.fullResolutionImage] forState:UIControlStateNormal];
+            [image3Button setImage:[UIImage imageWithCGImage:asset3.defaultRepresentation.fullResolutionImage] forState:UIControlStateNormal];
+            image1Button.enabled = YES;
+            image2Button.enabled = YES;
+            image3Button.enabled = YES;
+            break;
+        }
+        default:
+            break;
+    }
+    
+    
 }
 
 #pragma mark - photoView delegate

@@ -69,7 +69,33 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addImage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BVJ-bZ-PCr"/>
+                                    <action selector="tapImage1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NBm-3s-1aR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVI-yF-uGw">
+                                <rect key="frame" x="206" y="110" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="7vu-q3-GFM"/>
+                                    <constraint firstAttribute="height" constant="90" id="egt-Ul-G0C"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapImage3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cnr-fA-I9y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTO-ac-WlQ">
+                                <rect key="frame" x="110" y="110" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="3AQ-RF-YU9"/>
+                                    <constraint firstAttribute="height" constant="90" id="hak-qr-ssa"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapImage2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h3Y-mn-voX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,10 +104,14 @@
                             <constraint firstAttribute="bottom" secondItem="S6u-wY-Fm7" secondAttribute="bottom" constant="35" id="1Gq-dq-lDJ"/>
                             <constraint firstItem="bdi-Xi-aOS" firstAttribute="top" secondItem="my5-xp-gee" secondAttribute="top" constant="2" id="5VN-Ai-PH7"/>
                             <constraint firstItem="OMY-3E-Zfg" firstAttribute="top" secondItem="my5-xp-gee" secondAttribute="top" constant="8" id="Dgh-jg-DFX"/>
+                            <constraint firstItem="uVI-yF-uGw" firstAttribute="leading" secondItem="bTO-ac-WlQ" secondAttribute="trailing" constant="6" id="ICV-gE-TZs"/>
+                            <constraint firstItem="bTO-ac-WlQ" firstAttribute="leading" secondItem="S6u-wY-Fm7" secondAttribute="trailing" constant="6" id="RPz-pF-rf8"/>
                             <constraint firstAttribute="trailing" secondItem="vfN-0e-drm" secondAttribute="trailing" constant="10" id="U38-PM-rgr"/>
+                            <constraint firstItem="Tfg-jR-tMR" firstAttribute="top" secondItem="bTO-ac-WlQ" secondAttribute="bottom" constant="3" id="YpY-7h-fHi"/>
                             <constraint firstAttribute="bottom" secondItem="Tfg-jR-tMR" secondAttribute="bottom" constant="2" id="gic-fc-jf3"/>
                             <constraint firstItem="bdi-Xi-aOS" firstAttribute="leading" secondItem="my5-xp-gee" secondAttribute="leading" constant="10" id="hse-14-aw1"/>
                             <constraint firstAttribute="trailing" secondItem="bdi-Xi-aOS" secondAttribute="trailing" constant="10" id="nwu-Ug-BKA"/>
+                            <constraint firstItem="Tfg-jR-tMR" firstAttribute="top" secondItem="uVI-yF-uGw" secondAttribute="bottom" constant="3" id="oXO-eu-Y2j"/>
                             <constraint firstItem="OMY-3E-Zfg" firstAttribute="leading" secondItem="my5-xp-gee" secondAttribute="leading" constant="15" id="rDH-DV-2ht"/>
                             <constraint firstItem="S6u-wY-Fm7" firstAttribute="leading" secondItem="my5-xp-gee" secondAttribute="leading" constant="14" id="ru9-vi-SIr"/>
                             <constraint firstItem="vfN-0e-drm" firstAttribute="leading" secondItem="Tfg-jR-tMR" secondAttribute="trailing" id="sdJ-Uz-bSv"/>
@@ -98,8 +128,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="addButton" destination="S6u-wY-Fm7" id="G9H-w1-QhP"/>
                 <outlet property="detailsTextView" destination="bdi-Xi-aOS" id="MIu-Xv-K7Z"/>
+                <outlet property="image1Button" destination="S6u-wY-Fm7" id="ORQ-kw-YWe"/>
+                <outlet property="image2Button" destination="bTO-ac-WlQ" id="czG-F4-YSt"/>
+                <outlet property="image3Button" destination="uVI-yF-uGw" id="28q-Gx-UMd"/>
                 <outlet property="placeButton" destination="Tfg-jR-tMR" id="sUM-cS-FV6"/>
                 <outlet property="placeholderLabel" destination="OMY-3E-Zfg" id="p9a-ea-qp9"/>
             </connections>

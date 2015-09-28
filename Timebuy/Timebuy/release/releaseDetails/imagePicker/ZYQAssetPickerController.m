@@ -606,8 +606,10 @@ static UIColor *titleColor;
 - (BOOL)shouldSelectAsset:(ALAsset *)asset
 {
     ZYQAssetPickerController *vc = (ZYQAssetPickerController *)self.navigationController;
+    
     BOOL selectable = [vc.selectionFilter evaluateWithObject:asset];
     if (_indexPathsForSelectedItems.count > vc.maximumNumberOfSelection) {
+        
         if (vc.delegate!=nil&&[vc.delegate respondsToSelector:@selector(assetPickerControllerDidMaximum:)]) {
             [vc.delegate assetPickerControllerDidMaximum:vc];
         }
@@ -1097,6 +1099,13 @@ static UIColor *titleColor;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //修改navigationBar的属性，自己修改
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationBar.translucent = NO;
+    self.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:22.0f], NSFontAttributeName, nil];
 }
 
 - (void)didReceiveMemoryWarning

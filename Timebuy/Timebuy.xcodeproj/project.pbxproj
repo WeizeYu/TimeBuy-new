@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187664961BB964EB0033A35C /* MessagePhotoMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876648E1BB964EB0033A35C /* MessagePhotoMenuItem.m */; };
+		187664971BB964EB0033A35C /* PhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 187664901BB964EB0033A35C /* PhotoPicker.m */; };
+		187664981BB964EB0033A35C /* ShowBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187664921BB964EB0033A35C /* ShowBigViewController.m */; };
+		187664991BB964EB0033A35C /* ZYQAssetPicker.Bundle in Resources */ = {isa = PBXBuildFile; fileRef = 187664931BB964EB0033A35C /* ZYQAssetPicker.Bundle */; };
+		1876649A1BB964EB0033A35C /* ZYQAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187664951BB964EB0033A35C /* ZYQAssetPickerController.m */; };
+		1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876649D1BB972810033A35C /* NFXIntroViewController.m */; };
 		70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535ED21BB2B5CC00091EE6 /* locationViewController.m */; };
 		70535ED51BB2B5CC00091EE6 /* locationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70535ED31BB2B5CC00091EE6 /* locationViewController.xib */; };
 		70535F671BB2B7FE00091EE6 /* addImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70535EDE1BB2B7FE00091EE6 /* addImg.png */; };
@@ -226,11 +232,6 @@
 		70E6F1AA1BB683C300D175B1 /* 箭头9x17px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E6F1A71BB683C300D175B1 /* 箭头9x17px@3x.png */; };
 		70E6F1AE1BB6C0B500D175B1 /* labelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6F1AC1BB6C0B500D175B1 /* labelsViewController.m */; };
 		70E6F1AF1BB6C0B500D175B1 /* labelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70E6F1AD1BB6C0B500D175B1 /* labelsViewController.xib */; };
-		70E6F1BB1BB810AC00D175B1 /* MessagePhotoMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6F1B31BB810AC00D175B1 /* MessagePhotoMenuItem.m */; };
-		70E6F1BC1BB810AC00D175B1 /* PhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6F1B51BB810AC00D175B1 /* PhotoPicker.m */; };
-		70E6F1BD1BB810AC00D175B1 /* ShowBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6F1B71BB810AC00D175B1 /* ShowBigViewController.m */; };
-		70E6F1BE1BB810AC00D175B1 /* ZYQAssetPicker.Bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70E6F1B81BB810AC00D175B1 /* ZYQAssetPicker.Bundle */; };
-		70E6F1BF1BB810AC00D175B1 /* ZYQAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6F1BA1BB810AC00D175B1 /* ZYQAssetPickerController.m */; };
 		732350121BB416B300C9E325 /* ingBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350101BB416B300C9E325 /* ingBigTableViewCell.m */; };
 		732350131BB416B300C9E325 /* ingBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732350111BB416B300C9E325 /* ingBigTableViewCell.xib */; };
 		732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350161BB41A4300C9E325 /* waitTableViewCell.m */; };
@@ -264,6 +265,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1876648D1BB964EB0033A35C /* MessagePhotoMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoMenuItem.h; sourceTree = "<group>"; };
+		1876648E1BB964EB0033A35C /* MessagePhotoMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoMenuItem.m; sourceTree = "<group>"; };
+		1876648F1BB964EB0033A35C /* PhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
+		187664901BB964EB0033A35C /* PhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPicker.m; sourceTree = "<group>"; };
+		187664911BB964EB0033A35C /* ShowBigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowBigViewController.h; sourceTree = "<group>"; };
+		187664921BB964EB0033A35C /* ShowBigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowBigViewController.m; sourceTree = "<group>"; };
+		187664931BB964EB0033A35C /* ZYQAssetPicker.Bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYQAssetPicker.Bundle; sourceTree = "<group>"; };
+		187664941BB964EB0033A35C /* ZYQAssetPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYQAssetPickerController.h; sourceTree = "<group>"; };
+		187664951BB964EB0033A35C /* ZYQAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYQAssetPickerController.m; sourceTree = "<group>"; };
+		1876649C1BB972810033A35C /* NFXIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFXIntroViewController.h; sourceTree = "<group>"; };
+		1876649D1BB972810033A35C /* NFXIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFXIntroViewController.m; sourceTree = "<group>"; };
 		70535ED11BB2B5CC00091EE6 /* locationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
 		70535ED21BB2B5CC00091EE6 /* locationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
 		70535ED31BB2B5CC00091EE6 /* locationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = locationViewController.xib; sourceTree = "<group>"; };
@@ -537,15 +549,6 @@
 		70E6F1AB1BB6C0B500D175B1 /* labelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = labelsViewController.h; sourceTree = "<group>"; };
 		70E6F1AC1BB6C0B500D175B1 /* labelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = labelsViewController.m; sourceTree = "<group>"; };
 		70E6F1AD1BB6C0B500D175B1 /* labelsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = labelsViewController.xib; sourceTree = "<group>"; };
-		70E6F1B21BB810AC00D175B1 /* MessagePhotoMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoMenuItem.h; sourceTree = "<group>"; };
-		70E6F1B31BB810AC00D175B1 /* MessagePhotoMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoMenuItem.m; sourceTree = "<group>"; };
-		70E6F1B41BB810AC00D175B1 /* PhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
-		70E6F1B51BB810AC00D175B1 /* PhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPicker.m; sourceTree = "<group>"; };
-		70E6F1B61BB810AC00D175B1 /* ShowBigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowBigViewController.h; sourceTree = "<group>"; };
-		70E6F1B71BB810AC00D175B1 /* ShowBigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowBigViewController.m; sourceTree = "<group>"; };
-		70E6F1B81BB810AC00D175B1 /* ZYQAssetPicker.Bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYQAssetPicker.Bundle; sourceTree = "<group>"; };
-		70E6F1B91BB810AC00D175B1 /* ZYQAssetPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYQAssetPickerController.h; sourceTree = "<group>"; };
-		70E6F1BA1BB810AC00D175B1 /* ZYQAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYQAssetPickerController.m; sourceTree = "<group>"; };
 		7323500F1BB416B300C9E325 /* ingBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingBigTableViewCell.h; sourceTree = "<group>"; };
 		732350101BB416B300C9E325 /* ingBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingBigTableViewCell.m; sourceTree = "<group>"; };
 		732350111BB416B300C9E325 /* ingBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingBigTableViewCell.xib; sourceTree = "<group>"; };
@@ -608,10 +611,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1876648B1BB964EB0033A35C /* imagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1876648C1BB964EB0033A35C /* PhotoView */,
+				187664931BB964EB0033A35C /* ZYQAssetPicker.Bundle */,
+				187664941BB964EB0033A35C /* ZYQAssetPickerController.h */,
+				187664951BB964EB0033A35C /* ZYQAssetPickerController.m */,
+			);
+			path = imagePicker;
+			sourceTree = "<group>";
+		};
+		1876648C1BB964EB0033A35C /* PhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				1876648D1BB964EB0033A35C /* MessagePhotoMenuItem.h */,
+				1876648E1BB964EB0033A35C /* MessagePhotoMenuItem.m */,
+				1876648F1BB964EB0033A35C /* PhotoPicker.h */,
+				187664901BB964EB0033A35C /* PhotoPicker.m */,
+				187664911BB964EB0033A35C /* ShowBigViewController.h */,
+				187664921BB964EB0033A35C /* ShowBigViewController.m */,
+			);
+			path = PhotoView;
+			sourceTree = "<group>";
+		};
+		1876649B1BB972810033A35C /* localImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1876649C1BB972810033A35C /* NFXIntroViewController.h */,
+				1876649D1BB972810033A35C /* NFXIntroViewController.m */,
+			);
+			path = localImageBrowser;
+			sourceTree = "<group>";
+		};
 		70535ED01BB2B58300091EE6 /* release */ = {
 			isa = PBXGroup;
 			children = (
-				70E6F1B01BB810AC00D175B1 /* imagePicker */,
 				70535ED11BB2B5CC00091EE6 /* locationViewController.h */,
 				70535ED21BB2B5CC00091EE6 /* locationViewController.m */,
 				70535ED31BB2B5CC00091EE6 /* locationViewController.xib */,
@@ -901,6 +936,7 @@
 				70860BD81BB041AF00E54EEF /* SDWebImage */,
 				70860BFA1BB041AF00E54EEF /* userConfiguration */,
 				70860BFD1BB041AF00E54EEF /* VPImageCropper */,
+				1876649B1BB972810033A35C /* localImageBrowser */,
 			);
 			path = openSource;
 			sourceTree = "<group>";
@@ -1070,6 +1106,7 @@
 		70E6F1681BB6247200D175B1 /* tableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				1876648B1BB964EB0033A35C /* imagePicker */,
 				70E6F1721BB6247200D175B1 /* releaseDetailsTableViewCell.h */,
 				70E6F1731BB6247200D175B1 /* releaseDetailsTableViewCell.m */,
 				70E6F1741BB6247200D175B1 /* releaseDetailsTableViewCell.xib */,
@@ -1087,30 +1124,6 @@
 				70E6F1A21BB6744300D175B1 /* urgentTableViewCell.xib */,
 			);
 			path = tableViewCells;
-			sourceTree = "<group>";
-		};
-		70E6F1B01BB810AC00D175B1 /* imagePicker */ = {
-			isa = PBXGroup;
-			children = (
-				70E6F1B11BB810AC00D175B1 /* PhotoView */,
-				70E6F1B81BB810AC00D175B1 /* ZYQAssetPicker.Bundle */,
-				70E6F1B91BB810AC00D175B1 /* ZYQAssetPickerController.h */,
-				70E6F1BA1BB810AC00D175B1 /* ZYQAssetPickerController.m */,
-			);
-			path = imagePicker;
-			sourceTree = "<group>";
-		};
-		70E6F1B11BB810AC00D175B1 /* PhotoView */ = {
-			isa = PBXGroup;
-			children = (
-				70E6F1B21BB810AC00D175B1 /* MessagePhotoMenuItem.h */,
-				70E6F1B31BB810AC00D175B1 /* MessagePhotoMenuItem.m */,
-				70E6F1B41BB810AC00D175B1 /* PhotoPicker.h */,
-				70E6F1B51BB810AC00D175B1 /* PhotoPicker.m */,
-				70E6F1B61BB810AC00D175B1 /* ShowBigViewController.h */,
-				70E6F1B71BB810AC00D175B1 /* ShowBigViewController.m */,
-			);
-			path = PhotoView;
 			sourceTree = "<group>";
 		};
 		732350141BB41A1C00C9E325 /* 等待中cell */ = {
@@ -1308,6 +1321,7 @@
 				70535F691BB2B7FE00091EE6 /* addImg@3x.png in Resources */,
 				70535F9D1BB2B7FE00091EE6 /* 导航字体@3x.png in Resources */,
 				70860BBC1BB0407D00E54EEF /* AMap.bundle in Resources */,
+				187664991BB964EB0033A35C /* ZYQAssetPicker.Bundle in Resources */,
 				70E6F1891BB6247200D175B1 /* priceTableViewCell.xib in Resources */,
 				70860B981BB036AE00E54EEF /* tabbar_mainbtn@2x.png in Resources */,
 				70535FE41BB2B7FE00091EE6 /* xitongshezhi.png in Resources */,
@@ -1421,7 +1435,6 @@
 				70535FDF1BB2B7FE00091EE6 /* wodezuji@2x.png in Resources */,
 				70535FA01BB2B7FE00091EE6 /* 导航条320x64@3x.png in Resources */,
 				70535FC61BB2B7FE00091EE6 /* fabu@2x.png in Resources */,
-				70E6F1BE1BB810AC00D175B1 /* ZYQAssetPicker.Bundle in Resources */,
 				70535FC21BB2B7FE00091EE6 /* b21c8701a18b87d600927607010828381e30fdd2.jpg.png in Resources */,
 				70535FDC1BB2B7FE00091EE6 /* wodexiaoxi@2x.png in Resources */,
 				70535F961BB2B7FE00091EE6 /* 个人设置1@3x.png in Resources */,
@@ -1489,6 +1502,7 @@
 				70860C0F1BB041AF00E54EEF /* SDWebImageDecoder.m in Sources */,
 				7323503E1BB5696F00C9E325 /* cancelTableViewCell.m in Sources */,
 				70860C0D1BB041AF00E54EEF /* SDImageCache.m in Sources */,
+				187664971BB964EB0033A35C /* PhotoPicker.m in Sources */,
 				70860C411BB18B9300E54EEF /* profilesRootViewController.m in Sources */,
 				732350281BB41EE100C9E325 /* doneBigTableViewCell.m in Sources */,
 				70860C0E1BB041AF00E54EEF /* SDWebImageCompat.m in Sources */,
@@ -1497,26 +1511,26 @@
 				70860C3C1BB16D2000E54EEF /* homeDetailsViewController.m in Sources */,
 				70860B701BB01CF100E54EEF /* AppDelegate.m in Sources */,
 				70860C091BB041AF00E54EEF /* KLCPopup.m in Sources */,
+				187664981BB964EB0033A35C /* ShowBigViewController.m in Sources */,
 				70E6F1991BB63F4200D175B1 /* releaseRootViewController.m in Sources */,
 				70860C1B1BB041AF00E54EEF /* userConfiguration.m in Sources */,
 				732350121BB416B300C9E325 /* ingBigTableViewCell.m in Sources */,
 				70860C111BB041AF00E54EEF /* SDWebImageDownloaderOperation.m in Sources */,
 				70860B6D1BB01CF100E54EEF /* main.m in Sources */,
 				70E6F1821BB6247200D175B1 /* selectTimeViewController.m in Sources */,
+				1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */,
 				70860C2D1BB1669200E54EEF /* findingsRootViewController.m in Sources */,
 				70E6F1861BB6247200D175B1 /* labelsTableViewCell.m in Sources */,
 				70860C1C1BB041AF00E54EEF /* VPImageCropperViewController.m in Sources */,
 				70860C241BB1664100E54EEF /* homeRootViewController.m in Sources */,
 				70860C191BB041AF00E54EEF /* UIImageView+WebCache.m in Sources */,
 				70E6F18A1BB6247200D175B1 /* releaseDetailsTableViewCell.m in Sources */,
-				70E6F1BD1BB810AC00D175B1 /* ShowBigViewController.m in Sources */,
+				187664961BB964EB0033A35C /* MessagePhotoMenuItem.m in Sources */,
 				732350321BB5570500C9E325 /* myReleaseViewController.m in Sources */,
+				1876649A1BB964EB0033A35C /* ZYQAssetPickerController.m in Sources */,
 				70E6F1881BB6247200D175B1 /* priceTableViewCell.m in Sources */,
-				70E6F1BB1BB810AC00D175B1 /* MessagePhotoMenuItem.m in Sources */,
-				70E6F1BF1BB810AC00D175B1 /* ZYQAssetPickerController.m in Sources */,
 				70860C181BB041AF00E54EEF /* UIImageView+HighlightedWebCache.m in Sources */,
 				732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */,
-				70E6F1BC1BB810AC00D175B1 /* PhotoPicker.m in Sources */,
 				70860C0A1BB041AF00E54EEF /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
