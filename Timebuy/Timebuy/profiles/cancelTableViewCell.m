@@ -11,6 +11,7 @@
 @implementation cancelTableViewCell
 
 - (void)awakeFromNib {
+    [self.refaButton.layer setCornerRadius:3];
     // Initialization code
 }
 -(void)setData:(NSMutableDictionary *)cancelDic{

@@ -93,6 +93,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="callClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pgA-hY-aI2"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pa-AV-yNV">
                         <rect key="frame" x="180" y="170" width="82" height="26"/>
@@ -106,6 +109,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="sureClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xqz-RH-QMO"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vZ-ks-Gi9">
                         <rect key="frame" x="272" y="170" width="82" height="26"/>
@@ -119,6 +125,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="commitClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8RC-tB-sI1"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浙江工业大学" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTu-en-ijb">
                         <rect key="frame" x="29" y="152" width="54" height="9"/>
@@ -178,8 +187,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="callButton" destination="uG4-PX-Gge" id="Hrv-eR-Qc4"/>
+                <outlet property="commitButton" destination="1vZ-ks-Gi9" id="KOQ-AS-Ub8"/>
                 <outlet property="content" destination="7Vs-mv-VtG" id="mPO-J9-R4w"/>
                 <outlet property="headImage" destination="01b-N0-wPl" id="CEK-lF-Vxk"/>
+                <outlet property="makesureButton" destination="0pa-AV-yNV" id="YKs-jS-NdY"/>
                 <outlet property="money" destination="3ZU-UN-kPo" id="iep-tm-u6g"/>
                 <outlet property="showImage" destination="xqk-sX-GG2" id="f6N-5N-VIF"/>
                 <outlet property="showImage2" destination="MFm-yc-v8N" id="pB4-86-nTQ"/>

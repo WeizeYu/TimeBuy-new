@@ -195,6 +195,7 @@
                 <outlet property="content" destination="cFJ-Ga-BfQ" id="vne-5J-6tJ"/>
                 <outlet property="headImage" destination="URw-Q0-RXM" id="We2-oC-pJI"/>
                 <outlet property="money" destination="1zt-mU-kYq" id="011-Qo-hz5"/>
+                <outlet property="refaButton" destination="b38-r1-9mf" id="nWO-XJ-WQ5"/>
                 <outlet property="share" destination="0p4-MS-sJv" id="SgD-tx-gxt"/>
                 <outlet property="shouImage2" destination="nEL-x2-EVV" id="3ll-FL-ZsJ"/>
                 <outlet property="showImage" destination="XRu-eL-CRA" id="TIt-Yd-uZn"/>
