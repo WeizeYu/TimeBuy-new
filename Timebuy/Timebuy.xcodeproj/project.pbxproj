@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840D4D71BBAAD45006141A9 /* loginViewController.m */; };
+		1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840D4D81BBAAD45006141A9 /* loginViewController.xib */; };
 		187664961BB964EB0033A35C /* MessagePhotoMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876648E1BB964EB0033A35C /* MessagePhotoMenuItem.m */; };
 		187664971BB964EB0033A35C /* PhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 187664901BB964EB0033A35C /* PhotoPicker.m */; };
 		187664981BB964EB0033A35C /* ShowBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187664921BB964EB0033A35C /* ShowBigViewController.m */; };
@@ -267,6 +269,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1840D4D61BBAAD45006141A9 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		1840D4D71BBAAD45006141A9 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		1840D4D81BBAAD45006141A9 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
 		1876648D1BB964EB0033A35C /* MessagePhotoMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoMenuItem.h; sourceTree = "<group>"; };
 		1876648E1BB964EB0033A35C /* MessagePhotoMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoMenuItem.m; sourceTree = "<group>"; };
 		1876648F1BB964EB0033A35C /* PhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
@@ -615,6 +620,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1840D4C61BBAA90B006141A9 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				1840D4D61BBAAD45006141A9 /* loginViewController.h */,
+				1840D4D71BBAAD45006141A9 /* loginViewController.m */,
+				1840D4D81BBAAD45006141A9 /* loginViewController.xib */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
 		1876648B1BB964EB0033A35C /* imagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +892,7 @@
 				70860B741BB01CF100E54EEF /* Main.storyboard */,
 				70860B971BB036AE00E54EEF /* tabbar_mainbtn@2x.png */,
 				70860B771BB01CF100E54EEF /* Images.xcassets */,
+				1840D4C61BBAA90B006141A9 /* login */,
 				70535ED01BB2B58300091EE6 /* release */,
 				70860C1E1BB1660A00E54EEF /* home */,
 				70860C291BB1667600E54EEF /* findings */,
@@ -1305,6 +1321,7 @@
 				70535F741BB2B7FE00091EE6 /* 栏@2x.png in Resources */,
 				70535F9E1BB2B7FE00091EE6 /* 导航条320x64.png in Resources */,
 				70E6F1A91BB683C300D175B1 /* 箭头9x17px@2x.png in Resources */,
+				1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */,
 				70535FAC1BB2B7FE00091EE6 /* 新浪1@2x.png in Resources */,
 				70E587B21BB2DD8B00915DD6 /* location1.png in Resources */,
 				70535F6B1BB2B7FE00091EE6 /* dingwei1@2x.png in Resources */,
@@ -1530,6 +1547,7 @@
 				70860C2D1BB1669200E54EEF /* findingsRootViewController.m in Sources */,
 				70E6F1861BB6247200D175B1 /* labelsTableViewCell.m in Sources */,
 				70860C1C1BB041AF00E54EEF /* VPImageCropperViewController.m in Sources */,
+				1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */,
 				70860C241BB1664100E54EEF /* homeRootViewController.m in Sources */,
 				70860C191BB041AF00E54EEF /* UIImageView+WebCache.m in Sources */,
 				70E6F18A1BB6247200D175B1 /* releaseDetailsTableViewCell.m in Sources */,

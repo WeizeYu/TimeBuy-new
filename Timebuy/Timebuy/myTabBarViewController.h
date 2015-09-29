@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "AFNetworking.h"
+
 #import "homeRootViewController.h"
 #import "findingsRootViewController.h"
 #import "newsRootViewController.h"
 #import "profilesRootViewController.h"
 #import "locationViewController.h"
 #import "releaseRootViewController.h"
+#import "loginViewController.h"
 
 @interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate>
 {

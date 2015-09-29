@@ -161,8 +161,11 @@
     //locationViewController *locationVC = [[locationViewController alloc] init];
     //[self presentViewController:locationVC animated:YES completion:nil];
     
-    releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
-    [self presentViewController:releaseRootVC animated:YES completion:nil];
+    //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
+    //[self presentViewController:releaseRootVC animated:YES completion:nil];
+    
+    loginViewController *loginVC = [[loginViewController alloc] init];
+    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 #pragma mark- TabBar Delegate
