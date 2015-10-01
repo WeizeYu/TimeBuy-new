@@ -7,15 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "verifyPhoneViewController.h"
 
-@interface loginViewController : UIViewController
+#import "JKCountDownButton.h"
+#import "MBProgressHUD.h"
+#import "AFNetworking.h"
+#import <SMS_SDK/SMS_SDK.h>
+
+@interface loginViewController : UIViewController < UITextFieldDelegate,MBProgressHUDDelegate>
+{
+    BOOL isVerified;
+    
+    MBProgressHUD *HUD;
+    MBProgressHUD *HUDinSuccess;
+    MBProgressHUD *HUDSendSuccess;
+}
 
 @property (strong, nonatomic) IBOutlet UIView *countryView;
 @property (strong, nonatomic) IBOutlet UIButton *countryButton;
 @property (strong, nonatomic) IBOutlet UIView *telephoneView;
 @property (strong, nonatomic) IBOutlet UITextField *telephoneTextField;
-@property (strong, nonatomic) IBOutlet UIButton *getVerifyMsgButton;
-@property (strong, nonatomic) IBOutlet UIButton *getVerifyVoiceButton;
+@property (weak, nonatomic) IBOutlet JKCountDownButton *getVerifyMsgButton;
+//@property (weak, nonatomic) IBOutlet JKCountDownButton *getVerifyVoiceButton;
 @property (strong, nonatomic) IBOutlet UIView *verifyNumView;
 @property (strong, nonatomic) IBOutlet UITextField *verifyNumTextField;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
@@ -30,10 +43,11 @@
 - (IBAction)cancel:(id)sender;
 
 - (IBAction)selectCountry:(id)sender;
-- (IBAction)getVerifyMsg:(id)sender;
-- (IBAction)getVerifyVoice:(id)sender;
 - (IBAction)login:(id)sender;
 - (IBAction)userAgreement:(id)sender;
+
+- (IBAction)getVerifyMsg:(JKCountDownButton *)sender;
+//- (IBAction)getVerifyVoice:(JKCountDownButton *)sender;
 
 - (IBAction)loginByWeixin:(id)sender;
 - (IBAction)loginByWeibo:(id)sender;

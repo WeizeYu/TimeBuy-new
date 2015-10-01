@@ -234,6 +234,15 @@
 		70E6F1AA1BB683C300D175B1 /* 箭头9x17px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E6F1A71BB683C300D175B1 /* 箭头9x17px@3x.png */; };
 		70E6F1AE1BB6C0B500D175B1 /* labelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E6F1AC1BB6C0B500D175B1 /* labelsViewController.m */; };
 		70E6F1AF1BB6C0B500D175B1 /* labelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70E6F1AD1BB6C0B500D175B1 /* labelsViewController.xib */; };
+		70E839141BBCC1740027A1CB /* verifyPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E839121BBCC1740027A1CB /* verifyPhoneViewController.m */; };
+		70E839151BBCC1740027A1CB /* verifyPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70E839131BBCC1740027A1CB /* verifyPhoneViewController.xib */; };
+		70E839191BBCD05D0027A1CB /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E839181BBCD05D0027A1CB /* JKCountDownButton.m */; };
+		70E8391F1BBCFF020027A1CB /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70E8391B1BBCFF020027A1CB /* SMS_SDKLocalizable.strings */; };
+		70E839201BBCFF020027A1CB /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */; };
+		70E839221BBCFF220027A1CB /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839211BBCFF220027A1CB /* libicucore.dylib */; };
+		70E839241BBCFF2A0027A1CB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839231BBCFF2A0027A1CB /* MessageUI.framework */; };
+		70E839271BBCFF390027A1CB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839251BBCFF390027A1CB /* AddressBook.framework */; };
+		70E839281BBCFF390027A1CB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839261BBCFF390027A1CB /* AddressBookUI.framework */; };
 		732350121BB416B300C9E325 /* ingBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350101BB416B300C9E325 /* ingBigTableViewCell.m */; };
 		732350131BB416B300C9E325 /* ingBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732350111BB416B300C9E325 /* ingBigTableViewCell.xib */; };
 		732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350161BB41A4300C9E325 /* waitTableViewCell.m */; };
@@ -556,6 +565,18 @@
 		70E6F1AB1BB6C0B500D175B1 /* labelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = labelsViewController.h; sourceTree = "<group>"; };
 		70E6F1AC1BB6C0B500D175B1 /* labelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = labelsViewController.m; sourceTree = "<group>"; };
 		70E6F1AD1BB6C0B500D175B1 /* labelsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = labelsViewController.xib; sourceTree = "<group>"; };
+		70E839111BBCC1740027A1CB /* verifyPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = verifyPhoneViewController.h; sourceTree = "<group>"; };
+		70E839121BBCC1740027A1CB /* verifyPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = verifyPhoneViewController.m; sourceTree = "<group>"; };
+		70E839131BBCC1740027A1CB /* verifyPhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = verifyPhoneViewController.xib; sourceTree = "<group>"; };
+		70E839171BBCD05D0027A1CB /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		70E839181BBCD05D0027A1CB /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		70E8391C1BBCFF020027A1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		70E8391E1BBCFF020027A1CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		70E839211BBCFF220027A1CB /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		70E839231BBCFF2A0027A1CB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		70E839251BBCFF390027A1CB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		70E839261BBCFF390027A1CB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		7323500F1BB416B300C9E325 /* ingBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingBigTableViewCell.h; sourceTree = "<group>"; };
 		732350101BB416B300C9E325 /* ingBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingBigTableViewCell.m; sourceTree = "<group>"; };
 		732350111BB416B300C9E325 /* ingBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingBigTableViewCell.xib; sourceTree = "<group>"; };
@@ -595,8 +616,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E839271BBCFF390027A1CB /* AddressBook.framework in Frameworks */,
+				70E839281BBCFF390027A1CB /* AddressBookUI.framework in Frameworks */,
+				70E839241BBCFF2A0027A1CB /* MessageUI.framework in Frameworks */,
+				70E839221BBCFF220027A1CB /* libicucore.dylib in Frameworks */,
 				70860BB91BB0404D00E54EEF /* AMapSearchKit.framework in Frameworks */,
 				70860BBA1BB0404D00E54EEF /* MAMapKit.framework in Frameworks */,
+				70E839201BBCFF020027A1CB /* SMS_SDK.framework in Frameworks */,
 				70860BB41BB03ED100E54EEF /* Security.framework in Frameworks */,
 				70860BB21BB03ECA00E54EEF /* libstdc++.6.0.9.dylib in Frameworks */,
 				70860BB01BB03EC200E54EEF /* libz.dylib in Frameworks */,
@@ -623,9 +649,13 @@
 		1840D4C61BBAA90B006141A9 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				70E839161BBCD05D0027A1CB /* JKCountDownButton */,
 				1840D4D61BBAAD45006141A9 /* loginViewController.h */,
 				1840D4D71BBAAD45006141A9 /* loginViewController.m */,
 				1840D4D81BBAAD45006141A9 /* loginViewController.xib */,
+				70E839111BBCC1740027A1CB /* verifyPhoneViewController.h */,
+				70E839121BBCC1740027A1CB /* verifyPhoneViewController.m */,
+				70E839131BBCC1740027A1CB /* verifyPhoneViewController.xib */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -933,6 +963,10 @@
 		70860B9C1BB03E2F00E54EEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70E839251BBCFF390027A1CB /* AddressBook.framework */,
+				70E839261BBCFF390027A1CB /* AddressBookUI.framework */,
+				70E839231BBCFF2A0027A1CB /* MessageUI.framework */,
+				70E839211BBCFF220027A1CB /* libicucore.dylib */,
 				70860BB71BB0404D00E54EEF /* AMapSearchKit.framework */,
 				70860BB81BB0404D00E54EEF /* MAMapKit.framework */,
 				70860BB31BB03ED100E54EEF /* Security.framework */,
@@ -952,6 +986,7 @@
 		70860BBD1BB041AF00E54EEF /* openSource */ = {
 			isa = PBXGroup;
 			children = (
+				70E8391A1BBCFF020027A1CB /* SMS_SDK */,
 				70860BBE1BB041AF00E54EEF /* AFNetworking */,
 				70860BD21BB041AF00E54EEF /* KLCPopup */,
 				70860BD51BB041AF00E54EEF /* MBProgressHUD */,
@@ -1148,6 +1183,24 @@
 			path = tableViewCells;
 			sourceTree = "<group>";
 		};
+		70E839161BBCD05D0027A1CB /* JKCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				70E839171BBCD05D0027A1CB /* JKCountDownButton.h */,
+				70E839181BBCD05D0027A1CB /* JKCountDownButton.m */,
+			);
+			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
+		70E8391A1BBCFF020027A1CB /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				70E8391B1BBCFF020027A1CB /* SMS_SDKLocalizable.strings */,
+				70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
 		732350141BB41A1C00C9E325 /* 等待中cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1288,6 +1341,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 70860B5E1BB01CF100E54EEF;
 			productRefGroup = 70860B681BB01CF100E54EEF /* Products */;
@@ -1317,6 +1371,7 @@
 				70535FB51BB2B7FE00091EE6 /* 组局(1)@2x.png in Resources */,
 				70535FE51BB2B7FE00091EE6 /* xitongshezhi@2x.png in Resources */,
 				70535FE71BB2B7FE00091EE6 /* zhifufangshi.png in Resources */,
+				70E839151BBCC1740027A1CB /* verifyPhoneViewController.xib in Resources */,
 				70535F941BB2B7FE00091EE6 /* 个人设置1.png in Resources */,
 				70535F741BB2B7FE00091EE6 /* 栏@2x.png in Resources */,
 				70535F9E1BB2B7FE00091EE6 /* 导航条320x64.png in Resources */,
@@ -1396,6 +1451,7 @@
 				70535F8B1BB2B7FE00091EE6 /* QQ1@2x.png in Resources */,
 				70535F901BB2B7FE00091EE6 /* showImg4.png in Resources */,
 				70535F8F1BB2B7FE00091EE6 /* showImg3.png in Resources */,
+				70E8391F1BBCFF020027A1CB /* SMS_SDKLocalizable.strings in Resources */,
 				70535FDB1BB2B7FE00091EE6 /* wodexiaoxi.png in Resources */,
 				70860C251BB1664100E54EEF /* homeRootViewController.xib in Resources */,
 				70535FE31BB2B7FE00091EE6 /* xianshikongxian@3x.png in Resources */,
@@ -1499,8 +1555,10 @@
 				70860C161BB041AF00E54EEF /* UIImage+MultiFormat.m in Sources */,
 				70860C171BB041AF00E54EEF /* UIImage+WebP.m in Sources */,
 				70860C001BB041AF00E54EEF /* AFHTTPRequestOperation.m in Sources */,
+				70E839141BBCC1740027A1CB /* verifyPhoneViewController.m in Sources */,
 				70860C121BB041AF00E54EEF /* SDWebImageManager.m in Sources */,
 				732350431BB5698700C9E325 /* cancelBigTableViewCell.m in Sources */,
+				70E839191BBCD05D0027A1CB /* JKCountDownButton.m in Sources */,
 				7385835D1BB2E21600E06534 /* ingTableViewCell.m in Sources */,
 				732350391BB5677200C9E325 /* complainTableViewCell.m in Sources */,
 				70E6F1A31BB6744300D175B1 /* urgentTableViewCell.m in Sources */,
@@ -1586,6 +1644,15 @@
 				70860B751BB01CF100E54EEF /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		70E8391B1BBCFF020027A1CB /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70E8391C1BBCFF020027A1CB /* en */,
+				70E8391E1BBCFF020027A1CB /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1679,6 +1746,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Timebuy",
+					"$(PROJECT_DIR)/Timebuy/openSource/SMS_SDK",
 				);
 				INFOPLIST_FILE = Timebuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1696,6 +1764,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Timebuy",
+					"$(PROJECT_DIR)/Timebuy/openSource/SMS_SDK",
 				);
 				INFOPLIST_FILE = Timebuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
