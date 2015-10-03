@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "AFNetworking.h"
+#import "userConfiguration.h"
 
-#import "homeRootViewController.h"
+#import "homeMainViewController.h"
 #import "findingsRootViewController.h"
 #import "newsRootViewController.h"
 #import "profilesRootViewController.h"
@@ -18,7 +19,7 @@
 #import "releaseRootViewController.h"
 #import "loginViewController.h"
 
-@interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate>
+@interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate,UIAlertViewDelegate>
 {
     UIViewController *vc3;
     
