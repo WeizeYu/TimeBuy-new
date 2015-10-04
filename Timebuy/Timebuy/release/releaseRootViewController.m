@@ -17,6 +17,7 @@
 @synthesize releaseTableView;
 @synthesize datePicker;
 @synthesize location;
+@synthesize locationName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,7 +69,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recModifyInRelease:) name:@"passModifyInRelease" object:nil];
     
-    placeStr = location;
+    //定位地址名称
+    placeStr = locationName;
     
 }
 
@@ -119,6 +121,8 @@
 
 - (void)send:(id)sender {
     //[self sendMgs];
+    confirmViewController *confirmVC = [[confirmViewController alloc] init];
+    [self presentViewController:confirmVC animated:YES completion:nil];
     
     titleTextField = (UITextField *)[releaseTableView viewWithTag:1];
     NSLog(@"get text = %@",titleTextField.text);
@@ -221,6 +225,8 @@
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 cell = [[[NSBundle mainBundle] loadNibNamed:@"releaseDetailsTableViewCell" owner:self options:nil] lastObject];
             }
+            
+            [cell.placeButton setTitle:placeStr forState:UIControlStateNormal];
             
             return cell;
             

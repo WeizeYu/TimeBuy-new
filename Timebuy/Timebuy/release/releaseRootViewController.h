@@ -17,6 +17,7 @@
 #import "priceViewController.h"
 #import "selectTimeViewController.h"
 #import "labelsViewController.h"
+#import "confirmViewController.h"
 
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
@@ -51,7 +52,8 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *releaseTableView;
 @property (strong, nonatomic) UIDatePicker *datePicker;
-@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSString *locationName;
+@property (strong, nonatomic) AMapGeoPoint *location;
 
 - (IBAction)cancel:(id)sender;
 

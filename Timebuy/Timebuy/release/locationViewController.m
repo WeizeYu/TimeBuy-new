@@ -248,7 +248,7 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
                                                             object:self
-                                                          userInfo:@{@"state":@"1",@"location":poi.name}];
+                                                          userInfo:@{@"state":@"1",@"name":poi.name, @"location":poi.location}];
         
     } else {
         
@@ -256,7 +256,7 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
                                                             object:self
-                                                          userInfo:@{@"state":@"1",@"location":tip.name}];
+                                                          userInfo:@{@"state":@"1",@"name":tip.name, @"location":tip.location}];
         
     }
     

@@ -97,9 +97,12 @@
     getState = [getDic objectForKey:@"state"];
     
     if ([getState isEqualToString:@"1"]) {
-        getLocation = [getDic objectForKey:@"location"];
+        getLocationName = [getDic objectForKey:@"name"];
+        location = [getDic objectForKey:@"location"];
         
         releaseRootViewController *releaseMainVC = [[releaseRootViewController alloc] init];
+        releaseMainVC.locationName = getLocationName;
+        releaseMainVC.location = location;
         [self presentViewController:releaseMainVC animated:YES completion:nil];
     }
 }
@@ -158,9 +161,8 @@
     //self.selectedIndex=2;
     //button.selected=YES;
     
-    
-    //locationViewController *locationVC = [[locationViewController alloc] init];
-    //[self presentViewController:locationVC animated:YES completion:nil];
+    locationViewController *locationVC = [[locationViewController alloc] init];
+    [self presentViewController:locationVC animated:YES completion:nil];
     
     //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
     //[self presentViewController:releaseRootVC animated:YES completion:nil];
@@ -168,7 +170,7 @@
     //loginViewController *loginVC = [[loginViewController alloc] init];
     //[self presentViewController:loginVC animated:YES completion:nil];
     
-
+    /*
     if ([[userConfiguration getStringValueForConfigurationKey:@"userId"] isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"你还没有登录，登录后才可以进行发布服务" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即登录", nil];
         [alert show];
@@ -176,6 +178,7 @@
         locationViewController *locationVC = [[locationViewController alloc] init];
         [self presentViewController:locationVC animated:YES completion:nil];
     }
+    */
     
 }
 
@@ -189,9 +192,7 @@
 }
 
 #pragma mark - TabBar Delegate
-
 //  换页和button的状态关联上
-
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
     if (self.selectedIndex==2) {

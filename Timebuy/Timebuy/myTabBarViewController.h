@@ -24,7 +24,8 @@
     UIViewController *vc3;
     
     NSString *getState;
-    NSString *getLocation;
+    NSString *getLocationName;
+    AMapGeoPoint *location;
 }
 
 @property (strong, nonatomic) UITabBar *myTabBar;
