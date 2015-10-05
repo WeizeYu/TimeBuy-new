@@ -65,6 +65,15 @@
             NSString *title = [NSString stringWithFormat:@"剩余%d秒",60];
             [getVerifyMsgButton setTitle:title forState:UIControlStateDisabled];
             
+            HUDSendSuccess = [[MBProgressHUD alloc] init];
+            HUDSendSuccess.mode = MBProgressHUDModeText;
+            HUDSendSuccess.delegate = self;
+            HUDSendSuccess.labelText = @"验证码发送成功";
+            [HUDSendSuccess show:YES];
+            [HUDSendSuccess hide:YES afterDelay:1];
+            
+            [self.view addSubview:HUDSendSuccess];
+            
             [getVerifyMsgButton didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
                 NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
                 return title;
@@ -75,21 +84,11 @@
                 
             }];
             
-            
             [SMS_SDK getVerificationCodeBySMSWithPhone:telephoneTextField.text zone:@"86" result:^(SMS_SDKError *error) {
                 //注意区号和手机号码前面都不要加“＋”号，有的开发者喜欢这样写，@“＋86”，这种是错误的写法
                 if (!error) {
                     NSLog(@"获取验证码成功");
                     isVerified = YES;
-                    
-                    HUDSendSuccess = [[MBProgressHUD alloc] init];
-                    HUDSendSuccess.mode = MBProgressHUDModeText;
-                    HUDSendSuccess.delegate = self;
-                    HUDSendSuccess.labelText = @"验证码发送成功";
-                    [HUDSendSuccess show:YES];
-                    [HUDSendSuccess hide:YES afterDelay:1];
-                    
-                    [self.view addSubview:HUDSendSuccess];
                     
                 } else {
                     NSLog(@"错误吗：%zi,错误描述：%@",error.errorCode,error.errorDescription);
@@ -107,18 +106,33 @@
 //登录
 - (IBAction)login:(id)sender
 {
-    if (isVerified == YES && ![verifyNumTextField.text isEqualToString:@""]) {
-        [SMS_SDK commitVerifyCode:verifyNumTextField.text result:^(enum SMS_ResponseState state) {
-            //self.verfyCode.text这里传的是获取到的验证码，可以把获取到的验证码填写在文本框里面，然后获取到文本框里面的值传进参数里
-            if (1==state) {
-                NSLog(@"验证成功");
-                [self verifyLogin];
-            } else if (0==state){
-                NSLog(@"验证失败");
-            }
-        }];
+    NSLog(@"verify number = %@", verifyNumTextField.text);
+    if (![telephoneTextField.text isEqualToString:@""]) {
+        if (isVerified == YES && ![verifyNumTextField.text isEqualToString:@""]) {
+            [SMS_SDK commitVerifyCode:verifyNumTextField.text result:^(enum SMS_ResponseState state) {
+                //self.verfyCode.text这里传的是获取到的验证码，可以把获取到的验证码填写在文本框里面，然后获取到文本框里面的值传进参数里
+                if (1==state) {
+                    NSLog(@"验证成功");
+                    [self verifyLogin];
+                } else if (0==state){
+                    NSLog(@"验证失败");
+                    
+                    MBProgressHUD *failHUD = [[MBProgressHUD alloc] init];
+                    failHUD.mode = MBProgressHUDModeText;
+                    failHUD.delegate = self;
+                    failHUD.labelText = @"验证码错误，请重试";
+                    [failHUD show:YES];
+                    [failHUD hide:YES afterDelay:1];
+                    
+                    [self.view addSubview:failHUD];
+                    
+                }
+            }];
+        } else {
+            [self showErrorWithTitle:@"" WithMessage:@"请先进行手机验证"];
+        }
     } else {
-        [self showErrorWithTitle:@"" WithMessage:@"请先进行手机验证"];
+        [self showErrorWithTitle:@"" WithMessage:@"请输入手机号"];
     }
 }
 
@@ -196,6 +210,12 @@
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.delegate = self;
     
+    NSDate *curDate = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    NSString *curDateTime = [formatter stringFromDate:curDate];
+    
     //上传至服务器
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer  = [AFJSONRequestSerializer serializer];
@@ -208,8 +228,9 @@
     NSDictionary *dict = @{ @"phone":telephoneTextField.text,
                             @"source":@"1",
                             @"clientType":@"20",
-                            @"clientVersion":[[UIDevice currentDevice] systemVersion],           //获得设备系统版本
-                            @"did":[[[UIDevice currentDevice] identifierForVendor] UUIDString]   //获得设备标志
+                            @"clientVersion":[[UIDevice currentDevice] systemVersion],            //获得设备系统版本
+                            @"did":[[[UIDevice currentDevice] identifierForVendor] UUIDString],   //获得设备标志
+                            @"loginTime":curDateTime
                             };
     
     //3.请求
@@ -239,6 +260,8 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"passState"
                                                                 object:self
                                                               userInfo:@{@"state":@"0"}];
+            //用户的信息存入本地
+            [userConfiguration setStringValueForConfigurationKey:@"phone" withValue:telephoneTextField.text];
             
             //设置下载后的头像
             //[userConfiguration setDataValueForConfigurationKey:@"portrait" withValue:UIImagePNGRepresentation([UIImage imageNamed:@"portrait.png"])];

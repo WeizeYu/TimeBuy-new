@@ -12,7 +12,7 @@
 #import "userConfiguration.h"
 
 #import "homeMainViewController.h"
-#import "findingsRootViewController.h"
+#import "findingsMainViewController.h"
 #import "newsRootViewController.h"
 #import "profilesRootViewController.h"
 #import "locationViewController.h"

@@ -36,7 +36,7 @@
 @property (strong, nonatomic) UITableView *searchPlaceTableView;
 
 @property (strong, nonatomic) NSArray *POIArray;
-@property (strong, nonatomic) NSArray *tipsResultArray;
+@property (strong, nonatomic) NSMutableArray *tipsResultArray;
 
 - (IBAction)cancel:(id)sender;
 

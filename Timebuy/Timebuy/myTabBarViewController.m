@@ -23,6 +23,8 @@
     //NSLog(@"Hello tabbarVC");
     //NSLog(@"tabvc = %@",self);
     self.tabBar.translucent = NO;
+    
+    //[self logout];
 }
 
 - (void)viewDidLoad {
@@ -37,7 +39,7 @@
     vc1.view.backgroundColor = [UIColor whiteColor];
     //vc1.tabBarItem.title = @"拾贝";
     
-    findingsRootViewController *vc2 = [[findingsRootViewController alloc] init];
+    findingsMainViewController *vc2 = [[findingsMainViewController alloc] init];
     vc2.view.backgroundColor = [UIColor whiteColor];
     //vc2.tabBarItem.title = @"发现";
     
@@ -98,6 +100,7 @@
     
     if ([getState isEqualToString:@"1"]) {
         getLocationName = [getDic objectForKey:@"name"];
+        
         location = [getDic objectForKey:@"location"];
         
         releaseRootViewController *releaseMainVC = [[releaseRootViewController alloc] init];
@@ -161,8 +164,8 @@
     //self.selectedIndex=2;
     //button.selected=YES;
     
-    locationViewController *locationVC = [[locationViewController alloc] init];
-    [self presentViewController:locationVC animated:YES completion:nil];
+    //locationViewController *locationVC = [[locationViewController alloc] init];
+    //[self presentViewController:locationVC animated:YES completion:nil];
     
     //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
     //[self presentViewController:releaseRootVC animated:YES completion:nil];
@@ -170,15 +173,15 @@
     //loginViewController *loginVC = [[loginViewController alloc] init];
     //[self presentViewController:loginVC animated:YES completion:nil];
     
-    /*
-    if ([[userConfiguration getStringValueForConfigurationKey:@"userId"] isEqualToString:@""]) {
+    
+    if ([[userConfiguration getStringValueForConfigurationKey:@"phone"] isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"你还没有登录，登录后才可以进行发布服务" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即登录", nil];
         [alert show];
     } else {
         locationViewController *locationVC = [[locationViewController alloc] init];
         [self presentViewController:locationVC animated:YES completion:nil];
     }
-    */
+    
     
 }
 
@@ -211,6 +214,18 @@
     } else {
         return YES;
     }
+}
+
+//清空本地数据
+- (void)logout {
+    //清空本地数据
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dict = [defaults dictionaryRepresentation];
+    for (id key in dict) {
+        [defaults removeObjectForKey:key];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didReceiveMemoryWarning {

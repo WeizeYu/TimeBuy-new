@@ -36,12 +36,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycv-vC-iGl">
-                    <rect key="frame" x="8" y="30" width="12" height="23"/>
+                    <rect key="frame" x="5" y="26" width="20" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="12" id="hDz-f5-5X3"/>
-                        <constraint firstAttribute="height" constant="23" id="ibF-Vn-5yh"/>
+                        <constraint firstAttribute="width" constant="20" id="CdT-xm-cJq"/>
+                        <constraint firstAttribute="height" constant="30" id="bVg-RQ-eoH"/>
                     </constraints>
-                    <state key="normal" image="箭头9x17px.png">
+                    <state key="normal" image="back20x30px.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -127,27 +127,27 @@
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="L5A-Ok-5LT" secondAttribute="trailing" id="B3a-uJ-u7H"/>
+                <constraint firstItem="ycv-vC-iGl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="EeN-OT-QpQ"/>
                 <constraint firstItem="L5A-Ok-5LT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hfo-GT-n8S"/>
                 <constraint firstItem="rce-Vk-sdt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="IB8-iV-r68"/>
                 <constraint firstAttribute="trailing" secondItem="HrJ-Ce-Wa6" secondAttribute="trailing" id="PSK-N7-Sps"/>
                 <constraint firstItem="L5A-Ok-5LT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RTC-ON-Dgg"/>
-                <constraint firstItem="ycv-vC-iGl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Sqh-vk-Nnf"/>
                 <constraint firstAttribute="trailing" secondItem="XTb-PH-LTP" secondAttribute="trailing" constant="8" id="Ugv-PA-AX5"/>
                 <constraint firstItem="aY8-P2-py2" firstAttribute="trailing" secondItem="HrJ-Ce-Wa6" secondAttribute="trailing" id="X4G-Ea-CJ2"/>
+                <constraint firstItem="ycv-vC-iGl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="b8f-2h-bDK"/>
                 <constraint firstItem="XTb-PH-LTP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="kQj-G0-oZT"/>
                 <constraint firstItem="aY8-P2-py2" firstAttribute="leading" secondItem="HrJ-Ce-Wa6" secondAttribute="leading" id="lez-kf-Mbc"/>
                 <constraint firstItem="aY8-P2-py2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="qaq-8L-bhU"/>
                 <constraint firstItem="HrJ-Ce-Wa6" firstAttribute="top" secondItem="aY8-P2-py2" secondAttribute="bottom" constant="2" id="wEl-rf-8i7"/>
                 <constraint firstAttribute="centerX" secondItem="rce-Vk-sdt" secondAttribute="centerX" constant="-0.5" id="wiz-UD-PDT"/>
-                <constraint firstItem="ycv-vC-iGl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="wrQ-Lj-dc2"/>
                 <constraint firstItem="HrJ-Ce-Wa6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wth-qp-avh"/>
             </constraints>
             <point key="canvasLocation" x="305" y="376"/>
         </view>
     </objects>
     <resources>
+        <image name="back20x30px.png" width="82" height="124"/>
         <image name="导航条375x64.png" width="375" height="63"/>
-        <image name="箭头9x17px.png" width="12" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

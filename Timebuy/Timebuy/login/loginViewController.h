@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "AFNetworking.h"
 #import <SMS_SDK/SMS_SDK.h>
+#import "userConfiguration.h"
 
 @interface loginViewController : UIViewController < UITextFieldDelegate,MBProgressHUDDelegate>
 {

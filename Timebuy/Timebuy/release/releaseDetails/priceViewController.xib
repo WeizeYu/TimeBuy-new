@@ -24,12 +24,12 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCR-xN-Qd2">
-                    <rect key="frame" x="8" y="30" width="12" height="23"/>
+                    <rect key="frame" x="5" y="26" width="20" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="23" id="XPz-0J-Jwz"/>
-                        <constraint firstAttribute="width" constant="12" id="dX3-Um-qaz"/>
+                        <constraint firstAttribute="height" constant="30" id="Uvn-I1-qJS"/>
+                        <constraint firstAttribute="width" constant="20" id="evh-CL-KEP"/>
                     </constraints>
-                    <state key="normal" image="箭头9x17px.png">
+                    <state key="normal" image="back20x30px.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -114,14 +114,14 @@
                 <constraint firstItem="NTQ-8J-zzx" firstAttribute="top" secondItem="39V-NW-wQF" secondAttribute="top" constant="27" id="FKF-xo-yWN"/>
                 <constraint firstItem="w1r-Dg-Rns" firstAttribute="leading" secondItem="39V-NW-wQF" secondAttribute="leading" id="GyO-mo-xkk"/>
                 <constraint firstItem="MpP-d5-Rw5" firstAttribute="leading" secondItem="39V-NW-wQF" secondAttribute="leading" constant="14" id="IOf-1h-jNh"/>
-                <constraint firstItem="GCR-xN-Qd2" firstAttribute="leading" secondItem="39V-NW-wQF" secondAttribute="leading" constant="8" id="Iuy-DM-w20"/>
                 <constraint firstAttribute="trailing" secondItem="NTQ-8J-zzx" secondAttribute="trailing" constant="8" id="KEm-Y0-XNO"/>
                 <constraint firstAttribute="trailing" secondItem="MpP-d5-Rw5" secondAttribute="trailing" constant="14" id="KtV-ep-aRf"/>
                 <constraint firstAttribute="trailing" secondItem="w1r-Dg-Rns" secondAttribute="trailing" id="Rc7-6m-Bsi"/>
                 <constraint firstItem="eV2-r0-je9" firstAttribute="top" secondItem="w1r-Dg-Rns" secondAttribute="bottom" constant="8" id="SnS-Kk-OVb"/>
                 <constraint firstItem="eV2-r0-je9" firstAttribute="leading" secondItem="39V-NW-wQF" secondAttribute="leading" id="TxN-GJ-CDB"/>
+                <constraint firstItem="GCR-xN-Qd2" firstAttribute="leading" secondItem="39V-NW-wQF" secondAttribute="leading" constant="5" id="Xgc-QK-faD"/>
                 <constraint firstAttribute="trailing" secondItem="eV2-r0-je9" secondAttribute="trailing" id="cOn-Nm-KZM"/>
-                <constraint firstItem="GCR-xN-Qd2" firstAttribute="top" secondItem="39V-NW-wQF" secondAttribute="top" constant="30" id="mkH-nG-h7C"/>
+                <constraint firstItem="GCR-xN-Qd2" firstAttribute="top" secondItem="39V-NW-wQF" secondAttribute="top" constant="26" id="oPw-yu-h86"/>
                 <constraint firstItem="w1r-Dg-Rns" firstAttribute="top" secondItem="39V-NW-wQF" secondAttribute="top" id="vb7-Fk-Qpk"/>
                 <constraint firstItem="hrv-8F-U7c" firstAttribute="top" secondItem="39V-NW-wQF" secondAttribute="top" constant="28" id="zJ9-T3-vgq"/>
             </constraints>
@@ -129,8 +129,8 @@
         </view>
     </objects>
     <resources>
+        <image name="back20x30px.png" width="82" height="124"/>
         <image name="导航条375x64.png" width="375" height="63"/>
-        <image name="箭头9x17px.png" width="12" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
