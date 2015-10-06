@@ -17,10 +17,34 @@
 @synthesize welfareTableView;
 @synthesize segmentedControl;
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = YES;
+        }
+    }
+    
+    self.tabBarController.tabBar.hidden = YES;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    welfareTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:24.0f], NSFontAttributeName, nil];
+    self.navigationItem.title = @"公益";
+    
+    //自定义返回按钮
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem  = backButton;
+}
+
+- (void)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - tabelview Delegate
@@ -81,6 +105,9 @@
         segmentedControl.shouldAnimateUserSelection = NO;
         segmentedControl.tag = 2;
         //[self.view addSubview:segmentedControl];
+        
+        segmentedControl.selectedSegmentIndex = 0;
+        
         [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
         return segmentedControl;
     }
@@ -105,12 +132,38 @@
         UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 238.0)];
         titleImageView.image = [UIImage imageNamed:@"111.png"];
         
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 230) / 2, 138, 230, 50)];
+        titleLabel.text = @"时贝公益计划";
+        titleLabel.font = [UIFont fontWithName:@"Hanzipen TC" size:36.0f];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.textColor = [UIColor whiteColor];
+        
+        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 230) / 2, 196, 230, 18)];
+        detailLabel.text = @"用你我的时间创造不一样的未来！";
+        detailLabel.textAlignment = NSTextAlignmentCenter;
+        detailLabel.font = [UIFont fontWithName:@"Hanzipen TC" size:14.0f];
+        detailLabel.textColor = [UIColor whiteColor];
+        
         [cell addSubview:titleImageView];
+        [cell addSubview:titleLabel];
+        [cell addSubview:detailLabel];
+        
         
     } else {
+        welfareDetailsTableViewCell *cell = (welfareDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+        
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTableIdentifier];
+            
+            cell.contentView.frame = cell.bounds;
+            cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+            
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"welfareDetailsTableViewCell" owner:self options:nil] lastObject];
         }
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        
+        return cell;
     }
     
     //cell.textLabel.text = @"Hello";

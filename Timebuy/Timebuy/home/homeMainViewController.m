@@ -148,7 +148,7 @@
             pageImgView2.image = [UIImage imageNamed:@"zisu10.1.png"];
             
             UIImageView *pageImgView3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 188)];
-            pageImgView3.image = [UIImage imageNamed:@"3首页-07.jpg"];
+            pageImgView3.image = [UIImage imageNamed:@"3首页-07.png"];
             
             NSMutableArray *viewsArray = [[NSMutableArray alloc] initWithObjects:pageImgView3,pageImgView1,pageImgView2, nil];
             [view setViewsArray:viewsArray];

@@ -147,7 +147,7 @@
     button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
     
     //  设定button大小为适应图片
-    button.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+    button.frame = CGRectMake(0.0, 0.0, 67, 60);
     [button setImage:buttonImage forState:UIControlStateNormal];
     [button setImage:selectedImage forState:UIControlStateSelected];
     
@@ -157,13 +157,16 @@
     /*
      *  核心代码：设置button的center 和 tabBar的 center 做对齐操作， 同时做出相对的上浮
      */
-    CGFloat heightDifference = buttonImage.size.height - self.tabBar.frame.size.height;
+    NSLog(@"tabbar = %f",self.tabBar.frame.size.height);
+    NSLog(@"tabbar center1 = %f",self.tabBar.center.y);
+    
+    CGFloat heightDifference = 60 - self.tabBar.frame.size.height;   //设置图片的尺寸为67*60，所以已经固定好了
     if (heightDifference < 0)
         button.center = self.tabBar.center;
     else
     {
         CGPoint center = self.tabBar.center;
-        center.y = center.y - heightDifference/2.0;
+        center.y = center.y - heightDifference - 1;
         button.center = center;
     }
     
