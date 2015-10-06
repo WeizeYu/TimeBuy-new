@@ -2292,7 +2292,7 @@
 					"$(PROJECT_DIR)/Timebuy/openSource/SMS_SDK",
 				);
 				INFOPLIST_FILE = Timebuy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2313,7 +2313,7 @@
 					"$(PROJECT_DIR)/Timebuy/openSource/SMS_SDK",
 				);
 				INFOPLIST_FILE = Timebuy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
