@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "welfareViewController.h"
 
 @interface findingsMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 {

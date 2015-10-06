@@ -28,7 +28,7 @@
         
         //self.portraitImgView.layer.masksToBounds = YES;
         //self.portraitImgView.layer.cornerRadius = self.portraitImgView.bounds.size.height / 2;
-        
+        //self.frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 20);
         
     }
     return self;

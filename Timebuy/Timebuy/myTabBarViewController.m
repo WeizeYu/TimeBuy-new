@@ -35,6 +35,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    NSLog(@"%f",self.tabBar.bounds.size.height);
+    
     homeMainViewController *vc1 = [[homeMainViewController alloc] init];
     vc1.view.backgroundColor = [UIColor whiteColor];
     //vc1.tabBarItem.title = @"拾贝";
@@ -56,12 +58,22 @@
     //vc5.tabBarItem.title = @"我的";
     
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    //nav1.tabBarItem.image = [UIImage imageNamed:@"homeSelect"];
+    //显示底部图片的原始图片
+    nav1.tabBarItem.image = [[UIImage imageNamed:@"homeNormal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav1.tabBarItem.selectedImage = [[UIImage imageNamed:@"homeSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     nav1.tabBarItem.title = @"拾贝";
     UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+    nav2.tabBarItem.image = [[UIImage imageNamed:@"findingsNormal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav2.tabBarItem.selectedImage = [[UIImage imageNamed:@"findingsSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     nav2.tabBarItem.title = @"发现";
     UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+    nav4.tabBarItem.image = [[UIImage imageNamed:@"newsNormal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav4.tabBarItem.selectedImage = [[UIImage imageNamed:@"newsSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     nav4.tabBarItem.title = @"动态";
     UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
+    nav5.tabBarItem.image = [[UIImage imageNamed:@"profilesNormal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav5.tabBarItem.selectedImage = [[UIImage imageNamed:@"profilesSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     nav5.tabBarItem.title = @"我的";
     
     [nav1.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
@@ -114,7 +126,7 @@
 -(void)setup
 {
     //  添加突出按钮
-    [self addCenterButtonWithImage:[UIImage imageNamed:@"tabbar_mainbtn@2x.png"] selectedImage:[UIImage imageNamed:@"tabbar_mainbtn@2x.png"]];
+    [self addCenterButtonWithImage:[UIImage imageNamed:@"center"] selectedImage:[UIImage imageNamed:@"center"]];
     //  UITabBarControllerDelegate 指定为自己
     self.delegate=self;
     //  指定当前页——中间页

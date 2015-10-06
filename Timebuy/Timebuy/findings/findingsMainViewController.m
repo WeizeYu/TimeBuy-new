@@ -118,7 +118,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSInteger row = indexPath.row;
+    switch (row) {
+        case 0:
+        
+            break;
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+        {
+            welfareViewController *welfareVC = [[welfareViewController alloc] init];
+            [self.navigationController pushViewController:welfareVC animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
