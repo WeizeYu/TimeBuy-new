@@ -11,9 +11,11 @@
 @implementation ingBigTableViewCell
 
 - (void)awakeFromNib {
+    [self.superView.layer setCornerRadius:8];
     [self.callButton.layer setCornerRadius:3];
     [self.makesureButton.layer setCornerRadius:3];
     [self.commitButton.layer setCornerRadius:3];
+    
     // Initialization code
 }
 - (IBAction)callClick:(id)sender {
@@ -53,7 +55,7 @@
     time.font=[UIFont fontWithName:@"Arial" size:13];
     [callview addSubview:time];
     UIImageView *phonepic=[[UIImageView alloc]initWithFrame:CGRectMake(262, 42, 26, 26)];
-    UIImage *pic=[UIImage imageNamed:@"addImg"];
+    UIImage *pic=[UIImage imageNamed:@"phone"];
     [phonepic setImage:pic];
     [callview addSubview:phonepic];
     KLCPopup *popup =[KLCPopup popupWithContentView:callview showType:KLCPopupShowTypeGrowIn dismissType:KLCPopupDismissTypeGrowOut maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:true dismissOnContentTouch:false];
@@ -67,7 +69,10 @@
 
 }
 - (IBAction)commitClick:(id)sender {
-    
+    if(self.commitBlock)
+    {
+        self.commitBlock();
+    }
 
 }
 -(void)setData:(NSMutableDictionary *)ingDic{

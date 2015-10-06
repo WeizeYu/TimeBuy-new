@@ -11,6 +11,7 @@
 @implementation complainTableViewCell
 
 - (void)awakeFromNib {
+    [self.rootView.layer setCornerRadius:8];
     [self.commitButton.layer setCornerRadius:3];
     // Initialization code
 }

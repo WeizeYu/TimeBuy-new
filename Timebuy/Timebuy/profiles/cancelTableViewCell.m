@@ -11,6 +11,7 @@
 @implementation cancelTableViewCell
 
 - (void)awakeFromNib {
+    [self.rootView.layer setCornerRadius:8];
     [self.refaButton.layer setCornerRadius:3];
     // Initialization code
 }

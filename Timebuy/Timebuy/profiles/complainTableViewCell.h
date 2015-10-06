@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *content;
 @property (strong, nonatomic) IBOutlet UILabel *where;
 @property (strong, nonatomic) IBOutlet UIButton *commitButton;
+@property (strong, nonatomic) IBOutlet UIView *rootView;
 -(void)setData:(NSMutableDictionary *)complainDic;
 @end

@@ -227,10 +227,18 @@
 		7323503F1BB5696F00C9E325 /* cancelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7323503D1BB5696F00C9E325 /* cancelTableViewCell.xib */; };
 		732350431BB5698700C9E325 /* cancelBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350411BB5698700C9E325 /* cancelBigTableViewCell.m */; };
 		732350441BB5698700C9E325 /* cancelBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732350421BB5698700C9E325 /* cancelBigTableViewCell.xib */; };
-		736E13DF1BB97ED500882CCE /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 736E13DE1BB97ED500882CCE /* down.png */; };
-		736E13E11BB97EDF00882CCE /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 736E13E01BB97EDF00882CCE /* up.png */; };
 		7385835D1BB2E21600E06534 /* ingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7385835B1BB2E21600E06534 /* ingTableViewCell.m */; };
 		7385835E1BB2E21600E06534 /* ingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7385835C1BB2E21600E06534 /* ingTableViewCell.xib */; };
+		73ED70551BBF8006004EB6CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70541BBF8006004EB6CD /* down.png */; };
+		73ED70571BBF801B004EB6CD /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70561BBF801B004EB6CD /* phone.png */; };
+		73ED705C1BBF8288004EB6CD /* complainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED705A1BBF8288004EB6CD /* complainDetailViewController.m */; };
+		73ED705D1BBF8288004EB6CD /* complainDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED705B1BBF8288004EB6CD /* complainDetailViewController.xib */; };
+		73ED70651BC0B4F4004EB6CD /* waitingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED70631BC0B4F4004EB6CD /* waitingDetailViewController.m */; };
+		73ED70661BC0B4F4004EB6CD /* waitingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70641BC0B4F4004EB6CD /* waitingDetailViewController.xib */; };
+		73ED706A1BC0B50B004EB6CD /* doneDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED70681BC0B50B004EB6CD /* doneDetailViewController.m */; };
+		73ED706B1BC0B50B004EB6CD /* doneDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70691BC0B50B004EB6CD /* doneDetailViewController.xib */; };
+		73ED706F1BC0B51F004EB6CD /* ingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED706D1BC0B51F004EB6CD /* ingDetailViewController.m */; };
+		73ED70701BC0B51F004EB6CD /* ingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED706E1BC0B51F004EB6CD /* ingDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,11 +525,23 @@
 		732350401BB5698700C9E325 /* cancelBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cancelBigTableViewCell.h; sourceTree = "<group>"; };
 		732350411BB5698700C9E325 /* cancelBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cancelBigTableViewCell.m; sourceTree = "<group>"; };
 		732350421BB5698700C9E325 /* cancelBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cancelBigTableViewCell.xib; sourceTree = "<group>"; };
-		736E13DE1BB97ED500882CCE /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
-		736E13E01BB97EDF00882CCE /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		7385835A1BB2E21600E06534 /* ingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingTableViewCell.h; sourceTree = "<group>"; };
 		7385835B1BB2E21600E06534 /* ingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingTableViewCell.m; sourceTree = "<group>"; };
 		7385835C1BB2E21600E06534 /* ingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingTableViewCell.xib; sourceTree = "<group>"; };
+		73ED70541BBF8006004EB6CD /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		73ED70561BBF801B004EB6CD /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		73ED70591BBF8288004EB6CD /* complainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = complainDetailViewController.h; sourceTree = "<group>"; };
+		73ED705A1BBF8288004EB6CD /* complainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = complainDetailViewController.m; sourceTree = "<group>"; };
+		73ED705B1BBF8288004EB6CD /* complainDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = complainDetailViewController.xib; sourceTree = "<group>"; };
+		73ED70621BC0B4F4004EB6CD /* waitingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waitingDetailViewController.h; sourceTree = "<group>"; };
+		73ED70631BC0B4F4004EB6CD /* waitingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waitingDetailViewController.m; sourceTree = "<group>"; };
+		73ED70641BC0B4F4004EB6CD /* waitingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = waitingDetailViewController.xib; sourceTree = "<group>"; };
+		73ED70671BC0B50B004EB6CD /* doneDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doneDetailViewController.h; sourceTree = "<group>"; };
+		73ED70681BC0B50B004EB6CD /* doneDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doneDetailViewController.m; sourceTree = "<group>"; };
+		73ED70691BC0B50B004EB6CD /* doneDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doneDetailViewController.xib; sourceTree = "<group>"; };
+		73ED706C1BC0B51F004EB6CD /* ingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingDetailViewController.h; sourceTree = "<group>"; };
+		73ED706D1BC0B51F004EB6CD /* ingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingDetailViewController.m; sourceTree = "<group>"; };
+		73ED706E1BC0B51F004EB6CD /* ingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,8 +601,8 @@
 		70535EDD1BB2B7FE00091EE6 /* button */ = {
 			isa = PBXGroup;
 			children = (
-				736E13E01BB97EDF00882CCE /* up.png */,
-				736E13DE1BB97ED500882CCE /* down.png */,
+				73ED70561BBF801B004EB6CD /* phone.png */,
+				73ED70541BBF8006004EB6CD /* down.png */,
 				70535EDE1BB2B7FE00091EE6 /* addImg.png */,
 				70535EDF1BB2B7FE00091EE6 /* addImg@2x.png */,
 				70535EE01BB2B7FE00091EE6 /* addImg@3x.png */,
@@ -975,6 +995,7 @@
 		70860C201BB1660A00E54EEF /* profiles */ = {
 			isa = PBXGroup;
 			children = (
+				73ED705E1BC0A15F004EB6CD /* 我的发布详情界面 */,
 				738583581BB2D3AF00E06534 /* ProfilesDetailTableViewCells */,
 				70860C3E1BB18B9300E54EEF /* profilesRootViewController.h */,
 				70860C3F1BB18B9300E54EEF /* profilesRootViewController.m */,
@@ -1045,6 +1066,7 @@
 		738583581BB2D3AF00E06534 /* ProfilesDetailTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				73ED70581BBF821D004EB6CD /* 我申诉的 */,
 				732350351BB566A500C9E325 /* 已取消cell */,
 				732350341BB5668D00C9E325 /* 申诉中cell */,
 				7323501F1BB41E1600C9E325 /* 已完成cell */,
@@ -1068,6 +1090,56 @@
 				732350111BB416B300C9E325 /* ingBigTableViewCell.xib */,
 			);
 			name = "进行中cell";
+			sourceTree = "<group>";
+		};
+		73ED70581BBF821D004EB6CD /* 我申诉的 */ = {
+			isa = PBXGroup;
+			children = (
+				73ED70591BBF8288004EB6CD /* complainDetailViewController.h */,
+				73ED705A1BBF8288004EB6CD /* complainDetailViewController.m */,
+				73ED705B1BBF8288004EB6CD /* complainDetailViewController.xib */,
+			);
+			name = "我申诉的";
+			sourceTree = "<group>";
+		};
+		73ED705E1BC0A15F004EB6CD /* 我的发布详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				73ED70611BC0A1AD004EB6CD /* 等待中详情界面 */,
+				73ED70601BC0A18C004EB6CD /* 已完成详情界面 */,
+				73ED705F1BC0A179004EB6CD /* 进行中详情界面 */,
+			);
+			name = "我的发布详情界面";
+			sourceTree = "<group>";
+		};
+		73ED705F1BC0A179004EB6CD /* 进行中详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				73ED706C1BC0B51F004EB6CD /* ingDetailViewController.h */,
+				73ED706D1BC0B51F004EB6CD /* ingDetailViewController.m */,
+				73ED706E1BC0B51F004EB6CD /* ingDetailViewController.xib */,
+			);
+			name = "进行中详情界面";
+			sourceTree = "<group>";
+		};
+		73ED70601BC0A18C004EB6CD /* 已完成详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				73ED70671BC0B50B004EB6CD /* doneDetailViewController.h */,
+				73ED70681BC0B50B004EB6CD /* doneDetailViewController.m */,
+				73ED70691BC0B50B004EB6CD /* doneDetailViewController.xib */,
+			);
+			name = "已完成详情界面";
+			sourceTree = "<group>";
+		};
+		73ED70611BC0A1AD004EB6CD /* 等待中详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				73ED70621BC0B4F4004EB6CD /* waitingDetailViewController.h */,
+				73ED70631BC0B4F4004EB6CD /* waitingDetailViewController.m */,
+				73ED70641BC0B4F4004EB6CD /* waitingDetailViewController.xib */,
+			);
+			name = "等待中详情界面";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1154,6 +1226,7 @@
 				732350331BB5570500C9E325 /* myReleaseViewController.xib in Resources */,
 				70E587B71BB2DD8B00915DD6 /* location2@3x.png in Resources */,
 				70535FBA1BB2B7FE00091EE6 /* 蔡依林.png in Resources */,
+				73ED706B1BC0B50B004EB6CD /* doneDetailViewController.xib in Resources */,
 				70535FBE1BB2B7FE00091EE6 /* 高挺.png in Resources */,
 				70535F7C1BB2B7FE00091EE6 /* fengxiang.png in Resources */,
 				70535F891BB2B7FE00091EE6 /* qiuzhu@3x.png in Resources */,
@@ -1161,6 +1234,7 @@
 				70535F931BB2B7FE00091EE6 /* zisu10.1.png in Resources */,
 				70535FB51BB2B7FE00091EE6 /* 组局(1)@2x.png in Resources */,
 				70535FE51BB2B7FE00091EE6 /* xitongshezhi@2x.png in Resources */,
+				73ED70701BC0B51F004EB6CD /* ingDetailViewController.xib in Resources */,
 				70535FE71BB2B7FE00091EE6 /* zhifufangshi.png in Resources */,
 				70535F941BB2B7FE00091EE6 /* 个人设置1.png in Resources */,
 				70535F741BB2B7FE00091EE6 /* 栏@2x.png in Resources */,
@@ -1200,6 +1274,7 @@
 				70535FD81BB2B7FE00091EE6 /* wodericheng.png in Resources */,
 				70535F7A1BB2B7FE00091EE6 /* back@2x.png in Resources */,
 				70535F6A1BB2B7FE00091EE6 /* dingwei1.png in Resources */,
+				73ED70571BBF801B004EB6CD /* phone.png in Resources */,
 				70535F8D1BB2B7FE00091EE6 /* showImg.png in Resources */,
 				70535FB21BB2B7FE00091EE6 /* 男符号1@2x.png in Resources */,
 				70535FE11BB2B7FE00091EE6 /* xianshikongxian.png in Resources */,
@@ -1210,12 +1285,12 @@
 				70535FC11BB2B7FE00091EE6 /* 7-140223103130591@3x.png in Resources */,
 				70535F821BB2B7FE00091EE6 /* logo@2x.png in Resources */,
 				70535FB91BB2B7FE00091EE6 /* 背景@3x.png in Resources */,
-				736E13E11BB97EDF00882CCE /* up.png in Resources */,
 				70535FA91BB2B7FE00091EE6 /* 支付宝1@2x.png in Resources */,
 				70860B761BB01CF100E54EEF /* Main.storyboard in Resources */,
 				7323503A1BB5677200C9E325 /* complainTableViewCell.xib in Resources */,
 				70535FC31BB2B7FE00091EE6 /* b21c8701a18b87d600927607010828381e30fdd2.jpg@2x.png in Resources */,
 				70535F991BB2B7FE00091EE6 /* 女@2x.png in Resources */,
+				73ED70551BBF8006004EB6CD /* down.png in Resources */,
 				70535F681BB2B7FE00091EE6 /* addImg@2x.png in Resources */,
 				70535FBB1BB2B7FE00091EE6 /* 附近的人1.png in Resources */,
 				70535F921BB2B7FE00091EE6 /* xiangqing xiaoxi.png in Resources */,
@@ -1230,6 +1305,7 @@
 				70535FAA1BB2B7FE00091EE6 /* 支付宝1@3x.png in Resources */,
 				70535FCA1BB2B7FE00091EE6 /* gerenxiaoxi@3x.png in Resources */,
 				70535F841BB2B7FE00091EE6 /* paotui.png in Resources */,
+				73ED70661BC0B4F4004EB6CD /* waitingDetailViewController.xib in Resources */,
 				70535FDD1BB2B7FE00091EE6 /* wodexiaoxi@3x.png in Resources */,
 				70535F7F1BB2B7FE00091EE6 /* gongyi@3x.png in Resources */,
 				70535F8B1BB2B7FE00091EE6 /* QQ1@2x.png in Resources */,
@@ -1245,12 +1321,12 @@
 				70535FD61BB2B7FE00091EE6 /* tuichudenglu@2x.png in Resources */,
 				70E587B31BB2DD8B00915DD6 /* location1@2x.png in Resources */,
 				70535FBC1BB2B7FE00091EE6 /* 附近的人1@2x.png in Resources */,
-				736E13DF1BB97ED500882CCE /* down.png in Resources */,
 				70535F751BB2B7FE00091EE6 /* 栏@3x.png in Resources */,
 				70535FCE1BB2B7FE00091EE6 /* hewomenliaoliao.png in Resources */,
 				70535F811BB2B7FE00091EE6 /* logo200x56-01.png in Resources */,
 				70535F7D1BB2B7FE00091EE6 /* gongyi.png in Resources */,
 				70535F851BB2B7FE00091EE6 /* paotui@2x.png in Resources */,
+				73ED705D1BBF8288004EB6CD /* complainDetailViewController.xib in Resources */,
 				70535FE91BB2B7FE00091EE6 /* zhifufangshi@3x.png in Resources */,
 				70535FEB1BB2B7FE00091EE6 /* 我的日程 background.png in Resources */,
 				70535F6E1BB2B7FE00091EE6 /* xiugai@2x.png in Resources */,
@@ -1329,14 +1405,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73ED706F1BC0B51F004EB6CD /* ingDetailViewController.m in Sources */,
 				70860C161BB041AF00E54EEF /* UIImage+MultiFormat.m in Sources */,
+				73ED706A1BC0B50B004EB6CD /* doneDetailViewController.m in Sources */,
 				70860C171BB041AF00E54EEF /* UIImage+WebP.m in Sources */,
 				70860C001BB041AF00E54EEF /* AFHTTPRequestOperation.m in Sources */,
 				70860C121BB041AF00E54EEF /* SDWebImageManager.m in Sources */,
+				73ED705C1BBF8288004EB6CD /* complainDetailViewController.m in Sources */,
 				732350431BB5698700C9E325 /* cancelBigTableViewCell.m in Sources */,
 				7385835D1BB2E21600E06534 /* ingTableViewCell.m in Sources */,
 				732350391BB5677200C9E325 /* complainTableViewCell.m in Sources */,
 				70860B9B1BB03A4600E54EEF /* myTabBarViewController.m in Sources */,
+				73ED70651BC0B4F4004EB6CD /* waitingDetailViewController.m in Sources */,
 				70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */,
 				70860C011BB041AF00E54EEF /* AFHTTPRequestOperationManager.m in Sources */,
 				70860C031BB041AF00E54EEF /* AFNetworkReachabilityManager.m in Sources */,

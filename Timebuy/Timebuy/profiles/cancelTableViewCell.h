@@ -18,5 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *zan;
 @property (strong, nonatomic) IBOutlet UILabel *share;
 @property (strong, nonatomic) IBOutlet UIButton *refaButton;
+@property (strong, nonatomic) IBOutlet UIView *rootView;
 -(void)setData:(NSMutableDictionary *)cancelDic;
 @end

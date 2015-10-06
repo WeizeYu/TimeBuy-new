@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.rootView.layer setCornerRadius:8];
     [self.refaButton.layer setCornerRadius:3];
 }
 -(void)setData:(NSMutableDictionary *)cancelDic{

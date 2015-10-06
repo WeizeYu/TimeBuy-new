@@ -16,5 +16,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *headImage;
 @property (strong, nonatomic) IBOutlet UILabel *where;
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
+@property (strong, nonatomic) IBOutlet UIView *rootView;
+
 -(void)setData:(NSMutableDictionary *)doneDic;
 @end

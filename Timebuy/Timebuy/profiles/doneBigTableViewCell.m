@@ -11,6 +11,7 @@
 @implementation doneBigTableViewCell
 
 - (void)awakeFromNib {
+    [self.rootView.layer setCornerRadius:8];
     // Initialization code
 }
 -(void)setData:(NSMutableDictionary *)doneDic{

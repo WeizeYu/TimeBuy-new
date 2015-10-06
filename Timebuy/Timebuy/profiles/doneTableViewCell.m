@@ -11,6 +11,7 @@
 @implementation doneTableViewCell
 
 - (void)awakeFromNib {
+    [self.rootView.layer setCornerRadius:8];
     [self.doneButton.layer setCornerRadius:3];
     // Initialization code
 }

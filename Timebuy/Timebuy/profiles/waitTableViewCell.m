@@ -11,6 +11,7 @@
 @implementation waitTableViewCell
 
 - (void)awakeFromNib {
+    [self.rootView.layer setCornerRadius:8];
     [self.cancelButton.layer setCornerRadius:3];
     // Initialization code
 }
