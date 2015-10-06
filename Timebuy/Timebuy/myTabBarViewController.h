@@ -9,16 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "AFNetworking.h"
-#import "homeRootViewController.h"
-#import "findingsRootViewController.h"
+#import "userConfiguration.h"
+
+#import "homeMainViewController.h"
+#import "findingsMainViewController.h"
 #import "newsRootViewController.h"
 #import "profilesRootViewController.h"
 #import "locationViewController.h"
-#import "releaseMainViewController.h"
+#import "releaseRootViewController.h"
+#import "loginViewController.h"
 
-@interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate>
+@interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate,UIAlertViewDelegate>
 {
     UIViewController *vc3;
+    
+    NSString *getState;
+    NSString *getLocationName;
+    AMapGeoPoint *location;
 }
 
 @property (strong, nonatomic) UITabBar *myTabBar;

@@ -20,6 +20,7 @@
 @synthesize POIArray;
 @synthesize tipsResultArray;
 @synthesize searchPlaceTableView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -46,6 +47,7 @@
     [[[[placeSearchBar.subviews objectAtIndex:0] subviews] objectAtIndex:0] removeFromSuperview];
     [placeSearchBar setBackgroundColor:[UIColor clearColor]];
     placeSearchBar.delegate = self;
+    
     [myMapView addSubview:placeSearchBar];
     
     search = [[AMapSearchAPI alloc] init];
@@ -59,6 +61,13 @@
     [self.view addSubview:shadowView];
     shadowView.hidden = YES;
     
+    transition = [CATransition animation];
+    transition.delegate = self;
+    transition.duration = 0.2f;
+    transition.timingFunction = UIViewAnimationCurveEaseInOut;
+    transition.type = kCATransitionFade;
+    //[shadowView.layer addAnimation:transition forKey:nil];
+    
     _tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     _tapGr.cancelsTouchesInView = NO;
     _tapGr.numberOfTapsRequired = 1;
@@ -68,20 +77,29 @@
     searchPlaceTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64 + placeSearchBar.bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - (64 + placeSearchBar.bounds.size.height))];
     searchPlaceTableView.delegate = self;
     searchPlaceTableView.dataSource = self;
+    searchPlaceTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:searchPlaceTableView];
     searchPlaceTableView.hidden = YES;
-    }
+    
+}
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
+
 #pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     NSLog(@"begin");
     
+    if ([searchBar.text isEqualToString:@""]) {
+        NSLog(@"Hello");
+    }
+    
     //searchPlaceTableView.hidden = NO;
     shadowView.hidden = NO;
+    [shadowView.layer addAnimation:transition forKey:nil];
     
     [placeSearchBar setTintColor:[UIColor whiteColor]];
     [placeSearchBar setBackgroundColor:[UIColor whiteColor]];
@@ -94,7 +112,7 @@
     searchStr = searchBar.text;
     searchStr = [searchStr stringByReplacingCharactersInRange:range withString:text];
     
-    NSLog(@"searchStr = %@", searchStr);
+    //NSLog(@"searchStr = %@", searchStr);
     
     if ([searchStr isEqualToString:@""]) {
         searchBar.text = @"";
@@ -108,6 +126,15 @@
     }
     
     return YES;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    //NSLog(@"searchText = %@", searchBar.text);
+    if ([searchBar.text isEqualToString:@""]) {
+        searchPlaceTableView.hidden = YES;
+    }
+    
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -152,17 +179,44 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (searchPlaceTableView.hidden == YES) {
-        NSLog(@"place table view");
         return [POIArray count];
     } else {
-        NSLog(@"search place table view");
-        return [tipsResultArray count];
+        if ([tipsResultArray count] > 0) {
+            return [tipsResultArray count];
+        } else {
+            return 0;
+        }
+        
     }
-    }
+    
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 58.0f;
+    
+    if (searchPlaceTableView.hidden == YES) {
+        return 58.0f;
+    } else {
+        if ([tipsResultArray count] > 0) {
+            return 58.0f;
+        } else {
+            return [[UIScreen mainScreen] bounds].size.height - 64;
+        }
+    }
+    
+    return 0.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (searchPlaceTableView.hidden == NO) {
+        
+        if (tipsResultArray.count == 0) {
+            return [[UIScreen mainScreen] bounds].size.height - 84;
+        }
+        
+    }
+    return 1.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -174,6 +228,28 @@
     }
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (searchPlaceTableView.hidden == NO) {
+        if (tipsResultArray.count == 0) {
+            CGSize mainSize = [[UIScreen mainScreen] bounds].size;
+            
+            UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, mainSize.width, mainSize.height - 64)];
+            sectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+            
+            UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake((mainSize.width - 200) / 2, 100, 200, 20)];
+            tipsLabel.text = @"找不到位置，请尝试其他关键词";
+            tipsLabel.font = [UIFont systemFontOfSize:12.0f];
+            tipsLabel.textAlignment = NSTextAlignmentCenter;
+            tipsLabel.textColor = [UIColor lightGrayColor];
+            [sectionView addSubview:tipsLabel];
+            
+            return sectionView;
+        }
+    }
+    return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row=[indexPath row];
@@ -183,9 +259,7 @@
     
     if (searchPlaceTableView.hidden == YES) {
         if (cell == nil) {
-            
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellTableIdentifier];
-            
         }
         
         AMapPOI *poi = (AMapPOI *)[POIArray objectAtIndex:indexPath.row];
@@ -194,23 +268,53 @@
         cell.textLabel.text = poi.name;
         cell.detailTextLabel.text = poi.address;
     } else {
-        if (cell == nil) {
+        
+        if ([tipsResultArray count] > 0) {
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellTableIdentifier];
+            }
             
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellTableIdentifier];
+            AMapTip *tip = (AMapTip *)[tipsResultArray objectAtIndex:indexPath.row];
             
+            cell.textLabel.text = tip.name;
+            cell.detailTextLabel.text = tip.district;
         }
         
-        AMapTip *tip = (AMapTip *)[tipsResultArray objectAtIndex:indexPath.row];
-        
-        cell.textLabel.text = tip.name;
-        cell.detailTextLabel.text = tip.district;
     }
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [placeSearchBar resignFirstResponder];
+    
+    if (searchPlaceTableView.hidden == YES) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        AMapPOI *poi = (AMapPOI *)[POIArray objectAtIndex:indexPath.row];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
+                                                            object:self
+                                                          userInfo:@{@"state":@"1",@"name":poi.name, @"location":poi.location}];
+        
+    } else {
+        
+        if ([tipsResultArray count] > 0) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            AMapTip *tip = (AMapTip *)[tipsResultArray objectAtIndex:indexPath.row];
+            
+            if (tip.location) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
+                                                                    object:self
+                                                                  userInfo:@{@"state":@"1",@"name":tip.name, @"location":tip.location}];
+            } else {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
+                                                                    object:self
+                                                                  userInfo:@{@"state":@"1",@"name":tip.name}];
+            }
+        }
+    }
+    
 }
 
 #pragma mark - MAMapViewDelegate
@@ -225,6 +329,7 @@
     regeo.requireExtension = YES;
     
     [search AMapReGoecodeSearch:regeo];
+    
 }
 
 #pragma mark - AMapSearchDelegate
@@ -243,14 +348,21 @@
     [placeTableView reloadData];
     
 }
+
 -(void)onInputTipsSearchDone:(AMapInputTipsSearchRequest*)request response:(AMapInputTipsSearchResponse *)response
 {
-    tipsResultArray = [[NSArray alloc] init];
+    tipsResultArray = [[NSMutableArray alloc] init];
     
-    tipsResultArray = response.tips;
+    for (AMapTip *tip in response.tips) {
+        if (tip.location) {
+            [tipsResultArray addObject:tip];
+        }
+    }
     
+    //tipsResultArray = response.tips;
     [searchPlaceTableView reloadData];
 }
+
 #pragma mark - userLocation
 -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation
 updatingLocation:(BOOL)updatingLocation

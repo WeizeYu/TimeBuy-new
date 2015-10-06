@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="alipayTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ct5-1V-gwP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="5mw-Vz-FUa"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alipay.png" translatesAutoresizingMaskIntoConstraints="NO" id="677-Yb-UWV">
+                        <rect key="frame" x="15" y="4" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="TiI-wk-8b4"/>
+                            <constraint firstAttribute="width" constant="35" id="qpv-4A-jQf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlQ-bR-8Cg">
+                        <rect key="frame" x="70" y="11" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="S96-A3-d4H"/>
+                            <constraint firstAttribute="width" constant="75" id="pTb-w5-4v9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes.png" translatesAutoresizingMaskIntoConstraints="NO" id="4HU-l4-sWd">
+                        <rect key="frame" x="290" y="14" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="VXH-Rm-h3M"/>
+                            <constraint firstAttribute="width" constant="15" id="nqy-2w-07L"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4HU-l4-sWd" secondAttribute="trailing" constant="15" id="1yI-im-9te"/>
+                    <constraint firstItem="ct5-1V-gwP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FiG-zg-skr"/>
+                    <constraint firstItem="4HU-l4-sWd" firstAttribute="top" secondItem="ct5-1V-gwP" secondAttribute="bottom" constant="13" id="IhD-SN-fSt"/>
+                    <constraint firstItem="677-Yb-UWV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="JVR-Sy-paf"/>
+                    <constraint firstItem="ct5-1V-gwP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MtQ-fE-rLq"/>
+                    <constraint firstItem="zlQ-bR-8Cg" firstAttribute="leading" secondItem="677-Yb-UWV" secondAttribute="trailing" constant="20" id="TGt-8h-AYu"/>
+                    <constraint firstItem="zlQ-bR-8Cg" firstAttribute="top" secondItem="ct5-1V-gwP" secondAttribute="bottom" constant="10" id="h0G-sn-ups"/>
+                    <constraint firstItem="677-Yb-UWV" firstAttribute="top" secondItem="ct5-1V-gwP" secondAttribute="bottom" constant="3" id="pT4-Ny-G8t"/>
+                    <constraint firstAttribute="trailing" secondItem="ct5-1V-gwP" secondAttribute="trailing" id="veK-We-zhl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="selectImgView2" destination="4HU-l4-sWd" id="1Cb-zC-dCZ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="alipay.png" width="73" height="72"/>
+        <image name="yes.png" width="15" height="15"/>
+    </resources>
+</document>

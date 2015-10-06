@@ -10,7 +10,6 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <MAMapKit/MAMapKit.h>
 
-
 @interface locationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MAMapViewDelegate,AMapSearchDelegate,UISearchBarDelegate,UIGestureRecognizerDelegate>
 {
     MAMapView * myMapView;
@@ -25,15 +24,19 @@
     NSString *searchStr;
     
     UITapGestureRecognizer *_tapGr;
+    
+    CATransition *transition;
+    
 }
 
 @property (strong, nonatomic) IBOutlet UISearchBar *placeSearchBar;
 @property (strong, nonatomic) IBOutlet UIView *myView;
 @property (strong, nonatomic) IBOutlet UITableView *placeTableView;
+
 @property (strong, nonatomic) UITableView *searchPlaceTableView;
 
 @property (strong, nonatomic) NSArray *POIArray;
-@property (strong, nonatomic) NSArray *tipsResultArray;
+@property (strong, nonatomic) NSMutableArray *tipsResultArray;
 
 - (IBAction)cancel:(id)sender;
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="priceTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="priceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkP-Rb-BSw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSk-W7-ETz">
+                                <rect key="frame" x="14" y="12" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3Iv-y9-OUn"/>
+                                    <constraint firstAttribute="width" constant="42" id="d1Q-4A-dKE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入价格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cby-D1-Vnw">
+                                <rect key="frame" x="64" y="12" width="56" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Gea-v8-be0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-Fh-D6t">
+                                <rect key="frame" x="0.0" y="47" width="320" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BAs-5j-N40"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cby-D1-Vnw" firstAttribute="top" secondItem="pkP-Rb-BSw" secondAttribute="top" constant="12" id="0wN-OH-dOh"/>
+                            <constraint firstItem="cby-D1-Vnw" firstAttribute="leading" secondItem="WSk-W7-ETz" secondAttribute="trailing" constant="8" id="4rH-T9-W4Y"/>
+                            <constraint firstItem="WSk-W7-ETz" firstAttribute="leading" secondItem="pkP-Rb-BSw" secondAttribute="leading" constant="14" id="776-ac-kwD"/>
+                            <constraint firstItem="WSk-W7-ETz" firstAttribute="top" secondItem="pkP-Rb-BSw" secondAttribute="top" constant="12" id="Env-qb-dxY"/>
+                            <constraint firstAttribute="height" constant="48" id="K93-0y-QIl"/>
+                            <constraint firstAttribute="bottom" secondItem="VZB-Fh-D6t" secondAttribute="bottom" id="VVQ-w9-G5e"/>
+                            <constraint firstItem="VZB-Fh-D6t" firstAttribute="leading" secondItem="pkP-Rb-BSw" secondAttribute="leading" id="dhB-tR-5V6"/>
+                            <constraint firstAttribute="trailing" secondItem="VZB-Fh-D6t" secondAttribute="trailing" id="pBS-ao-9wz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="pkP-Rb-BSw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YJd-GP-BwW"/>
+                    <constraint firstItem="pkP-Rb-BSw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gF7-Wj-30v"/>
+                    <constraint firstAttribute="trailing" secondItem="pkP-Rb-BSw" secondAttribute="trailing" id="hJ5-Nr-yVo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="priceLabel" destination="cby-D1-Vnw" id="ZTE-I0-q0K"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
