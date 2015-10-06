@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface welfareDetailsTableViewCell : UITableViewCell
+@interface welfareTableViewCell : UITableViewCell
 
 @end

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HMSegmentedControl.h"
 
-#import "welfareDetailsTableViewCell.h"
+#import "welfareTableViewCell.h"
+#import "welfareDetailsViewController.h"
 
 @interface welfareViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 

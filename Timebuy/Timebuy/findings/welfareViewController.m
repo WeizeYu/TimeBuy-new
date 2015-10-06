@@ -150,14 +150,14 @@
         
         
     } else {
-        welfareDetailsTableViewCell *cell = (welfareDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+        welfareTableViewCell *cell = (welfareTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
         
         if (cell == nil) {
             
             cell.contentView.frame = cell.bounds;
             cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
             
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"welfareDetailsTableViewCell" owner:self options:nil] lastObject];
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"welfareTableViewCell" owner:self options:nil] lastObject];
         }
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -172,6 +172,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    welfareDetailsViewController *welfareDetailsVC = [[welfareDetailsViewController alloc] init];
+    [self.navigationController pushViewController:welfareDetailsVC animated:YES];
     
 }
 
