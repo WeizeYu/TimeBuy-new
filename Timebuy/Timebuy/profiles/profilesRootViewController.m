@@ -14,6 +14,23 @@
 @end
 @implementation profilesRootViewController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = NO;
+        }
+    }
+    
+    self.tabBarController.tabBar.hidden = NO;
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mytitle=[[NSArray alloc]initWithObjects:@"我发布的",@"我收藏的",@"我****",nil];
