@@ -16,6 +16,10 @@
 #import "complainTableViewCell.h"
 #import "cancelBigTableViewCell.h"
 #import "cancelTableViewCell.h"
+#import "complainDetailViewController.h"
+#import "waitingDetailViewController.h"
+#import "doneDetailViewController.h"
+#import "ingDetailViewController.h"
 #define kDuration 0.4  // 动画持续时间(秒)
 
 @interface myReleaseViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -143,7 +147,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.tabBar.hidden=true;
     //[self createData];
+    self.title=@"我的发布";
     _pageTag=0;
     _lightArray=[[NSArray alloc]initWithObjects:_light0,_light1,_light2,_light3,_light4, nil];
     [self showlight];
@@ -157,6 +163,7 @@
     _leftTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(left)];
     _leftTap.direction=UISwipeGestureRecognizerDirectionRight;
     [_backView addGestureRecognizer:_leftTap];
+ 
     // Do any additional setup after loading the view from its nib.
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
@@ -168,29 +175,63 @@
     UITableViewCell *cell = [self tableView:self.releasetableview cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(_pageTag==0)
+    {
+        waitingDetailViewController *vc=[[waitingDetailViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+    else if(_pageTag==1)
+    {
+        ingDetailViewController *vc=[[ingDetailViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
+
+    }
+    else if(_pageTag==2)
+    {
+        doneDetailViewController *vc=[[doneDetailViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",indexPath.row];
-    UITableViewCell *cell=[[UITableViewCell alloc]init];
-    cell.backgroundColor=[UIColor lightGrayColor];
     if(indexPath.row==1)
     {
         //NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",indexPath.row];
-        cell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell.contentView.frame = cell.bounds;
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"ingBigTableViewCell" owner:self options:nil] lastObject];
+        ingBigTableViewCell *imgcell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (imgcell == nil) {
+            imgcell.contentView.frame = imgcell.bounds;
+            imgcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+            
+            imgcell = [[[NSBundle mainBundle] loadNibNamed:@"ingBigTableViewCell" owner:self options:nil] lastObject];
         }
-        
+        [imgcell setAccessoryType:UITableViewCellAccessoryNone];
+        [imgcell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        return imgcell;
+        //cell=imgcell;
     }
     else
     {
-        cell = (ingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell.contentView.frame = cell.bounds;
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"ingTableViewCell" owner:self options:nil] lastObject];
+        __weak typeof(self) weakSelf = self;
+        ingTableViewCell *imgcell = (ingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (imgcell == nil) {
+            imgcell.contentView.frame = imgcell.bounds;
+            imgcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+            imgcell = [[[NSBundle mainBundle] loadNibNamed:@"ingTableViewCell" owner:self options:nil] lastObject];
         }
-        
+        imgcell.commitBlock=^{
+            NSLog(@"commit block");
+            complainDetailViewController *vc=[[complainDetailViewController alloc]init];
+            [weakSelf.navigationController pushViewController:vc animated:true];
+        };
+        [imgcell setAccessoryType:UITableViewCellAccessoryNone];
+        [imgcell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        return imgcell;
+        //cell=imgcell;
     }
+//    [cell setAccessoryType:UITableViewCellAccessoryNone];
+//    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//    return cell;
     //UITableViewCell *cell=[[UITableViewCell alloc]init];
 
 #pragma -----------------------------进行中界面-初始化--------------------------------
@@ -308,10 +349,6 @@
     }
 */
     // Configure the cell.
-    cell.backgroundColor=[UIColor whiteColor];
-    [cell setAccessoryType:UITableViewCellAccessoryNone];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    return cell;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -17,9 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mytitle=[[NSArray alloc]initWithObjects:@"我发布的",@"我收藏的",@"我****",nil];
-    self.navigationItem.title=@"我的";
     self.rootTableview.dataSource=self;
     self.rootTableview.delegate=self;
+    //@{}代表Dictionary
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:24]}];
+    self.title=@"我的";
     // Do any additional setup after loading the view from its nib.
 }
 #pragma ---------------------TableviewDelegate---------------------------------
@@ -45,7 +47,8 @@
     if(indexPath.row==0)
     {
         myReleaseViewController *vc=[[myReleaseViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:true];        
+        [self.navigationController pushViewController:vc animated:true];
+        
     }
 }
 

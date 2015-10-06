@@ -214,7 +214,7 @@
         
         button.selected=YES;
     } else {
-        button.selected=NO;
+        
     }
 }
 
