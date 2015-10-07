@@ -215,6 +215,10 @@
             return [[UIScreen mainScreen] bounds].size.height - 84;
         }
         
+    } else {
+        if (POIArray.count == 0) {
+            return [[UIScreen mainScreen] bounds].size.height - 240 - 20;
+        }
     }
     return 1.0f;
 }
@@ -222,14 +226,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if (searchPlaceTableView.hidden == YES) {
-        return 50.0f;
-    } else {
-        return 1.0f;
+        if (POIArray.count != 0) {
+            return 50.0f;
+        }
     }
+    
+    return 1.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
+    //设置数值为空情况
     if (searchPlaceTableView.hidden == NO) {
         if (tipsResultArray.count == 0) {
             CGSize mainSize = [[UIScreen mainScreen] bounds].size;
@@ -238,7 +244,23 @@
             sectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
             
             UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake((mainSize.width - 200) / 2, 100, 200, 20)];
-            tipsLabel.text = @"找不到位置，请尝试其他关键词";
+            tipsLabel.text = @"找不到位置，请尝试其他关键词。";
+            tipsLabel.font = [UIFont systemFontOfSize:12.0f];
+            tipsLabel.textAlignment = NSTextAlignmentCenter;
+            tipsLabel.textColor = [UIColor lightGrayColor];
+            [sectionView addSubview:tipsLabel];
+            
+            return sectionView;
+        }
+    } else {
+        if (POIArray.count == 0) {
+            CGSize mainSize = [[UIScreen mainScreen] bounds].size;
+            
+            UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, mainSize.width, mainSize.height - 240)];
+            sectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+            
+            UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake((mainSize.width - 200) / 2, 100, 200, 20)];
+            tipsLabel.text = @"找不到位置，请尝试自定义输入搜索。";
             tipsLabel.font = [UIFont systemFontOfSize:12.0f];
             tipsLabel.textAlignment = NSTextAlignmentCenter;
             tipsLabel.textColor = [UIColor lightGrayColor];
@@ -247,6 +269,7 @@
             return sectionView;
         }
     }
+    
     return nil;
 }
 

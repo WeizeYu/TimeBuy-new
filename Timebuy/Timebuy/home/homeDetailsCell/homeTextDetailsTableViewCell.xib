@@ -82,7 +82,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MrOJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGz-0l-yEX">
-                        <rect key="frame" x="70" y="14" width="98" height="15"/>
+                        <rect key="frame" x="65" y="14" width="98" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="98" id="Xij-se-jyZ"/>
                             <constraint firstAttribute="height" constant="15" id="rWc-tW-S5n"/>
@@ -101,7 +101,7 @@
                     <constraint firstItem="AHU-yG-WmY" firstAttribute="top" secondItem="MYh-wD-W86" secondAttribute="bottom" constant="3" id="OHi-1a-r6E"/>
                     <constraint firstItem="f32-81-C8d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Pcw-Sl-Uqd"/>
                     <constraint firstItem="yHz-eU-9Bv" firstAttribute="leading" secondItem="AHU-yG-WmY" secondAttribute="trailing" constant="8" id="XKB-4C-QCv"/>
-                    <constraint firstItem="KGz-0l-yEX" firstAttribute="leading" secondItem="yHz-eU-9Bv" secondAttribute="trailing" constant="8" id="aJ9-uM-kOq"/>
+                    <constraint firstItem="KGz-0l-yEX" firstAttribute="leading" secondItem="yHz-eU-9Bv" secondAttribute="trailing" constant="3" id="aJ9-uM-kOq"/>
                     <constraint firstItem="AHU-yG-WmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="f99-G4-Y91"/>
                     <constraint firstItem="yHz-eU-9Bv" firstAttribute="top" secondItem="MYh-wD-W86" secondAttribute="bottom" constant="11" id="fZ3-AR-fv8"/>
                     <constraint firstAttribute="trailing" secondItem="fP2-O5-hzL" secondAttribute="trailing" id="otz-Y1-2pg"/>

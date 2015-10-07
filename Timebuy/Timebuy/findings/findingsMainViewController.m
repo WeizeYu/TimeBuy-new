@@ -124,6 +124,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row;
+    
+    //点击后灰色消失
+    [findingsTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     switch (row) {
         case 0:
             break;

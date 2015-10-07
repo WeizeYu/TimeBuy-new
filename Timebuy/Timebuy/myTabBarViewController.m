@@ -169,11 +169,11 @@
     //self.selectedIndex=2;
     //button.selected=YES;
     
-    //locationViewController *locationVC = [[locationViewController alloc] init];
-    //[self presentViewController:locationVC animated:YES completion:nil];
+    locationViewController *locationVC = [[locationViewController alloc] init];
+    [self presentViewController:locationVC animated:YES completion:nil];
     
-    releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
-    [self presentViewController:releaseRootVC animated:YES completion:nil];
+    //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
+    //[self presentViewController:releaseRootVC animated:YES completion:nil];
     
     //loginViewController *loginVC = [[loginViewController alloc] init];
     //[self presentViewController:loginVC animated:YES completion:nil];
