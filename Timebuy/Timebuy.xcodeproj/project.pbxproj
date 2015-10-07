@@ -342,6 +342,10 @@
 		73ED706B1BC0B50B004EB6CD /* doneDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70691BC0B50B004EB6CD /* doneDetailViewController.xib */; };
 		73ED706F1BC0B51F004EB6CD /* ingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED706D1BC0B51F004EB6CD /* ingDetailViewController.m */; };
 		73ED70701BC0B51F004EB6CD /* ingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED706E1BC0B51F004EB6CD /* ingDetailViewController.xib */; };
+		73F8098E1BC4BAE0003A5B0B /* paoTuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F8098C1BC4BAE0003A5B0B /* paoTuiViewController.m */; settings = {ASSET_TAGS = (); }; };
+		73F8098F1BC4BAE0003A5B0B /* paoTuiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73F8098D1BC4BAE0003A5B0B /* paoTuiViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		73F809931BC4BB26003A5B0B /* paoTuiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F809911BC4BB26003A5B0B /* paoTuiTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73F809941BC4BB26003A5B0B /* paoTuiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73F809921BC4BB26003A5B0B /* paoTuiTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -797,6 +801,12 @@
 		73ED706C1BC0B51F004EB6CD /* ingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingDetailViewController.h; sourceTree = "<group>"; };
 		73ED706D1BC0B51F004EB6CD /* ingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingDetailViewController.m; sourceTree = "<group>"; };
 		73ED706E1BC0B51F004EB6CD /* ingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingDetailViewController.xib; sourceTree = "<group>"; };
+		73F8098B1BC4BAE0003A5B0B /* paoTuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paoTuiViewController.h; sourceTree = "<group>"; };
+		73F8098C1BC4BAE0003A5B0B /* paoTuiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paoTuiViewController.m; sourceTree = "<group>"; };
+		73F8098D1BC4BAE0003A5B0B /* paoTuiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = paoTuiViewController.xib; sourceTree = "<group>"; };
+		73F809901BC4BB26003A5B0B /* paoTuiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paoTuiTableViewCell.h; sourceTree = "<group>"; };
+		73F809911BC4BB26003A5B0B /* paoTuiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paoTuiTableViewCell.m; sourceTree = "<group>"; };
+		73F809921BC4BB26003A5B0B /* paoTuiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = paoTuiTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1117,8 +1127,6 @@
 				7002894F1BC0FADB00E62B5A /* 箭头9x17px.png */,
 				700289501BC0FADB00E62B5A /* 箭头9x17px@2x.png */,
 				700289511BC0FADB00E62B5A /* 箭头9x17px@3x.png */,
-				736E13E01BB97EDF00882CCE /* up.png */,
-				736E13DE1BB97ED500882CCE /* down.png */,
 				73ED70561BBF801B004EB6CD /* phone.png */,
 				73ED70541BBF8006004EB6CD /* down.png */,
 				70535EDE1BB2B7FE00091EE6 /* addImg.png */,
@@ -1543,6 +1551,7 @@
 		70860C291BB1667600E54EEF /* findings */ = {
 			isa = PBXGroup;
 			children = (
+				73F8098A1BC4BAC4003A5B0B /* 跑腿 */,
 				70860C2A1BB1669200E54EEF /* findingsMainViewController.h */,
 				70860C2B1BB1669200E54EEF /* findingsMainViewController.m */,
 				70860C2C1BB1669200E54EEF /* findingsMainViewController.xib */,
@@ -1715,6 +1724,19 @@
 			name = "等待中详情界面";
 			sourceTree = "<group>";
 		};
+		73F8098A1BC4BAC4003A5B0B /* 跑腿 */ = {
+			isa = PBXGroup;
+			children = (
+				73F8098B1BC4BAE0003A5B0B /* paoTuiViewController.h */,
+				73F8098C1BC4BAE0003A5B0B /* paoTuiViewController.m */,
+				73F8098D1BC4BAE0003A5B0B /* paoTuiViewController.xib */,
+				73F809901BC4BB26003A5B0B /* paoTuiTableViewCell.h */,
+				73F809911BC4BB26003A5B0B /* paoTuiTableViewCell.m */,
+				73F809921BC4BB26003A5B0B /* paoTuiTableViewCell.xib */,
+			);
+			name = "跑腿";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1850,6 +1872,7 @@
 				7002894A1BC0F64D00E62B5A /* confirmViewController.xib in Resources */,
 				70028A301BC376A600E62B5A /* profilesNormal.png in Resources */,
 				7002897E1BC0FF8900E62B5A /* releaseDetailsTableViewCell.xib in Resources */,
+				73F8098F1BC4BAE0003A5B0B /* paoTuiViewController.xib in Resources */,
 				70860B981BB036AE00E54EEF /* tabbar_mainbtn@2x.png in Resources */,
 				70535FE41BB2B7FE00091EE6 /* xitongshezhi.png in Resources */,
 				70860C2E1BB1669200E54EEF /* findingsMainViewController.xib in Resources */,
@@ -1880,7 +1903,6 @@
 				70535F821BB2B7FE00091EE6 /* logo@2x.png in Resources */,
 				70535FB91BB2B7FE00091EE6 /* 背景@3x.png in Resources */,
 				700289C21BC2AFA500E62B5A /* accompany.png in Resources */,
-				736E13E11BB97EDF00882CCE /* up.png in Resources */,
 				70535FA91BB2B7FE00091EE6 /* 支付宝1@2x.png in Resources */,
 				700289CE1BC2AFA500E62B5A /* 学霸.png in Resources */,
 				70860B761BB01CF100E54EEF /* Main.storyboard in Resources */,
@@ -1904,7 +1926,6 @@
 				70535FA81BB2B7FE00091EE6 /* 支付宝1.png in Resources */,
 				70535FAA1BB2B7FE00091EE6 /* 支付宝1@3x.png in Resources */,
 				70535FCA1BB2B7FE00091EE6 /* gerenxiaoxi@3x.png in Resources */,
-				70535F841BB2B7FE00091EE6 /* paotui.png in Resources */,
 				73ED70661BC0B4F4004EB6CD /* waitingDetailViewController.xib in Resources */,
 				70535FDD1BB2B7FE00091EE6 /* wodexiaoxi@3x.png in Resources */,
 				70535F8B1BB2B7FE00091EE6 /* QQ1@2x.png in Resources */,
@@ -1935,8 +1956,6 @@
 				700289CB1BC2AFA500E62B5A /* welfare.png in Resources */,
 				700289A51BC11E7600E62B5A /* alipay.png in Resources */,
 				700289CF1BC2AFA500E62B5A /* 跑腿(1).png in Resources */,
-				70535F7D1BB2B7FE00091EE6 /* gongyi.png in Resources */,
-				70535F851BB2B7FE00091EE6 /* paotui@2x.png in Resources */,
 				73ED705D1BBF8288004EB6CD /* complainDetailViewController.xib in Resources */,
 				70535FE91BB2B7FE00091EE6 /* zhifufangshi@3x.png in Resources */,
 				70535FEB1BB2B7FE00091EE6 /* 我的日程 background.png in Resources */,
@@ -1946,6 +1965,7 @@
 				70535F801BB2B7FE00091EE6 /* logo.png in Resources */,
 				700289C41BC2AFA500E62B5A /* accompany@3x.png in Resources */,
 				70028A331BC376A600E62B5A /* profilesSelect@2x.png in Resources */,
+				73F809941BC4BB26003A5B0B /* paoTuiTableViewCell.xib in Resources */,
 				70535F6D1BB2B7FE00091EE6 /* xiugai.png in Resources */,
 				700289531BC0FADB00E62B5A /* 箭头9x17px@2x.png in Resources */,
 				700289771BC0FF8900E62B5A /* ZYQAssetPicker.Bundle in Resources */,
@@ -2125,10 +2145,12 @@
 				7002892F1BBFC1A200E62B5A /* UIView+MJExtension.m in Sources */,
 				70860C241BB1664100E54EEF /* homeMainViewController.m in Sources */,
 				70860C191BB041AF00E54EEF /* UIImageView+WebCache.m in Sources */,
+				73F809931BC4BB26003A5B0B /* paoTuiTableViewCell.m in Sources */,
 				700289251BBFC1A200E62B5A /* MJRefreshBackGifFooter.m in Sources */,
 				7002892E1BBFC1A200E62B5A /* UIScrollView+MJRefresh.m in Sources */,
 				700289271BBFC1A200E62B5A /* MJRefreshBackStateFooter.m in Sources */,
 				7002892A1BBFC1A200E62B5A /* MJRefreshStateHeader.m in Sources */,
+				73F8098E1BC4BAE0003A5B0B /* paoTuiViewController.m in Sources */,
 				732350321BB5570500C9E325 /* myReleaseViewController.m in Sources */,
 				70860C181BB041AF00E54EEF /* UIImageView+HighlightedWebCache.m in Sources */,
 				732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */,

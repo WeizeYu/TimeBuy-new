@@ -145,9 +145,29 @@
     [self.view addSubview:_backView];
     [self.releasetableview reloadData];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = YES;
+        }
+    }
+    self.tabBarController.tabBar.hidden = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = NO;
+        }
+    }
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBarController.tabBar.hidden=true;
     //[self createData];
     self.title=@"我的发布";
     _pageTag=0;
@@ -169,7 +189,7 @@
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;//self.dataSourceDic.count;
+    return 5;//self.dataSourceDic.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self tableView:self.releasetableview cellForRowAtIndexPath:indexPath];
@@ -194,7 +214,7 @@
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",indexPath.row];
+    NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",(long)indexPath.row];
     if(indexPath.row==1)
     {
         //NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",indexPath.row];

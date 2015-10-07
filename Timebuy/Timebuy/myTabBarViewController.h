@@ -22,7 +22,6 @@
 @interface myTabBarViewController : UITabBarController <UITabBarControllerDelegate,UIAlertViewDelegate>
 {
     UIViewController *vc3;
-    
     NSString *getState;
     NSString *getLocationName;
     AMapGeoPoint *location;

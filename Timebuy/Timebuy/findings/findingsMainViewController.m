@@ -7,7 +7,7 @@
 //
 
 #import "findingsMainViewController.h"
-
+#import "paoTuiViewController.h"
 @interface findingsMainViewController ()
 
 @end
@@ -121,11 +121,13 @@
     NSInteger row = indexPath.row;
     switch (row) {
         case 0:
-        
             break;
         case 1:
-            
+        {
+            paoTuiViewController *vc=[[paoTuiViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
+        }
         case 2:
             
             break;
