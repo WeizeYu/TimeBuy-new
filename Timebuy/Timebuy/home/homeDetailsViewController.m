@@ -63,6 +63,18 @@
     [self.contentView.layer setCornerRadius:3];
     [self.biaoView.layer setCornerRadius:8];
     // Do any additional setup after loading the view from its nib.
+
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:24.0f], NSFontAttributeName, nil];
+    self.navigationItem.title = @"详情";
+    
+    //自定义返回按钮
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem  = backButton;
+}
+
+- (void)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 - (IBAction)helpClick:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您确定要帮助ta么？确定即开始任务咯。" message:@"" delegate:self cancelButtonTitle:@"取消"  otherButtonTitles:nil ];

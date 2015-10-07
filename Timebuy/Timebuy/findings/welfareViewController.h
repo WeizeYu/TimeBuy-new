@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "HMSegmentedControl.h"
 
-@interface welfareViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+#import "welfareTableViewCell.h"
+#import "welfareDetailsViewController.h"
+
+@interface welfareViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate>
+{
+    UITapGestureRecognizer *_tapGr;
+}
 
 @property (strong, nonatomic) IBOutlet UITableView *welfareTableView;
 @property (strong, nonatomic) HMSegmentedControl *segmentedControl;

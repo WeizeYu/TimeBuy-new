@@ -20,7 +20,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     //self.hidesBottomBarWhenPushed = YES;
-    //NSLog(@"Hello tabbarVC");
+    NSLog(@"Hello tabbarVC");
     //NSLog(@"tabvc = %@",self);
     self.tabBar.translucent = NO;
     
@@ -35,14 +35,13 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSLog(@"%f",self.tabBar.bounds.size.height);
-    
     homeMainViewController *vc1 = [[homeMainViewController alloc] init];
     vc1.view.backgroundColor = [UIColor whiteColor];
     //vc1.tabBarItem.title = @"拾贝";
     
     findingsMainViewController *vc2 = [[findingsMainViewController alloc] init];
     vc2.view.backgroundColor = [UIColor whiteColor];
+    //vc2.hidesBottomBarWhenPushed = YES;
     //vc2.tabBarItem.title = @"发现";
     
     vc3 = [[UIViewController alloc] init];
@@ -80,19 +79,10 @@
     nav1.navigationBar.translucent = NO;
     
     [nav2.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
+    //nav2.hidesBottomBarWhenPushed = YES;
     nav2.navigationBar.translucent = NO;
     
     [nav4.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
-    nav4.navigationBar.translucent = NO;
-    
-    [nav5.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
-    nav5.navigationBar.translucent = NO;
-    
-    self.viewControllers = @[nav1,nav2,vc3,nav4,nav5];
-    
-    [nav2.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
-    nav2.navigationBar.translucent = NO;
-        [nav4.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
     nav4.navigationBar.translucent = NO;
     
     [nav5.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条375x64"] forBarMetrics:UIBarMetricsDefault];
@@ -147,7 +137,7 @@
     button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
     
     //  设定button大小为适应图片
-    button.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+    button.frame = CGRectMake(0.0, 0.0, 80, 72);
     [button setImage:buttonImage forState:UIControlStateNormal];
     [button setImage:selectedImage forState:UIControlStateSelected];
     
@@ -157,13 +147,16 @@
     /*
      *  核心代码：设置button的center 和 tabBar的 center 做对齐操作， 同时做出相对的上浮
      */
-    CGFloat heightDifference = buttonImage.size.height - self.tabBar.frame.size.height;
+    NSLog(@"tabbar = %f",self.tabBar.frame.size.height);
+    NSLog(@"tabbar center1 = %f",self.tabBar.center.y);
+    
+    CGFloat heightDifference = 60 - self.tabBar.frame.size.height;   //设置图片的尺寸为67*60，所以已经固定好了
     if (heightDifference < 0)
         button.center = self.tabBar.center;
     else
     {
         CGPoint center = self.tabBar.center;
-        center.y = center.y - heightDifference/2.0;
+        center.y = center.y - heightDifference;
         button.center = center;
     }
     
@@ -176,8 +169,8 @@
     //self.selectedIndex=2;
     //button.selected=YES;
     
-    //locationViewController *locationVC = [[locationViewController alloc] init];
-    //[self presentViewController:locationVC animated:YES completion:nil];
+    locationViewController *locationVC = [[locationViewController alloc] init];
+    [self presentViewController:locationVC animated:YES completion:nil];
     
     //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
     //[self presentViewController:releaseRootVC animated:YES completion:nil];
@@ -185,7 +178,7 @@
     //loginViewController *loginVC = [[loginViewController alloc] init];
     //[self presentViewController:loginVC animated:YES completion:nil];
     
-    
+    /*
     if ([[userConfiguration getStringValueForConfigurationKey:@"phone"] isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"你还没有登录，登录后才可以进行发布服务" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即登录", nil];
         [alert show];
@@ -193,7 +186,7 @@
         locationViewController *locationVC = [[locationViewController alloc] init];
         [self presentViewController:locationVC animated:YES completion:nil];
     }
-    
+    */
     
 }
 
@@ -210,11 +203,12 @@
 //  换页和button的状态关联上
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    if (self.selectedIndex==2) {
-        
+    //NSLog(@"hello！！");
+    //点击后的响应
+    if (self.selectedIndex==3) {
         button.selected=YES;
     } else {
-        
+        self.tabBar.hidden = NO;
     }
 }
 

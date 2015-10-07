@@ -18,6 +18,7 @@
 @synthesize showImgButton3;
 @synthesize timeAndDistLabel;
 @synthesize detailsLabel;
+@synthesize levelImgView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

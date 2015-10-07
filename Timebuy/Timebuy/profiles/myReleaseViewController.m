@@ -148,13 +148,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = YES;
         }
     }
+    
     self.tabBarController.tabBar.hidden = YES;
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
@@ -166,6 +169,7 @@
     }
     self.tabBarController.tabBar.hidden = NO;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self createData];

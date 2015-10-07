@@ -14,6 +14,23 @@
 @end
 @implementation profilesRootViewController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = NO;
+        }
+    }
+    
+    self.tabBarController.tabBar.hidden = NO;
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mytitle=[[NSArray alloc]initWithObjects:@"我发布的",@"我收藏的",@"我****",nil];
@@ -23,6 +40,9 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:24]}];
     self.title=@"我的";
     // Do any additional setup after loading the view from its nib.
+    
+    self.hidesBottomBarWhenPushed = YES;
+    
 }
 #pragma ---------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

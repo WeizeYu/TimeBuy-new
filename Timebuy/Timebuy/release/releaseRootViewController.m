@@ -70,7 +70,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recModifyInRelease:) name:@"passModifyInRelease" object:nil];
     
     //定位地址名称
-    placeStr = locationName;
+    //placeStr = locationName;
     
 }
 
