@@ -21,13 +21,17 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    //self.hidesBottomBarWhenPushed = YES;
+    
+    self.tabBarController.tabBar.hidden = NO;
     
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = NO;
         }
     }
+    
+    NSLog(@"Hello findings");
+    NSLog(@"findings tabbar = %@",self.tabBarController.tabBar);
     
     self.tabBarController.tabBar.hidden = NO;
     
@@ -45,6 +49,8 @@
     imageArray        = [[NSMutableArray alloc] initWithObjects:@"help",@"hardworking",@"accompany",@"welfare", nil];
     titleArray        = [[NSMutableArray alloc] initWithObjects:@"跑腿",@"学霸",@"陪伴",@"公益", nil];
     titileDetailArray = [[NSMutableArray alloc] initWithObjects:@"随手而递 魔鬼步伐~",@"如此这般走进学霸的世界~",@"当你孤单的时候你会想起谁~",@"用你我的时间创造不一样的未来~", nil];
+    
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 #pragma mark - tableViewdelgate

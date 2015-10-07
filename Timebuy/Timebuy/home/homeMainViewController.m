@@ -159,8 +159,31 @@
             return cell;
             break;
         }
+        case 1:
+        {
+            homeImageDetailsTableViewCell *cell = (homeImageDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+            
+            if (cell == nil) {
+                
+                cell.contentView.frame = cell.bounds;
+                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                
+                cell = [[[NSBundle mainBundle] loadNibNamed:@"homeImageDetailsTableViewCell" owner:self options:nil] lastObject];
+            }
+            
+            cell.portraitImgView.layer.masksToBounds = YES;
+            cell.portraitImgView.layer.cornerRadius = cell.portraitImgView.bounds.size.height / 2;
+            
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            
+            
+            return cell;
+            
+            break;
+        }
         case 2:
         {
+            
             homeTextDetailsTableViewCell *cell = (homeTextDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
             
             if (cell == nil) {
@@ -194,8 +217,16 @@
                 cell = [[[NSBundle mainBundle] loadNibNamed:@"homeImageDetailsTableViewCell" owner:self options:nil] lastObject];
             }
             
+            cell.portraitImgView.image = [UIImage imageNamed:@"portrait2.png"];
             cell.portraitImgView.layer.masksToBounds = YES;
             cell.portraitImgView.layer.cornerRadius = cell.portraitImgView.bounds.size.height / 2;
+            cell.nicknameLabel.text = @"黄小名";
+            cell.priceLabel.text = @"￥10";
+            cell.detailsLabel.text = @"求帮拿快递，地址在顺丰快递门口";
+            
+            [cell.showImgButton1 setImage:[UIImage imageNamed:@"showImg4.png"] forState:UIControlStateNormal];
+            cell.showImgButton2.hidden = YES;
+            cell.showImgButton3.hidden = YES;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 

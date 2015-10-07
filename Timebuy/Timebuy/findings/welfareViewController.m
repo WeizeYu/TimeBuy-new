@@ -19,13 +19,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
+        
     for (UIView *v in self.tabBarController.view.subviews) {
-        if ([v isKindOfClass:[UIButton class]]) {
+        if ([v isKindOfClass:[UIButton class]] || [v isKindOfClass:[UITabBar class]]) {
             v.hidden = YES;
         }
     }
-    
     self.tabBarController.tabBar.hidden = YES;
     
 }
@@ -41,6 +40,35 @@
     //自定义返回按钮
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem  = backButton;
+    
+    //welfareTableView.hidden = YES;
+    
+    _tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    _tapGr.cancelsTouchesInView = NO;
+    _tapGr.numberOfTapsRequired = 1;
+    _tapGr.delegate = self;
+    [self.tabBarController.view addGestureRecognizer:_tapGr];
+    
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+    
+    for (UIView *v in self.tabBarController.view.subviews) {
+        //v.hidden = YES;
+        
+        if ([v isKindOfClass:[UIButton class]] || [v isKindOfClass:[UITabBar class]]) {
+            v.hidden = NO;
+        }
+        NSLog(@"v = %@",v);
+    }
+}
+
+-(void)viewTapped:(UITapGestureRecognizer*)tapGr
+{
+    
 }
 
 - (void)back:(id)sender {

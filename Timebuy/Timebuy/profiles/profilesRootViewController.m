@@ -40,6 +40,9 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:24]}];
     self.title=@"我的";
     // Do any additional setup after loading the view from its nib.
+    
+    self.hidesBottomBarWhenPushed = YES;
+    
 }
 #pragma ---------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

@@ -41,6 +41,12 @@
     
     [sendButton setEnabled:YES];
     
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]] || [v isKindOfClass:[UITabBar class]]) {
+            v.hidden = YES;
+        }
+    }
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)send:(id)sender {
