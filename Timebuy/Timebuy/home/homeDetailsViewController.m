@@ -9,27 +9,61 @@
 #import "homeDetailsViewController.h"
 
 @interface homeDetailsViewController ()
-
+@property (strong, nonatomic) IBOutlet UIImageView *headImage;
+@property (strong, nonatomic) IBOutlet UIButton *helpButton;
+@property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UIView *biaoView;
+@property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UIImageView *sexImg;
+@property (strong, nonatomic) IBOutlet UILabel *age;
+@property (strong, nonatomic) IBOutlet UILabel *type;
+@property (strong, nonatomic) IBOutlet UILabel *time;
+@property (strong, nonatomic) IBOutlet UILabel *worktime;
+@property (strong, nonatomic) IBOutlet UILabel *pay;
+@property (strong, nonatomic) IBOutlet UILabel *content;
+@property (strong, nonatomic) IBOutlet UIButton *where;
+@property (strong, nonatomic) IBOutlet UILabel *howlong;
+@property (strong, nonatomic) IBOutlet UIImageView *showImg;
+@property (strong, nonatomic) IBOutlet UIImageView *showImg2;
+@property (strong, nonatomic) IBOutlet UIImageView *showImg3;
+@property (strong, nonatomic) IBOutlet UILabel *orderNumber;
+@property (strong, nonatomic) IBOutlet UILabel *zan;
+@property (strong, nonatomic) IBOutlet UILabel *fengxiang;
+@property (strong, nonatomic) IBOutlet UILabel *biaoqian;
 @end
 
 @implementation homeDetailsViewController
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = YES;
         }
     }
-    
     self.tabBarController.tabBar.hidden = YES;
-    
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = NO;
+        }
+    }
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"详情";
+    self.headImage.layer.masksToBounds=true;
+    [self.headImage.layer setCornerRadius:20];
+    [self.helpButton.layer setCornerRadius:3];
+    [self.contentView.layer setCornerRadius:3];
+    [self.biaoView.layer setCornerRadius:8];
     // Do any additional setup after loading the view from its nib.
+
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:24.0f], NSFontAttributeName, nil];
     self.navigationItem.title = @"详情";
     
@@ -40,6 +74,14 @@
 
 - (void)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+
+}
+- (IBAction)helpClick:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您确定要帮助ta么？确定即开始任务咯。" message:@"" delegate:self cancelButtonTitle:@"取消"  otherButtonTitles:nil ];
+    // optional - add more buttons:
+    [alert addButtonWithTitle:@"确定"];
+    [alert show];
+
 }
 
 - (void)didReceiveMemoryWarning {

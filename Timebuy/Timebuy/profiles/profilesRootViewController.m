@@ -47,7 +47,7 @@
     return 3;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *CellIdentifier =[NSString stringWithFormat:@"Cell%ld",indexPath.row];
+    NSString *CellIdentifier =[NSString stringWithFormat:@"Cell%ld",(long)indexPath.row];
     UITableViewCell *cell=[[UITableViewCell alloc]initWithFrame:CGRectMake(0, 0, self.view.layer.bounds.size.width, 44)];
     // Configure the cell.
     if(cell==nil)

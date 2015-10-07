@@ -51,6 +51,10 @@
     self.jieheaderImage.layer.masksToBounds=true;
     [self.jieheaderImage.layer setCornerRadius:13];
     [self.ingButton.layer setCornerRadius:3];
+    [self.ingButton.layer setBorderWidth:1];
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 1, 153.f/255, 0, 1 });
+    [_ingButton.layer setBorderColor:colorref];//边框颜色
     [self.contentView.layer setCornerRadius:3];
     [self.biaoView.layer setCornerRadius:8];
     //设置滚动
