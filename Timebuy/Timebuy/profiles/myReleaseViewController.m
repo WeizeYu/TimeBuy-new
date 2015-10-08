@@ -148,16 +148,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = YES;
         }
     }
-    
     self.tabBarController.tabBar.hidden = YES;
-    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
@@ -198,6 +195,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self tableView:self.releasetableview cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 6)];
+    UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake(22+18+((self.view.frame.size.width-45-36*5)/4+36)*(_pageTag)-5, 0, 10, 6)];
+    [sanjiao setImage:[UIImage imageNamed:@"sanjiao.png"]];
+    [view addSubview:sanjiao];
+    return view;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(_pageTag==0)

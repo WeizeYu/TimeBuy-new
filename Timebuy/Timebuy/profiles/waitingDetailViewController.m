@@ -35,7 +35,19 @@
 @end
 
 @implementation waitingDetailViewController
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = YES;
+        }
+    }
+    
+    self.tabBarController.tabBar.hidden = YES;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"详情";
