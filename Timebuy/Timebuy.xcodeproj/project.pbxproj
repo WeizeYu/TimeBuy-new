@@ -112,7 +112,6 @@
 		70028A401BC3BD5500E62B5A /* welfareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70028A3E1BC3BD5500E62B5A /* welfareTableViewCell.m */; };
 		70028A411BC3BD5500E62B5A /* welfareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70028A3F1BC3BD5500E62B5A /* welfareTableViewCell.xib */; };
 		70028A431BC3C1EB00E62B5A /* sucai.png in Resources */ = {isa = PBXBuildFile; fileRef = 70028A421BC3C1EB00E62B5A /* sucai.png */; };
-		70028A471BC3C64800E62B5A /* Hanzipen.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 70028A461BC3C64800E62B5A /* Hanzipen.ttc */; };
 		700F8CE71BC4DB5700165A93 /* V1.png in Resources */ = {isa = PBXBuildFile; fileRef = 700F8CD21BC4DB5700165A93 /* V1.png */; settings = {ASSET_TAGS = (); }; };
 		700F8CE81BC4DB5700165A93 /* V1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700F8CD31BC4DB5700165A93 /* V1@2x.png */; settings = {ASSET_TAGS = (); }; };
 		700F8CE91BC4DB5700165A93 /* V1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700F8CD41BC4DB5700165A93 /* V1@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -135,6 +134,12 @@
 		700F8CFA1BC4DB5700165A93 /* V7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700F8CE51BC4DB5700165A93 /* V7@2x.png */; settings = {ASSET_TAGS = (); }; };
 		700F8CFB1BC4DB5700165A93 /* V7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700F8CE61BC4DB5700165A93 /* V7@3x.png */; settings = {ASSET_TAGS = (); }; };
 		700F8CFD1BC4DCF300165A93 /* portrait2.png in Resources */ = {isa = PBXBuildFile; fileRef = 700F8CFC1BC4DCF300165A93 /* portrait2.png */; settings = {ASSET_TAGS = (); }; };
+		700F8CFF1BC5161400165A93 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 700F8CFE1BC5161300165A93 /* libz.tbd */; };
+		700F8D011BC5161E00165A93 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 700F8D001BC5161E00165A93 /* libstdc++.6.0.9.tbd */; };
+		700F8D041BC6821800165A93 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */; };
+		7045A3971BC6848E00B15244 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7045A3961BC6848E00B15244 /* libicucore.tbd */; };
+		7045A39B1BC69B4D00B15244 /* welfarePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A3991BC69B4D00B15244 /* welfarePayViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7045A39C1BC69B4D00B15244 /* welfarePayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7045A39A1BC69B4D00B15244 /* welfarePayViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535ED21BB2B5CC00091EE6 /* locationViewController.m */; };
 		70535ED51BB2B5CC00091EE6 /* locationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70535ED31BB2B5CC00091EE6 /* locationViewController.xib */; };
 		70535F671BB2B7FE00091EE6 /* addImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70535EDE1BB2B7FE00091EE6 /* addImg.png */; };
@@ -270,8 +275,6 @@
 		70860BAA1BB03EAC00E54EEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BA91BB03EAC00E54EEF /* CoreLocation.framework */; };
 		70860BAC1BB03EB300E54EEF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BAB1BB03EB300E54EEF /* CoreTelephony.framework */; };
 		70860BAE1BB03EBC00E54EEF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BAD1BB03EBC00E54EEF /* SystemConfiguration.framework */; };
-		70860BB01BB03EC200E54EEF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BAF1BB03EC200E54EEF /* libz.dylib */; };
-		70860BB21BB03ECA00E54EEF /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BB11BB03ECA00E54EEF /* libstdc++.6.0.9.dylib */; };
 		70860BB41BB03ED100E54EEF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BB31BB03ED100E54EEF /* Security.framework */; };
 		70860BB91BB0404D00E54EEF /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BB71BB0404D00E54EEF /* AMapSearchKit.framework */; };
 		70860BBA1BB0404D00E54EEF /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70860BB81BB0404D00E54EEF /* MAMapKit.framework */; };
@@ -342,8 +345,6 @@
 		70E839151BBCC1740027A1CB /* verifyPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70E839131BBCC1740027A1CB /* verifyPhoneViewController.xib */; };
 		70E839191BBCD05D0027A1CB /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E839181BBCD05D0027A1CB /* JKCountDownButton.m */; };
 		70E8391F1BBCFF020027A1CB /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70E8391B1BBCFF020027A1CB /* SMS_SDKLocalizable.strings */; };
-		70E839201BBCFF020027A1CB /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */; };
-		70E839221BBCFF220027A1CB /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839211BBCFF220027A1CB /* libicucore.dylib */; };
 		70E839241BBCFF2A0027A1CB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839231BBCFF2A0027A1CB /* MessageUI.framework */; };
 		70E839271BBCFF390027A1CB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839251BBCFF390027A1CB /* AddressBook.framework */; };
 		70E839281BBCFF390027A1CB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E839261BBCFF390027A1CB /* AddressBookUI.framework */; };
@@ -541,7 +542,6 @@
 		70028A3E1BC3BD5500E62B5A /* welfareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welfareTableViewCell.m; sourceTree = "<group>"; };
 		70028A3F1BC3BD5500E62B5A /* welfareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = welfareTableViewCell.xib; sourceTree = "<group>"; };
 		70028A421BC3C1EB00E62B5A /* sucai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sucai.png; sourceTree = "<group>"; };
-		70028A461BC3C64800E62B5A /* Hanzipen.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hanzipen.ttc; sourceTree = "<group>"; };
 		700F8CD21BC4DB5700165A93 /* V1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = V1.png; sourceTree = "<group>"; };
 		700F8CD31BC4DB5700165A93 /* V1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "V1@2x.png"; sourceTree = "<group>"; };
 		700F8CD41BC4DB5700165A93 /* V1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "V1@3x.png"; sourceTree = "<group>"; };
@@ -564,6 +564,13 @@
 		700F8CE51BC4DB5700165A93 /* V7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "V7@2x.png"; sourceTree = "<group>"; };
 		700F8CE61BC4DB5700165A93 /* V7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "V7@3x.png"; sourceTree = "<group>"; };
 		700F8CFC1BC4DCF300165A93 /* portrait2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portrait2.png; sourceTree = "<group>"; };
+		700F8CFE1BC5161300165A93 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		700F8D001BC5161E00165A93 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		700F8D021BC5162700165A93 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7045A3961BC6848E00B15244 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		7045A3981BC69B4D00B15244 /* welfarePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welfarePayViewController.h; sourceTree = "<group>"; };
+		7045A3991BC69B4D00B15244 /* welfarePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welfarePayViewController.m; sourceTree = "<group>"; };
+		7045A39A1BC69B4D00B15244 /* welfarePayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = welfarePayViewController.xib; sourceTree = "<group>"; };
 		70535ED11BB2B5CC00091EE6 /* locationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
 		70535ED21BB2B5CC00091EE6 /* locationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
 		70535ED31BB2B5CC00091EE6 /* locationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = locationViewController.xib; sourceTree = "<group>"; };
@@ -707,8 +714,6 @@
 		70860BA91BB03EAC00E54EEF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		70860BAB1BB03EB300E54EEF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		70860BAD1BB03EBC00E54EEF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		70860BAF1BB03EC200E54EEF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		70860BB11BB03ECA00E54EEF /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		70860BB31BB03ED100E54EEF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		70860BB71BB0404D00E54EEF /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = Timebuy/AMapSearchKit.framework; sourceTree = "<group>"; };
 		70860BB81BB0404D00E54EEF /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Timebuy/MAMapKit.framework; sourceTree = "<group>"; };
@@ -827,7 +832,6 @@
 		70E8391C1BBCFF020027A1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		70E8391E1BBCFF020027A1CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
-		70E839211BBCFF220027A1CB /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		70E839231BBCFF2A0027A1CB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		70E839251BBCFF390027A1CB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		70E839261BBCFF390027A1CB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -888,16 +892,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7045A3971BC6848E00B15244 /* libicucore.tbd in Frameworks */,
+				700F8D041BC6821800165A93 /* SMS_SDK.framework in Frameworks */,
+				700F8D011BC5161E00165A93 /* libstdc++.6.0.9.tbd in Frameworks */,
+				700F8CFF1BC5161400165A93 /* libz.tbd in Frameworks */,
 				70E839271BBCFF390027A1CB /* AddressBook.framework in Frameworks */,
 				70E839281BBCFF390027A1CB /* AddressBookUI.framework in Frameworks */,
 				70E839241BBCFF2A0027A1CB /* MessageUI.framework in Frameworks */,
-				70E839221BBCFF220027A1CB /* libicucore.dylib in Frameworks */,
 				70860BB91BB0404D00E54EEF /* AMapSearchKit.framework in Frameworks */,
 				70860BBA1BB0404D00E54EEF /* MAMapKit.framework in Frameworks */,
-				70E839201BBCFF020027A1CB /* SMS_SDK.framework in Frameworks */,
 				70860BB41BB03ED100E54EEF /* Security.framework in Frameworks */,
-				70860BB21BB03ECA00E54EEF /* libstdc++.6.0.9.dylib in Frameworks */,
-				70860BB01BB03EC200E54EEF /* libz.dylib in Frameworks */,
 				70860BAE1BB03EBC00E54EEF /* SystemConfiguration.framework in Frameworks */,
 				70860BAC1BB03EB300E54EEF /* CoreTelephony.framework in Frameworks */,
 				70860BAA1BB03EAC00E54EEF /* CoreLocation.framework in Frameworks */,
@@ -1452,7 +1456,6 @@
 		70860B6A1BB01CF100E54EEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				70028A461BC3C64800E62B5A /* Hanzipen.ttc */,
 				70535EDB1BB2B7FE00091EE6 /* Image */,
 				70860B6B1BB01CF100E54EEF /* Info.plist */,
 				70860B6C1BB01CF100E54EEF /* main.m */,
@@ -1480,15 +1483,16 @@
 		70860B9C1BB03E2F00E54EEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7045A3961BC6848E00B15244 /* libicucore.tbd */,
+				700F8D021BC5162700165A93 /* libc++.tbd */,
+				700F8D001BC5161E00165A93 /* libstdc++.6.0.9.tbd */,
+				700F8CFE1BC5161300165A93 /* libz.tbd */,
 				70E839251BBCFF390027A1CB /* AddressBook.framework */,
 				70E839261BBCFF390027A1CB /* AddressBookUI.framework */,
 				70E839231BBCFF2A0027A1CB /* MessageUI.framework */,
-				70E839211BBCFF220027A1CB /* libicucore.dylib */,
 				70860BB71BB0404D00E54EEF /* AMapSearchKit.framework */,
 				70860BB81BB0404D00E54EEF /* MAMapKit.framework */,
 				70860BB31BB03ED100E54EEF /* Security.framework */,
-				70860BB11BB03ECA00E54EEF /* libstdc++.6.0.9.dylib */,
-				70860BAF1BB03EC200E54EEF /* libz.dylib */,
 				70860BAD1BB03EBC00E54EEF /* SystemConfiguration.framework */,
 				70860BAB1BB03EB300E54EEF /* CoreTelephony.framework */,
 				70860BA91BB03EAC00E54EEF /* CoreLocation.framework */,
@@ -1645,6 +1649,9 @@
 				70BB686F1BC3F3430059F1BE /* welfareDetailsViewController.h */,
 				70BB68701BC3F3430059F1BE /* welfareDetailsViewController.m */,
 				70BB68711BC3F3430059F1BE /* welfareDetailsViewController.xib */,
+				7045A3981BC69B4D00B15244 /* welfarePayViewController.h */,
+				7045A3991BC69B4D00B15244 /* welfarePayViewController.m */,
+				7045A39A1BC69B4D00B15244 /* welfarePayViewController.xib */,
 			);
 			path = findings;
 			sourceTree = "<group>";
@@ -1975,12 +1982,12 @@
 				70028A311BC376A600E62B5A /* profilesNormal@2x.png in Resources */,
 				70535F9E1BB2B7FE00091EE6 /* 导航条320x64.png in Resources */,
 				700289CC1BC2AFA500E62B5A /* welfare@2x.png in Resources */,
+				7045A39C1BC69B4D00B15244 /* welfarePayViewController.xib in Resources */,
 				1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */,
 				700F8CF41BC4DB5700165A93 /* V5@2x.png in Resources */,
 				70535FAC1BB2B7FE00091EE6 /* 新浪1@2x.png in Resources */,
 				700F8CEE1BC4DB5700165A93 /* V3@2x.png in Resources */,
 				700F8CF91BC4DB5700165A93 /* V7.png in Resources */,
-				70028A471BC3C64800E62B5A /* Hanzipen.ttc in Resources */,
 				70E587B21BB2DD8B00915DD6 /* location1.png in Resources */,
 				70535F6B1BB2B7FE00091EE6 /* dingwei1@2x.png in Resources */,
 				70535F9F1BB2B7FE00091EE6 /* 导航条320x64@2x.png in Resources */,
@@ -2294,6 +2301,7 @@
 				70860C111BB041AF00E54EEF /* SDWebImageDownloaderOperation.m in Sources */,
 				70860B6D1BB01CF100E54EEF /* main.m in Sources */,
 				7002897D1BC0FF8900E62B5A /* releaseDetailsTableViewCell.m in Sources */,
+				7045A39B1BC69B4D00B15244 /* welfarePayViewController.m in Sources */,
 				70E6F1821BB6247200D175B1 /* selectTimeViewController.m in Sources */,
 				1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */,
 				700289871BC108EA00E62B5A /* confirmDetailsTableViewCell.m in Sources */,

@@ -162,14 +162,16 @@
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 230) / 2, 138, 230, 50)];
         titleLabel.text = @"时贝公益计划";
-        titleLabel.font = [UIFont fontWithName:@"Hanzipen TC" size:36.0f];
+        //titleLabel.font = [UIFont fontWithName:@"Hanzipen TC" size:36.0f];
+        titleLabel.font = [UIFont systemFontOfSize:36.0f];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.textColor = [UIColor whiteColor];
         
         UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 230) / 2, 196, 230, 18)];
         detailLabel.text = @"用你我的时间创造不一样的未来！";
         detailLabel.textAlignment = NSTextAlignmentCenter;
-        detailLabel.font = [UIFont fontWithName:@"Hanzipen TC" size:14.0f];
+        //detailLabel.font = [UIFont fontWithName:@"Hanzipen TC" size:14.0f];
+        detailLabel.font = [UIFont systemFontOfSize:14.0f];
         detailLabel.textColor = [UIColor whiteColor];
         
         [cell addSubview:titleImageView];
