@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182FB4301BC7C4CA0087FD9B /* payDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FB42E1BC7C4CA0087FD9B /* payDetailsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		182FB4311BC7C4CA0087FD9B /* payDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182FB42F1BC7C4CA0087FD9B /* payDetailsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		182FB4351BC7C5340087FD9B /* welfarePriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FB4331BC7C5340087FD9B /* welfarePriceTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		182FB4361BC7C5340087FD9B /* welfarePriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182FB4341BC7C5340087FD9B /* welfarePriceTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840D4D71BBAAD45006141A9 /* loginViewController.m */; };
 		1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840D4D81BBAAD45006141A9 /* loginViewController.xib */; };
 		1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876649D1BB972810033A35C /* NFXIntroViewController.m */; };
@@ -138,8 +142,8 @@
 		700F8D011BC5161E00165A93 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 700F8D001BC5161E00165A93 /* libstdc++.6.0.9.tbd */; };
 		700F8D041BC6821800165A93 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E8391D1BBCFF020027A1CB /* SMS_SDK.framework */; };
 		7045A3971BC6848E00B15244 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7045A3961BC6848E00B15244 /* libicucore.tbd */; };
-		7045A39B1BC69B4D00B15244 /* welfarePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A3991BC69B4D00B15244 /* welfarePayViewController.m */; settings = {ASSET_TAGS = (); }; };
-		7045A39C1BC69B4D00B15244 /* welfarePayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7045A39A1BC69B4D00B15244 /* welfarePayViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		7045A39B1BC69B4D00B15244 /* welfarePaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A3991BC69B4D00B15244 /* welfarePaymentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7045A39C1BC69B4D00B15244 /* welfarePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7045A39A1BC69B4D00B15244 /* welfarePaymentViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535ED21BB2B5CC00091EE6 /* locationViewController.m */; };
 		70535ED51BB2B5CC00091EE6 /* locationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70535ED31BB2B5CC00091EE6 /* locationViewController.xib */; };
 		70535F671BB2B7FE00091EE6 /* addImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70535EDE1BB2B7FE00091EE6 /* addImg.png */; };
@@ -395,6 +399,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182FB42D1BC7C4CA0087FD9B /* payDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payDetailsTableViewCell.h; sourceTree = "<group>"; };
+		182FB42E1BC7C4CA0087FD9B /* payDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = payDetailsTableViewCell.m; sourceTree = "<group>"; };
+		182FB42F1BC7C4CA0087FD9B /* payDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = payDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		182FB4321BC7C5340087FD9B /* welfarePriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welfarePriceTableViewCell.h; sourceTree = "<group>"; };
+		182FB4331BC7C5340087FD9B /* welfarePriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welfarePriceTableViewCell.m; sourceTree = "<group>"; };
+		182FB4341BC7C5340087FD9B /* welfarePriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = welfarePriceTableViewCell.xib; sourceTree = "<group>"; };
 		1840D4D61BBAAD45006141A9 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		1840D4D71BBAAD45006141A9 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		1840D4D81BBAAD45006141A9 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
@@ -568,9 +578,9 @@
 		700F8D001BC5161E00165A93 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		700F8D021BC5162700165A93 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		7045A3961BC6848E00B15244 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		7045A3981BC69B4D00B15244 /* welfarePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welfarePayViewController.h; sourceTree = "<group>"; };
-		7045A3991BC69B4D00B15244 /* welfarePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welfarePayViewController.m; sourceTree = "<group>"; };
-		7045A39A1BC69B4D00B15244 /* welfarePayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = welfarePayViewController.xib; sourceTree = "<group>"; };
+		7045A3981BC69B4D00B15244 /* welfarePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welfarePaymentViewController.h; sourceTree = "<group>"; };
+		7045A3991BC69B4D00B15244 /* welfarePaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welfarePaymentViewController.m; sourceTree = "<group>"; };
+		7045A39A1BC69B4D00B15244 /* welfarePaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = welfarePaymentViewController.xib; sourceTree = "<group>"; };
 		70535ED11BB2B5CC00091EE6 /* locationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
 		70535ED21BB2B5CC00091EE6 /* locationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
 		70535ED31BB2B5CC00091EE6 /* locationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = locationViewController.xib; sourceTree = "<group>"; };
@@ -922,6 +932,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182FB4271BC7C3190087FD9B /* welfarePayTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				182FB42D1BC7C4CA0087FD9B /* payDetailsTableViewCell.h */,
+				182FB42E1BC7C4CA0087FD9B /* payDetailsTableViewCell.m */,
+				182FB42F1BC7C4CA0087FD9B /* payDetailsTableViewCell.xib */,
+				182FB4321BC7C5340087FD9B /* welfarePriceTableViewCell.h */,
+				182FB4331BC7C5340087FD9B /* welfarePriceTableViewCell.m */,
+				182FB4341BC7C5340087FD9B /* welfarePriceTableViewCell.xib */,
+			);
+			path = welfarePayTableViewCell;
+			sourceTree = "<group>";
+		};
 		1840D4C61BBAA90B006141A9 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1649,9 +1672,10 @@
 				70BB686F1BC3F3430059F1BE /* welfareDetailsViewController.h */,
 				70BB68701BC3F3430059F1BE /* welfareDetailsViewController.m */,
 				70BB68711BC3F3430059F1BE /* welfareDetailsViewController.xib */,
-				7045A3981BC69B4D00B15244 /* welfarePayViewController.h */,
-				7045A3991BC69B4D00B15244 /* welfarePayViewController.m */,
-				7045A39A1BC69B4D00B15244 /* welfarePayViewController.xib */,
+				7045A3981BC69B4D00B15244 /* welfarePaymentViewController.h */,
+				7045A3991BC69B4D00B15244 /* welfarePaymentViewController.m */,
+				7045A39A1BC69B4D00B15244 /* welfarePaymentViewController.xib */,
+				182FB4271BC7C3190087FD9B /* welfarePayTableViewCell */,
 			);
 			path = findings;
 			sourceTree = "<group>";
@@ -1982,7 +2006,7 @@
 				70028A311BC376A600E62B5A /* profilesNormal@2x.png in Resources */,
 				70535F9E1BB2B7FE00091EE6 /* 导航条320x64.png in Resources */,
 				700289CC1BC2AFA500E62B5A /* welfare@2x.png in Resources */,
-				7045A39C1BC69B4D00B15244 /* welfarePayViewController.xib in Resources */,
+				7045A39C1BC69B4D00B15244 /* welfarePaymentViewController.xib in Resources */,
 				1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */,
 				700F8CF41BC4DB5700165A93 /* V5@2x.png in Resources */,
 				70535FAC1BB2B7FE00091EE6 /* 新浪1@2x.png in Resources */,
@@ -2016,6 +2040,7 @@
 				70860BBC1BB0407D00E54EEF /* AMap.bundle in Resources */,
 				7002894A1BC0F64D00E62B5A /* confirmViewController.xib in Resources */,
 				70028A301BC376A600E62B5A /* profilesNormal.png in Resources */,
+				182FB4311BC7C4CA0087FD9B /* payDetailsTableViewCell.xib in Resources */,
 				700F8CFD1BC4DCF300165A93 /* portrait2.png in Resources */,
 				700F8CE81BC4DB5700165A93 /* V1@2x.png in Resources */,
 				7002897E1BC0FF8900E62B5A /* releaseDetailsTableViewCell.xib in Resources */,
@@ -2047,6 +2072,7 @@
 				700289451BC00A4C00E62B5A /* proxy.png in Resources */,
 				70535F981BB2B7FE00091EE6 /* 女.png in Resources */,
 				7002892B1BBFC1A200E62B5A /* MJRefresh.bundle in Resources */,
+				182FB4361BC7C5340087FD9B /* welfarePriceTableViewCell.xib in Resources */,
 				70535FC11BB2B7FE00091EE6 /* 7-140223103130591@3x.png in Resources */,
 				70535F821BB2B7FE00091EE6 /* logo@2x.png in Resources */,
 				70535FB91BB2B7FE00091EE6 /* 背景@3x.png in Resources */,
@@ -2292,6 +2318,7 @@
 				70860B701BB01CF100E54EEF /* AppDelegate.m in Sources */,
 				700289211BBFC1A200E62B5A /* MJRefreshHeader.m in Sources */,
 				70860C091BB041AF00E54EEF /* KLCPopup.m in Sources */,
+				182FB4301BC7C4CA0087FD9B /* payDetailsTableViewCell.m in Sources */,
 				700289201BBFC1A200E62B5A /* MJRefreshFooter.m in Sources */,
 				700289791BC0FF8900E62B5A /* labelsTableViewCell.m in Sources */,
 				7002893B1BBFEA8900E62B5A /* homeImageDetailsTableViewCell.m in Sources */,
@@ -2301,9 +2328,10 @@
 				70860C111BB041AF00E54EEF /* SDWebImageDownloaderOperation.m in Sources */,
 				70860B6D1BB01CF100E54EEF /* main.m in Sources */,
 				7002897D1BC0FF8900E62B5A /* releaseDetailsTableViewCell.m in Sources */,
-				7045A39B1BC69B4D00B15244 /* welfarePayViewController.m in Sources */,
+				7045A39B1BC69B4D00B15244 /* welfarePaymentViewController.m in Sources */,
 				70E6F1821BB6247200D175B1 /* selectTimeViewController.m in Sources */,
 				1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */,
+				182FB4351BC7C5340087FD9B /* welfarePriceTableViewCell.m in Sources */,
 				700289871BC108EA00E62B5A /* confirmDetailsTableViewCell.m in Sources */,
 				700289811BC0FF8900E62B5A /* urgentTableViewCell.m in Sources */,
 				70BB686E1BC3F0DF0059F1BE /* AFURLSessionManager.m in Sources */,

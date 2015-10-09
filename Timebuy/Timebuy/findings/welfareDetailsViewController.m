@@ -51,6 +51,10 @@
 
 - (void)send:(id)sender {
     //[self sendMgs];
+    welfarePaymentViewController *welfarePayVC = [[welfarePaymentViewController alloc] init];
+    
+    [self.navigationController pushViewController:welfarePayVC animated:YES];
+    
 }
 
 #pragma mark - tableViewdelgate
@@ -143,7 +147,7 @@
         }
         case 3:
         {
-            programDetailsTableViewCell *cell = (programDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+            payDetailsTableViewCell *cell = (payDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
             
             if (cell == nil) {
                 
