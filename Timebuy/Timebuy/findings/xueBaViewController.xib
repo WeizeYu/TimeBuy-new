@@ -5,28 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="paoTuiViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="xueBaViewController">
             <connections>
-                <outlet property="paoTuiTableView" destination="aoB-1v-Pxl" id="hlK-cK-OKo"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="IOc-PS-AWm" id="1vr-D8-2zT"/>
+                <outlet property="xueBaTableView" destination="pDN-Rb-ipa" id="S2k-tw-c5I"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="IOc-PS-AWm">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="182" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aoB-1v-Pxl">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="182" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pDN-Rb-ipa">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="aoB-1v-Pxl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aMT-HB-5e3"/>
-                <constraint firstItem="aoB-1v-Pxl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ajg-wy-a4r"/>
-                <constraint firstAttribute="trailing" secondItem="aoB-1v-Pxl" secondAttribute="trailing" id="h17-Sd-Mnd"/>
-                <constraint firstAttribute="bottom" secondItem="aoB-1v-Pxl" secondAttribute="bottom" id="jF3-85-VSx"/>
+                <constraint firstAttribute="trailing" secondItem="pDN-Rb-ipa" secondAttribute="trailing" id="GVu-yp-vOE"/>
+                <constraint firstAttribute="bottom" secondItem="pDN-Rb-ipa" secondAttribute="bottom" id="pw4-dy-BFO"/>
+                <constraint firstItem="pDN-Rb-ipa" firstAttribute="top" secondItem="IOc-PS-AWm" secondAttribute="top" id="rK3-72-AZg"/>
+                <constraint firstItem="pDN-Rb-ipa" firstAttribute="leading" secondItem="IOc-PS-AWm" secondAttribute="leading" id="zOR-I5-tGy"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>

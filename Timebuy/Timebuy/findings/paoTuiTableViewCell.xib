@@ -114,11 +114,16 @@
                             <constraint firstAttribute="width" constant="60" id="uUn-26-fNA"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-fQ-IrZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="V1.png" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-fQ-IrZ">
                         <rect key="frame" x="90" y="16" width="13" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="13" id="FWi-2n-NY1"/>
+                            <constraint firstAttribute="height" constant="12" id="Ml0-q3-WX1"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="a7L-fQ-IrZ" firstAttribute="leading" secondItem="YPc-jj-xGJ" secondAttribute="trailing" constant="48" id="2Cp-te-vJm"/>
                     <constraint firstAttribute="trailing" secondItem="4Kc-fC-en4" secondAttribute="trailing" id="AGG-5J-QkN"/>
                     <constraint firstAttribute="bottom" secondItem="QmU-iS-TVa" secondAttribute="bottom" constant="6" id="Bwl-Xt-aIN"/>
                     <constraint firstAttribute="trailing" secondItem="lwD-u9-PVC" secondAttribute="trailing" constant="12" id="C5m-Sy-RCc"/>
@@ -132,6 +137,7 @@
                     <constraint firstItem="cie-cf-uNc" firstAttribute="top" secondItem="lwD-u9-PVC" secondAttribute="bottom" constant="8" id="hQD-EF-ioL"/>
                     <constraint firstAttribute="trailing" secondItem="cKy-nH-Xg0" secondAttribute="trailing" id="hU5-2E-9eg"/>
                     <constraint firstAttribute="trailing" secondItem="QmU-iS-TVa" secondAttribute="trailing" constant="12" id="j7V-X3-HvH"/>
+                    <constraint firstItem="a7L-fQ-IrZ" firstAttribute="top" secondItem="4Kc-fC-en4" secondAttribute="bottom" constant="13" id="kQv-II-Yrx"/>
                     <constraint firstItem="Fa0-AH-EmD" firstAttribute="top" secondItem="lwD-u9-PVC" secondAttribute="bottom" constant="8" id="kSr-Ju-2lS"/>
                     <constraint firstItem="YPc-jj-xGJ" firstAttribute="top" secondItem="4Kc-fC-en4" secondAttribute="bottom" constant="5" id="kjB-SP-bf1"/>
                     <constraint firstItem="cie-cf-uNc" firstAttribute="leading" secondItem="WgX-hq-QcQ" secondAttribute="trailing" constant="8" id="lp7-pm-omS"/>
@@ -145,6 +151,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="V1.png" width="409" height="373"/>
         <image name="portrait.png" width="180" height="180"/>
         <image name="showImg2.png" width="750" height="562"/>
         <image name="showImg3.png" width="750" height="562"/>

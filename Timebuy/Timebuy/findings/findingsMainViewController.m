@@ -8,6 +8,8 @@
 
 #import "findingsMainViewController.h"
 #import "paoTuiViewController.h"
+#import "peiBanViewController.h"
+#import "xueBaViewController.h"
 @interface findingsMainViewController ()
 
 @end
@@ -138,11 +140,17 @@
             break;
         }
         case 2:
-            
+        {
+            xueBaViewController *vc2=[[xueBaViewController alloc]init];
+            [self.navigationController pushViewController:vc2 animated:YES];
             break;
+        }
         case 3:
-            
+        {
+            peiBanViewController *vc=[[peiBanViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
+        }
         case 4:
         {
             welfareViewController *welfareVC = [[welfareViewController alloc] init];

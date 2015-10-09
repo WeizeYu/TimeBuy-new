@@ -56,6 +56,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]] || [v isKindOfClass:[UITabBar class]]) {
+            v.hidden = YES;
+        }
+    }
+    self.tabBarController.tabBar.hidden = YES;
     self.title=@"详情";
     self.headImage.layer.masksToBounds=true;
     [self.headImage.layer setCornerRadius:20];

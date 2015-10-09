@@ -33,7 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mytitle=[[NSArray alloc]initWithObjects:@"我发布的",@"我收藏的",@"我****",nil];
+    self.mytitle=[[NSArray alloc]initWithObjects:@"我的发布",@"我的响应",@"个人设置",nil];
     self.rootTableview.dataSource=self;
     self.rootTableview.delegate=self;
     //@{}代表Dictionary
