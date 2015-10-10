@@ -8,6 +8,7 @@
 
 #import "profilesRootViewController.h"
 #import "myReleaseViewController.h"
+#import "myResponseViewController.h"
 @interface profilesRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *rootTableview;
 @property (nonatomic) NSArray *mytitle;
@@ -68,7 +69,11 @@
     {
         myReleaseViewController *vc=[[myReleaseViewController alloc]init];
         [self.navigationController pushViewController:vc animated:true];
-        
+    }
+    else if(indexPath.row==1)
+    {
+        myResponseViewController *vc=[[myResponseViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
     }
 }
 

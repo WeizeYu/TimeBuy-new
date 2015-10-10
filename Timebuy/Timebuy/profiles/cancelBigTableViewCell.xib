@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,14 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSZ-jb-xeh" id="USY-I2-N5q">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="203.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90Z-8P-fRQ">
                         <rect key="frame" x="6" y="0.0" width="363" height="201"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月25号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sy-7c-ktK">
-                                <rect key="frame" x="36" y="8" width="64" height="8"/>
+                                <rect key="frame" x="36" y="8" width="66" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="9hX-mk-0C1"/>
                                 </constraints>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00~8:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUI-a1-zHs">
-                                <rect key="frame" x="35" y="18" width="65" height="14"/>
+                                <rect key="frame" x="35" y="18" width="67.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="k9Z-cB-231"/>
                                 </constraints>
@@ -107,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2g-w4-5OE">
-                                <rect key="frame" x="313" y="151" width="11" height="11"/>
+                                <rect key="frame" x="312" y="151" width="11" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="boN-mA-oa7"/>
                                     <constraint firstAttribute="width" constant="11" id="dMe-HJ-c0b"/>
@@ -117,7 +117,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmp-YK-w76">
-                                <rect key="frame" x="338" y="151" width="11" height="11"/>
+                                <rect key="frame" x="337" y="151" width="11" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="3yN-Tv-vhG"/>
                                     <constraint firstAttribute="width" constant="11" id="ReG-Nd-DEP"/>
@@ -127,7 +127,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6e-wZ-kSe">
-                                <rect key="frame" x="325" y="151" width="7" height="12"/>
+                                <rect key="frame" x="324" y="151" width="7" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="aEt-70-Ams"/>
                                 </constraints>
@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-MS-sJv">
-                                <rect key="frame" x="350" y="151" width="7" height="12"/>
+                                <rect key="frame" x="349" y="151" width="8" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="r3S-oQ-gjd"/>
                                 </constraints>
@@ -213,7 +213,6 @@
                 <outlet property="refaButton" destination="b38-r1-9mf" id="nWO-XJ-WQ5"/>
                 <outlet property="rootView" destination="90Z-8P-fRQ" id="Ra5-91-2se"/>
                 <outlet property="share" destination="0p4-MS-sJv" id="SgD-tx-gxt"/>
-                <outlet property="shouImage2" destination="nEL-x2-EVV" id="3ll-FL-ZsJ"/>
                 <outlet property="showImage" destination="XRu-eL-CRA" id="TIt-Yd-uZn"/>
                 <outlet property="showImage2" destination="nEL-x2-EVV" id="bno-kz-vcH"/>
                 <outlet property="time" destination="7sy-7c-ktK" id="dlq-M4-Wyh"/>

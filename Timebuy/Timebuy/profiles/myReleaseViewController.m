@@ -54,6 +54,9 @@
 #pragma ----------------------------tableview数据初始化--------------------------------
 -(void)createData:(NSInteger) buttonTag{
     
+    _pageTag=buttonTag;
+    [self.releasetableview reloadData];
+    //[self.dataSourceDic setObject:(buttonTag-1) forKey:@"tag"];
 }
 #pragma ----------------------------segment 图标移动----------------------------------
 -(void) showlight{
@@ -79,6 +82,9 @@
         return;
     }
     switch (tag) {
+        case 0:
+            [self createData:tag];
+            break;
         case 1:
             [self createData:tag];
             break;
@@ -89,9 +95,6 @@
             [self createData:tag];
             break;
         case 4:
-            [self createData:tag];
-            break;
-        case 5:
             [self createData:tag];
             break;
     }
@@ -118,7 +121,6 @@
     [UIView commitAnimations];
     //[_backView addGestureRecognizer:_singleTap1];
     [self showlight];
-
     [self.view addSubview:_backView];
     [self.releasetableview reloadData];
 }
@@ -190,7 +192,7 @@
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;//self.dataSourceDic.count;
+    return 3;//self.dataSourceDic.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self tableView:self.releasetableview cellForRowAtIndexPath:indexPath];
@@ -223,160 +225,213 @@
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",(long)indexPath.row];
-    if(indexPath.row==1)
+    UITableViewCell *cell=[[UITableViewCell alloc]init];
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    if(indexPath.row==0)
     {
-        //NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",indexPath.row];
-        ingBigTableViewCell *imgcell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (imgcell == nil) {
-            imgcell.contentView.frame = imgcell.bounds;
-            imgcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-            
-            imgcell = [[[NSBundle mainBundle] loadNibNamed:@"ingBigTableViewCell" owner:self options:nil] lastObject];
+        if(_pageTag==0)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"waitimageCell%ld",(long)indexPath.row];
+            waitBigTableViewCell *waitcell = (waitBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (waitcell == nil) {
+                waitcell.contentView.frame = waitcell.bounds;
+                waitcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                waitcell = [[[NSBundle mainBundle] loadNibNamed:@"waitBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=waitcell;
         }
-        [imgcell setAccessoryType:UITableViewCellAccessoryNone];
-        [imgcell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        return imgcell;
-        //cell=imgcell;
+        else if(_pageTag==1)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"ingimageCell%ld",(long)indexPath.row];
+            ingBigTableViewCell *ingcell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            __weak typeof(self) weakSelf = self;
+            if (ingcell == nil) {
+                ingcell.contentView.frame = ingcell.bounds;
+                ingcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                ingcell = [[[NSBundle mainBundle] loadNibNamed:@"ingBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            ingcell.commitBlock=^{
+                NSLog(@"commit block");
+                complainDetailViewController *vc=[[complainDetailViewController alloc]init];
+                [weakSelf.navigationController pushViewController:vc animated:true];
+            };
+            cell=ingcell;
+        }
+        else if(_pageTag==2)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"doneimageCell%ld",(long)indexPath.row];
+            doneBigTableViewCell *donecell = (doneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (donecell == nil) {
+                donecell.contentView.frame = donecell.bounds;
+                donecell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                donecell = [[[NSBundle mainBundle] loadNibNamed:@"doneBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=donecell;
+        }
+        else if(_pageTag==3)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
+            complainTableViewCell *comcell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (comcell == nil) {
+                comcell.contentView.frame = comcell.bounds;
+                comcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                comcell = [[[NSBundle mainBundle] loadNibNamed:@"complainTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=comcell;
+        }
+        else if(_pageTag==4)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"cancelimageCell%ld",(long)indexPath.row];
+            cancelBigTableViewCell *cancelcell = (cancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cancelcell == nil) {
+                cancelcell.contentView.frame = cancelcell.bounds;
+                cancelcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                cancelcell = [[[NSBundle mainBundle] loadNibNamed:@"cancelBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=cancelcell;
+        }
     }
     else
     {
-        __weak typeof(self) weakSelf = self;
-        ingTableViewCell *imgcell = (ingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (imgcell == nil) {
-            imgcell.contentView.frame = imgcell.bounds;
-            imgcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-            imgcell = [[[NSBundle mainBundle] loadNibNamed:@"ingTableViewCell" owner:self options:nil] lastObject];
-        }
-        imgcell.commitBlock=^{
-            NSLog(@"commit block");
-            complainDetailViewController *vc=[[complainDetailViewController alloc]init];
-            [weakSelf.navigationController pushViewController:vc animated:true];
-        };
-        [imgcell setAccessoryType:UITableViewCellAccessoryNone];
-        [imgcell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        return imgcell;
-        //cell=imgcell;
-    }
-//    [cell setAccessoryType:UITableViewCellAccessoryNone];
-//    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    return cell;
-    //UITableViewCell *cell=[[UITableViewCell alloc]init];
-
 #pragma -----------------------------进行中界面-初始化--------------------------------
-    /*if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"0"])
-    {
-        NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",indexPath.row];
-        if([self.dataSourceDic objectForKey:@"pics"])
-        {
-            ingBigTableViewCell *cell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"ingBigTableViewCell" owner:self options:nil] lastObject];
+    //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"1"])
+        if(_pageTag==1){
+            NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",(long)indexPath.row];
+            __weak typeof(self) weakSelf = self;
+            if([self.dataSourceDic objectForKey:@"pics"])
+            {
+                ingBigTableViewCell *ingcell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (ingcell == nil) {
+                    ingcell.contentView.frame = ingcell.bounds;
+                    ingcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    ingcell = [[[NSBundle mainBundle] loadNibNamed:@"ingBigTableViewCell" owner:self options:nil] lastObject];
+                }
+                ingcell.commitBlock=^{
+                    NSLog(@"commit block");
+                    complainDetailViewController *vc=[[complainDetailViewController alloc]init];
+                    [weakSelf.navigationController pushViewController:vc animated:true];
+                };
+                cell=ingcell;
+              //  [cell setData:self.dataSourceDic];
             }
-          //  [cell setData:self.dataSourceDic];
-        }
-        else
-        {
-            ingTableViewCell *cell = (ingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"ingTableViewCell" owner:self options:nil] lastObject];
+            else
+            {
+                ingTableViewCell *ingcell = (ingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (ingcell == nil) {
+                    ingcell.contentView.frame = ingcell.bounds;
+                    ingcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    ingcell = [[[NSBundle mainBundle] loadNibNamed:@"ingTableViewCell" owner:self options:nil] lastObject];
+                }
+                ingcell.commitBlock=^{
+                    NSLog(@"commit block");
+                    complainDetailViewController *vc=[[complainDetailViewController alloc]init];
+                    [weakSelf.navigationController pushViewController:vc animated:true];
+                };
+                cell=ingcell;
             }
+            
+            //  [cell setData:self.dataSourceDic];
         }
-        //  [cell setData:self.dataSourceDic];
-    }
 #pragma -----------------------------等待中界面-初始化--------------------------------
-    if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"1"])
-    {
-        NSString *CellIdentifier =[NSString stringWithFormat:@"waitCell%ld",indexPath.row];
-        if([self.dataSourceDic objectForKey:@"pics"])
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"0"])
+        if(_pageTag==0){
+            NSString *CellIdentifier =[NSString stringWithFormat:@"waitCell%ld",(long)indexPath.row];
+            if([self.dataSourceDic objectForKey:@"pics"])
+                {
+                    waitBigTableViewCell *waitcell = (waitBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                    if (waitcell == nil) {
+                        waitcell.contentView.frame = waitcell.bounds;
+                        waitcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                        waitcell = [[[NSBundle mainBundle] loadNibNamed:@"waitBigTableViewCell" owner:self options:nil] lastObject];
+                    }
+                    cell=waitcell;
+                    //[cell setData:self.dataSourceDic];
+                }
+                else
+                {
+                    waitTableViewCell *waitcell = (waitTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                    if (waitcell == nil) {
+                        waitcell.contentView.frame = waitcell.bounds;
+                        waitcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                        waitcell = [[[NSBundle mainBundle] loadNibNamed:@"waitTableViewCell" owner:self options:nil] lastObject];
+                    }
+                    cell=waitcell;
+                }
+            //  [cell setData:self.dataSourceDic];
+        }
+    #pragma -----------------------------已完成界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"2"])
+    if(_pageTag==2)
         {
-            waitBigTableViewCell *cell = (waitBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"waitBigTableViewCell" owner:self options:nil] lastObject];
+            NSString *CellIdentifier =[NSString stringWithFormat:@"dongCell%ld",(long)indexPath.row];
+            if([self.dataSourceDic objectForKey:@"pics"]){
+                doneBigTableViewCell *donecell = (doneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (donecell == nil) {
+                    donecell.contentView.frame = donecell.bounds;
+                    donecell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    donecell = [[[NSBundle mainBundle] loadNibNamed:@"doneBigTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=donecell;
+                //[cell setData:self.dataSourceDic];
             }
-            //[cell setData:self.dataSourceDic];
-        }
-        else
-        {
-            waitTableViewCell *cell = (waitTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"waitTableViewCell" owner:self options:nil] lastObject];
-            }
-        }
-        //  [cell setData:self.dataSourceDic];
-    }
-#pragma -----------------------------已完成界面-初始化--------------------------------
-    if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"2"])
-    {
-        NSString *CellIdentifier =[NSString stringWithFormat:@"dongCell%ld",indexPath.row];
-        if([self.dataSourceDic objectForKey:@"pics"])
-        {
-            doneBigTableViewCell *cell = (doneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"doneBigTableViewCell" owner:self options:nil] lastObject];
-            }
-            //[cell setData:self.dataSourceDic];
-        }
-        else
-        {
-            doneTableViewCell *cell = (doneTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"doneTableViewCell" owner:self options:nil] lastObject];
-            }
-        }
-        //  [cell setData:self.dataSourceDic];
-    }
-#pragma -----------------------------申诉中界面-初始化--------------------------------
-    if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"3"])
-    {
-        NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",indexPath.row];
-        complainTableViewCell *cell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-        cell.contentView.frame = cell.bounds;
-        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"complainTableViewCell" owner:self options:nil] lastObject];
-        }
-        //[cell setData:self.dataSourceDic];
-
-    }
-#pragma -----------------------------已取消界面-初始化--------------------------------
-    if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"4"])
-    {
-        NSString *CellIdentifier =[NSString stringWithFormat:@"cancelCell%ld",indexPath.row];
-        if([self.dataSourceDic objectForKey:@"pics"])
-        {
-            cancelBigTableViewCell *cell = (cancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"cancelBigTableViewCell" owner:self options:nil] lastObject];
-            }
-          //  [cell setData:self.dataSourceDic];
-        }
-        else
-        {
-            cancelTableViewCell *cell = (cancelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell.contentView.frame = cell.bounds;
-                cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-                cell = [[[NSBundle mainBundle] loadNibNamed:@"cancelTableViewCell" owner:self options:nil] lastObject];
+            else
+            {
+                doneTableViewCell *donecell = (doneTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (donecell == nil) {
+                    donecell.contentView.frame = donecell.bounds;
+                    donecell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    donecell = [[[NSBundle mainBundle] loadNibNamed:@"doneTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=donecell;
             }
             //  [cell setData:self.dataSourceDic];
         }
+#pragma -----------------------------申诉中界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"3"])
+    if(_pageTag==3)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
+            complainTableViewCell *comcell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (comcell == nil) {
+            comcell.contentView.frame = comcell.bounds;
+            comcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+            comcell = [[[NSBundle mainBundle] loadNibNamed:@"complainTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=comcell;
+            //[cell setData:self.dataSourceDic];
+
+        }
+#pragma -----------------------------已取消界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"4"])
+    if(_pageTag==4)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"cancelCell%ld",(long)indexPath.row];
+            if([self.dataSourceDic objectForKey:@"pics"])
+            {
+                cancelBigTableViewCell *cancelcell = (cancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (cancelcell == nil) {
+                    cancelcell.contentView.frame = cancelcell.bounds;
+                    cancelcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    cancelcell = [[[NSBundle mainBundle] loadNibNamed:@"cancelBigTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=cancelcell;
+              //  [cell setData:self.dataSourceDic];
+            }
+            else
+            {
+                cancelTableViewCell *cancelcell = (cancelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (cancelcell == nil) {
+                    cancelcell.contentView.frame = cancelcell.bounds;
+                    cancelcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    cancelcell = [[[NSBundle mainBundle] loadNibNamed:@"cancelTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=cancelcell;
+                //  [cell setData:self.dataSourceDic];
+            }
+        }
     }
-*/
+    return cell;
     // Configure the cell.
 }
 - (void)didReceiveMemoryWarning {

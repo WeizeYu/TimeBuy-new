@@ -242,20 +242,16 @@
         return (NSAttributedString *)title;
     } else if (!self.titleFormatter) {
         NSDictionary *titleAttrs = selected ? [self resultingSelectedTitleTextAttributes] : [self resultingTitleTextAttributes];
-        
         // the color should be cast to CGColor in order to avoid invalid context on iOS7
         UIColor *titleColor = titleAttrs[NSForegroundColorAttributeName];
-        
         if (titleColor) {
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:titleAttrs];
-            
             dict[NSForegroundColorAttributeName] = (id)titleColor.CGColor;
-            
             titleAttrs = [NSDictionary dictionaryWithDictionary:dict];
         }
-        
         return [[NSAttributedString alloc] initWithString:(NSString *)title attributes:titleAttrs];
-    } else {
+    }
+    else {
         return self.titleFormatter(self, title, index, selected);
     }
 }
@@ -790,7 +786,6 @@
         [self.selectionIndicatorBoxLayer removeFromSuperlayer];
     } else {
         [self scrollToSelectedSegmentIndex:animated];
-        
         if (animated) {
             // If the selected segment layer is not added to the super layer, that means no
             // index is currently selected, so add the layer then move it to the new

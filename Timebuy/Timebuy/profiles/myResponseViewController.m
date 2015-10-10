@@ -1,0 +1,339 @@
+//
+//  myResponseViewController.m
+//  Timebuy
+//
+//  Created by yuweize on 15/10/9.
+//  Copyright © 2015年 com.CraftDream. All rights reserved.
+//
+
+#import "myResponseViewController.h"
+#import "HMSegmentedControl.h"
+#import "RcancelTableViewCell.h"
+#import "RcomplainTableViewCell.h"
+#import "RingTableViewCell.h"
+#import "RdoneTableViewCell.h"
+#import "RcomplainTableViewCell.h"
+#import "RingBigTableViewCell.h"
+#import "RcancelBigTableViewCell.h"
+#import "RdoneBigTableViewCell.h"
+@interface myResponseViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) HMSegmentedControl *segmentedControl4;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic) UITableView *tableview1;
+@property (nonatomic) UITableView *tableview2;
+@property (nonatomic) UITableView *tableview3;
+@property (nonatomic) UITableView *tableview4;
+@property (nonatomic) NSInteger pageTag;
+#pragma -----------------------tableview的字典数组----------------------------
+@property (nonatomic) NSMutableDictionary *dataSourceDic;
+@end
+
+@implementation myResponseViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = YES;
+        }
+    }
+    self.tabBarController.tabBar.hidden = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    for (UIView *v in self.tabBarController.view.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            v.hidden = NO;
+        }
+    }
+    self.tabBarController.tabBar.hidden = NO;
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    _pageTag=0;
+    self.title=@"我的响应";
+#pragma -----------------------------segment设置------------------------------------------------
+    CGFloat viewWidth = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
+    self.segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 2, viewWidth, 25)];
+    self.segmentedControl4.sectionTitles = @[@"在进行", @"已完成", @"申诉中",@"已取消"];
+    self.segmentedControl4.selectedSegmentIndex = 0;
+    self.segmentedControl4.backgroundColor = [UIColor whiteColor];
+    UIFont* font = [UIFont fontWithName:@"Arial-ItalicMT" size:11.0];
+    self.segmentedControl4.titleTextAttributes = @{NSFontAttributeName:font,NSForegroundColorAttributeName:[UIColor blackColor]};
+    self.segmentedControl4.selectionIndicatorHeight = 4.0f;
+    self.segmentedControl4.selectionIndicatorColor = [UIColor colorWithRed:12.0 / 255.0f green:228.0 / 255.0f blue:225.0 / 255.0f alpha:1];
+    self.segmentedControl4.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
+    self.segmentedControl4.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+#pragma -----------------------------scrollview设置------------------------------------------
+    self.segmentedControl4.tag = 4;
+    __weak typeof(self) weakSelf = self;
+    [self.segmentedControl4 setIndexChangeBlock:^(NSInteger index) {
+        [weakSelf.scrollView scrollRectToVisible:CGRectMake(viewWidth * index, 0, viewWidth, self.view.frame.size.height-90) animated:YES];
+    }];
+    [self.view addSubview:self.segmentedControl4];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 28, viewWidth, self.view.frame.size.height-65)];
+    self.scrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.contentSize = CGSizeMake(viewWidth * 4, self.view.frame.size.height-65);
+    self.scrollView.delegate = self;
+    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-65) animated:YES];
+    [self.view addSubview:self.scrollView];
+#pragma ------------------------------scrollview内容添加------------------------------------
+     self.tableview1=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-65)];
+    [self setApperanceForTableview:_tableview1];
+    [self.scrollView addSubview:_tableview1];
+    
+    self.tableview2=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth, 0, viewWidth, self.view.frame.size.height-65)];
+    [self setApperanceForTableview:_tableview2];
+    [self.scrollView addSubview:_tableview2];
+    
+    self.tableview3=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*2, 0, viewWidth, self.view.frame.size.height-65)];
+    [self setApperanceForTableview:_tableview3];
+    [self.scrollView addSubview:_tableview3];
+    
+    self.tableview4=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*3, 0, viewWidth, self.view.frame.size.height-65)];
+    [self setApperanceForTableview:_tableview4];
+    [self.scrollView addSubview:_tableview4];
+}
+- (void)setApperanceForTableview:(UITableView *)tableview {
+    [tableview setRowHeight:106];
+    [tableview setSectionHeaderHeight:6];
+    [tableview setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [tableview setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    tableview.delegate=self;
+    tableview.dataSource=self;
+    [tableview reloadData];
+}
+#pragma ----------------------------TableviewDelegate---------------------------------
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;//self.dataSourceDic.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell=[UITableViewCell alloc];
+    if(_pageTag==0)
+    {
+        cell = [self tableView:self.tableview1 cellForRowAtIndexPath:indexPath];
+    }
+    else if(_pageTag==1)
+    {
+        cell = [self tableView:self.tableview2 cellForRowAtIndexPath:indexPath];
+    }
+    else if(_pageTag==2)
+    {
+        cell = [self tableView:self.tableview3 cellForRowAtIndexPath:indexPath];
+    }
+    else if(_pageTag==3)
+    {
+        cell = [self tableView:self.tableview4 cellForRowAtIndexPath:indexPath];
+    }
+    return cell.frame.size.height;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 6)];
+    //UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake(45+21+((self.view.frame.size.width-90-42*4)/4+45)*(_pageTag)-5, 0, 10, 6)];
+    UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-41*4)/8+(_pageTag*(self.view.frame.size.width/4))+20-5, 0, 10, 6)];
+    [sanjiao setImage:[UIImage imageNamed:@"sanjiao.png"]];
+    [view addSubview:sanjiao];
+    return view;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell=[[UITableViewCell alloc]init];
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    if(indexPath.row==0)
+    {
+        if(_pageTag==0)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"RingimageCell%ld",(long)indexPath.row];
+            RingBigTableViewCell *ingcell = (RingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            //__weak typeof(self) weakSelf = self;
+            if (ingcell == nil) {
+                ingcell.contentView.frame = ingcell.bounds;
+                ingcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                ingcell = [[[NSBundle mainBundle] loadNibNamed:@"RingBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=ingcell;
+        }
+        else if(_pageTag==1)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"RdoneimageCell%ld",(long)indexPath.row];
+            RdoneBigTableViewCell *donecell = (RdoneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (donecell == nil) {
+                donecell.contentView.frame = donecell.bounds;
+                donecell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                donecell = [[[NSBundle mainBundle] loadNibNamed:@"RdoneBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=donecell;
+        }
+        else if(_pageTag==2)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"RcomplainCell%ld",(long)indexPath.row];
+            RcomplainTableViewCell *comcell = (RcomplainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (comcell == nil) {
+                comcell.contentView.frame = comcell.bounds;
+                comcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                comcell = [[[NSBundle mainBundle] loadNibNamed:@"RcomplainTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=comcell;
+        }
+        else if(_pageTag==3)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"RcancelCell%ld",(long)indexPath.row];
+            RcancelBigTableViewCell *cancelcell = (RcancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cancelcell == nil) {
+                cancelcell.contentView.frame = cancelcell.bounds;
+                cancelcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                cancelcell = [[[NSBundle mainBundle] loadNibNamed:@"RcancelBigTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=cancelcell;
+        }
+    }
+    else
+    {
+#pragma -----------------------------进行中界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"1"])
+        if(_pageTag==0){
+            NSString *CellIdentifier =[NSString stringWithFormat:@"RingCell%ld",(long)indexPath.row];
+            //__weak typeof(self) weakSelf = self;
+            if([self.dataSourceDic objectForKey:@"pics"])
+            {
+                RingBigTableViewCell *ingcell = (RingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (ingcell == nil) {
+                    ingcell.contentView.frame = ingcell.bounds;
+                    ingcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    ingcell = [[[NSBundle mainBundle] loadNibNamed:@"RingBigTableViewCell" owner:self options:nil] lastObject];
+                }
+//                ingcell.commitBlock=^{
+//                    NSLog(@"commit block");
+//                    complainDetailViewController *vc=[[complainDetailViewController alloc]init];
+//                    [weakSelf.navigationController pushViewController:vc animated:true];
+//                };
+                cell=ingcell;
+                //  [cell setData:self.dataSourceDic];
+            }
+            else
+            {
+                RingTableViewCell *ingcell = (RingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (ingcell == nil) {
+                    ingcell.contentView.frame = ingcell.bounds;
+                    ingcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    ingcell = [[[NSBundle mainBundle] loadNibNamed:@"RingTableViewCell" owner:self options:nil] lastObject];
+                }
+//                ingcell.commitBlock=^{
+//                    NSLog(@"commit block");
+//                    complainDetailViewController *vc=[[complainDetailViewController alloc]init];
+//                    [weakSelf.navigationController pushViewController:vc animated:true];
+//                };
+                cell=ingcell;
+            }
+            
+            //  [cell setData:self.dataSourceDic];
+        }
+#pragma -----------------------------已完成界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"2"])
+        if(_pageTag==1)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"RdongCell%ld",(long)indexPath.row];
+            if([self.dataSourceDic objectForKey:@"pics"]){
+                RdoneBigTableViewCell *donecell = (RdoneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (donecell == nil) {
+                    donecell.contentView.frame = donecell.bounds;
+                    donecell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    donecell = [[[NSBundle mainBundle] loadNibNamed:@"RdoneBigTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=donecell;
+                //[cell setData:self.dataSourceDic];
+            }
+            else
+            {
+                RdoneTableViewCell *donecell = (RdoneTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (donecell == nil) {
+                    donecell.contentView.frame = donecell.bounds;
+                    donecell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    donecell = [[[NSBundle mainBundle] loadNibNamed:@"RdoneTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=donecell;
+            }
+            //  [cell setData:self.dataSourceDic];
+        }
+#pragma -----------------------------申诉中界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"3"])
+        if(_pageTag==2)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
+            RcomplainTableViewCell *comcell = (RcomplainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (comcell == nil) {
+                comcell.contentView.frame = comcell.bounds;
+                comcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                comcell = [[[NSBundle mainBundle] loadNibNamed:@"RcomplainTableViewCell" owner:self options:nil] lastObject];
+            }
+            cell=comcell;
+            //[cell setData:self.dataSourceDic];
+        }
+#pragma -----------------------------已取消界面-初始化--------------------------------
+        //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"4"])
+        if(_pageTag==3)
+        {
+            NSString *CellIdentifier =[NSString stringWithFormat:@"cancelCell%ld",(long)indexPath.row];
+            if([self.dataSourceDic objectForKey:@"pics"])
+            {
+                RcancelBigTableViewCell *cancelcell = (RcancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (cancelcell == nil) {
+                    cancelcell.contentView.frame = cancelcell.bounds;
+                    cancelcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    cancelcell = [[[NSBundle mainBundle] loadNibNamed:@"RcancelBigTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=cancelcell;
+                //  [cell setData:self.dataSourceDic];
+            }
+            else
+            {
+                RcancelTableViewCell *cancelcell = (RcancelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+                if (cancelcell == nil) {
+                    cancelcell.contentView.frame = cancelcell.bounds;
+                    cancelcell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    cancelcell = [[[NSBundle mainBundle] loadNibNamed:@"RcancelTableViewCell" owner:self options:nil] lastObject];
+                }
+                cell=cancelcell;
+                //  [cell setData:self.dataSourceDic];
+            }
+        }
+    }
+    return cell;
+    // Configure the cell.
+}
+#pragma mark ------------------------ UIScrollViewDelegate----------------------------
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat pageWidth = scrollView.frame.size.width;
+    NSInteger page = scrollView.contentOffset.x / pageWidth;
+    _pageTag=page;
+    if(_pageTag==0)
+    {
+        [self.tableview1 reloadData];
+    }
+    else if(_pageTag==1)
+    {
+        [self.tableview2 reloadData];
+    }
+    else if(_pageTag==2)
+    {
+        [self.tableview3 reloadData];
+    }
+    else if(_pageTag==3)
+    {
+        [self.tableview4 reloadData];
+    }
+    [self.segmentedControl4 setSelectedSegmentIndex:page animated:YES];
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+@end
