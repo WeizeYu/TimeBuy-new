@@ -62,6 +62,10 @@
                     <constraint firstItem="cxU-dK-kHK" firstAttribute="top" secondItem="mhh-UK-hxT" secondAttribute="bottom" constant="4" id="fFU-4s-z6I"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="teamDetailsLabel" destination="Uh7-WI-b2o" id="xO3-af-vfw"/>
+                <outlet property="teamTitleLabel" destination="cxU-dK-kHK" id="6dy-kb-UO4"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

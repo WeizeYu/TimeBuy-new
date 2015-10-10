@@ -19,6 +19,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     welfarePayTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    UIView *sendView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 64 - 64, [UIScreen mainScreen].bounds.size.width, 64)];
+    sendView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:sendView];
+    
+    sendButton = [[UIButton alloc] initWithFrame:CGRectMake(13, 12, [UIScreen mainScreen].bounds.size.width - 13 * 2, 40)];
+    [sendButton setTitle:@"确定支付" forState:UIControlStateNormal];
+    [sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [sendButton setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:80.0 / 255.0f green:227.0 / 255.0f blue:194.0 / 255.0f alpha:1] size:sendButton.bounds.size] forState:UIControlStateNormal];
+    [sendButton setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor] size:sendButton.bounds.size] forState:UIControlStateDisabled];
+    [sendButton addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
+    [sendView addSubview:sendButton];
+    sendButton.layer.masksToBounds = YES;
+    sendButton.layer.cornerRadius = 3;
+    
+    [sendButton setEnabled:YES];
+}
+
+- (void)send:(id)sender {
+    //[self sendMgs];
 }
 
 #pragma mark - tableViewDelege
@@ -157,13 +177,17 @@
         }
     }
     
-    
     return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            welfareChangePriceViewController *welfareChangePriceVC = [[welfareChangePriceViewController alloc] init];
+            [self.navigationController pushViewController:welfareChangePriceVC animated:YES];
+        }
+    } else if (indexPath.section == 1) {
         if (indexPath.row == 1) {
             UIImageView *mywalletImgView = (UIImageView *)[welfarePayTableView viewWithTag:101];
             UIImageView *alipayImgView = (UIImageView *)[welfarePayTableView viewWithTag:102];
@@ -178,6 +202,25 @@
             alipayImgView.hidden = NO;
         }
     }
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
 }
 
 - (void)didReceiveMemoryWarning {

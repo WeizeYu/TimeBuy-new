@@ -1,14 +1,16 @@
 //
-//  welfareProgressTableViewCell.m
+//  programInfoTableViewCell.m
 //  Timebuy
 //
 //  Created by CraftDream on 15/10/6.
 //  Copyright © 2015年 com.CraftDream. All rights reserved.
 //
 
-#import "welfareProgressTableViewCell.h"
+#import "programInfoTableViewCell.h"
 
-@implementation welfareProgressTableViewCell
+@implementation programInfoTableViewCell
+@synthesize teamDetailsLabel;
+@synthesize teamTitleLabel;
 
 - (void)awakeFromNib {
     // Initialization code

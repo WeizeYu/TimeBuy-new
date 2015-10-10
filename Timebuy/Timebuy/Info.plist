@@ -26,11 +26,9 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAPPTransportSecurity</key>
-	<dict>
-		<key>NSAllowArbitraryLoads</key>
-		<true/>
-	</dict>
+    <key>NSAppTransportSecurity</key><dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/></dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>本应用需要使用您的定位信息，否则可能无法提供相应服务</string>
 	<key>UIMainStoryboardFile</key>

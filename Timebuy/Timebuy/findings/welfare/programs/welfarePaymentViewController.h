@@ -12,7 +12,12 @@
 #import "myWalletTableViewCell.h"
 #import "alipayTableViewCell.h"
 
+#import "welfareChangePriceViewController.h"
+
 @interface welfarePaymentViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+{
+    UIButton *sendButton;
+}
 
 @property (strong, nonatomic) IBOutlet UITableView *welfarePayTableView;
 @end

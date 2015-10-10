@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface programDetailsTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *programDetailsLabel;
 
 @end

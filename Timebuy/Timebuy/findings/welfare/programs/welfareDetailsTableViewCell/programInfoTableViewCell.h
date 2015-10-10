@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface programInfoTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *teamTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *teamDetailsLabel;
 
 @end

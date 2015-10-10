@@ -49,16 +49,6 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浙外微霖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuO-6b-fhG">
-                        <rect key="frame" x="263" y="185" width="49" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="49" id="EW5-Eo-Hh8"/>
-                            <constraint firstAttribute="height" constant="16" id="IXX-Ar-tA0"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/来自" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40r-53-LUL">
                         <rect key="frame" x="232" y="183" width="29" height="16"/>
                         <constraints>
@@ -69,11 +59,21 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浙外微霖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuO-6b-fhG">
+                        <rect key="frame" x="263" y="183" width="49" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="EW5-Eo-Hh8"/>
+                            <constraint firstAttribute="height" constant="16" id="IXX-Ar-tA0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="HbY-ld-Fdm" secondAttribute="trailing" constant="20" id="1GQ-iZ-O4U"/>
                     <constraint firstAttribute="trailing" secondItem="4H8-3Y-VdW" secondAttribute="trailing" id="6Ra-27-imw"/>
-                    <constraint firstAttribute="bottom" secondItem="OuO-6b-fhG" secondAttribute="bottom" constant="8" id="BNl-XF-2P6"/>
+                    <constraint firstAttribute="bottom" secondItem="OuO-6b-fhG" secondAttribute="bottom" constant="10" id="BNl-XF-2P6"/>
                     <constraint firstItem="C7m-3N-U3C" firstAttribute="leading" secondItem="Ide-Vf-Yga" secondAttribute="trailing" constant="8" id="L8V-V4-8hk"/>
                     <constraint firstItem="4H8-3Y-VdW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NTR-U9-Nno"/>
                     <constraint firstItem="4H8-3Y-VdW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Naz-R9-8g4"/>
@@ -87,6 +87,9 @@
                     <constraint firstAttribute="bottom" secondItem="40r-53-LUL" secondAttribute="bottom" constant="10" id="ueX-YM-HmS"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="programDetailsLabel" destination="HbY-ld-Fdm" id="KX2-fX-FCl"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

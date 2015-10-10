@@ -122,6 +122,13 @@
                     <constraint firstItem="9lX-du-Ftw" firstAttribute="top" secondItem="RdN-ee-n0Q" secondAttribute="bottom" id="x2F-P0-tRb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avgPriceLabel" destination="9lX-du-Ftw" id="pjc-c5-gxG"/>
+                <outlet property="soldoutNumLabel" destination="aIH-QN-FaD" id="O9I-sB-LUq"/>
+                <outlet property="targetNumLabel" destination="Dj1-KU-aXA" id="eeu-Ik-g8f"/>
+                <outlet property="welfareProgressLabel" destination="RdN-ee-n0Q" id="KW0-4J-CYK"/>
+                <outlet property="welfareProgressView" destination="rVN-rs-MiF" id="iOp-ve-fyh"/>
+            </connections>
             <point key="canvasLocation" x="353" y="321"/>
         </tableViewCell>
     </objects>

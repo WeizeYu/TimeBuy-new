@@ -10,6 +10,11 @@
 
 @implementation welfareTableViewCell
 
+@synthesize teamNameButton;
+@synthesize programImgView;
+@synthesize programTitleLabel;
+@synthesize programDetailsLabel;
+
 - (void)awakeFromNib {
     // Initialization code
 }
