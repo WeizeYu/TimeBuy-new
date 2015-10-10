@@ -17,8 +17,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqL-RS-7t3">
                         <rect key="frame" x="6" y="0.0" width="363" height="201"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015年8月25号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-la-JQD">
-                                <rect key="frame" x="22" y="6" width="64" height="8"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月25号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-la-JQD">
+                                <rect key="frame" x="22" y="6" width="66" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="qWT-L6-KQ8"/>
                                 </constraints>
@@ -26,8 +26,8 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="7:00~8:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBV-0Q-ilG">
-                                <rect key="frame" x="21" y="18" width="65" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00~8:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBV-0Q-ilG">
+                                <rect key="frame" x="21" y="18" width="67.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="uYb-RK-RA8"/>
                                 </constraints>
@@ -35,8 +35,8 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="￥5元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtE-yN-bog">
-                                <rect key="frame" x="86" y="11" width="34" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥5元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtE-yN-bog">
+                                <rect key="frame" x="88" y="11" width="34" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="0at-mR-euW"/>
                                 </constraints>
@@ -150,7 +150,6 @@
                 <outlet property="headImage" destination="51w-eF-X7Z" id="hqs-gb-COK"/>
                 <outlet property="money" destination="KtE-yN-bog" id="Es3-pG-WCW"/>
                 <outlet property="rootView" destination="zqL-RS-7t3" id="hY7-ky-Qcn"/>
-                <outlet property="shouImage2" destination="ahM-Gf-ddm" id="Kuo-NL-80u"/>
                 <outlet property="showImage" destination="fN3-Oy-UAb" id="rMb-ii-ldp"/>
                 <outlet property="showImage2" destination="ahM-Gf-ddm" id="Otp-An-m9C"/>
                 <outlet property="time" destination="WEK-la-JQD" id="0uv-Xm-9xh"/>

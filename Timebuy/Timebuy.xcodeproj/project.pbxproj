@@ -368,6 +368,22 @@
 		734B86491BC6A497000D1508 /* sanjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 734B86481BC6A497000D1508 /* sanjiao.png */; settings = {ASSET_TAGS = (); }; };
 		7385835D1BB2E21600E06534 /* ingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7385835B1BB2E21600E06534 /* ingTableViewCell.m */; };
 		7385835E1BB2E21600E06534 /* ingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7385835C1BB2E21600E06534 /* ingTableViewCell.xib */; };
+		73CA21A31BC7EA06000A6C41 /* myResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21A11BC7EA06000A6C41 /* myResponseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21A41BC7EA06000A6C41 /* myResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21A21BC7EA06000A6C41 /* myResponseViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21AB1BC92A14000A6C41 /* RcomplainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21A91BC92A14000A6C41 /* RcomplainTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21AC1BC92A14000A6C41 /* RcomplainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21AA1BC92A14000A6C41 /* RcomplainTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21B01BC92A29000A6C41 /* RdoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21AE1BC92A29000A6C41 /* RdoneTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21B11BC92A29000A6C41 /* RdoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21AF1BC92A29000A6C41 /* RdoneTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21B51BC92A3A000A6C41 /* RcancelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21B31BC92A3A000A6C41 /* RcancelTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21B61BC92A3A000A6C41 /* RcancelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21B41BC92A3A000A6C41 /* RcancelTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21BA1BC92A54000A6C41 /* RingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21B81BC92A54000A6C41 /* RingTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21BB1BC92A54000A6C41 /* RingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21B91BC92A54000A6C41 /* RingTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21BF1BC92C08000A6C41 /* RingBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21BD1BC92C08000A6C41 /* RingBigTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21C01BC92C08000A6C41 /* RingBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21BE1BC92C08000A6C41 /* RingBigTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21C51BC92C64000A6C41 /* RdoneBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21C31BC92C64000A6C41 /* RdoneBigTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21C61BC92C64000A6C41 /* RdoneBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21C41BC92C64000A6C41 /* RdoneBigTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21CA1BC92C7A000A6C41 /* RcancelBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21C81BC92C7A000A6C41 /* RcancelBigTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21CB1BC92C7A000A6C41 /* RcancelBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21C91BC92C7A000A6C41 /* RcancelBigTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		73ED70551BBF8006004EB6CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70541BBF8006004EB6CD /* down.png */; };
 		73ED70571BBF801B004EB6CD /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70561BBF801B004EB6CD /* phone.png */; };
 		73ED705C1BBF8288004EB6CD /* complainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED705A1BBF8288004EB6CD /* complainDetailViewController.m */; };
@@ -873,6 +889,30 @@
 		7385835A1BB2E21600E06534 /* ingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingTableViewCell.h; sourceTree = "<group>"; };
 		7385835B1BB2E21600E06534 /* ingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingTableViewCell.m; sourceTree = "<group>"; };
 		7385835C1BB2E21600E06534 /* ingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21A01BC7EA06000A6C41 /* myResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myResponseViewController.h; sourceTree = "<group>"; };
+		73CA21A11BC7EA06000A6C41 /* myResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myResponseViewController.m; sourceTree = "<group>"; };
+		73CA21A21BC7EA06000A6C41 /* myResponseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myResponseViewController.xib; sourceTree = "<group>"; };
+		73CA21A81BC92A14000A6C41 /* RcomplainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RcomplainTableViewCell.h; sourceTree = "<group>"; };
+		73CA21A91BC92A14000A6C41 /* RcomplainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RcomplainTableViewCell.m; sourceTree = "<group>"; };
+		73CA21AA1BC92A14000A6C41 /* RcomplainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RcomplainTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21AD1BC92A29000A6C41 /* RdoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdoneTableViewCell.h; sourceTree = "<group>"; };
+		73CA21AE1BC92A29000A6C41 /* RdoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdoneTableViewCell.m; sourceTree = "<group>"; };
+		73CA21AF1BC92A29000A6C41 /* RdoneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RdoneTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21B21BC92A3A000A6C41 /* RcancelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RcancelTableViewCell.h; sourceTree = "<group>"; };
+		73CA21B31BC92A3A000A6C41 /* RcancelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RcancelTableViewCell.m; sourceTree = "<group>"; };
+		73CA21B41BC92A3A000A6C41 /* RcancelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RcancelTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21B71BC92A54000A6C41 /* RingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingTableViewCell.h; sourceTree = "<group>"; };
+		73CA21B81BC92A54000A6C41 /* RingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RingTableViewCell.m; sourceTree = "<group>"; };
+		73CA21B91BC92A54000A6C41 /* RingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RingTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21BC1BC92C08000A6C41 /* RingBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBigTableViewCell.h; sourceTree = "<group>"; };
+		73CA21BD1BC92C08000A6C41 /* RingBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RingBigTableViewCell.m; sourceTree = "<group>"; };
+		73CA21BE1BC92C08000A6C41 /* RingBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RingBigTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21C21BC92C64000A6C41 /* RdoneBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RdoneBigTableViewCell.h; sourceTree = "<group>"; };
+		73CA21C31BC92C64000A6C41 /* RdoneBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RdoneBigTableViewCell.m; sourceTree = "<group>"; };
+		73CA21C41BC92C64000A6C41 /* RdoneBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RdoneBigTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21C71BC92C7A000A6C41 /* RcancelBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RcancelBigTableViewCell.h; sourceTree = "<group>"; };
+		73CA21C81BC92C7A000A6C41 /* RcancelBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RcancelBigTableViewCell.m; sourceTree = "<group>"; };
+		73CA21C91BC92C7A000A6C41 /* RcancelBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RcancelBigTableViewCell.xib; sourceTree = "<group>"; };
 		73ED70541BBF8006004EB6CD /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		73ED70561BBF801B004EB6CD /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
 		73ED70591BBF8288004EB6CD /* complainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = complainDetailViewController.h; sourceTree = "<group>"; };
@@ -1809,6 +1849,10 @@
 		734B864A1BC6A923000D1508 /* 我的响应 */ = {
 			isa = PBXGroup;
 			children = (
+				73CA219F1BC7E954000A6C41 /* 我的响应所有cell */,
+				73CA21A01BC7EA06000A6C41 /* myResponseViewController.h */,
+				73CA21A11BC7EA06000A6C41 /* myResponseViewController.m */,
+				73CA21A21BC7EA06000A6C41 /* myResponseViewController.xib */,
 			);
 			name = "我的响应";
 			sourceTree = "<group>";
@@ -1840,6 +1884,66 @@
 				732350111BB416B300C9E325 /* ingBigTableViewCell.xib */,
 			);
 			name = "进行中cell";
+			sourceTree = "<group>";
+		};
+		73CA219F1BC7E954000A6C41 /* 我的响应所有cell */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21C11BC92C3E000A6C41 /* 已取消cell */,
+				73CA21A71BC7EC51000A6C41 /* 申诉中cell */,
+				73CA21A61BC7EC40000A6C41 /* 已完成cell */,
+				73CA21A51BC7EC2D000A6C41 /* 在进行cell */,
+			);
+			name = "我的响应所有cell";
+			sourceTree = "<group>";
+		};
+		73CA21A51BC7EC2D000A6C41 /* 在进行cell */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21B71BC92A54000A6C41 /* RingTableViewCell.h */,
+				73CA21B81BC92A54000A6C41 /* RingTableViewCell.m */,
+				73CA21B91BC92A54000A6C41 /* RingTableViewCell.xib */,
+				73CA21BC1BC92C08000A6C41 /* RingBigTableViewCell.h */,
+				73CA21BD1BC92C08000A6C41 /* RingBigTableViewCell.m */,
+				73CA21BE1BC92C08000A6C41 /* RingBigTableViewCell.xib */,
+			);
+			name = "在进行cell";
+			sourceTree = "<group>";
+		};
+		73CA21A61BC7EC40000A6C41 /* 已完成cell */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21AD1BC92A29000A6C41 /* RdoneTableViewCell.h */,
+				73CA21AE1BC92A29000A6C41 /* RdoneTableViewCell.m */,
+				73CA21AF1BC92A29000A6C41 /* RdoneTableViewCell.xib */,
+				73CA21C21BC92C64000A6C41 /* RdoneBigTableViewCell.h */,
+				73CA21C31BC92C64000A6C41 /* RdoneBigTableViewCell.m */,
+				73CA21C41BC92C64000A6C41 /* RdoneBigTableViewCell.xib */,
+			);
+			name = "已完成cell";
+			sourceTree = "<group>";
+		};
+		73CA21A71BC7EC51000A6C41 /* 申诉中cell */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21A81BC92A14000A6C41 /* RcomplainTableViewCell.h */,
+				73CA21A91BC92A14000A6C41 /* RcomplainTableViewCell.m */,
+				73CA21AA1BC92A14000A6C41 /* RcomplainTableViewCell.xib */,
+			);
+			name = "申诉中cell";
+			sourceTree = "<group>";
+		};
+		73CA21C11BC92C3E000A6C41 /* 已取消cell */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21B21BC92A3A000A6C41 /* RcancelTableViewCell.h */,
+				73CA21B31BC92A3A000A6C41 /* RcancelTableViewCell.m */,
+				73CA21B41BC92A3A000A6C41 /* RcancelTableViewCell.xib */,
+				73CA21C71BC92C7A000A6C41 /* RcancelBigTableViewCell.h */,
+				73CA21C81BC92C7A000A6C41 /* RcancelBigTableViewCell.m */,
+				73CA21C91BC92C7A000A6C41 /* RcancelBigTableViewCell.xib */,
+			);
+			name = "已取消cell";
 			sourceTree = "<group>";
 		};
 		73ED70581BBF821D004EB6CD /* 我申诉的 */ = {
@@ -2028,6 +2132,7 @@
 				700289A01BC11D5C00E62B5A /* mywallet.png in Resources */,
 				70028A2F1BC376A600E62B5A /* newsSelect@2x.png in Resources */,
 				70535FE51BB2B7FE00091EE6 /* xitongshezhi@2x.png in Resources */,
+				73CA21A41BC7EA06000A6C41 /* myResponseViewController.xib in Resources */,
 				70028A281BC376A600E62B5A /* homeNormal.png in Resources */,
 				700289821BC0FF8900E62B5A /* urgentTableViewCell.xib in Resources */,
 				73ED70701BC0B51F004EB6CD /* ingDetailViewController.xib in Resources */,
@@ -2057,6 +2162,7 @@
 				70535F7B1BB2B7FE00091EE6 /* back@3x.png in Resources */,
 				70860C3D1BB16D2000E54EEF /* homeDetailsViewController.xib in Resources */,
 				7323501E1BB41A7E00C9E325 /* waitBigTableViewCell.xib in Resources */,
+				73CA21B11BC92A29000A6C41 /* RdoneTableViewCell.xib in Resources */,
 				7002897A1BC0FF8900E62B5A /* labelsTableViewCell.xib in Resources */,
 				7385835E1BB2E21600E06534 /* ingTableViewCell.xib in Resources */,
 				70535F721BB2B7FE00091EE6 /* yes@3x.png in Resources */,
@@ -2079,7 +2185,9 @@
 				7002897E1BC0FF8900E62B5A /* releaseDetailsTableViewCell.xib in Resources */,
 				73F8098F1BC4BAE0003A5B0B /* paoTuiViewController.xib in Resources */,
 				70860B981BB036AE00E54EEF /* tabbar_mainbtn@2x.png in Resources */,
+				73CA21B61BC92A3A000A6C41 /* RcancelTableViewCell.xib in Resources */,
 				70535FE41BB2B7FE00091EE6 /* xitongshezhi.png in Resources */,
+				73CA21C61BC92C64000A6C41 /* RdoneBigTableViewCell.xib in Resources */,
 				70860C2E1BB1669200E54EEF /* findingsMainViewController.xib in Resources */,
 				70028A431BC3C1EB00E62B5A /* sucai.png in Resources */,
 				70860C331BB166A200E54EEF /* newsRootViewController.xib in Resources */,
@@ -2143,6 +2251,7 @@
 				70535F8B1BB2B7FE00091EE6 /* QQ1@2x.png in Resources */,
 				73F809AD1BC549BD003A5B0B /* xueBaTableViewCell.xib in Resources */,
 				700289A21BC11D5C00E62B5A /* mywallet@3x.png in Resources */,
+				73CA21AC1BC92A14000A6C41 /* RcomplainTableViewCell.xib in Resources */,
 				70028A411BC3BD5500E62B5A /* welfareTableViewCell.xib in Resources */,
 				7002897C1BC0FF8900E62B5A /* priceTableViewCell.xib in Resources */,
 				700F8CE91BC4DB5700165A93 /* V1@3x.png in Resources */,
@@ -2183,6 +2292,7 @@
 				70535FEB1BB2B7FE00091EE6 /* 我的日程 background.png in Resources */,
 				70535F6E1BB2B7FE00091EE6 /* xiugai@2x.png in Resources */,
 				732350441BB5698700C9E325 /* cancelBigTableViewCell.xib in Resources */,
+				73CA21C01BC92C08000A6C41 /* RingBigTableViewCell.xib in Resources */,
 				70E6F1831BB6247200D175B1 /* selectTimeViewController.xib in Resources */,
 				70535F801BB2B7FE00091EE6 /* logo.png in Resources */,
 				700289C41BC2AFA500E62B5A /* accompany@3x.png in Resources */,
@@ -2202,6 +2312,7 @@
 				70535FD11BB2B7FE00091EE6 /* meiritixing.png in Resources */,
 				70535F761BB2B7FE00091EE6 /* 37x-Checkmark.png in Resources */,
 				700F8CFA1BC4DB5700165A93 /* V7@2x.png in Resources */,
+				73CA21CB1BC92C7A000A6C41 /* RcancelBigTableViewCell.xib in Resources */,
 				7323503F1BB5696F00C9E325 /* cancelTableViewCell.xib in Resources */,
 				70028A241BC376A600E62B5A /* findingsNormal.png in Resources */,
 				70535F771BB2B7FE00091EE6 /* 37x-Checkmark@2x.png in Resources */,
@@ -2222,6 +2333,7 @@
 				70535FAF1BB2B7FE00091EE6 /* 爱心1@2x.png in Resources */,
 				7002899C1BC1094A00E62B5A /* alipayTableViewCell.xib in Resources */,
 				700289C11BC2AFA500E62B5A /* 111.png in Resources */,
+				73CA21BB1BC92A54000A6C41 /* RingTableViewCell.xib in Resources */,
 				70535ED51BB2B5CC00091EE6 /* locationViewController.xib in Resources */,
 				73F809A81BC549A1003A5B0B /* xueBaViewController.xib in Resources */,
 				70535FAB1BB2B7FE00091EE6 /* 新浪1.png in Resources */,
@@ -2291,6 +2403,7 @@
 				700289961BC1093A00E62B5A /* myWalletTableViewCell.m in Sources */,
 				7002892D1BBFC1A200E62B5A /* UIScrollView+MJExtension.m in Sources */,
 				7002891F1BBFC1A200E62B5A /* MJRefreshComponent.m in Sources */,
+				73CA21A31BC7EA06000A6C41 /* myResponseViewController.m in Sources */,
 				700289241BBFC1A200E62B5A /* MJRefreshAutoStateFooter.m in Sources */,
 				70BB68691BC3F0DF0059F1BE /* AFNetworkReachabilityManager.m in Sources */,
 				70E6F1801BB6247200D175B1 /* priceViewController.m in Sources */,
@@ -2299,12 +2412,14 @@
 				73ED706A1BC0B50B004EB6CD /* doneDetailViewController.m in Sources */,
 				70860C171BB041AF00E54EEF /* UIImage+WebP.m in Sources */,
 				70BB68681BC3F0DF0059F1BE /* AFHTTPSessionManager.m in Sources */,
+				73CA21BF1BC92C08000A6C41 /* RingBigTableViewCell.m in Sources */,
 				700289231BBFC1A200E62B5A /* MJRefreshAutoNormalFooter.m in Sources */,
 				700289401BBFF87900E62B5A /* homeTextDetailsTableViewCell.m in Sources */,
 				70E839141BBCC1740027A1CB /* verifyPhoneViewController.m in Sources */,
 				70860C121BB041AF00E54EEF /* SDWebImageManager.m in Sources */,
 				70BB68661BC3F0DF0059F1BE /* AFHTTPRequestOperation.m in Sources */,
 				70BB686B1BC3F0DF0059F1BE /* AFURLConnectionOperation.m in Sources */,
+				73CA21C51BC92C64000A6C41 /* RdoneBigTableViewCell.m in Sources */,
 				70BB68671BC3F0DF0059F1BE /* AFHTTPRequestOperationManager.m in Sources */,
 				700289781BC0FF8900E62B5A /* ZYQAssetPickerController.m in Sources */,
 				73ED705C1BBF8288004EB6CD /* complainDetailViewController.m in Sources */,
@@ -2313,10 +2428,12 @@
 				700289491BC0F64D00E62B5A /* confirmViewController.m in Sources */,
 				70E839191BBCD05D0027A1CB /* JKCountDownButton.m in Sources */,
 				7385835D1BB2E21600E06534 /* ingTableViewCell.m in Sources */,
+				73CA21B01BC92A29000A6C41 /* RdoneTableViewCell.m in Sources */,
 				7002897B1BC0FF8900E62B5A /* priceTableViewCell.m in Sources */,
 				700289751BC0FF8900E62B5A /* PhotoPicker.m in Sources */,
 				732350391BB5677200C9E325 /* complainTableViewCell.m in Sources */,
 				7002891D1BBFC1A200E62B5A /* MJRefreshAutoFooter.m in Sources */,
+				73CA21BA1BC92A54000A6C41 /* RingTableViewCell.m in Sources */,
 				70860B9B1BB03A4600E54EEF /* myTabBarViewController.m in Sources */,
 				73ED70651BC0B4F4004EB6CD /* waitingDetailViewController.m in Sources */,
 				73F809A21BC54990003A5B0B /* peiBanViewController.m in Sources */,
@@ -2328,6 +2445,7 @@
 				7002898C1BC108FF00E62B5A /* confirmTimeTableViewCell.m in Sources */,
 				700289221BBFC1A200E62B5A /* MJRefreshAutoGifFooter.m in Sources */,
 				7002892C1BBFC1A200E62B5A /* MJRefreshConst.m in Sources */,
+				73CA21CA1BC92C7A000A6C41 /* RcancelBigTableViewCell.m in Sources */,
 				7323501D1BB41A7E00C9E325 /* waitBigTableViewCell.m in Sources */,
 				70860C0B1BB041AF00E54EEF /* MKAnnotationView+WebCache.m in Sources */,
 				70860C0C1BB041AF00E54EEF /* NSData+ImageContentType.m in Sources */,
@@ -2370,6 +2488,7 @@
 				70860B6D1BB01CF100E54EEF /* main.m in Sources */,
 				7002897D1BC0FF8900E62B5A /* releaseDetailsTableViewCell.m in Sources */,
 				70E6F1821BB6247200D175B1 /* selectTimeViewController.m in Sources */,
+				73CA21AB1BC92A14000A6C41 /* RcomplainTableViewCell.m in Sources */,
 				1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */,
 				700289871BC108EA00E62B5A /* confirmDetailsTableViewCell.m in Sources */,
 				700289811BC0FF8900E62B5A /* urgentTableViewCell.m in Sources */,
@@ -2393,6 +2512,7 @@
 				73F8098E1BC4BAE0003A5B0B /* paoTuiViewController.m in Sources */,
 				732350321BB5570500C9E325 /* myReleaseViewController.m in Sources */,
 				70860C181BB041AF00E54EEF /* UIImageView+HighlightedWebCache.m in Sources */,
+				73CA21B51BC92A3A000A6C41 /* RcancelTableViewCell.m in Sources */,
 				70BB68721BC3F3430059F1BE /* welfareDetailsViewController.m in Sources */,
 				732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */,
 				700289911BC1091C00E62B5A /* confirmPriceTableViewCell.m in Sources */,

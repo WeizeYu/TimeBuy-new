@@ -15,15 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" text="客观地描述将方便客户更快地解决您的问题.同时请您留下您的联系方式,我们将尽快与您联系." translatesAutoresizingMaskIntoConstraints="NO" id="Htr-rY-nZA">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="客观地描述将方便客户更快地解决您的问题.同时请您留下您的联系方式,我们将尽快与您联系." translatesAutoresizingMaskIntoConstraints="NO" id="Htr-rY-nZA">
                     <rect key="frame" x="0.0" y="8" width="375" height="195"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="195" id="sXP-HR-7du"/>
+                    </constraints>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Htr-rY-nZA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DNc-JQ-RIv"/>
+                <constraint firstItem="Htr-rY-nZA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="F4W-gc-cbS"/>
+                <constraint firstAttribute="trailing" secondItem="Htr-rY-nZA" secondAttribute="trailing" id="j4b-SA-U62"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
