@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface welfareTableViewCell : UITableViewCell
+@interface programTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *teamNameButton;
 @property (strong, nonatomic) IBOutlet UIImageView *programImgView;
 @property (strong, nonatomic) IBOutlet UILabel *programTitleLabel;

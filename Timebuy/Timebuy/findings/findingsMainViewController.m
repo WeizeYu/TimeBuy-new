@@ -32,8 +32,8 @@
         }
     }
     
-    NSLog(@"Hello findings");
-    NSLog(@"findings tabbar = %@",self.tabBarController.tabBar);
+    //NSLog(@"Hello findings");
+    //NSLog(@"findings tabbar = %@",self.tabBarController.tabBar);
     
     self.tabBarController.tabBar.hidden = NO;
     

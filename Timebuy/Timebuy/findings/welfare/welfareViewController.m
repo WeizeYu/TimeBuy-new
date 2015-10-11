@@ -16,6 +16,7 @@
 
 @synthesize welfareTableView;
 @synthesize segmentedControl;
+@synthesize SegmentIndex;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
@@ -41,14 +42,7 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem  = backButton;
     
-    //welfareTableView.hidden = YES;
-    
-    _tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    _tapGr.cancelsTouchesInView = NO;
-    _tapGr.numberOfTapsRequired = 1;
-    _tapGr.delegate = self;
-    [self.tabBarController.view addGestureRecognizer:_tapGr];
-    
+    SegmentIndex = 0;
     
 }
 
@@ -62,13 +56,7 @@
         if ([v isKindOfClass:[UIButton class]] || [v isKindOfClass:[UITabBar class]]) {
             v.hidden = NO;
         }
-        NSLog(@"v = %@",v);
     }
-}
-
--(void)viewTapped:(UITapGestureRecognizer*)tapGr
-{
-    
 }
 
 - (void)back:(id)sender {
@@ -97,7 +85,20 @@
     if (indexPath.section == 0) {
         return 238.0f;
     } else {
-        return 288.0f;
+        //return 288.0f;
+        switch (SegmentIndex) {
+            case 0:
+                return 288.0f;
+                break;
+            case 1:
+                return 64.0f;
+                break;
+            case 2:
+                return 288.0f;
+                break;
+            default:
+                break;
+        }
     }
     
     return 0.0f;
@@ -112,7 +113,20 @@
     if (section == 0) {
         return 1;
     } else {
-        return 10;
+        //return 10;
+        switch (SegmentIndex) {
+            case 0:
+                return 10;
+                break;
+            case 1:
+                return 5;
+                break;
+            case 2:
+                return 0;
+                break;
+            default:
+                break;
+        }
     }
     
     return 0;
@@ -134,7 +148,7 @@
         segmentedControl.tag = 2;
         //[self.view addSubview:segmentedControl];
         
-        segmentedControl.selectedSegmentIndex = 0;
+        segmentedControl.selectedSegmentIndex = SegmentIndex;
         
         [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
         return segmentedControl;
@@ -178,22 +192,53 @@
         [cell addSubview:titleLabel];
         [cell addSubview:detailLabel];
         
-        
     } else {
-        welfareTableViewCell *cell = (welfareTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
-        
-        if (cell == nil) {
-            
-            cell.contentView.frame = cell.bounds;
-            cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-            
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"welfareTableViewCell" owner:self options:nil] lastObject];
+        switch (SegmentIndex) {
+            case 0:
+            {
+                programTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+                
+                if (cell == nil) {
+                    
+                    cell.contentView.frame = cell.bounds;
+                    cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    
+                    cell = [[[NSBundle mainBundle] loadNibNamed:@"programTableViewCell" owner:self options:nil] lastObject];
+                }
+                
+                [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+                
+                return cell;
+                break;
+            }
+            case 1:
+            {
+                teamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+                
+                if (cell == nil) {
+                    
+                    cell.contentView.frame = cell.bounds;
+                    cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+                    
+                    cell = [[[NSBundle mainBundle] loadNibNamed:@"teamTableViewCell" owner:self options:nil] lastObject];
+                }
+                
+                [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+                
+                cell.teamImageView.layer.masksToBounds = YES;
+                cell.teamImageView.layer.cornerRadius = cell.bounds.size.height / 2;
+                
+                return cell;
+                break;
+            }
+            case 2:
+            {
+                return nil;
+                break;
+            }
+            default:
+                break;
         }
-        
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        
-        
-        return cell;
     }
     
     //cell.textLabel.text = @"Hello";
@@ -203,14 +248,43 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    welfareDetailsViewController *welfareDetailsVC = [[welfareDetailsViewController alloc] init];
-    [self.navigationController pushViewController:welfareDetailsVC animated:YES];
-    
+    if (indexPath.section == 0) {
+        
+    } else {
+        //return 10;
+        switch (SegmentIndex) {
+            case 0:
+            {
+                welfareDetailsViewController *welfareDetailsVC = [[welfareDetailsViewController alloc] init];
+                [self.navigationController pushViewController:welfareDetailsVC animated:YES];
+                break;
+            }
+            case 1:
+            {
+                teamDetailsViewController *teamDetailsVC = [[teamDetailsViewController alloc] init];
+                [self.navigationController pushViewController:teamDetailsVC animated:YES];
+                break;
+            }
+            case 2:
+            {
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark - segementCotoll button
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)sc {
-    NSLog(@"Selected index %ld (via UIControlEventValueChanged)", (long)sc.selectedSegmentIndex);
+    //NSLog(@"Selected index %ld (via UIControlEventValueChanged)", (long)sc.selectedSegmentIndex);
+    SegmentIndex = sc.selectedSegmentIndex;
+    [welfareTableView reloadData];
+    if (SegmentIndex == 1) {
+        welfareTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    } else {
+        welfareTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
