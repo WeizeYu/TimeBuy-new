@@ -80,7 +80,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-Op-Hpc">
-                                    <rect key="frame" x="79" y="45" width="12.5" height="10"/>
+                                    <rect key="frame" x="79" y="45" width="13" height="10"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="rzf-lo-tN0"/>
                                     </constraints>
@@ -101,7 +101,7 @@
                                     <rect key="frame" x="14" y="73" width="347" height="45"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月25日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-tv-DM0">
-                                            <rect key="frame" x="18" y="7" width="79.5" height="11"/>
+                                            <rect key="frame" x="18" y="7" width="80" height="11"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="11" id="IAr-KA-Ino"/>
                                             </constraints>
@@ -110,7 +110,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:30~8:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hE-vB-Ozg">
-                                            <rect key="frame" x="17" y="20" width="84.5" height="19"/>
+                                            <rect key="frame" x="17" y="20" width="85" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="19" id="GMD-mC-SMX"/>
                                             </constraints>
@@ -283,7 +283,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-2w-dq0">
-                                    <rect key="frame" x="62" y="589" width="12.5" height="10"/>
+                                    <rect key="frame" x="62" y="589" width="13" height="10"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="Cq6-ku-ZRY"/>
                                     </constraints>
@@ -317,7 +317,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="于6点50分接单成功" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-Ht-sBa">
-                                    <rect key="frame" x="43" y="607" width="115.5" height="13"/>
+                                    <rect key="frame" x="43" y="607" width="116" height="13"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="13" id="Gmq-Ft-tgi"/>
                                     </constraints>

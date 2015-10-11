@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="programInfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhh-UK-hxT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="2"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="plQ-aj-zzY"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qd-qI-oNy">
+                        <rect key="frame" x="12" y="6" width="6" height="20"/>
+                        <color key="backgroundColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="0uf-kX-NOM"/>
+                            <constraint firstAttribute="width" constant="6" id="pl4-7c-1QX"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="由浙江外国语学院英语学院十个本科生组成的支教团队远赴海外.共计十天196个小时,请你为他们的时间定价." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="277" translatesAutoresizingMaskIntoConstraints="NO" id="Uh7-WI-b2o">
+                        <rect key="frame" x="26" y="25" width="277" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="jK8-FV-3Zb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="以时成贝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxU-dK-kHK">
+                        <rect key="frame" x="26" y="6" width="235" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="cGF-Xb-Dge"/>
+                            <constraint firstAttribute="width" constant="235" id="db2-Bp-Gw2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Uh7-WI-b2o" firstAttribute="top" secondItem="mhh-UK-hxT" secondAttribute="bottom" constant="23" id="AqD-5W-pRQ"/>
+                    <constraint firstAttribute="trailing" secondItem="mhh-UK-hxT" secondAttribute="trailing" id="B0g-sO-TP8"/>
+                    <constraint firstItem="mhh-UK-hxT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BjW-Es-9oC"/>
+                    <constraint firstItem="mhh-UK-hxT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="F0g-Tk-Iaz"/>
+                    <constraint firstItem="1Qd-qI-oNy" firstAttribute="top" secondItem="mhh-UK-hxT" secondAttribute="bottom" constant="4" id="NGo-gg-aEB"/>
+                    <constraint firstItem="cxU-dK-kHK" firstAttribute="leading" secondItem="1Qd-qI-oNy" secondAttribute="trailing" constant="8" id="Oz0-pe-Fj1"/>
+                    <constraint firstItem="1Qd-qI-oNy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="UA3-F7-HWx"/>
+                    <constraint firstAttribute="trailing" secondItem="Uh7-WI-b2o" secondAttribute="trailing" constant="17" id="axx-io-VBw"/>
+                    <constraint firstItem="Uh7-WI-b2o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="dx3-WV-fCm"/>
+                    <constraint firstItem="cxU-dK-kHK" firstAttribute="top" secondItem="mhh-UK-hxT" secondAttribute="bottom" constant="4" id="fFU-4s-z6I"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="teamDetailsLabel" destination="Uh7-WI-b2o" id="xO3-af-vfw"/>
+                <outlet property="teamTitleLabel" destination="cxU-dK-kHK" id="6dy-kb-UO4"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
