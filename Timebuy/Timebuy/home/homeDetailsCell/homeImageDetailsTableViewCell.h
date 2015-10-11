@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageCellModal.h"
 
 @interface homeImageDetailsTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *portraitImgView;
@@ -23,4 +24,5 @@
 - (IBAction)showImg2:(id)sender;
 - (IBAction)showImg3:(id)sender;
 
+@property(nonatomic,strong)ImageCellModal *imageCellModal;
 @end

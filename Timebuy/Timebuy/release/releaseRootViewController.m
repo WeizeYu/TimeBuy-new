@@ -36,7 +36,7 @@
     placeStr = @"杭州小和山";
     timeStr = @"请确定合适开始和结束";
     priceStr = @"输入价格";
-    phoneStr = @"18767122229";
+    phone = @"18767122229";
     
     shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 275 + 64)];
     shadowView.backgroundColor = [UIColor blackColor];
@@ -129,6 +129,13 @@
     
     detailsTextView = (UITextView *)[releaseTableView viewWithTag:2];
     NSLog(@"get text from textview = %@", detailsTextView.text);
+    releaseDetailsTableViewCell *cell =(releaseDetailsTableViewCell*)[releaseTableView viewWithTag:108];
+    confirmVC.pics = cell.getImageArray;
+    confirmVC.money = priceStr;
+    confirmVC.phone = phone;
+    confirmVC.news = detailsTextView.text;
+//    NSLog(@"  1111-- %@--1111",confirmVC.news );
+
 }
 
 //点击阴影取消事件
@@ -224,10 +231,11 @@
                 //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 cell = [[[NSBundle mainBundle] loadNibNamed:@"releaseDetailsTableViewCell" owner:self options:nil] lastObject];
+                cell.tag = 108;
+
             }
             
             [cell.placeButton setTitle:placeStr forState:UIControlStateNormal];
-            
             return cell;
             
             break;
@@ -364,7 +372,7 @@
     //2.设置登录参数
     NSDictionary *dict = @{ @"userid":[userConfiguration getStringValueForConfigurationKey:@"userId"],
                             @"pic":@"123",
-                            @"phone":phoneStr,
+                            @"phone":phone,
                             @"news":@"测试内容",
                             @"starttime":timeStr,
                             //@"finishtime":finishTimeStr,
