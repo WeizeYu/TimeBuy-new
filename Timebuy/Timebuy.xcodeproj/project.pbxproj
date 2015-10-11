@@ -183,6 +183,8 @@
 		7045A4371BC9EBF100B15244 /* teamMemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A4351BC9EBF100B15244 /* teamMemberTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		7045A4381BC9EBF100B15244 /* teamMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7045A4361BC9EBF100B15244 /* teamMemberTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		7045A43A1BC9F5EA00B15244 /* weilin.png in Resources */ = {isa = PBXBuildFile; fileRef = 7045A4391BC9F5EA00B15244 /* weilin.png */; settings = {ASSET_TAGS = (); }; };
+		7045A4401BCA8BD100B15244 /* CACustomTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A43D1BCA8BD100B15244 /* CACustomTextLayer.m */; settings = {ASSET_TAGS = (); }; };
+		7045A4411BCA8BD100B15244 /* NJDBezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A43F1BCA8BD100B15244 /* NJDBezierCurve.m */; settings = {ASSET_TAGS = (); }; };
 		70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535ED21BB2B5CC00091EE6 /* locationViewController.m */; };
 		70535ED51BB2B5CC00091EE6 /* locationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70535ED31BB2B5CC00091EE6 /* locationViewController.xib */; };
 		70535F671BB2B7FE00091EE6 /* addImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70535EDE1BB2B7FE00091EE6 /* addImg.png */; };
@@ -683,6 +685,10 @@
 		7045A4351BC9EBF100B15244 /* teamMemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teamMemberTableViewCell.m; sourceTree = "<group>"; };
 		7045A4361BC9EBF100B15244 /* teamMemberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = teamMemberTableViewCell.xib; sourceTree = "<group>"; };
 		7045A4391BC9F5EA00B15244 /* weilin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weilin.png; sourceTree = "<group>"; };
+		7045A43C1BCA8BD100B15244 /* CACustomTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CACustomTextLayer.h; sourceTree = "<group>"; };
+		7045A43D1BCA8BD100B15244 /* CACustomTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CACustomTextLayer.m; sourceTree = "<group>"; };
+		7045A43E1BCA8BD100B15244 /* NJDBezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDBezierCurve.h; sourceTree = "<group>"; };
+		7045A43F1BCA8BD100B15244 /* NJDBezierCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDBezierCurve.m; sourceTree = "<group>"; };
 		70535ED11BB2B5CC00091EE6 /* locationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
 		70535ED21BB2B5CC00091EE6 /* locationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
 		70535ED31BB2B5CC00091EE6 /* locationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = locationViewController.xib; sourceTree = "<group>"; };
@@ -1426,6 +1432,17 @@
 			path = teamDetailsTableViewCell;
 			sourceTree = "<group>";
 		};
+		7045A43B1BCA8BD100B15244 /* NJDNumberJump */ = {
+			isa = PBXGroup;
+			children = (
+				7045A43C1BCA8BD100B15244 /* CACustomTextLayer.h */,
+				7045A43D1BCA8BD100B15244 /* CACustomTextLayer.m */,
+				7045A43E1BCA8BD100B15244 /* NJDBezierCurve.h */,
+				7045A43F1BCA8BD100B15244 /* NJDBezierCurve.m */,
+			);
+			path = NJDNumberJump;
+			sourceTree = "<group>";
+		};
 		70535ED01BB2B58300091EE6 /* release */ = {
 			isa = PBXGroup;
 			children = (
@@ -1764,6 +1781,7 @@
 		70860BBD1BB041AF00E54EEF /* openSource */ = {
 			isa = PBXGroup;
 			children = (
+				7045A43B1BCA8BD100B15244 /* NJDNumberJump */,
 				70028A381BC3948000E62B5A /* HMSegmentedControl */,
 				70E8391A1BBCFF020027A1CB /* SMS_SDK */,
 				70BB68521BC3F0DF0059F1BE /* AFNetworking */,
@@ -2546,6 +2564,7 @@
 				7002891F1BBFC1A200E62B5A /* MJRefreshComponent.m in Sources */,
 				73CA21A31BC7EA06000A6C41 /* myResponseViewController.m in Sources */,
 				700289241BBFC1A200E62B5A /* MJRefreshAutoStateFooter.m in Sources */,
+				7045A4411BCA8BD100B15244 /* NJDBezierCurve.m in Sources */,
 				7045A3E51BC9487D00B15244 /* xueBaViewController.m in Sources */,
 				70BB68691BC3F0DF0059F1BE /* AFNetworkReachabilityManager.m in Sources */,
 				70E6F1801BB6247200D175B1 /* priceViewController.m in Sources */,
@@ -2654,6 +2673,7 @@
 				7045A3ED1BC9487D00B15244 /* programDetailsTableViewCell.m in Sources */,
 				70860C1C1BB041AF00E54EEF /* VPImageCropperViewController.m in Sources */,
 				1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */,
+				7045A4401BCA8BD100B15244 /* CACustomTextLayer.m in Sources */,
 				7002892F1BBFC1A200E62B5A /* UIView+MJExtension.m in Sources */,
 				70860C241BB1664100E54EEF /* homeMainViewController.m in Sources */,
 				70860C191BB041AF00E54EEF /* UIImageView+WebCache.m in Sources */,

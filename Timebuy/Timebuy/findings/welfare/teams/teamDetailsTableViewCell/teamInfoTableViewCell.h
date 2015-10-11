@@ -10,4 +10,5 @@
 
 @interface teamInfoTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *teamInfoLabel;
 @end

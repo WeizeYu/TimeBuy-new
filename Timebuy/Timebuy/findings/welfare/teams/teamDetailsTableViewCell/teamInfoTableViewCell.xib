@@ -62,6 +62,9 @@
                     <constraint firstItem="cvl-aD-aoy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sp8-4O-Ary"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="teamInfoLabel" destination="Ed0-SR-86F" id="0k9-IM-4LP"/>
+            </connections>
             <point key="canvasLocation" x="300" y="291"/>
         </tableViewCell>
     </objects>

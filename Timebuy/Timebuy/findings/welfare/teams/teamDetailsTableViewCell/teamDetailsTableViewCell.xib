@@ -122,6 +122,13 @@
                     <constraint firstItem="8o7-bd-65H" firstAttribute="top" secondItem="KLr-Dj-2WG" secondAttribute="bottom" constant="19" id="xrj-r3-ojS"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="programNumLabel" destination="wJr-83-v1o" id="eXn-sV-tiE"/>
+                <outlet property="targetNumLabel" destination="bnU-Jv-96i" id="ByZ-rM-4LS"/>
+                <outlet property="teamProgressLabel" destination="tbn-xu-byT" id="vRG-cH-gki"/>
+                <outlet property="teamProgressView" destination="U6Z-v8-2Ay" id="OCI-mf-NJL"/>
+                <outlet property="timeLabel" destination="8o7-bd-65H" id="azV-cs-h9R"/>
+            </connections>
             <point key="canvasLocation" x="397" y="467"/>
         </tableViewCell>
     </objects>

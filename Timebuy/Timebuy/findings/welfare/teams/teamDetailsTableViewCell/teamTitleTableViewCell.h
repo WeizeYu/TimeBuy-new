@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface teamTitleTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *teamLogoImageView;
+@property (strong, nonatomic) IBOutlet UILabel *teamNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *teamInfoLabel;
 
 @end

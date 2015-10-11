@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CACustomTextLayer.h"
 
 @interface payDetailsTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIView *numberView;
+@property (strong, nonatomic) CACustomTextLayer *textLayer;
+@property NSInteger endNumber;
 @end

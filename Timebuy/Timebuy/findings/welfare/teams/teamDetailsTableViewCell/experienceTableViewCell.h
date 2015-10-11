@@ -10,4 +10,5 @@
 
 @interface experienceTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *experienceDetailsLabel;
 @end

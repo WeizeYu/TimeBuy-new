@@ -226,7 +226,7 @@
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 
                 cell.teamImageView.layer.masksToBounds = YES;
-                cell.teamImageView.layer.cornerRadius = cell.bounds.size.height / 2;
+                cell.teamImageView.layer.cornerRadius = cell.teamImageView.bounds.size.height / 2;
                 
                 return cell;
                 break;

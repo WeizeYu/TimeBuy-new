@@ -90,6 +90,9 @@
             }
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
             
+            cell.teamLogoImageView.layer.masksToBounds = YES;
+            cell.teamLogoImageView.layer.cornerRadius = cell.teamLogoImageView.bounds.size.height / 2;
+            
             return cell;
             break;
         }

@@ -95,16 +95,6 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="196" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwx-H9-6tR">
-                        <rect key="frame" x="87" y="74" width="146" height="62"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="62" id="DoM-0I-fOZ"/>
-                            <constraint firstAttribute="width" constant="146" id="Squ-hy-jY9"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="62"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32k-1q-mcE">
                         <rect key="frame" x="0.0" y="169" width="320" height="1"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -112,10 +102,19 @@
                             <constraint firstAttribute="height" constant="1" id="xTl-Qd-D3f"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XC-Jz-GRL">
+                        <rect key="frame" x="87" y="74" width="146" height="62"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="62" id="EnK-oE-k1D"/>
+                            <constraint firstAttribute="width" constant="146" id="RsM-ef-iUU"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="5XC-Jz-GRL" firstAttribute="leading" secondItem="dJF-t3-s85" secondAttribute="trailing" constant="1" id="1e5-Vw-CAd"/>
+                    <constraint firstItem="5XC-Jz-GRL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1sp-yX-As9"/>
                     <constraint firstItem="qgT-Zd-Io1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4cb-Dq-Kl2"/>
-                    <constraint firstItem="lBv-3Z-5FI" firstAttribute="top" secondItem="gwx-H9-6tR" secondAttribute="bottom" constant="2" id="6xL-yO-b9r"/>
                     <constraint firstItem="yjN-NX-dB3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7ZX-zp-V4d"/>
                     <constraint firstItem="3MW-NL-NNA" firstAttribute="top" secondItem="ytN-oe-3Qk" secondAttribute="bottom" constant="43" id="7eS-4Z-xUQ"/>
                     <constraint firstItem="ytN-oe-3Qk" firstAttribute="top" secondItem="e37-fe-DkH" secondAttribute="bottom" constant="7" id="8Cv-PC-Z75"/>
@@ -127,20 +126,22 @@
                     <constraint firstAttribute="trailing" secondItem="ytN-oe-3Qk" secondAttribute="trailing" id="MfW-u9-y6D"/>
                     <constraint firstItem="WOO-N7-UbD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="SMT-VT-jTT"/>
                     <constraint firstItem="32k-1q-mcE" firstAttribute="top" secondItem="lBv-3Z-5FI" secondAttribute="bottom" constant="10" id="Urd-KR-4G9"/>
+                    <constraint firstItem="lBv-3Z-5FI" firstAttribute="top" secondItem="5XC-Jz-GRL" secondAttribute="bottom" constant="2" id="W8u-Q9-SdG"/>
                     <constraint firstAttribute="trailing" secondItem="e37-fe-DkH" secondAttribute="trailing" constant="8" id="WTF-yZ-3uR"/>
-                    <constraint firstItem="3MW-NL-NNA" firstAttribute="leading" secondItem="gwx-H9-6tR" secondAttribute="trailing" constant="1" id="Y4W-27-S7k"/>
-                    <constraint firstItem="gwx-H9-6tR" firstAttribute="top" secondItem="ytN-oe-3Qk" secondAttribute="bottom" constant="8" id="gwX-x1-yMt"/>
+                    <constraint firstItem="3MW-NL-NNA" firstAttribute="leading" secondItem="5XC-Jz-GRL" secondAttribute="trailing" constant="1" id="dy2-l8-I91"/>
                     <constraint firstItem="WOO-N7-UbD" firstAttribute="top" secondItem="qU6-Ma-RdL" secondAttribute="bottom" constant="13" id="hI0-6s-Vuh"/>
-                    <constraint firstItem="gwx-H9-6tR" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jVv-Sh-SEF"/>
+                    <constraint firstItem="5XC-Jz-GRL" firstAttribute="top" secondItem="ytN-oe-3Qk" secondAttribute="bottom" constant="8" id="lM0-2c-nPx"/>
                     <constraint firstAttribute="trailing" secondItem="32k-1q-mcE" secondAttribute="trailing" id="ozr-rh-004"/>
                     <constraint firstItem="qU6-Ma-RdL" firstAttribute="top" secondItem="yjN-NX-dB3" secondAttribute="bottom" constant="6" id="p52-nQ-dZb"/>
                     <constraint firstItem="ytN-oe-3Qk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pN6-xR-i9e"/>
                     <constraint firstAttribute="trailing" secondItem="qU6-Ma-RdL" secondAttribute="trailing" id="slz-yG-vcA"/>
                     <constraint firstAttribute="trailing" secondItem="yjN-NX-dB3" secondAttribute="trailing" constant="12" id="tW8-Sc-OjL"/>
-                    <constraint firstItem="gwx-H9-6tR" firstAttribute="leading" secondItem="dJF-t3-s85" secondAttribute="trailing" constant="1" id="u7R-WP-417"/>
                     <constraint firstItem="lBv-3Z-5FI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="yMz-5k-O9A"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="numberView" destination="5XC-Jz-GRL" id="N07-wS-JTP"/>
+            </connections>
             <point key="canvasLocation" x="333" y="326"/>
         </tableViewCell>
     </objects>

@@ -9,6 +9,9 @@
 #import "teamTitleTableViewCell.h"
 
 @implementation teamTitleTableViewCell
+@synthesize teamNameLabel;
+@synthesize teamLogoImageView;
+@synthesize teamInfoLabel;
 
 - (void)awakeFromNib {
     // Initialization code

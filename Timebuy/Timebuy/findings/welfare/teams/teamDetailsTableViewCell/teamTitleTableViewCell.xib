@@ -70,6 +70,11 @@
                     <constraint firstItem="mXL-qC-NTF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hgt-5V-007"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="teamInfoLabel" destination="YRP-hv-0Um" id="WMS-Iw-2Tg"/>
+                <outlet property="teamLogoImageView" destination="xRi-Ux-5kX" id="rFr-9O-htB"/>
+                <outlet property="teamNameLabel" destination="76m-Ar-UnE" id="Met-G6-Psk"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

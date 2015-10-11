@@ -63,6 +63,9 @@
                     <constraint firstItem="DWI-MI-coP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sog-Sw-msR"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="experienceDetailsLabel" destination="W2f-5K-kqX" id="0SV-56-uDH"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

@@ -10,4 +10,10 @@
 
 @interface teamDetailsTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIProgressView *teamProgressView;
+@property (strong, nonatomic) IBOutlet UILabel *teamProgressLabel;
+@property (strong, nonatomic) IBOutlet UILabel *targetNumLabel;
+@property (strong, nonatomic) IBOutlet UILabel *programNumLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+
 @end
