@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="户口迁移手续求待办，急急急" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="f32-81-C8d">
                         <rect key="frame" x="12" y="46" width="296" height="13"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="QRX-Hi-Iu9"/>
                         </constraints>
@@ -25,6 +26,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proxy.png" translatesAutoresizingMaskIntoConstraints="NO" id="AHU-yG-WmY">
                         <rect key="frame" x="12" y="8" width="30" height="30"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="7Na-si-ddH"/>
                             <constraint firstAttribute="width" constant="30" id="yBL-67-84l"/>
@@ -40,6 +42,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFw-iT-qjf">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="22"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Jy2-2J-w8j"/>
                                     <constraint firstAttribute="width" constant="46" id="Qp3-dl-rWx"/>
@@ -49,6 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="0mC-d5-Dh0"/>
@@ -59,13 +63,15 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYh-wD-W86">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="5" id="r2e-lK-67X"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="约0.6km/3分钟前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgE-WV-ia7">
                         <rect key="frame" x="188" y="61" width="120" height="10"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="H3n-xd-8l8"/>
                             <constraint firstAttribute="width" constant="120" id="fXU-pX-42b"/>
@@ -76,6 +82,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="V4.png" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-eU-9Bv">
                         <rect key="frame" x="50" y="16" width="12" height="12"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="r1f-lx-cLs"/>
                             <constraint firstAttribute="width" constant="12" id="x8b-gd-Hpt"/>
@@ -83,6 +90,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MrOJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGz-0l-yEX">
                         <rect key="frame" x="65" y="14" width="98" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="98" id="Xij-se-jyZ"/>
                             <constraint firstAttribute="height" constant="15" id="rWc-tW-S5n"/>
@@ -92,6 +100,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="rgE-WV-ia7" secondAttribute="trailing" constant="12" id="277-B7-ATM"/>
                     <constraint firstItem="MYh-wD-W86" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5MH-Ks-3iI"/>
@@ -111,6 +120,7 @@
                     <constraint firstAttribute="trailing" secondItem="MYh-wD-W86" secondAttribute="trailing" id="yy4-0M-eoF"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="detailsLabel" destination="f32-81-C8d" id="CEL-Wg-Rfe"/>
                 <outlet property="nicknameLabel" destination="KGz-0l-yEX" id="mDb-m5-eol"/>

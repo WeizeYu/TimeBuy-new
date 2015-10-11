@@ -33,9 +33,9 @@
     NSString *startTime;
     NSString *endTime;
     NSString *priceStr;
-    NSString *phoneStr;
+    NSString *phone;
     NSString *label;
-    
+  
     MBProgressHUD *HUD;
     MBProgressHUD *HUDinSuccess;
     

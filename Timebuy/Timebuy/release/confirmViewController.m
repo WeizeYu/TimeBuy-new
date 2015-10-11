@@ -7,8 +7,10 @@
 //
 
 #import "confirmViewController.h"
+#import "AFNetworking.h"
+#import "userConfiguration.h"
 
-@interface confirmViewController ()
+@interface confirmViewController ()<MBProgressHUDDelegate>
 
 @end
 
@@ -45,6 +47,84 @@
 
 - (void)send:(id)sender {
     //[self sendMgs];
+}
+
+-(void)sendMgs{
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.delegate = self;
+    
+    //上传至服务器
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"d6089681f79c7627bbac829307e041a7" forHTTPHeaderField:@"x-timebuy-sid"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    //2.设置登录参数
+    
+    //  NSDictionary *params = [NSMutableDictionary dictionary];
+//    NSLog(@"   %lu",(unsigned long)self.phone );
+    
+    NSDictionary *dict = @{ @"userid":@"27",
+                            @"pics":self.pics,
+                            @"phone":self.phone,
+                            @"news":self.news,
+                            @"starttime":@"2014-5-5 14",
+                            //@"finishtime":finishTimeStr,
+                            @"label":@"测试label",
+                            @"money":self.money,
+                            @"coordname":@"小和山",
+                            @"coordx":@"30.124546",
+                            @"coordy":@"120.214126"};
+    
+    
+    //         NSDictionary *dict = @{ @"userId":@"27",
+    //         @"news":@"123",
+    //         @"nickName":@"oj",
+    //         @"sex":@"0",
+    //         @"birthDay":@"2011-10-2",
+    //         @"profession":@"123",
+    //         @"address":@"111",
+    //         @"phone":@"18767122229",
+    //         @"signature":@"hello"};
+    
+    //3.请求
+    [manager GET:@"http://192.168.8.102:8080/timebuy/news/info" parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"GET --> %@", responseObject); //自动返回主线程
+        
+        [HUD hide:YES];
+        NSString *getStatus = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]];
+        NSString *getCode = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]];
+        if ([getStatus isEqualToString:@"1"] && [getCode isEqualToString:@"1000"]) {
+            
+            HUDinSuccess = [[MBProgressHUD alloc] initWithView:self.view];
+            [self.view addSubview:HUDinSuccess];
+            HUDinSuccess.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+            HUDinSuccess.mode = MBProgressHUDModeCustomView;
+            HUDinSuccess.delegate = self;
+            HUDinSuccess.labelText = @"发布成功";
+            [HUDinSuccess show:YES];
+            [HUDinSuccess hide:YES afterDelay:1];
+            
+        } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2005"]) {
+            [self showErrorWithTitle:@"发布失败" WithMessage:@"错误"];
+        } else {
+            [self showErrorWithTitle:@"发布失败" WithMessage:@"系统错误"];
+        }
+        
+    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        [HUD hide:YES];
+        [self showErrorWithTitle:@"发布失败" WithMessage:@"网络连接失败，请检查网络设置"];
+    }];
+
+}
+
+-(void)showErrorWithTitle:(NSString *)titile WithMessage:(NSString *)msg
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titile message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 #pragma mark - tableViewDelege
