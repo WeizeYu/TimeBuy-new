@@ -7,6 +7,8 @@
 //
 
 #import "homeImageDetailsTableViewCell.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
 
 @implementation homeImageDetailsTableViewCell
 
@@ -45,8 +47,36 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)showImg1:(id)sender {
-    
+
+-(void)setImageCellModal:(ImageCellModal *)imageCellModal{
+    _imageCellModal = imageCellModal;
+    [self.showImgButton1 setImage:[UIImage imageNamed:self.imageCellModal.image_url[0]] forState:UIControlStateNormal];
+    [self.showImgButton2 setImage:[UIImage imageNamed:self.imageCellModal.image_url[1]] forState:UIControlStateNormal];
+    [self.showImgButton3 setImage:[UIImage imageNamed:self.imageCellModal.image_url[2]] forState:UIControlStateNormal];
+
+}
+
+
+
+- (IBAction)showImg1:(UIImageView *)sender {
+    int i = 0;
+    NSMutableArray *mAray = [NSMutableArray array];
+    for (NSString *url in self.imageCellModal.image_url) {
+        MJPhoto *mjPhoto = [[MJPhoto alloc] init];
+//        NSURL *urlS = [NSURL URLWithString:url];
+//        NSString *urlStr = urlS.absoluteString;
+        mjPhoto.url = [NSURL URLWithString:url];
+        mjPhoto.index = i;
+        mjPhoto.srcImageView = (UIImageView *)sender;
+//        NSLog(@" 111---  %@ ---111",mjPhoto.srcImageView );
+
+        [mAray addObject:mjPhoto];
+        i++;
+    }
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.photos =mAray;
+    [browser show];
+   
 }
 
 - (IBAction)showImg2:(id)sender {

@@ -7,8 +7,10 @@
 //
 
 #import "homeMainViewController.h"
+#import "ImageCellModal.h"
 
 @interface homeMainViewController ()
+@property(nonatomic,strong)ImageCellModal *imageCellModal;
 
 @end
 
@@ -16,6 +18,14 @@
 
 @synthesize button;
 @synthesize homeTableView;
+
+
+-(ImageCellModal *)imageCellModal{
+    if (_imageCellModal == nil) {
+        _imageCellModal = [[ImageCellModal alloc] init];
+    }
+    return _imageCellModal;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
@@ -175,7 +185,8 @@
             cell.portraitImgView.layer.cornerRadius = cell.portraitImgView.bounds.size.height / 2;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
+            self.imageCellModal.image_url = [NSArray arrayWithObjects:@"showImg",@"showImg2",@"showImg3",nil];
+            cell.imageCellModal = self.imageCellModal;
             
             return cell;
             

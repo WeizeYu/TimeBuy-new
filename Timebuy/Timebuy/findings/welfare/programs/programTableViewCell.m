@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 com.CraftDream. All rights reserved.
 //
 
-#import "welfareTableViewCell.h"
+#import "programTableViewCell.h"
 
-@implementation welfareTableViewCell
+@implementation programTableViewCell
 
 @synthesize teamNameButton;
 @synthesize programImgView;

@@ -107,6 +107,8 @@
                     cell = [[[NSBundle mainBundle] loadNibNamed:@"payDetailsTableViewCell" owner:self options:nil] lastObject];
                 }
                 
+                cell.endNumber = 960;
+                
                 return cell;
                 break;
             }

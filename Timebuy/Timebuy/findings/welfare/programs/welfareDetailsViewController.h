@@ -10,7 +10,7 @@
 
 #import "welfareProgressTableViewCell.h"
 #import "programInfoTableViewCell.h"
-#import "payDetailsTableViewCell.h"
+#import "programDetailsTableViewCell.h"
 #import "welfarePaymentViewController.h"
 
 @interface welfareDetailsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>

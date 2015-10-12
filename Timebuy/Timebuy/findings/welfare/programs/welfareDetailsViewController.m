@@ -147,7 +147,7 @@
         }
         case 3:
         {
-            payDetailsTableViewCell *cell = (payDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+            programDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
             
             if (cell == nil) {
                 
@@ -161,6 +161,7 @@
             return cell;
             break;
         }
+        
         default:
             break;
     }
