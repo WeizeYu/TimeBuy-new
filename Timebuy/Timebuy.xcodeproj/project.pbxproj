@@ -197,7 +197,6 @@
 		7045A43A1BC9F5EA00B15244 /* weilin.png in Resources */ = {isa = PBXBuildFile; fileRef = 7045A4391BC9F5EA00B15244 /* weilin.png */; settings = {ASSET_TAGS = (); }; };
 		7045A4401BCA8BD100B15244 /* CACustomTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A43D1BCA8BD100B15244 /* CACustomTextLayer.m */; settings = {ASSET_TAGS = (); }; };
 		7045A4411BCA8BD100B15244 /* NJDBezierCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045A43F1BCA8BD100B15244 /* NJDBezierCurve.m */; settings = {ASSET_TAGS = (); }; };
-		7045A4431BCAA81F00B15244 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7045A4421BCAA81F00B15244 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535ED21BB2B5CC00091EE6 /* locationViewController.m */; };
 		70535ED51BB2B5CC00091EE6 /* locationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70535ED31BB2B5CC00091EE6 /* locationViewController.xib */; };
 		70535F671BB2B7FE00091EE6 /* addImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70535EDE1BB2B7FE00091EE6 /* addImg.png */; };
@@ -433,6 +432,10 @@
 		73CA21C61BC92C64000A6C41 /* RdoneBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21C41BC92C64000A6C41 /* RdoneBigTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		73CA21CA1BC92C7A000A6C41 /* RcancelBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21C81BC92C7A000A6C41 /* RcancelBigTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		73CA21CB1BC92C7A000A6C41 /* RcancelBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21C91BC92C7A000A6C41 /* RcancelBigTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21D11BCBC982000A6C41 /* mySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21CF1BCBC982000A6C41 /* mySettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21D21BCBC982000A6C41 /* mySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21D01BCBC982000A6C41 /* mySettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		73CA21D61BCBD66B000A6C41 /* myWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA21D41BCBD66B000A6C41 /* myWalletViewController.m */; settings = {ASSET_TAGS = (); }; };
+		73CA21D71BCBD66B000A6C41 /* myWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CA21D51BCBD66B000A6C41 /* myWalletViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		73ED70551BBF8006004EB6CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70541BBF8006004EB6CD /* down.png */; };
 		73ED70571BBF801B004EB6CD /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED70561BBF801B004EB6CD /* phone.png */; };
 		73ED705C1BBF8288004EB6CD /* complainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED705A1BBF8288004EB6CD /* complainDetailViewController.m */; };
@@ -1029,6 +1032,13 @@
 		73CA21C71BC92C7A000A6C41 /* RcancelBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RcancelBigTableViewCell.h; sourceTree = "<group>"; };
 		73CA21C81BC92C7A000A6C41 /* RcancelBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RcancelBigTableViewCell.m; sourceTree = "<group>"; };
 		73CA21C91BC92C7A000A6C41 /* RcancelBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RcancelBigTableViewCell.xib; sourceTree = "<group>"; };
+		73CA21CE1BCBC982000A6C41 /* mySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySettingViewController.h; sourceTree = "<group>"; };
+		73CA21CF1BCBC982000A6C41 /* mySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySettingViewController.m; sourceTree = "<group>"; };
+		73CA21D01BCBC982000A6C41 /* mySettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mySettingViewController.xib; sourceTree = "<group>"; };
+		73CA21D31BCBD66B000A6C41 /* myWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myWalletViewController.h; sourceTree = "<group>"; };
+		73CA21D41BCBD66B000A6C41 /* myWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myWalletViewController.m; sourceTree = "<group>"; };
+		73CA21D51BCBD66B000A6C41 /* myWalletViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myWalletViewController.xib; sourceTree = "<group>"; };
+		73CA21D81BCBD866000A6C41 /* timeBuy_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timeBuy_PrefixHeader.pch; sourceTree = "<group>"; };
 		73ED70541BBF8006004EB6CD /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		73ED70561BBF801B004EB6CD /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
 		73ED70591BBF8288004EB6CD /* complainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = complainDetailViewController.h; sourceTree = "<group>"; };
@@ -1991,6 +2001,8 @@
 			children = (
 				3BEB5C391BCA89880085C946 /* Modal */,
 				3BEB5C331BCA85900085C946 /* View */,
+				73CA21CD1BCBC94A000A6C41 /* 我的设置 */,
+				73CA21CC1BCBC8E8000A6C41 /* 我的钱包 */,
 				734B864A1BC6A923000D1508 /* 我的响应 */,
 				73ED705E1BC0A15F004EB6CD /* 我的发布详情界面 */,
 				738583581BB2D3AF00E06534 /* ProfilesDetailTableViewCells */,
@@ -2224,6 +2236,26 @@
 			name = "已取消cell";
 			sourceTree = "<group>";
 		};
+		73CA21CC1BCBC8E8000A6C41 /* 我的钱包 */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21D31BCBD66B000A6C41 /* myWalletViewController.h */,
+				73CA21D41BCBD66B000A6C41 /* myWalletViewController.m */,
+				73CA21D51BCBD66B000A6C41 /* myWalletViewController.xib */,
+			);
+			name = "我的钱包";
+			sourceTree = "<group>";
+		};
+		73CA21CD1BCBC94A000A6C41 /* 我的设置 */ = {
+			isa = PBXGroup;
+			children = (
+				73CA21CE1BCBC982000A6C41 /* mySettingViewController.h */,
+				73CA21CF1BCBC982000A6C41 /* mySettingViewController.m */,
+				73CA21D01BCBC982000A6C41 /* mySettingViewController.xib */,
+			);
+			name = "我的设置";
+			sourceTree = "<group>";
+		};
 		73ED70581BBF821D004EB6CD /* 我申诉的 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2402,9 +2434,9 @@
 				70535FDA1BB2B7FE00091EE6 /* wodericheng@3x.png in Resources */,
 				7045A41E1BC9EA9B00B15244 /* teamDetailsViewController.xib in Resources */,
 				70535F7B1BB2B7FE00091EE6 /* back@3x.png in Resources */,
+				73CA21D21BCBC982000A6C41 /* mySettingViewController.xib in Resources */,
 				7045A3F61BC9487D00B15244 /* welfarePaymentViewController.xib in Resources */,
 				70860C3D1BB16D2000E54EEF /* homeDetailsViewController.xib in Resources */,
-				7045A4431BCAA81F00B15244 /* Info.plist in Resources */,
 				7045A3E21BC9487D00B15244 /* peiBanViewController.xib in Resources */,
 				7323501E1BB41A7E00C9E325 /* waitBigTableViewCell.xib in Resources */,
 				73CA21B11BC92A29000A6C41 /* RdoneTableViewCell.xib in Resources */,
@@ -2438,6 +2470,7 @@
 				70860C331BB166A200E54EEF /* newsRootViewController.xib in Resources */,
 				70535FE21BB2B7FE00091EE6 /* xianshikongxian@2x.png in Resources */,
 				700289D01BC2AFA500E62B5A /* 陪伴.png in Resources */,
+				73CA21D71BCBD66B000A6C41 /* myWalletViewController.xib in Resources */,
 				70535F711BB2B7FE00091EE6 /* yes@2x.png in Resources */,
 				70535FC81BB2B7FE00091EE6 /* gerenxiaoxi.png in Resources */,
 				70535FC51BB2B7FE00091EE6 /* fabu.png in Resources */,
@@ -2786,8 +2819,10 @@
 				3BEB5C371BCA85BF0085C946 /* ProfileDetailCell.m in Sources */,
 				732350321BB5570500C9E325 /* myReleaseViewController.m in Sources */,
 				7045A3EF1BC9487D00B15244 /* programInfoTableViewCell.m in Sources */,
+				73CA21D61BCBD66B000A6C41 /* myWalletViewController.m in Sources */,
 				70860C181BB041AF00E54EEF /* UIImageView+HighlightedWebCache.m in Sources */,
 				73CA21B51BC92A3A000A6C41 /* RcancelTableViewCell.m in Sources */,
+				73CA21D11BCBC982000A6C41 /* mySettingViewController.m in Sources */,
 				732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */,
 				700289911BC1091C00E62B5A /* confirmPriceTableViewCell.m in Sources */,
 				7045A42D1BC9EB2600B15244 /* teamInfoTableViewCell.m in Sources */,
@@ -2932,7 +2967,7 @@
 				GCC_PREFIX_HEADER = "Timebuy/Timebuy-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Timebuy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CraftDream.$(PRODUCT_NAME:rfc1034identifier)";
@@ -2957,7 +2992,7 @@
 				GCC_PREFIX_HEADER = "Timebuy/Timebuy-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Timebuy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CraftDream.$(PRODUCT_NAME:rfc1034identifier)";

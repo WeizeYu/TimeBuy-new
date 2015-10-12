@@ -55,6 +55,7 @@
 -(void)createData:(NSInteger) buttonTag{
     
     _pageTag=buttonTag;
+    [self showlight];
     [self.releasetableview reloadData];
     //[self.dataSourceDic setObject:(buttonTag-1) forKey:@"tag"];
 }
