@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *showImgButton1;
 @property (strong, nonatomic) IBOutlet UIButton *showImgButton2;
 @property (strong, nonatomic) IBOutlet UIButton *showImgButton3;
+@property (strong, nonatomic) IBOutlet UIImageView *showImgView1;
+@property (strong, nonatomic) IBOutlet UIImageView *showImgView2;
+@property (strong, nonatomic) IBOutlet UIImageView *showImgView3;
 @property (strong, nonatomic) IBOutlet UILabel *timeAndDistLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *levelImgView;
 

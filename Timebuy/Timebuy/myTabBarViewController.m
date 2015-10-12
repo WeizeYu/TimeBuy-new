@@ -24,6 +24,7 @@
     //NSLog(@"tabvc = %@",self);
     self.tabBar.translucent = NO;
     
+    //清楚本地错误
     //[self logout];
 }
 
@@ -168,25 +169,25 @@
     NSLog(@"press center");
     //self.selectedIndex=2;
     //button.selected=YES;
-//    
-//    locationViewController *locationVC = [[locationViewController alloc] init];
-//    [self presentViewController:locationVC animated:YES completion:nil];
     
-    releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
-    [self presentViewController:releaseRootVC animated:YES completion:nil];
+    //locationViewController *locationVC = [[locationViewController alloc] init];
+    //[self presentViewController:locationVC animated:YES completion:nil];
+    
+    //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
+    //[self presentViewController:releaseRootVC animated:YES completion:nil];
     
     //loginViewController *loginVC = [[loginViewController alloc] init];
     //[self presentViewController:loginVC animated:YES completion:nil];
     
-    /*
-    if ([[userConfiguration getStringValueForConfigurationKey:@"phone"] isEqualToString:@""]) {
+    
+    if ([[userConfiguration getStringValueForConfigurationKey:@"userId"] isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"你还没有登录，登录后才可以进行发布服务" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即登录", nil];
         [alert show];
     } else {
         locationViewController *locationVC = [[locationViewController alloc] init];
         [self presentViewController:locationVC animated:YES completion:nil];
     }
-    */
+    
     
 }
 

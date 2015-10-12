@@ -950,6 +950,7 @@
 		70E587AF1BB2DD8B00915DD6 /* location2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location2.png; sourceTree = "<group>"; };
 		70E587B01BB2DD8B00915DD6 /* location2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location2@2x.png"; sourceTree = "<group>"; };
 		70E587B11BB2DD8B00915DD6 /* location2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location2@3x.png"; sourceTree = "<group>"; };
+		70E6B87B1BCBD9C00081CED9 /* Timebuy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timebuy-Prefix.pch"; sourceTree = "<group>"; };
 		70E6F1621BB6247200D175B1 /* priceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = priceViewController.h; sourceTree = "<group>"; };
 		70E6F1631BB6247200D175B1 /* priceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = priceViewController.m; sourceTree = "<group>"; };
 		70E6F1641BB6247200D175B1 /* priceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = priceViewController.xib; sourceTree = "<group>"; };
@@ -1818,6 +1819,7 @@
 				70535EDB1BB2B7FE00091EE6 /* Image */,
 				7045A4421BCAA81F00B15244 /* Info.plist */,
 				70860B6C1BB01CF100E54EEF /* main.m */,
+				70E6B87B1BCBD9C00081CED9 /* Timebuy-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2926,6 +2928,8 @@
 					"$(PROJECT_DIR)/Timebuy",
 					"$(PROJECT_DIR)/Timebuy/openSource/SMS_SDK",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timebuy/Timebuy-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Timebuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -2949,6 +2953,8 @@
 					"$(PROJECT_DIR)/Timebuy",
 					"$(PROJECT_DIR)/Timebuy/openSource/SMS_SDK",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timebuy/Timebuy-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Timebuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

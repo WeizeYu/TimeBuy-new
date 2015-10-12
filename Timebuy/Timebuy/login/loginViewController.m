@@ -234,7 +234,8 @@
                             };
     
     //3.请求
-    [manager GET:@"http://192.168.8.102:8080/timebuy/reg/phone" parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *url = [NSString stringWithFormat:@"%@%@",timebuyUrl,@"reg/phone"];
+    [manager GET:url parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"GET --> %@", responseObject); //自动返回主线程
         [HUD hide:YES];
         
@@ -254,7 +255,7 @@
             [HUDinSuccess hide:YES afterDelay:1];
             
             // 将得到的数据存在本地
-            //getData = [responseObject objectForKey:@"data"];
+            NSData *getData = [responseObject objectForKey:@"data"];
             
             
             [[NSNotificationCenter defaultCenter] postNotificationName:@"passState"
@@ -262,6 +263,7 @@
                                                               userInfo:@{@"state":@"0"}];
             //用户的信息存入本地
             [userConfiguration setStringValueForConfigurationKey:@"phone" withValue:telephoneTextField.text];
+            [userConfiguration setStringValueForConfigurationKey:@"userId" withValue:[getData valueForKey:@"userId"]];
             
             //设置下载后的头像
             //[userConfiguration setDataValueForConfigurationKey:@"portrait" withValue:UIImagePNGRepresentation([UIImage imageNamed:@"portrait.png"])];

@@ -13,8 +13,15 @@
 
 #import "MJRefresh.h"
 #import "JScrollView+PageControl+AutoScroll.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "userConfiguration.h"
 
-@interface homeMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,JScrollViewViewDelegate>
+@interface homeMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,JScrollViewViewDelegate,MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+    MBProgressHUD *HUDinSuccess;
+}
 
 @property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) IBOutlet UITableView *homeTableView;
