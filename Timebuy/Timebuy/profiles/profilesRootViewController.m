@@ -10,7 +10,7 @@
 #import "myReleaseViewController.h"
 #import "myResponseViewController.h"
 #import "ProfileDetailModal.h"
-
+#import "mySettingViewController.h"
 @interface profilesRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *rootTableview;
 @property (nonatomic,strong) NSArray *mytitle;
@@ -25,27 +25,19 @@
         _profileModal = [[ProfileDetailModal alloc] init];
         _profileModal.phoneStr = @"12321312";
         _profileModal.nameStr = @"张三";
-        
     }
     return _profileModal;
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-    
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = NO;
         }
     }
-    
     self.tabBarController.tabBar.hidden = NO;
-    
 }
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mytitle=[[NSArray alloc]initWithObjects:@"我的钱包",@"我的发布",@"我的响应",@"我的公益",@"我的设置",nil];
@@ -131,15 +123,28 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row==0)
+    if(indexPath.section==1)
     {
-        myReleaseViewController *vc=[[myReleaseViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:true];
-    }
-    else if(indexPath.row==1)
-    {
-        myResponseViewController *vc=[[myResponseViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:true];
+        if(indexPath.row==1)
+        {
+            myReleaseViewController *vc=[[myReleaseViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else if(indexPath.row==1)
+        {
+            myReleaseViewController *vc=[[myReleaseViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else if(indexPath.row==2)
+        {
+            myResponseViewController *vc=[[myResponseViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        else if(indexPath.row==4)
+        {
+            mySettingViewController *vc=[[mySettingViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

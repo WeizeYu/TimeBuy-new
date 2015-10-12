@@ -1,0 +1,15 @@
+//
+//  timeBuy_PrefixHeader.pch
+//  Timebuy
+//
+//  Created by yuweize on 15/10/12.
+//  Copyright © 2015年 com.CraftDream. All rights reserved.
+//
+
+#ifndef timeBuy_PrefixHeader_pch
+#define timeBuy_PrefixHeader_pch
+#define urllll @"123"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* timeBuy_PrefixHeader_pch */
