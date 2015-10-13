@@ -173,7 +173,7 @@
         }
         case 1:
         {
-            homeImageDetailsTableViewCell *cell = (homeImageDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+            homeImageDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
             
             if (cell == nil) {
                 
@@ -187,8 +187,8 @@
             cell.portraitImgView.layer.cornerRadius = cell.portraitImgView.bounds.size.height / 2;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            self.imageCellModal.image_url = [NSArray arrayWithObjects:@"showImg",@"showImg2",@"showImg3",nil];
-            cell.imageCellModal = self.imageCellModal;
+            //self.imageCellModal.image_url = [NSArray arrayWithObjects:@"showImg",@"showImg2",@"showImg3",nil];
+            //cell.imageCellModal = self.imageCellModal;
             
             return cell;
             
@@ -237,9 +237,9 @@
             cell.priceLabel.text = @"￥10";
             cell.detailsLabel.text = @"求帮拿快递，地址在顺丰快递门口";
             
-            [cell.showImgButton1 setImage:[UIImage imageNamed:@"showImg4.png"] forState:UIControlStateNormal];
-            cell.showImgButton2.hidden = YES;
-            cell.showImgButton3.hidden = YES;
+            //[cell.showImgButton1 setImage:[UIImage imageNamed:@"showImg4.png"] forState:UIControlStateNormal];
+            //cell.showImgButton2.hidden = YES;
+            //cell.showImgButton3.hidden = YES;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 

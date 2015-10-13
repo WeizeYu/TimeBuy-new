@@ -154,9 +154,6 @@
                 <outlet property="nicknameLabel" destination="y2q-ej-p0u" id="28z-Yf-CZf"/>
                 <outlet property="portraitImgView" destination="hKx-7b-byd" id="gJt-a6-kik"/>
                 <outlet property="priceLabel" destination="2Hr-Cd-qtM" id="I3f-PD-PsQ"/>
-                <outlet property="showImgView1" destination="F1I-ob-c1F" id="teH-It-A1q"/>
-                <outlet property="showImgView2" destination="Aak-3X-TYh" id="Zzu-IQ-LHA"/>
-                <outlet property="showImgView3" destination="NsO-ol-1Qm" id="bHR-aM-MN0"/>
                 <outlet property="timeAndDistLabel" destination="u3b-Ra-Yvp" id="YdS-8F-9ZM"/>
             </connections>
             <point key="canvasLocation" x="505" y="286"/>
