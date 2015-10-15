@@ -13,10 +13,9 @@
 @property(nonatomic) NSString *appealTime;      //申诉时间
 @property(nonatomic) NSString *appealContent;   //申诉内容
 @property(nonatomic) NSString *appealNewsId;    //被申诉消息主键
--(id)initWithcomplainId:(NSString *)complainId;
--(id)initWithCommentUserId:(NSString *)commentUserId
-               commentDoId:(NSString *)commentDoId
-               commentTime:(NSString *)commentTime
-               commentKind:(NSString *)commentKind;
+-(id)initWithappealId:(NSString *)appealId;
+-(id)initWithappealTime:(NSString *)appealTime
+          appealContent:(NSString *)appealContent
+           appealNewsId:(NSString *)appealNewsId;
 -(id)initWithSelfinfo:(NSDictionary *)result;
 @end
