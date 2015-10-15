@@ -28,7 +28,6 @@
 		3BAE9A271BCE07B1000FBB11 /* ConmonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE9A251BCE07B1000FBB11 /* ConmonController.xib */; settings = {ASSET_TAGS = (); }; };
 		3BAE9A2B1BCE0AAB000FBB11 /* SexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9A291BCE0AAB000FBB11 /* SexController.m */; settings = {ASSET_TAGS = (); }; };
 		3BAE9A2C1BCE0AAB000FBB11 /* SexController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE9A2A1BCE0AAB000FBB11 /* SexController.xib */; settings = {ASSET_TAGS = (); }; };
-		3BAE9A2F1BCE3165000FBB11 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9A2E1BCE3165000FBB11 /* Const.m */; settings = {ASSET_TAGS = (); }; };
 		3BAE9A321BCE31BB000FBB11 /* MTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9A311BCE31BB000FBB11 /* MTConst.m */; settings = {ASSET_TAGS = (); }; };
 		3BAE9A361BCE3401000FBB11 /* SignatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9A341BCE3401000FBB11 /* SignatureController.m */; settings = {ASSET_TAGS = (); }; };
 		3BAE9A371BCE3401000FBB11 /* SignatureController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE9A351BCE3401000FBB11 /* SignatureController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -538,7 +537,6 @@
 		3BAE9A281BCE0AAB000FBB11 /* SexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexController.h; sourceTree = "<group>"; };
 		3BAE9A291BCE0AAB000FBB11 /* SexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexController.m; sourceTree = "<group>"; };
 		3BAE9A2A1BCE0AAB000FBB11 /* SexController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexController.xib; sourceTree = "<group>"; };
-		3BAE9A2E1BCE3165000FBB11 /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		3BAE9A301BCE31BB000FBB11 /* MTConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTConst.h; sourceTree = "<group>"; };
 		3BAE9A311BCE31BB000FBB11 /* MTConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTConst.m; sourceTree = "<group>"; };
 		3BAE9A331BCE3401000FBB11 /* SignatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureController.h; sourceTree = "<group>"; };
@@ -2240,7 +2238,6 @@
 				734B864A1BC6A923000D1508 /* 我的响应 */,
 				73ED705E1BC0A15F004EB6CD /* 我的发布详情界面 */,
 				738583581BB2D3AF00E06534 /* ProfilesDetailTableViewCells */,
-				3BAE9A2E1BCE3165000FBB11 /* Const.m */,
 			);
 			path = profiles;
 			sourceTree = "<group>";
@@ -3070,7 +3067,6 @@
 				70E6F1821BB6247200D175B1 /* selectTimeViewController.m in Sources */,
 				73CA21AB1BC92A14000A6C41 /* RcomplainTableViewCell.m in Sources */,
 				1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */,
-				3BAE9A2F1BCE3165000FBB11 /* Const.m in Sources */,
 				700289871BC108EA00E62B5A /* confirmDetailsTableViewCell.m in Sources */,
 				700289811BC0FF8900E62B5A /* urgentTableViewCell.m in Sources */,
 				70BB686E1BC3F0DF0059F1BE /* AFURLSessionManager.m in Sources */,
