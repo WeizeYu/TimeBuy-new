@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-
-@interface TimebuyTests : XCTestCase
+#import "TBNetLoginBusi.h"
+#import "UserModel.h"
+@interface TimebuyTests : XCTestCase<TBNetLoginBusiDelegate>
+@property (nonatomic) TBNetLoginBusi *service;
 
 @end
 
@@ -18,8 +20,21 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    self.service = [[TBNetLoginBusi alloc]initWithDelegate:self  username:@"13758240890"password:@"1"];
+    [self.service start];
+
+//[[NSRunLoop currentRunLoop] runUntilDate:[NSDate distantFuture]];
+// Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
+-(void)loginSuccess:(UserModel *)user{
+    //NSLog(@"%@",[user description]);
+    NSLog(@"suc");
+}
+-(void)loginFail:(NSError *)error{
+    NSLog(@"fail%@",error);
+}
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
