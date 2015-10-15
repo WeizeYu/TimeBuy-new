@@ -443,6 +443,9 @@
 		730966DA1BCFCC80001AD0DB /* taskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730966D91BCFCC80001AD0DB /* taskModel.m */; settings = {ASSET_TAGS = (); }; };
 		730966E01BCFD57D001AD0DB /* ComplaintsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730966DF1BCFD57D001AD0DB /* ComplaintsModel.m */; settings = {ASSET_TAGS = (); }; };
 		730966E31BCFD59A001AD0DB /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730966E21BCFD59A001AD0DB /* CommentModel.m */; settings = {ASSET_TAGS = (); }; };
+		730966E61BCFDC6B001AD0DB /* WelfareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730966E51BCFDC6B001AD0DB /* WelfareModel.m */; settings = {ASSET_TAGS = (); }; };
+		730966E91BCFDE74001AD0DB /* ShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730966E81BCFDE74001AD0DB /* ShareModel.m */; settings = {ASSET_TAGS = (); }; };
+		730966EC1BCFE1F7001AD0DB /* TeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730966EB1BCFE1F7001AD0DB /* TeamModel.m */; settings = {ASSET_TAGS = (); }; };
 		732350121BB416B300C9E325 /* ingBigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350101BB416B300C9E325 /* ingBigTableViewCell.m */; };
 		732350131BB416B300C9E325 /* ingBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732350111BB416B300C9E325 /* ingBigTableViewCell.xib */; };
 		732350181BB41A4300C9E325 /* waitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 732350161BB41A4300C9E325 /* waitTableViewCell.m */; };
@@ -1114,6 +1117,12 @@
 		730966DF1BCFD57D001AD0DB /* ComplaintsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplaintsModel.m; sourceTree = "<group>"; };
 		730966E11BCFD59A001AD0DB /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		730966E21BCFD59A001AD0DB /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		730966E41BCFDC6B001AD0DB /* WelfareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelfareModel.h; sourceTree = "<group>"; };
+		730966E51BCFDC6B001AD0DB /* WelfareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelfareModel.m; sourceTree = "<group>"; };
+		730966E71BCFDE74001AD0DB /* ShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareModel.h; sourceTree = "<group>"; };
+		730966E81BCFDE74001AD0DB /* ShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareModel.m; sourceTree = "<group>"; };
+		730966EA1BCFE1F7001AD0DB /* TeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamModel.h; sourceTree = "<group>"; };
+		730966EB1BCFE1F7001AD0DB /* TeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamModel.m; sourceTree = "<group>"; };
 		7323500F1BB416B300C9E325 /* ingBigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingBigTableViewCell.h; sourceTree = "<group>"; };
 		732350101BB416B300C9E325 /* ingBigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ingBigTableViewCell.m; sourceTree = "<group>"; };
 		732350111BB416B300C9E325 /* ingBigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ingBigTableViewCell.xib; sourceTree = "<group>"; };
@@ -2455,6 +2464,12 @@
 				730966DF1BCFD57D001AD0DB /* ComplaintsModel.m */,
 				730966E11BCFD59A001AD0DB /* CommentModel.h */,
 				730966E21BCFD59A001AD0DB /* CommentModel.m */,
+				730966E41BCFDC6B001AD0DB /* WelfareModel.h */,
+				730966E51BCFDC6B001AD0DB /* WelfareModel.m */,
+				730966E71BCFDE74001AD0DB /* ShareModel.h */,
+				730966E81BCFDE74001AD0DB /* ShareModel.m */,
+				730966EA1BCFE1F7001AD0DB /* TeamModel.h */,
+				730966EB1BCFE1F7001AD0DB /* TeamModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3127,6 +3142,7 @@
 				70535ED41BB2B5CC00091EE6 /* locationViewController.m in Sources */,
 				3BEB5C291BCA3AC40085C946 /* MJPhotoBrowser.m in Sources */,
 				70E6F1AE1BB6C0B500D175B1 /* labelsViewController.m in Sources */,
+				730966EC1BCFE1F7001AD0DB /* TeamModel.m in Sources */,
 				730966E01BCFD57D001AD0DB /* ComplaintsModel.m in Sources */,
 				70860C101BB041AF00E54EEF /* SDWebImageDownloader.m in Sources */,
 				700289761BC0FF8900E62B5A /* ShowBigViewController.m in Sources */,
@@ -3164,6 +3180,7 @@
 				3BAE9A211BCDFD69000FBB11 /* OtherCell.m in Sources */,
 				700289301BBFC1A200E62B5A /* JScrollView+PageControl+AutoScroll.m in Sources */,
 				3BEB5C2E1BCA3AC40085C946 /* SDWebImageManager+MJ.m in Sources */,
+				730966E61BCFDC6B001AD0DB /* WelfareModel.m in Sources */,
 				70860C411BB18B9300E54EEF /* profilesRootViewController.m in Sources */,
 				700289291BBFC1A200E62B5A /* MJRefreshNormalHeader.m in Sources */,
 				7002899B1BC1094A00E62B5A /* alipayTableViewCell.m in Sources */,
@@ -3194,6 +3211,7 @@
 				7002893B1BBFEA8900E62B5A /* homeImageDetailsTableViewCell.m in Sources */,
 				70E6F1991BB63F4200D175B1 /* releaseRootViewController.m in Sources */,
 				73509C791BCD161C005566D2 /* TBHttpRequest.m in Sources */,
+				730966E91BCFDE74001AD0DB /* ShareModel.m in Sources */,
 				7045A3E11BC9487D00B15244 /* peiBanViewController.m in Sources */,
 				70860C1B1BB041AF00E54EEF /* userConfiguration.m in Sources */,
 				732350121BB416B300C9E325 /* ingBigTableViewCell.m in Sources */,
