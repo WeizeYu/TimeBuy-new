@@ -21,8 +21,8 @@
 -(void)setProfileModal:(ProfileDetailModal *)profileModal{
     _profileModal = profileModal;
     
-    self.phoneLabel.text = [NSString stringWithFormat:@"账号 : %@",profileModal.phoneStr];
-    self.profleNameLabel.text = profileModal.nameStr;
+    self.phoneLabel.text = [NSString stringWithFormat:@"账号 : %@",profileModal.phone];
+    self.profleNameLabel.text = profileModal.nickName;
     self.vipView.backgroundColor = [UIColor blueColor];
     self.profileView.backgroundColor = [UIColor redColor];
     self.profileView.layer.cornerRadius = self.profileView.bounds.size.height / 2;
