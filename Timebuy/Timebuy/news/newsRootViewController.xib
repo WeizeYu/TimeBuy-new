@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="newsRootViewController">
             <connections>
+                <outlet property="btn1" destination="WCM-VW-wg7" id="r8k-ys-iox"/>
+                <outlet property="btn2" destination="tFw-1i-ccU" id="knB-gN-a2v"/>
+                <outlet property="btn3" destination="xpJ-PO-YPb" id="qM7-j8-HXI"/>
+                <outlet property="scrollView" destination="ZaX-yD-ZTj" id="sLU-zk-xXt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-VW-wg7">
+                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="GNK-Iy-XKr"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-PO-YPb">
+                    <rect key="frame" x="213" y="0.0" width="106.5" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="yAL-pg-Tqf"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-1i-ccU">
+                    <rect key="frame" x="106" y="0.0" width="107" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1gt-6i-633"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaX-yD-ZTj">
+                    <rect key="frame" x="0.0" y="30" width="320" height="538"/>
+                    <animations/>
+                </scrollView>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xpJ-PO-YPb" secondAttribute="trailing" id="0Rg-oI-idR"/>
+                <constraint firstItem="ZaX-yD-ZTj" firstAttribute="top" secondItem="tFw-1i-ccU" secondAttribute="bottom" id="71X-is-wlA"/>
+                <constraint firstItem="tFw-1i-ccU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8fX-Kz-jtQ"/>
+                <constraint firstAttribute="bottom" secondItem="ZaX-yD-ZTj" secondAttribute="bottom" id="DH5-DK-Wy2"/>
+                <constraint firstItem="tFw-1i-ccU" firstAttribute="leading" secondItem="WCM-VW-wg7" secondAttribute="trailing" id="Djv-fs-Igq"/>
+                <constraint firstAttribute="trailing" secondItem="ZaX-yD-ZTj" secondAttribute="trailing" id="I5v-bS-8mr"/>
+                <constraint firstItem="WCM-VW-wg7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jx9-aG-ODF"/>
+                <constraint firstItem="xpJ-PO-YPb" firstAttribute="leading" secondItem="tFw-1i-ccU" secondAttribute="trailing" id="WBg-3a-Urq"/>
+                <constraint firstItem="tFw-1i-ccU" firstAttribute="width" secondItem="WCM-VW-wg7" secondAttribute="width" id="XGb-Q6-ko4"/>
+                <constraint firstItem="WCM-VW-wg7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aVU-L0-K3n"/>
+                <constraint firstItem="xpJ-PO-YPb" firstAttribute="width" secondItem="WCM-VW-wg7" secondAttribute="width" id="jNx-BD-Jq6"/>
+                <constraint firstItem="xpJ-PO-YPb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kmE-SX-ECf"/>
+                <constraint firstItem="ZaX-yD-ZTj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mqf-rm-1eb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="169" y="206"/>
         </view>
     </objects>
 </document>
