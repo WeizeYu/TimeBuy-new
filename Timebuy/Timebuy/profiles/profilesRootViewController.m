@@ -11,11 +11,13 @@
 #import "myResponseViewController.h"
 #import "ProfileDetailModal.h"
 #import "mySettingViewController.h"
-@interface profilesRootViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "TBNetLoginBusi.h"
+#import "UserModel.h"
+@interface profilesRootViewController ()<UITableViewDataSource,UITableViewDelegate,TBNetLoginBusiDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *rootTableview;
 @property (nonatomic,strong) NSArray *mytitle;
 @property(nonatomic,strong)ProfileDetailModal *profileModal;
-
+@property(nonatomic) TBNetLoginBusi *tbNetLoginBusi;
 @end
 @implementation profilesRootViewController
 
@@ -48,9 +50,31 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:24]}];
     self.title=@"我的";
     // Do any additional setup after loading the view from its nib.
-    
     self.hidesBottomBarWhenPushed = YES;
-    
+    //__strong typeof(self) strongSelf = self;
+    self.tbNetLoginBusi =[[TBNetLoginBusi alloc]initWithDelegate:self username:@"13758240890" password:@"1"];
+    [self.tbNetLoginBusi start];
+}
+#pragma mark - JYCNetLoginBusiDelegate
+-(void)loginSuccess:(UserModel *)user{
+    NSLog(@"usermodel");
+    //[SVProgressHUD dismissWithSuccess:@"登录成功"];
+    //UserModel *usermodel=[[UserModel alloc] initWithLogin:user.user_id token:user.token];
+    //[[UserDBLogic sharedInstance] deleteCurrentUser];
+    //[[UserDBLogic sharedInstance] insertOneUser:usermodel];
+//    if ([self.loginDelegate respondsToSelector:@selector(loginSuccess)]) {
+//        [self.loginDelegate loginSuccess];
+//    }
+}
+
+-(void)loginFail:(NSError *)error{
+    if ([ErrorHandleUtil handleError:error]) {
+        if (error.code == -1) {
+            [SVProgressHUD dismissWithError:@"用户名或密码错误，请重试" afterDelay:AlertTime];
+        }else{
+            [SVProgressHUD dismissWithError:@"服务器繁忙，请重试" afterDelay:AlertTime];
+        }
+    }
 }
 #pragma ---------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
