@@ -19,7 +19,6 @@
 @property(nonatomic,copy)NSString *phone;
 @property(nonatomic,copy)NSString *signature;
 
-
 @property(nonatomic,copy)NSString *address;
 @property(nonatomic,copy)NSString *userId;
 @property(nonatomic,strong)NSDate *birthDay;

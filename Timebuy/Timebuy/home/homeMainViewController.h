@@ -17,6 +17,8 @@
 #import "MBProgressHUD.h"
 #import "userConfiguration.h"
 
+#import "taskModel.h"
+
 @interface homeMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,JScrollViewViewDelegate,MBProgressHUDDelegate>
 {
     MBProgressHUD *HUD;

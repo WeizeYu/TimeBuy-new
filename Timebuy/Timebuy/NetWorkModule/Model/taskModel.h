@@ -26,7 +26,7 @@
 @property(nonatomic) NSString *taskShare;      //任务分享数
 @property(nonatomic) NSString *taskTag;        //任务标记（0等待中，1进行中，2已完成，3申诉中，4已取消，5延时中）
 @property(nonatomic) NSString *taskDate;       //任务接受时间
--(id)initWithUserId:(NSString *)taskNewsId;
+-(id)initWithNewsId:(NSString *)taskNewsId;
 -(id)initWithtaskNews:(NSString *)taskNews
             taskPhone:(NSString *)taskPhone
               taskPic:(NSString *)taskPic
