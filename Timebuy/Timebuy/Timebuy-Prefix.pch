@@ -1,0 +1,26 @@
+//
+//  Timebuy-Prefix.pch
+//  Timebuy
+//
+//  Created by CraftDream on 15/10/12.
+//  Copyright © 2015年 com.CraftDream. All rights reserved.
+//
+
+#ifndef Timebuy_Prefix_pch
+#define Timebuy_Prefix_pch
+
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "SVProgressHUD.h"
+#import "ErrorHandleUtil.h"
+
+#define TimebuySerSend @"GET"
+#define AlertTime 1.0
+
+//#define timebuyUrl @"http://120.26.214.229:8080/timebuy/"
+#define timebuyUrl @"http://120.26.214.229:8080/timebuy/"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Timebuy_Prefix_pch */

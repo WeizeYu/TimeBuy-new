@@ -15,9 +15,9 @@
 @synthesize portraitImgView;
 @synthesize nicknameLabel;
 @synthesize priceLabel;
-@synthesize showImgButton1;
-@synthesize showImgButton2;
-@synthesize showImgButton3;
+//@synthesize showImgButton1;
+//@synthesize showImgButton2;
+//@synthesize showImgButton3;
 @synthesize timeAndDistLabel;
 @synthesize detailsLabel;
 @synthesize levelImgView;
@@ -50,14 +50,14 @@
 
 -(void)setImageCellModal:(ImageCellModal *)imageCellModal{
     _imageCellModal = imageCellModal;
-    [self.showImgButton1 setImage:[UIImage imageNamed:self.imageCellModal.image_url[0]] forState:UIControlStateNormal];
-    [self.showImgButton2 setImage:[UIImage imageNamed:self.imageCellModal.image_url[1]] forState:UIControlStateNormal];
-    [self.showImgButton3 setImage:[UIImage imageNamed:self.imageCellModal.image_url[2]] forState:UIControlStateNormal];
+    //[self.showImgButton1 setImage:[UIImage imageNamed:self.imageCellModal.image_url[0]] forState:UIControlStateNormal];
+    //[self.showImgButton2 setImage:[UIImage imageNamed:self.imageCellModal.image_url[1]] forState:UIControlStateNormal];
+    //[self.showImgButton3 setImage:[UIImage imageNamed:self.imageCellModal.image_url[2]] forState:UIControlStateNormal];
 
 }
 
 
-
+/*
 - (IBAction)showImg1:(UIImageView *)sender {
     int i = 0;
     NSMutableArray *mAray = [NSMutableArray array];
@@ -85,5 +85,6 @@
 - (IBAction)showImg3:(id)sender {
     
 }
-
+*/
+ 
 @end

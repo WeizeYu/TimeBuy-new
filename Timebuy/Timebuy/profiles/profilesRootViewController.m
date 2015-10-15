@@ -11,9 +11,14 @@
 #import "myResponseViewController.h"
 #import "ProfileDetailModal.h"
 #import "mySettingViewController.h"
+#import "HomePageController.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+
 #import "TBNetLoginBusi.h"
 #import "UserModel.h"
 @interface profilesRootViewController ()<UITableViewDataSource,UITableViewDelegate,TBNetLoginBusiDelegate>
+
 @property (strong, nonatomic) IBOutlet UITableView *rootTableview;
 @property (nonatomic,strong) NSArray *mytitle;
 @property(nonatomic,strong)ProfileDetailModal *profileModal;
@@ -22,14 +27,20 @@
 @implementation profilesRootViewController
 
 
--(ProfileDetailModal *)profileModal{
-    if (_profileModal == nil) {
-        _profileModal = [[ProfileDetailModal alloc] init];
-        _profileModal.phoneStr = @"12321312";
-        _profileModal.nameStr = @"张三";
-    }
-    return _profileModal;
-}
+//-(ProfileDetailModal *)profileModal{
+//    if (_profileModal == nil) {
+//        _profileModal = [[ProfileDetailModal alloc] init];
+//        NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+//        if (array) {
+//            _profileModal.phone = array[5];
+//            _profileModal.nickName = array[0];
+//        }
+//        else{ _profileModal.phone = @"未填写";
+//            _profileModal.nickName = @"未填写";
+//       
+//        }}
+//    return _profileModal;
+//}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
@@ -39,6 +50,7 @@
         }
     }
     self.tabBarController.tabBar.hidden = NO;
+    [self.rootTableview reloadData];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,12 +61,47 @@
     //@{}代表Dictionary
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:24]}];
     self.title=@"我的";
+    self.hidesBottomBarWhenPushed = YES;
+    [self getInfo];
     // Do any additional setup after loading the view from its nib.
+    
+}
+
+
+-(void)getInfo{
+//    /user/info
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//     [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary *params  = @{@"phone":@"18767122223"};
+    NSString *url = [NSString stringWithFormat:@"%@%@",timebuyUrl,@"user/info"];
+    [manager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    ProfileDetailModal *modal = [ProfileDetailModal objectWithKeyValues:responseObject[@"data"]];
+        
+//        NSLog(@" 111---  %@ ---111",responseObject );
+        self.profileModal = modal;
+//        NSLog(@" 111---  %@ ---111",self.profileModal );
+
+        NSString *timeStr = [responseObject[@"data"] objectForKey:@"birthDay"] ;
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[timeStr doubleValue] / 1000];
+        modal.birthDay = date;
+        NSTimeInterval dateDiff = [date timeIntervalSinceNow];
+        
+        int age=trunc(dateDiff/(60*60*24))/365;
+        modal.age = age;
+       [self saveData:modal];
+   
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@" 111---  %@ ---111",error );
+
+    }];
+    
     self.hidesBottomBarWhenPushed = YES;
     //__strong typeof(self) strongSelf = self;
     self.tbNetLoginBusi =[[TBNetLoginBusi alloc]initWithDelegate:self username:@"13758240890" password:@"1"];
     [self.tbNetLoginBusi start];
 }
+
 #pragma mark - JYCNetLoginBusiDelegate
 -(void)loginSuccess:(UserModel *)user{
     NSLog(@"usermodel");
@@ -76,6 +123,58 @@
         }
     }
 }
+
+-(void)saveData:(ProfileDetailModal *)modal{
+    
+    
+    NSString *ageStr = [NSString stringWithFormat:@"%d",modal.age];
+    
+    NSString *phone = modal.phone;
+    NSString *nickName = modal.nickName;
+    NSString *profession = modal.profession;
+    NSString *address = modal.address;
+    NSString *sex = modal.sex;
+    NSString *userId = modal.userId;
+   
+   
+//    NSArray *path1=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+//    NSLog(@" 111---  %@ ---111",path1 );
+    
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+    if (array) {
+        NSMutableArray *array2 = [NSMutableArray arrayWithArray:array];
+        [array2 replaceObjectAtIndex:0 withObject:nickName];
+        [array2 replaceObjectAtIndex:1 withObject:sex];
+        [array2 replaceObjectAtIndex:2 withObject:ageStr];
+        [array2 replaceObjectAtIndex:3 withObject:profession];
+        [array2 replaceObjectAtIndex:5 withObject:phone];
+        [array2 replaceObjectAtIndex:7 withObject:userId];
+        [array2 replaceObjectAtIndex:8 withObject:address];
+        [array2 replaceObjectAtIndex:9 withObject:modal.birthDay];
+
+        [[NSUserDefaults standardUserDefaults] setObject:array2 forKey:@"rightArray"];
+    }else{
+        NSMutableArray *array2 = [NSMutableArray arrayWithObjects:@"未填写",@"未填写",@"未填写",@"未填写",@"未填写",@"未填写",@"未填写",@"userId",@"address",@"birthDay", nil];
+        [array2 replaceObjectAtIndex:0 withObject:nickName];
+        [array2 replaceObjectAtIndex:1 withObject:sex];
+        [array2 replaceObjectAtIndex:2 withObject:ageStr];
+        [array2 replaceObjectAtIndex:3 withObject:profession];
+        [array2 replaceObjectAtIndex:5 withObject:phone];
+        [array2 replaceObjectAtIndex:7 withObject:userId];
+        [array2 replaceObjectAtIndex:8 withObject:address];
+        [array2 replaceObjectAtIndex:9 withObject:modal.birthDay];
+        
+        //            [array2 addObject:userId];
+        //            [array2 addObject:address];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:array2 forKey:@"rightArray"];
+        
+    }
+
+}
+
+
+
 #pragma ---------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -97,6 +196,8 @@
         ProfileDetailCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ProfileDetailCell" owner:nil options:nil] lastObject];
 //        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         cell.profileModal = self.profileModal;
+//        NSLog(@" 111---  %@ ---111",cell.profileModal );
+
          return cell;
     }
         
@@ -169,6 +270,10 @@
             mySettingViewController *vc=[[mySettingViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
+    }
+    else{
+        HomePageController *pageController = [[HomePageController alloc] init];
+        [self.navigationController pushViewController:pageController animated:YES];
     }
 }
 

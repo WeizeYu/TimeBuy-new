@@ -70,6 +70,8 @@
     // 马上进入刷新状态
     //[homeTableView.header beginRefreshing];
     
+    [self getAllNews];
+    
 }
 
 - (void)enter:(id)sender {
@@ -171,7 +173,7 @@
         }
         case 1:
         {
-            homeImageDetailsTableViewCell *cell = (homeImageDetailsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+            homeImageDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
             
             if (cell == nil) {
                 
@@ -185,8 +187,8 @@
             cell.portraitImgView.layer.cornerRadius = cell.portraitImgView.bounds.size.height / 2;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            self.imageCellModal.image_url = [NSArray arrayWithObjects:@"showImg",@"showImg2",@"showImg3",nil];
-            cell.imageCellModal = self.imageCellModal;
+            //self.imageCellModal.image_url = [NSArray arrayWithObjects:@"showImg",@"showImg2",@"showImg3",nil];
+            //cell.imageCellModal = self.imageCellModal;
             
             return cell;
             
@@ -235,9 +237,9 @@
             cell.priceLabel.text = @"￥10";
             cell.detailsLabel.text = @"求帮拿快递，地址在顺丰快递门口";
             
-            [cell.showImgButton1 setImage:[UIImage imageNamed:@"showImg4.png"] forState:UIControlStateNormal];
-            cell.showImgButton2.hidden = YES;
-            cell.showImgButton3.hidden = YES;
+            //[cell.showImgButton1 setImage:[UIImage imageNamed:@"showImg4.png"] forState:UIControlStateNormal];
+            //cell.showImgButton2.hidden = YES;
+            //cell.showImgButton3.hidden = YES;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
@@ -268,6 +270,112 @@
         default:
             break;
     }
+}
+
+#pragma mark - get all news
+- (void)getAllNews
+{
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.delegate = self;
+    
+    NSDate *curDate = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    NSString *curDateTime = [formatter stringFromDate:curDate];
+    
+    //上传至服务器
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    //manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"d6089681f79c7627bbac829307e041a7" forHTTPHeaderField:@"x-timebuy-sid"];
+    //[manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    //[manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    //manager.requestSerializer.stringEncoding =CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingUTF8);
+    
+    //2.设置登录参数
+    NSDictionary *dict = @{ //@"usrId":[userConfiguration getStringValueForConfigurationKey:@"userId"],
+                            @"timeNow":curDateTime,
+                            @"coordx":@"1",
+                            @"coordy":@"1",
+                            @"currentPage":@"1",
+                            //@"did":[[[UIDevice currentDevice] identifierForVendor] UUIDString],   //获得设备标志
+                            };
+    
+    //3.请求
+    NSString *url = [NSString stringWithFormat:@"%@%@",timebuyUrl,@"news/online"];
+    [manager GET:url parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"GET --> %@", responseObject); //自动返回主线程
+        [HUD hide:YES];
+        
+        NSString *getStatus = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]];
+        NSString *getCode = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]];
+        if ([getStatus isEqualToString:@"1"] && [getCode isEqualToString:@"1000"]) {
+            
+            //[self dismissViewControllerAnimated:YES completion:nil];
+            
+            HUDinSuccess = [[MBProgressHUD alloc] initWithView:self.view];
+            [self.view addSubview:HUDinSuccess];
+            HUDinSuccess.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+            HUDinSuccess.mode = MBProgressHUDModeCustomView;
+            HUDinSuccess.delegate = self;
+            HUDinSuccess.labelText = @"刷新成功";
+            [HUDinSuccess show:YES];
+            [HUDinSuccess hide:YES afterDelay:1];
+            
+            // 将得到的数据存在本地
+            //getData = [responseObject objectForKey:@"data"];
+            //用户的信息存入本地
+            //[userConfiguration setStringValueForConfigurationKey:@"phone" withValue:telephoneTextField.text];
+            
+            /*
+             //利用SDWenImage下载图片
+             NSString *headIdStr = [userConfiguration getStringValueForConfigurationKey:@"headIcon"];
+             NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.8.102:8080/timebuy/upload/%@",headIdStr]];
+             SDWebImageManager *manager = [SDWebImageManager sharedManager];
+             [manager downloadImageWithURL:url options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+             // progression tracking code
+             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+             if (error) {
+             NSLog(@"头像下载出错error %@",error);
+             } else {
+             if (image) {
+             NSLog(@"头像下载成功！");
+             //将图片数据存入NSUserDefaults中
+             [userConfiguration setDataValueForConfigurationKey:@"portrait" withValue:UIImagePNGRepresentation(image)];
+             
+             }
+             }
+             }];
+             */
+            
+            
+        } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2003"]) {
+            [self showErrorWithTitle:@"首页加载失败" WithMessage:@"用户名不存在"];
+        } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2004"]) {
+            [self showErrorWithTitle:@"首页加载失败" WithMessage:@"密码错误"];
+        } else {
+            [self showErrorWithTitle:@"首页加载失败" WithMessage:@"系统错误"];
+        }
+        
+    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        [HUD hide:YES];
+        [self showErrorWithTitle:@"首页加载失败" WithMessage:@"网络连接失败，请检查网络设置"];
+    }];
+}
+
+#pragma mark - MBProgressHUDDelegate
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+    // Remove HUD from screen when the HUD was hidded
+    [hud removeFromSuperview];
+    
+}
+
+-(void)showErrorWithTitle:(NSString *)titile WithMessage:(NSString *)msg
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titile message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void)didReceiveMemoryWarning {

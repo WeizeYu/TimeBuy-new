@@ -14,15 +14,18 @@
 @property (strong, nonatomic) IBOutlet UILabel *nicknameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
-@property (strong, nonatomic) IBOutlet UIButton *showImgButton1;
-@property (strong, nonatomic) IBOutlet UIButton *showImgButton2;
-@property (strong, nonatomic) IBOutlet UIButton *showImgButton3;
+//@property (strong, nonatomic) IBOutlet UIButton *showImgButton1;
+//@property (strong, nonatomic) IBOutlet UIButton *showImgButton2;
+//@property (strong, nonatomic) IBOutlet UIButton *showImgButton3;
+@property (strong, nonatomic) IBOutlet UIImageView *showImgView1;
+@property (strong, nonatomic) IBOutlet UIImageView *showImgView2;
+@property (strong, nonatomic) IBOutlet UIImageView *showImgView3;
 @property (strong, nonatomic) IBOutlet UILabel *timeAndDistLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *levelImgView;
 
-- (IBAction)showImg1:(id)sender;
-- (IBAction)showImg2:(id)sender;
-- (IBAction)showImg3:(id)sender;
+//- (IBAction)showImg1:(id)sender;
+//- (IBAction)showImg2:(id)sender;
+//- (IBAction)showImg3:(id)sender;
 
 @property(nonatomic,strong)ImageCellModal *imageCellModal;
 @end
