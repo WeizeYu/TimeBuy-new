@@ -28,7 +28,7 @@
     
     detailsTextView.delegate = self;
     
-    detailsTextView.tag = 2;
+    detailsTextView.tag = 1102;
     
     self.photPicker = [[PhotoPicker alloc] init];
     photPicker.delegate = self;

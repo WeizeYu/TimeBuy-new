@@ -173,21 +173,21 @@
     //locationViewController *locationVC = [[locationViewController alloc] init];
     //[self presentViewController:locationVC animated:YES completion:nil];
     
-    //releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
-    //[self presentViewController:releaseRootVC animated:YES completion:nil];
+    releaseRootViewController *releaseRootVC = [[releaseRootViewController alloc] init];
+    [self presentViewController:releaseRootVC animated:YES completion:nil];
     
     //loginViewController *loginVC = [[loginViewController alloc] init];
     //[self presentViewController:loginVC animated:YES completion:nil];
     
     
-    if ([[userConfiguration getStringValueForConfigurationKey:@"userId"] isEqualToString:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"你还没有登录，登录后才可以进行发布服务" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即登录", nil];
-        [alert show];
-    } else {
-        locationViewController *locationVC = [[locationViewController alloc] init];
-        [self presentViewController:locationVC animated:YES completion:nil];
-    }
-    
+//    if ([[userConfiguration getStringValueForConfigurationKey:@"userId"] isEqualToString:@""]) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"你还没有登录，登录后才可以进行发布服务" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即登录", nil];
+//        [alert show];
+//    } else {
+//        locationViewController *locationVC = [[locationViewController alloc] init];
+//        [self presentViewController:locationVC animated:YES completion:nil];
+//    }
+//    
     
 }
 
@@ -204,7 +204,7 @@
 //  换页和button的状态关联上
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    //NSLog(@"hello！！");
+    NSLog(@"selcect View = %lu", (unsigned long)self.selectedIndex);
     //点击后的响应
     if (self.selectedIndex==3) {
         button.selected=YES;

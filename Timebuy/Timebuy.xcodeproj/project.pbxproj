@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183B59F71BD11C0E00035BE0 /* AFNetNewsBusi.m in Sources */ = {isa = PBXBuildFile; fileRef = 183B59F61BD11C0E00035BE0 /* AFNetNewsBusi.m */; settings = {ASSET_TAGS = (); }; };
 		1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840D4D71BBAAD45006141A9 /* loginViewController.m */; };
 		1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840D4D81BBAAD45006141A9 /* loginViewController.xib */; };
 		1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876649D1BB972810033A35C /* NFXIntroViewController.m */; };
@@ -509,6 +510,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		183B59F51BD11C0E00035BE0 /* AFNetNewsBusi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetNewsBusi.h; sourceTree = "<group>"; };
+		183B59F61BD11C0E00035BE0 /* AFNetNewsBusi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetNewsBusi.m; sourceTree = "<group>"; };
 		1840D4D61BBAAD45006141A9 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		1840D4D71BBAAD45006141A9 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		1840D4D81BBAAD45006141A9 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
@@ -2409,6 +2412,8 @@
 			children = (
 				73509C9C1BCD28D1005566D2 /* TBNetLoginBusi.h */,
 				73509C9D1BCD28D1005566D2 /* TBNetLoginBusi.m */,
+				183B59F51BD11C0E00035BE0 /* AFNetNewsBusi.h */,
+				183B59F61BD11C0E00035BE0 /* AFNetNewsBusi.m */,
 			);
 			name = TBNetLoginBusi;
 			sourceTree = "<group>";
@@ -3109,6 +3114,7 @@
 				70E6F1821BB6247200D175B1 /* selectTimeViewController.m in Sources */,
 				73CA21AB1BC92A14000A6C41 /* RcomplainTableViewCell.m in Sources */,
 				1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */,
+				183B59F71BD11C0E00035BE0 /* AFNetNewsBusi.m in Sources */,
 				700289871BC108EA00E62B5A /* confirmDetailsTableViewCell.m in Sources */,
 				700289811BC0FF8900E62B5A /* urgentTableViewCell.m in Sources */,
 				70BB686E1BC3F0DF0059F1BE /* AFURLSessionManager.m in Sources */,

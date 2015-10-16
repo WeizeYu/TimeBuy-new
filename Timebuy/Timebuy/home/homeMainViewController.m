@@ -73,14 +73,18 @@
     [self getAllNews];
     
     /*
-    UIImage *image = [UIImage imageNamed:@"时钟.png"];
-    
-    NSData *date = [[NSData alloc] init];
-    
-    date = UIImagePNGRepresentation(image);
+    AFNetNewsBusi *test = [[AFNetNewsBusi alloc] init];
+    test.delegate = self;
+    [test go];
     */
-    
 }
+
+/*
+- (void)newsSuccess:(id)user
+{
+    NSLog(@"hello %@",user);
+}
+*/
 
 - (void)enter:(id)sender {
     homeDetailsViewController *homeDetailsVC = [[homeDetailsViewController alloc] init];
@@ -280,12 +284,9 @@
     }
 }
 
-#pragma mark - get all news
+#pragma mark - AFNet get all news
 - (void)getAllNews
 {
-    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    HUD.delegate = self;
-    
     NSDate *curDate = [NSDate date];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -294,12 +295,7 @@
     
     //上传至服务器
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    //manager.requestSerializer  = [AFJSONRequestSerializer serializer];
-    //manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:@"d6089681f79c7627bbac829307e041a7" forHTTPHeaderField:@"x-timebuy-sid"];
-    //[manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    //[manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    //manager.requestSerializer.stringEncoding =CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingUTF8);
     
     //2.设置登录参数
     NSDictionary *dict = @{ //@"usrId":[userConfiguration getStringValueForConfigurationKey:@"userId"],
@@ -314,22 +310,19 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",timebuyUrl,@"news/online"];
     [manager GET:url parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
 //        NSLog(@"GET --> %@", responseObject); //自动返回主线程
-        [HUD hide:YES];
         
         NSString *getStatus = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]];
         NSString *getCode = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]];
         if ([getStatus isEqualToString:@"1"] && [getCode isEqualToString:@"1000"]) {
             
-            //[self dismissViewControllerAnimated:YES completion:nil];
+            [SVProgressHUD show];
+            [SVProgressHUD dismissWithSuccess:@"加载成功" afterDelay:1.0];
             
-            HUDinSuccess = [[MBProgressHUD alloc] initWithView:self.view];
-            [self.view addSubview:HUDinSuccess];
-            HUDinSuccess.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-            HUDinSuccess.mode = MBProgressHUDModeCustomView;
-            HUDinSuccess.delegate = self;
-            HUDinSuccess.labelText = @"刷新成功";
-            [HUDinSuccess show:YES];
-            [HUDinSuccess hide:YES afterDelay:1];
+            NSData *getData = [[NSData alloc] init];
+            getData = [responseObject objectForKey:@"data"];
+            
+            //NSLog(@"address = %@",[getData valueForKey:@"address"]);
+            //self.taskModel.taskAcceptUserid =
             
             // 将得到的数据存在本地
             //getData = [responseObject objectForKey:@"data"];
@@ -357,27 +350,21 @@
              }];
              */
             
-            
         } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2003"]) {
-            [self showErrorWithTitle:@"首页加载失败" WithMessage:@"用户名不存在"];
+            //[self showErrorWithTitle:@"首页加载失败" WithMessage:@"用户名不存在"];
+            [SVProgressHUD show];
+            [SVProgressHUD dismissWithError:@"加载失败" afterDelay:1.0];
         } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2004"]) {
-            [self showErrorWithTitle:@"首页加载失败" WithMessage:@"密码错误"];
+            //[self showErrorWithTitle:@"首页加载失败" WithMessage:@"密码错误"];
         } else {
-            [self showErrorWithTitle:@"首页加载失败" WithMessage:@"系统错误"];
+            //[self showErrorWithTitle:@"首页加载失败" WithMessage:@"系统错误"];
         }
         
     } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
-        [HUD hide:YES];
-        [self showErrorWithTitle:@"首页加载失败" WithMessage:@"网络连接失败，请检查网络设置"];
+        [SVProgressHUD show];
+        [SVProgressHUD dismissWithError:@"加载失败" afterDelay:1.0];
     }];
-}
-
-#pragma mark - MBProgressHUDDelegate
-- (void)hudWasHidden:(MBProgressHUD *)hud {
-    // Remove HUD from screen when the HUD was hidded
-    [hud removeFromSuperview];
-    
 }
 
 -(void)showErrorWithTitle:(NSString *)titile WithMessage:(NSString *)msg

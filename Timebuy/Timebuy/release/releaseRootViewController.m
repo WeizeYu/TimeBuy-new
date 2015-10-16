@@ -31,11 +31,14 @@
      //self.navigationItem.rightBarButtonItem.enabled = NO;
      */
     
+    self.taskModel = [[taskModel alloc] init];
+    
     myRow = -1;
     
-    placeStr = @"杭州小和山";
     timeStr = @"请确定合适开始和结束";
-    priceStr = @"输入价格";
+    
+    self.taskModel.taskCoordname = @"杭州小和山";
+    self.taskModel.taskMoney = @"输入价格";
     phone = @"18767122229";
     
     shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 275 + 64)];
@@ -69,8 +72,11 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recModifyInRelease:) name:@"passModifyInRelease" object:nil];
     
+//    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+//    [releaseTableView addGestureRecognizer:tapGestureRecognizer];
+    
     //定位地址名称
-    //placeStr = locationName;
+    //self.taskModel.taskCoordname = locationName;
     
 }
 
@@ -79,38 +85,24 @@
     NSString *getType = [getDic objectForKey:@"type"];
     NSString *getValue = [getDic objectForKey:@"value"];
     
-    if ([getType isEqualToString:@"price"]) {
+    if ([getType isEqualToString:@"price"])
+    {
         NSString *str = @"￥";
-        priceStr = getValue;
+        self.taskModel.taskMoney = getValue;
         
         priceTableViewCell *cell= (priceTableViewCell *)[releaseTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
         cell.priceLabel.text = [str stringByAppendingString:getValue];
-    }  else if ([getType isEqualToString:@"time"]) {
+    }  else if ([getType isEqualToString:@"time"])
+    {
         
         timeStr = getValue;
         
         selectTimeTableViewCell *cell= (selectTimeTableViewCell *)[releaseTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
         cell.timeLabel.text = timeStr;
+        
+        self.taskModel.taskStarttime  = [getDic objectForKey:@"startTime"];
+        self.taskModel.taskFinishtime = [getDic objectForKey:@"endTime"];
     }
-    
-}
-
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
-    
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    
-    UIGraphicsBeginImageContext(rect.size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return image;
     
 }
 
@@ -124,17 +116,21 @@
     confirmViewController *confirmVC = [[confirmViewController alloc] init];
     [self presentViewController:confirmVC animated:YES completion:nil];
     
-    titleTextField = (UITextField *)[releaseTableView viewWithTag:1];
-    NSLog(@"get text = %@",titleTextField.text);
+    detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
     
-    detailsTextView = (UITextView *)[releaseTableView viewWithTag:2];
-    NSLog(@"get text from textview = %@", detailsTextView.text);
-    releaseDetailsTableViewCell *cell =(releaseDetailsTableViewCell*)[releaseTableView viewWithTag:108];
-    confirmVC.pics = cell.getImageArray;
-    confirmVC.money = priceStr;
-    confirmVC.phone = phone;
-    confirmVC.news = detailsTextView.text;
-//    NSLog(@"  1111-- %@--1111",confirmVC.news );
+    if (![detailsTextView.text isEqualToString:@""]) {
+        
+        self.taskModel.taskNews = detailsTextView.text;
+        
+//        releaseDetailsTableViewCell *cell =(releaseDetailsTableViewCell*)[releaseTableView viewWithTag:108];
+//        confirmVC.pics = cell.getImageArray;
+//        confirmVC.money = self.taskModel.taskMoney;
+//        confirmVC.phone = phone;
+//        confirmVC.news = detailsTextView.text;
+//        //NSLog(@"  1111-- %@--1111",confirmVC.news );
+    } else {
+        
+    }
 
 }
 
@@ -142,6 +138,17 @@
 -(void)Actiondo:(id)sender{
     [shadowView removeFromSuperview];
     [datePicker removeFromSuperview];
+}
+
+#pragma mark - tap view
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+    
+    if (![tap.view isEqual:detailsTextView]) {
+        [detailsTextView resignFirstResponder];
+    }
+    
+    //[textFiled resignFirstResponder];
 }
 
 #pragma mark - tableViewDelegate
@@ -235,7 +242,8 @@
 
             }
             
-            [cell.placeButton setTitle:placeStr forState:UIControlStateNormal];
+            [cell.placeButton setTitle:self.taskModel.taskCoordname forState:UIControlStateNormal];
+            
             return cell;
             
             break;
@@ -252,7 +260,7 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = [[[NSBundle mainBundle] loadNibNamed:@"priceTableViewCell" owner:self options:nil] lastObject];
                 }
-                cell.priceLabel.text = priceStr;
+                cell.priceLabel.text = self.taskModel.taskMoney;
                 
                 return cell;
                 
@@ -321,7 +329,7 @@
             if (myRow == 0) {
 
                 priceViewController *priceVC = [[priceViewController alloc] init];
-                priceVC.price = priceStr;
+                priceVC.price = self.taskModel.taskMoney;
                 
                 //[self.navigationController pushViewController:priceVC animated:YES];
                 [self presentViewController:priceVC animated:YES completion:nil];
@@ -353,7 +361,12 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if ([shadowView isExclusiveTouch]) {
         NSLog(@"hello");
+        
     }
+    
+    detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+    
+    [detailsTextView resignFirstResponder];
 }
 
 - (void)sendMgs
@@ -377,8 +390,8 @@
                             @"starttime":timeStr,
                             //@"finishtime":finishTimeStr,
                             @"label":@"测试label",
-                            @"money":priceStr,
-                            @"coordname":placeStr,
+                            @"money":self.taskModel.taskMoney,
+                            @"coordname":self.taskModel.taskCoordname,
                             @"coordx":@"30.124546",
                             @"coordy":@"120.214126"};
     
@@ -436,6 +449,26 @@
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titile message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+}
+
+# pragma mark - image background
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
 }
 
 - (void)didReceiveMemoryWarning {
