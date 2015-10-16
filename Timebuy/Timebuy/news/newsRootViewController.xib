@@ -19,34 +19,43 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-VW-wg7">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-VW-wg7">
                     <rect key="frame" x="0.0" y="0.0" width="106.5" height="30"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="GNK-Iy-XKr"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="订单动态"/>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="n7m-nB-e89"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-PO-YPb">
-                    <rect key="frame" x="213" y="0.0" width="106.5" height="30"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="yAL-pg-Tqf"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-1i-ccU">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-1i-ccU">
                     <rect key="frame" x="106" y="0.0" width="107" height="30"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="1gt-6i-633"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="系统通知"/>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="zPM-y0-NVs"/>
+                    </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaX-yD-ZTj">
                     <rect key="frame" x="0.0" y="30" width="320" height="538"/>
                     <animations/>
                 </scrollView>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-PO-YPb">
+                    <rect key="frame" x="213" y="0.0" width="106.5" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="yAL-pg-Tqf"/>
+                    </constraints>
+                    <state key="normal" title="活动公告"/>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="oNZ-nG-aaK"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

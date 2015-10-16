@@ -14,6 +14,7 @@
 #import "SignatureController.h"
 #import "ConmonController.h"
 #import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
@@ -164,7 +165,6 @@
             cell2.name2Label.text = self.rightArray[indexPath.row - 1];
         }
         
-        [[NSUserDefaults standardUserDefaults] setObject:self.rightArray forKey:@"rightArray"];
         NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
         NSInteger tag = [strTag integerValue];
         cell2.tag = tag;
@@ -175,7 +175,6 @@
         cell3.name1Label.text = self.leftAry[indexPath.row + 5];
 
         cell3.name2Label.text = self.rightArray[indexPath.row + 5];
-        [[NSUserDefaults standardUserDefaults] setObject:self.rightArray forKey:@"rightArray"];
         NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
         NSInteger tag = [strTag integerValue];
         cell3.tag = tag;
@@ -263,8 +262,8 @@
 
 -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 
-{
-    [self postTheIcon];
+{    [MBProgressHUD showHUDAddedTo:self.infoTableView animated:YES];
+    [self postTheIcon:info];
     
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     
@@ -272,6 +271,48 @@
     if ([type isEqualToString:@"public.image"])
     {
         //先把图片转成NSData
+       
+                //关闭相册界面
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        
+     
+    
+}
+}
+
+
+-(void)postTheIcon:(NSDictionary *)info{
+   
+    
+    
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+
+        params[@"userId"] =array[7];
+    NSLog(@" 111---  %@ ---111",array[7] );
+
+        params[@"nickName"] = array[0];
+        params[@"sex"] = array[1];
+        params[@"birthDay"] = array[9];
+        params[@"profession"] = array[3];
+        params[@"signature"] = array[6];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *url = [NSString stringWithFormat:@"%@user/update",timebuyUrl];
+    [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        UIImage* image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+       
+        NSData *data = UIImageJPEGRepresentation(image, 1.0);
+         [formData appendPartWithFileData:data name:@"headIcon" fileName:@"21323827163.jpg" mimeType:@"image/jpeg"];
+//        NSData *imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+
+//         [formData appendPartWithFileData:data name:@"pic" fileName:@"test.jpg" mimeType:@"image/jpeg"];
+        
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        [MBProgressHUD hideHUDForView:self.infoTableView animated:YES];
+        NSLog(@" 111---  %@ ---111",responseObject );
         UIImage* image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
         NSData *data;
         if (UIImagePNGRepresentation(image) == nil)
@@ -285,17 +326,12 @@
         
         [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"iconData"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-                //关闭相册界面
-        [picker dismissViewControllerAnimated:YES completion:nil];
+        [self.infoTableView reloadData];
         
-     
-    
-}
-}
-
-
--(void)postTheIcon{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@" 111---  %@ ---111",error );
+        
+    }];
     
     
 }

@@ -8,6 +8,7 @@
 
 #import "SystemMessageController.h"
 #import "SecondCell.h"
+#import "MJRefresh.h"
 
 @interface SystemMessageController ()
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView addHeaderWithTarget:self action:@selector(loadNewData)];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -25,13 +27,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView headerBeginRefreshing];
+    NSTimer *myTimer = [NSTimer  timerWithTimeInterval:2.0 target:self selector:@selector(timerFired:)userInfo:nil repeats:NO];
+    
+    [[NSRunLoop  currentRunLoop] addTimer:myTimer forMode:NSDefaultRunLoopMode];
+
 }
 
+-(void)timerFired:(NSTimer *)timer{
+    [self.tableView headerEndRefreshing];
+}
 #pragma mark - Table view data source
 
+-(void)loadNewData{
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 7;

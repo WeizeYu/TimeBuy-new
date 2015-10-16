@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="189.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYR-x6-anD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="OfX-CU-xkI"/>
@@ -23,6 +24,7 @@
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有谁想和我一起从工大出发游西湖，中途我请吃饭.西湖我就不多说了哦 你们懂的。" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="gFD-0L-SSQ">
                         <rect key="frame" x="15" y="9" width="290" height="49"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="49" id="cEH-oC-IjJ"/>
                         </constraints>
@@ -32,6 +34,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="showImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="DgI-ar-ahX">
                         <rect key="frame" x="15" y="66" width="90" height="90"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="m3a-2c-HHt"/>
                             <constraint firstAttribute="height" constant="90" id="pjy-Ek-Ed7"/>
@@ -39,6 +42,7 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="showImg3.png" translatesAutoresizingMaskIntoConstraints="NO" id="iVU-Nh-SNh">
                         <rect key="frame" x="211" y="66" width="90" height="90"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="ahT-Xh-N8H"/>
                             <constraint firstAttribute="height" constant="90" id="kRJ-QF-hrV"/>
@@ -46,6 +50,7 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dingwei1.png" translatesAutoresizingMaskIntoConstraints="NO" id="4vJ-Ha-zho">
                         <rect key="frame" x="15" y="164" width="20" height="20"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="0bN-bW-com"/>
                             <constraint firstAttribute="height" constant="20" id="gnM-hJ-kkR"/>
@@ -53,6 +58,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浙江工业大学" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaV-qj-7rK">
                         <rect key="frame" x="36" y="163" width="258" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="8n1-FS-ikV"/>
                             <constraint firstAttribute="width" constant="258" id="a4v-e8-hml"/>
@@ -63,12 +69,14 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="showImg2.png" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-Ct-ZGT">
                         <rect key="frame" x="113" y="66" width="90" height="90"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="kZ7-15-PCa"/>
                             <constraint firstAttribute="height" constant="90" id="yhs-E8-Pmi"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="4vJ-Ha-zho" firstAttribute="top" secondItem="DgI-ar-ahX" secondAttribute="bottom" constant="8" id="1mY-gQ-JIH"/>
                     <constraint firstItem="MLs-Ct-ZGT" firstAttribute="top" secondItem="gFD-0L-SSQ" secondAttribute="bottom" constant="8" id="2Kn-Df-Q00"/>
@@ -88,6 +96,7 @@
                     <constraint firstAttribute="trailing" secondItem="hYR-x6-anD" secondAttribute="trailing" id="vev-Xx-GUL"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="detailsTextLabel" destination="gFD-0L-SSQ" id="NOQ-Rf-5LL"/>
                 <outlet property="imageview1" destination="DgI-ar-ahX" id="3w9-dR-aaG"/>

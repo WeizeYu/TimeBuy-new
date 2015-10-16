@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -19,6 +19,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月25号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-wS-rxg">
                                 <rect key="frame" x="36" y="8" width="66" height="8"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="6T8-0u-cLn"/>
                                 </constraints>
@@ -28,6 +29,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00~8:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-E7-9jq">
                                 <rect key="frame" x="35" y="18" width="67.5" height="14"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="v24-h6-b5q"/>
                                 </constraints>
@@ -37,6 +39,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥5元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJT-GM-7fE">
                                 <rect key="frame" x="99" y="11" width="34" height="24"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="rck-4w-INs"/>
                                 </constraints>
@@ -46,6 +49,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我想要找个人帮我拿快递，快递在东合公寓的西十三" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CA-JK-KtE">
                                 <rect key="frame" x="18" y="37" width="276" height="12"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="v9c-4x-KmN"/>
                                 </constraints>
@@ -55,6 +59,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已取消" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vas-oi-aTy">
                                 <rect key="frame" x="313" y="10" width="39" height="13"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="afL-gR-J3y"/>
                                 </constraints>
@@ -64,6 +69,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dingwei1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ING-hO-1hd">
                                 <rect key="frame" x="18" y="56" width="10" height="10"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="Dry-Oy-kH7"/>
                                     <constraint firstAttribute="height" constant="10" id="gIO-j0-jbs"/>
@@ -71,6 +77,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="个人设置1.png" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-Ab-LdM">
                                 <rect key="frame" x="11" y="6" width="21" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="21" id="pEp-OG-vKh"/>
                                     <constraint firstAttribute="height" constant="21" id="uZh-g3-PU8"/>
@@ -78,6 +85,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aNp-c4-ZHY">
                                 <rect key="frame" x="0.0" y="68" width="363" height="1"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -86,6 +94,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-2Y-kfO">
                                 <rect key="frame" x="277" y="76" width="82" height="26"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="FeR-G4-niQ"/>
@@ -99,6 +108,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东合公寓三区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqv-Og-udy">
                                 <rect key="frame" x="29" y="57" width="54" height="9"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="YFk-8h-kiS"/>
                                 </constraints>
@@ -108,6 +118,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Co4-8D-tdh">
                                 <rect key="frame" x="312" y="56" width="11" height="11"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="ELs-1A-pfI"/>
                                     <constraint firstAttribute="width" constant="11" id="tW0-2N-jmp"/>
@@ -118,6 +129,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvF-eL-Sbo">
                                 <rect key="frame" x="337" y="56" width="11" height="11"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="11" id="4K8-SF-jto"/>
                                     <constraint firstAttribute="height" constant="11" id="IcI-dP-cqh"/>
@@ -128,6 +140,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-9h-hSw">
                                 <rect key="frame" x="324" y="56" width="7" height="12"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="Hcw-r1-EjA"/>
                                 </constraints>
@@ -137,6 +150,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yne-1T-Pcx">
                                 <rect key="frame" x="349" y="56" width="8" height="12"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="eIx-IJ-uN2"/>
                                 </constraints>
@@ -145,6 +159,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Vas-oi-aTy" secondAttribute="trailing" constant="11" id="1aT-hf-i9Z"/>
@@ -179,6 +194,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <animations/>
                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="xmz-kx-RGV" firstAttribute="top" secondItem="WjC-aK-BeW" secondAttribute="top" id="1WZ-Y7-zmQ"/>
@@ -187,6 +203,7 @@
                     <constraint firstItem="xmz-kx-RGV" firstAttribute="leading" secondItem="WjC-aK-BeW" secondAttribute="leading" constant="6" id="twB-3R-q7U"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="content" destination="6CA-JK-KtE" id="7ys-Fb-c1X"/>

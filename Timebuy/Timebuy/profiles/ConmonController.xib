@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2rY-Yr-16m">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                    <rect key="frame" x="0.0" y="11" width="320" height="47"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="kc7-pT-rRo"/>
@@ -27,13 +27,14 @@
                 </textField>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.94117647058823528" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2rY-Yr-16m" secondAttribute="trailing" id="ObL-QD-QMM"/>
-                <constraint firstItem="2rY-Yr-16m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q84-CN-ScR"/>
+                <constraint firstItem="2rY-Yr-16m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="Q84-CN-ScR"/>
                 <constraint firstItem="2rY-Yr-16m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tg6-qM-iBm"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="211" y="129"/>
         </view>
     </objects>
 </document>

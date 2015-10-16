@@ -60,13 +60,13 @@
     homeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     homeTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
-    __weak __typeof(self) weakSelf = self;
+//    __weak __typeof(self) weakSelf = self;
     
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-    homeTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf loadNewData];
-    }];
-    
+//    homeTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [weakSelf loadNewData];
+//    }];
+    [homeTableView addHeaderWithTarget:self action:@selector(loadNewData)];
     // 马上进入刷新状态
     //[homeTableView.header beginRefreshing];
     
@@ -101,7 +101,8 @@
 {
     NSLog(@"下拉");
     //结束刷新
-    [homeTableView.header endRefreshing];
+//    [homeTableView.header endRefreshing];
+    [homeTableView headerEndRefreshing];
 }
 
 #pragma mark - UITableView
@@ -312,7 +313,7 @@
     //3.请求
     NSString *url = [NSString stringWithFormat:@"%@%@",timebuyUrl,@"news/online"];
     [manager GET:url parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"GET --> %@", responseObject); //自动返回主线程
+//        NSLog(@"GET --> %@", responseObject); //自动返回主线程
         [HUD hide:YES];
         
         NSString *getStatus = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]];
