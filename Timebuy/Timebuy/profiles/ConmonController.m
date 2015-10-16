@@ -35,37 +35,26 @@
 }
 
 -(void)confirm{
-    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
-    NSString *userId = array[7];
-    NSString *sex = array[1];
-   
-  
-   
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    
-    params[@"userId"] = userId;
-    params[@"nickName"] = self.txtView.text;
-    params[@"sex"] = sex;
-    params[@"birthDay"] = array[9];
-    params[@"profession"] = array[3];
-    params[@"signature"] = @"123";
+     NSDictionary *params = [self appendingTheParams];
+   
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [NSString stringWithFormat:@"%@user/update",timebuyUrl];
-   [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-       
-   } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-       NSLog(@" 111---  %@ ---111",responseObject );
-   
+  [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+      
+      //        NSData *data = UIImageJPEGRepresentation(image, 1.0);
+      //        [formData appendPartWithFileData:data name:@"pic" fileName:@"test.jpg" mimeType:@"image/jpeg"];
+      
+      
+  } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+      NSLog(@" 111---  %@ ---111",responseObject );
 
-   } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-       NSLog(@" 111---  %@ ---111",error );
-
-   }];
+  } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+      
+  }];
 
     NSNumber *number = [NSNumber numberWithInteger:self.TBTag];
     [[NSNotificationCenter defaultCenter] postNotificationName:CommonDidChangeNotification object:nil userInfo:@{CommenKey : self.txtView.text,CellTag : number}];
-    [self.navigationController popViewControllerAnimated:YES];
     
 }
     // 参数:
@@ -97,7 +86,33 @@
 //    }];
 //}
 
+-(NSDictionary *)appendingTheParams{
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+  
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if (self.TBTag == 1) {
+        params[@"userId"] = array[7];
+        params[@"nickName"] = self.txtView.text;
+        params[@"sex"] = array[1];
+        params[@"birthDay"] = array[9];
+        params[@"profession"] = array[3];
+        params[@"signature"] = @"123";
+    }else if (self.TBTag == 4){
+        params[@"userId"] = array[7];
+        params[@"nickName"] = array[0];
+        params[@"sex"] = array[1];
+        params[@"birthDay"] = array[9];
+        params[@"profession"] = self.txtView.text;
+        params[@"signature"] = @"123";
+    }
+    
+//    NSLog(@" 111---  %@ ---111",params );
 
+    return params;
+  
+    
+}
     
     
   

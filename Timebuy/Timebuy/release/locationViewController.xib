@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -20,12 +20,14 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="导航条375x64.png" translatesAutoresizingMaskIntoConstraints="NO" id="6ei-IB-q7i">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="V7X-XW-Loz"/>
                     </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KgY-Jd-IEG">
                     <rect key="frame" x="0.0" y="304" width="320" height="314"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Ngb-2n-qjQ"/>
@@ -37,9 +39,11 @@
                     <subviews>
                         <searchBar contentMode="redraw" placeholder="在此输入大致任务位置" translatesAutoresizingMaskIntoConstraints="NO" id="Jfa-SX-Ei3">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <animations/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Jfa-SX-Ei3" firstAttribute="leading" secondItem="21V-dC-DpG" secondAttribute="leading" id="Eco-Se-kpy"/>
@@ -50,6 +54,7 @@
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事件定位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM6-GS-ba3">
                     <rect key="frame" x="113" y="28" width="94" height="27"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="27" id="6uQ-gf-qEf"/>
                         <constraint firstAttribute="width" constant="94" id="zyi-l7-jLs"/>
@@ -60,6 +65,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBn-fU-V5q">
                     <rect key="frame" x="8" y="28" width="39" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="bZX-YT-WAz"/>
                         <constraint firstAttribute="width" constant="39" id="idf-OW-vNw"/>
@@ -74,6 +80,7 @@
                     </connections>
                 </button>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jBn-fU-V5q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1SV-c1-kDM"/>
@@ -97,6 +104,7 @@
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G1y-rj-XWt">
             <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <animations/>
             <fontDescription key="fontDescription" type="system" pointSize="17"/>
             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
             <nil key="highlightedColor"/>

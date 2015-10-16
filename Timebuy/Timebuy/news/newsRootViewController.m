@@ -38,6 +38,7 @@
     [self.scrollView addSubview:VC.view];
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.btn1.selected = YES;
+    
     // Do any additional setup after loading the view from its nib.
 }
 - (void)addControllers {
@@ -90,6 +91,34 @@
     [self scrollViewDidEndScrollingAnimation:scrollView];
 }
 
+- (IBAction)btnClicked:(id)sender {
+    UIButton *btn = sender;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+
+    if (btn.tag == 1) {
+        self.btn1.selected = YES;
+        self.btn2.selected = NO;
+        self.btn3.selected = NO;
+        CGFloat offsetY = self.scrollView.contentOffset.y;
+        CGPoint offset = CGPointMake(0 , offsetY);
+        [self.scrollView setContentOffset:offset animated:YES];
+    }else if (btn.tag == 2){
+        self.btn1.selected = NO;
+        self.btn2.selected = YES;
+        self.btn3.selected = NO;
+        CGFloat offsetY = self.scrollView.contentOffset.y;
+        CGPoint offset = CGPointMake(width , offsetY);
+        [self.scrollView setContentOffset:offset animated:YES];
+    }else if  (btn.tag == 3){
+        self.btn1.selected = NO;
+        self.btn2.selected = NO;
+        self.btn3.selected = YES;
+        CGFloat offsetY = self.scrollView.contentOffset.y;
+        CGPoint offset = CGPointMake(2 * width , offsetY);
+        [self.scrollView setContentOffset:offset animated:YES];
+    }
+
+}
 
 /*
 #pragma mark - Navigation

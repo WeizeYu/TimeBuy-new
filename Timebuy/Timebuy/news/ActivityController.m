@@ -8,6 +8,7 @@
 
 #import "ActivityController.h"
 #import "ThirdCell.h"
+#import "MJRefresh.h"
 
 @interface ActivityController ()
 
@@ -18,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView addHeaderWithTarget:self action:@selector(loadNewData)];
+
+    NSTimer *myTimer = [NSTimer  timerWithTimeInterval:2.0 target:self selector:@selector(timerFired:)userInfo:nil repeats:NO];
+    
+    [[NSRunLoop  currentRunLoop] addTimer:myTimer forMode:NSDefaultRunLoopMode];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -25,9 +32,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView headerBeginRefreshing];
+    NSTimer *myTimer = [NSTimer  timerWithTimeInterval:2.0 target:self selector:@selector(timerFired:)userInfo:nil repeats:NO];
+    
+    [[NSRunLoop  currentRunLoop] addTimer:myTimer forMode:NSDefaultRunLoopMode];
+    
+}
+
+-(void)timerFired:(NSTimer *)timer{
+    [self.tableView headerEndRefreshing];
+}
+
+-(void)loadNewData{
+    
 }
 
 #pragma mark - Table view data source

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQ9-aK-O8s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Dua-pQ-85x"/>
@@ -23,6 +24,7 @@
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mywallet.png" translatesAutoresizingMaskIntoConstraints="NO" id="3BZ-F8-4YT">
                         <rect key="frame" x="15" y="4" width="35" height="35"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="1X4-Ko-vIo"/>
                             <constraint firstAttribute="height" constant="35" id="2x7-au-imo"/>
@@ -30,6 +32,7 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes.png" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-2z-ogY">
                         <rect key="frame" x="290" y="14" width="15" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="T3I-Ex-fSL"/>
                             <constraint firstAttribute="height" constant="15" id="fhU-Fh-gG5"/>
@@ -37,6 +40,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的钱包" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8i8-sG-w4L">
                         <rect key="frame" x="70" y="11" width="75" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="1LP-OD-Uc6"/>
                             <constraint firstAttribute="width" constant="75" id="fuu-bY-Mbk"/>
@@ -46,6 +50,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="wd1-2z-ogY" secondAttribute="trailing" constant="15" id="341-8m-6J8"/>
                     <constraint firstItem="BQ9-aK-O8s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EDU-xG-Qx5"/>
@@ -58,6 +63,7 @@
                     <constraint firstItem="wd1-2z-ogY" firstAttribute="top" secondItem="BQ9-aK-O8s" secondAttribute="bottom" constant="13" id="yYO-nU-nL7"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="selectImgView1" destination="wd1-2z-ogY" id="a6m-Js-jvh"/>
             </connections>

@@ -8,7 +8,8 @@
 
 #import "OrderController.h"
 #import "FirstCell.h"
-
+#import "AFHTTPRequestOperationManager.h"
+#import "MJRefresh.h"
 @interface OrderController ()
 
 @end
@@ -17,16 +18,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView addHeaderWithTarget:self action:@selector(loadNewData)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView headerBeginRefreshing];
+
+}
+
+- (void)loadNewData {
+    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSString *url = [NSString stringWithFormat:@"%@news/selectPublishTag",timebuyUrl];
+    params[@"userId"] = @"28";
+    params[@"tag"] = @"1";
+    [manager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@" 111---  %@ ---111",responseObject );
+        [self.tableView headerEndRefreshing];
+
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@" 111---  %@ ---111",error );
+
+    }];
     // Dispose of any resources that can be recreated.
 }
 

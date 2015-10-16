@@ -91,7 +91,7 @@
     
     //3.请求
     [manager GET:@"http://192.168.8.102:8080/timebuy/news/info" parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"GET --> %@", responseObject); //自动返回主线程
+//        NSLog(@"GET --> %@", responseObject); //自动返回主线程
         
         [HUD hide:YES];
         NSString *getStatus = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]];

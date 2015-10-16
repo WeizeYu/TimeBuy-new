@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -18,12 +18,14 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="导航条375x64.png" translatesAutoresizingMaskIntoConstraints="NO" id="wtg-my-ztV">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="mYi-9q-gPy"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jo-Ae-5DB">
                     <rect key="frame" x="113" y="28" width="94" height="27"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="94" id="wl5-74-ASH"/>
                         <constraint firstAttribute="height" constant="27" id="yCe-0C-Wux"/>
@@ -34,6 +36,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcZ-BD-wwP">
                     <rect key="frame" x="5" y="26" width="20" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="kVl-72-5WT"/>
                         <constraint firstAttribute="height" constant="30" id="pSI-6U-31D"/>
@@ -47,6 +50,7 @@
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Y6-8n-KUc">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <animations/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="4Ci-PA-zG1"/>
@@ -54,6 +58,7 @@
                     </connections>
                 </tableView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="wtg-my-ztV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3he-0Y-YX5"/>
