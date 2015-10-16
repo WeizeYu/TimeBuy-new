@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface TeamModel : NSObject
 @property(nonatomic) NSString *teamId;              //团队id
 @property(nonatomic) NSString *teamSummary;         //团队简介
