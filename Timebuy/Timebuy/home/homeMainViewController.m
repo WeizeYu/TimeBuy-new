@@ -72,6 +72,14 @@
     
     [self getAllNews];
     
+    /*
+    UIImage *image = [UIImage imageNamed:@"时钟.png"];
+    
+    NSData *date = [[NSData alloc] init];
+    
+    date = UIImagePNGRepresentation(image);
+    */
+    
 }
 
 - (void)enter:(id)sender {
@@ -211,7 +219,6 @@
             cell.portraitImgView.layer.cornerRadius = cell.portraitImgView.bounds.size.height / 2;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            
             
             return cell;
             
