@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ct5-1V-gwP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="5mw-Vz-FUa"/>
@@ -23,6 +24,7 @@
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alipay.png" translatesAutoresizingMaskIntoConstraints="NO" id="677-Yb-UWV">
                         <rect key="frame" x="15" y="4" width="35" height="35"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="TiI-wk-8b4"/>
                             <constraint firstAttribute="width" constant="35" id="qpv-4A-jQf"/>
@@ -30,6 +32,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlQ-bR-8Cg">
                         <rect key="frame" x="70" y="11" width="75" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="S96-A3-d4H"/>
                             <constraint firstAttribute="width" constant="75" id="pTb-w5-4v9"/>
@@ -40,12 +43,14 @@
                     </label>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes.png" translatesAutoresizingMaskIntoConstraints="NO" id="4HU-l4-sWd">
                         <rect key="frame" x="290" y="14" width="15" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="VXH-Rm-h3M"/>
                             <constraint firstAttribute="width" constant="15" id="nqy-2w-07L"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="4HU-l4-sWd" secondAttribute="trailing" constant="15" id="1yI-im-9te"/>
                     <constraint firstItem="ct5-1V-gwP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FiG-zg-skr"/>
@@ -58,6 +63,7 @@
                     <constraint firstAttribute="trailing" secondItem="ct5-1V-gwP" secondAttribute="trailing" id="veK-We-zhl"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="selectImgView2" destination="4HU-l4-sWd" id="1Cb-zC-dCZ"/>
             </connections>

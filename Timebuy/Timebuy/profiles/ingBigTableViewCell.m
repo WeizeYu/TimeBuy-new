@@ -65,6 +65,7 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"响应方已完成了您发布的任务，您要确认达成吗？" message:@"" delegate:self cancelButtonTitle:@"取消"  otherButtonTitles:nil ];
     // optional - add more buttons:
     [alert addButtonWithTitle:@"确定"];
+//    [alert addButtonWithTitle:@"12"];
     [alert show];
 
 }

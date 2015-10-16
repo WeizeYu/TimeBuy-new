@@ -10,4 +10,34 @@
 
 @implementation taskModel
 
+-(id)initWithNewsId:(NSString *)taskNewsId
+{
+    self = [super init];
+    if (self) {
+        self.taskNewsId = taskNewsId;
+    }
+    return self;
+}
+
+-(id)initWithtaskNews:(NSString *)taskNews
+            taskPhone:(NSString *)taskPhone
+              taskPic:(NSString *)taskPic
+              taskTag:(NSString *)taskTag
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+-(id)initWithSelfinfo:(NSDictionary *)result
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 @end

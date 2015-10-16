@@ -31,6 +31,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.homePageTableView reloadData];
+}
+
 -(void)editing{
     
     InfoViewController *infoVC = [[InfoViewController alloc] init];
@@ -65,6 +69,7 @@
         cell.backgroundColor = [UIColor blueColor];
         cell.iconView.layer.cornerRadius = cell.iconView.bounds.size.width /2 ;
         cell.iconView.layer.masksToBounds = YES;
+        [self cellWithData:cell];
         return cell;
     }
     static NSString *ID = @"ID";
@@ -75,6 +80,22 @@
     }
     return cell;
 }
+
+
+-(void)cellWithData:(HeaderCell *)cell{
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+    if (data) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.iconView.image = image;
+    }
+    cell.nameLabel.text = array[0];
+    cell.ageLabel.text = array[2];
+    cell.identifierLabel.text = array[3];
+
+    
+}
+
 
 
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

@@ -33,7 +33,7 @@
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clicked:)];
     [self.manView addGestureRecognizer:tap];
     [self.womenView addGestureRecognizer:tap1];
-    self.view.backgroundColor = [UIColor colorWithRed:240 green:240 blue:240 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:240 green:239 blue:244 alpha:1];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem  = backButton;
     

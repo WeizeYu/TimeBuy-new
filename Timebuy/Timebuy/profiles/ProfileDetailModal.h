@@ -11,19 +11,18 @@
 @interface ProfileDetailModal : NSObject
 @property(nonatomic,copy)NSString *nickName;
 @property(copy,nonatomic)NSString *sex;
-@property(nonatomic,assign)int  age;
+@property(nonatomic,assign)NSInteger  age;
 @property(nonatomic,copy)NSString *profession;
 @property(nonatomic,copy)NSString *hometown;
-
-@property(nonatomic,copy)NSString *userName;
 @property(nonatomic,copy)NSString *phone;
 @property(nonatomic,copy)NSString *signature;
+@property(nonatomic,strong)UIImage *headIcon;//头像
+@property(nonatomic,copy)NSString *address;//地址
+@property(nonatomic,copy)NSString *userName;//用户名
+@property(nonatomic,copy)NSString *userId;//用户id
+@property(nonatomic,strong)NSDate *birthDay;//生日
 
-
-@property(nonatomic,copy)NSString *address;
-@property(nonatomic,copy)NSString *userId;
-@property(nonatomic,strong)NSDate *birthDay;
 @end
 
 
-//_leftAry = [NSArray arrayWithObjects:@"姓名",@"性别",@"年龄",@"职业",@"故乡",@"账号",@"个性签名", nil];
+//依次@"姓名",@"性别",@"年龄",@"职业",@"故乡",@"账号",@"个性签名", nil];

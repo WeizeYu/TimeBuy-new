@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hz-Zk-ep9">
                         <rect key="frame" x="15" y="11" width="42" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="sDg-Pv-Vq2"/>
                             <constraint firstAttribute="height" constant="21" id="vVB-2O-RhM"/>
@@ -26,6 +27,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:30~15:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chd-49-1q1">
                         <rect key="frame" x="223" y="20" width="82" height="20"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Lmg-ih-gBN"/>
                             <constraint firstAttribute="width" constant="82" id="nS0-sN-Y3S"/>
@@ -36,6 +38,7 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-LX-9lk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="oIK-Bc-Utb"/>
@@ -43,6 +46,7 @@
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年10月3日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f67-uP-QBs">
                         <rect key="frame" x="228" y="1" width="77" height="19"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="V7a-ni-lGW"/>
                             <constraint firstAttribute="width" constant="77" id="YgL-fB-uaO"/>
@@ -52,6 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="f67-uP-QBs" secondAttribute="trailing" constant="15" id="Dpt-An-LHo"/>
                     <constraint firstItem="dAO-LX-9lk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Fgb-S5-4Bb"/>
@@ -64,6 +69,7 @@
                     <constraint firstItem="f67-uP-QBs" firstAttribute="top" secondItem="dAO-LX-9lk" secondAttribute="bottom" id="rB0-WW-dNq"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="dateLabel" destination="f67-uP-QBs" id="yeJ-WP-JYq"/>
                 <outlet property="timeLabel" destination="chd-49-1q1" id="tbw-aM-fYC"/>

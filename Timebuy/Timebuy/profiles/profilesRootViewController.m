@@ -78,9 +78,11 @@
     [manager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
     ProfileDetailModal *modal = [ProfileDetailModal objectWithKeyValues:responseObject[@"data"]];
         
-//        NSLog(@" 111---  %@ ---111",responseObject );
+     NSLog(@" 111---  %@ ---111",responseObject );
         self.profileModal = modal;
 //        NSLog(@" 111---  %@ ---111",self.profileModal );
+//        NSLog(@" 111---  %@ ---111",modal.headIcon );
+        [self saveTheHeadIcon:modal.headIcon];
 
         NSString *timeStr = [responseObject[@"data"] objectForKey:@"birthDay"] ;
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[timeStr doubleValue] / 1000];
@@ -99,7 +101,7 @@
     self.hidesBottomBarWhenPushed = YES;
     //__strong typeof(self) strongSelf = self;
     self.tbNetLoginBusi =[[TBNetLoginBusi alloc]initWithDelegate:self username:@"13758240890" password:@"1"];
-    [self.tbNetLoginBusi start];
+//    [self.tbNetLoginBusi start];
 }
 
 #pragma mark - JYCNetLoginBusiDelegate
@@ -112,6 +114,17 @@
 //    if ([self.loginDelegate respondsToSelector:@selector(loginSuccess)]) {
 //        [self.loginDelegate loginSuccess];
 //    }
+}
+
+
+-(void)saveTheHeadIcon:(UIImage *)image{
+    NSData *data = [[NSData alloc] init];
+
+   
+        
+        data = UIImagePNGRepresentation(image);
+    
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"iconData"];
 }
 
 -(void)loginFail:(NSError *)error{
@@ -127,7 +140,7 @@
 -(void)saveData:(ProfileDetailModal *)modal{
     
     
-    NSString *ageStr = [NSString stringWithFormat:@"%d",modal.age];
+    NSString *ageStr = [NSString stringWithFormat:@"%ld",(long)modal.age];
     
     NSString *phone = modal.phone;
     NSString *nickName = modal.nickName;
@@ -148,6 +161,7 @@
         [array2 replaceObjectAtIndex:2 withObject:ageStr];
         [array2 replaceObjectAtIndex:3 withObject:profession];
         [array2 replaceObjectAtIndex:5 withObject:phone];
+        [array2 replaceObjectAtIndex:6 withObject:modal.signature];
         [array2 replaceObjectAtIndex:7 withObject:userId];
         [array2 replaceObjectAtIndex:8 withObject:address];
         [array2 replaceObjectAtIndex:9 withObject:modal.birthDay];
@@ -160,6 +174,7 @@
         [array2 replaceObjectAtIndex:2 withObject:ageStr];
         [array2 replaceObjectAtIndex:3 withObject:profession];
         [array2 replaceObjectAtIndex:5 withObject:phone];
+        [array2 replaceObjectAtIndex:6 withObject:modal.signature];
         [array2 replaceObjectAtIndex:7 withObject:userId];
         [array2 replaceObjectAtIndex:8 withObject:address];
         [array2 replaceObjectAtIndex:9 withObject:modal.birthDay];
@@ -194,9 +209,7 @@
     static NSString *ID = @"ID";
     if (indexPath.row == 0 && indexPath.section == 0) {
         ProfileDetailCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ProfileDetailCell" owner:nil options:nil] lastObject];
-//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-        cell.profileModal = self.profileModal;
-//        NSLog(@" 111---  %@ ---111",cell.profileModal );
+        [self cellWithData:cell];
 
          return cell;
     }
@@ -213,6 +226,8 @@
 }
 
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 10;
 }
@@ -223,28 +238,6 @@
 }
 
 
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    if (section == 0) {
-//        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 10)];
-//        view.backgroundColor = [UIColor grayColor];
-//        return view;
-//    }
-//    else{
-//        return nil;
-//    }
-//        
-//}
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-//    if (section == 0) {
-//        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 10)];
-//        view.backgroundColor = [UIColor grayColor];
-//        return view;
-//    }else{
-//        return nil;
-//    }
-//}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -294,14 +287,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)cellWithData:(ProfileDetailCell *)cell{
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+    if (data) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.profileView.image = image;
+    }
+    cell.profleNameLabel.text = array[0];
+    cell.phoneLabel.text = array[5];
+    cell.vipView.backgroundColor = [UIColor blueColor];
+    cell.profileView.backgroundColor = [UIColor redColor];
+    cell.profileView.layer.cornerRadius = cell.profileView.bounds.size.height / 2;
+    cell.profileView.layer.masksToBounds = YES;
+    cell.vipView.layer.cornerRadius = cell.vipView.bounds.size.height / 2;
+    cell.vipView.layer.masksToBounds = YES;
 }
-*/
 
 @end
