@@ -130,9 +130,14 @@
 -(void)loginFail:(NSError *)error{
     if ([ErrorHandleUtil handleError:error]) {
         if (error.code == -1) {
-            [SVProgressHUD dismissWithError:@"用户名或密码错误，请重试" afterDelay:AlertTime];
+            //[SVProgressHUD dismissWithError:@"用户名或密码错误，请重试" afterDelay:AlertTime];
+            
+            [SVProgressHUD showErrorWithStatus:@"用户名或密码错误，请重试"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }else{
-            [SVProgressHUD dismissWithError:@"服务器繁忙，请重试" afterDelay:AlertTime];
+            //[SVProgressHUD dismissWithError:@"服务器繁忙，请重试" afterDelay:AlertTime];
+            [SVProgressHUD showErrorWithStatus:@"服务器繁忙，请重试"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }
     }
 }

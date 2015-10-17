@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SMS_SDK/SMS_SDK.h>
+#import "SVProgressHUD.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

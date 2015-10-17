@@ -57,6 +57,8 @@
     [titleView addSubview:logoImgView];
     [self.navigationItem setTitleView:titleView];
     
+    self.hidesBottomBarWhenPushed = YES;
+    
     homeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     homeTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
@@ -315,8 +317,10 @@
         NSString *getCode = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]];
         if ([getStatus isEqualToString:@"1"] && [getCode isEqualToString:@"1000"]) {
             
-            [SVProgressHUD show];
-            [SVProgressHUD dismissWithSuccess:@"加载成功" afterDelay:1.0];
+            //[SVProgressHUD show];
+            //[SVProgressHUD dismissWithSuccess:@"加载成功" afterDelay:1.0];
+            [SVProgressHUD showSuccessWithStatus:@"加载成功"];
+            [SVProgressHUD dismissWithDelay:1.0f];
             
             NSData *getData = [[NSData alloc] init];
             getData = [responseObject objectForKey:@"data"];
@@ -351,19 +355,21 @@
              */
             
         } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2003"]) {
-            //[self showErrorWithTitle:@"首页加载失败" WithMessage:@"用户名不存在"];
-            [SVProgressHUD show];
-            [SVProgressHUD dismissWithError:@"加载失败" afterDelay:1.0];
+            
+            [SVProgressHUD showSuccessWithStatus:@"加载成功"];
+            
         } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2004"]) {
             //[self showErrorWithTitle:@"首页加载失败" WithMessage:@"密码错误"];
+            [SVProgressHUD showErrorWithStatus:@"首页加载失败" ];
         } else {
             //[self showErrorWithTitle:@"首页加载失败" WithMessage:@"系统错误"];
+            [SVProgressHUD showErrorWithStatus:@"首页加载失败" ];
         }
         
     } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
-        [SVProgressHUD show];
-        [SVProgressHUD dismissWithError:@"加载失败" afterDelay:1.0];
+        
+        [SVProgressHUD showErrorWithStatus:error.description];
     }];
 }
 

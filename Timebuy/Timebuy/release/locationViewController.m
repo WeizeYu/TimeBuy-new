@@ -318,7 +318,7 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
                                                             object:self
-                                                          userInfo:@{@"state":@"1",@"name":poi.name, @"location":poi.location}];
+                                                          userInfo:@{@"state":@"1",@"name":poi.name, @"location":poi.location, @"userLocation":self.userLocation}];
         
     } else {
         
@@ -329,7 +329,7 @@
             if (tip.location) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
                                                                     object:self
-                                                                  userInfo:@{@"state":@"1",@"name":tip.name, @"location":tip.location}];
+                                                                  userInfo:@{@"state":@"1",@"name":tip.name, @"location":tip.location,@"userLocation":self.userLocation}];
             } else {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"passLocation"
                                                                     object:self
@@ -394,6 +394,8 @@ updatingLocation:(BOOL)updatingLocation
     {
         //取出当前位置的坐标
         //NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+        self.userLocation = userLocation;
+        
         AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
         regeo.location = [AMapGeoPoint locationWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
         regeo.radius = 800;

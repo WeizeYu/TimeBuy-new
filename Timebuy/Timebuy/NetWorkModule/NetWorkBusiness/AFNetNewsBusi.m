@@ -58,8 +58,8 @@
             
             [self.delegate newsSuccess:responseObject];
             
-            [SVProgressHUD show];
-            [SVProgressHUD dismissWithSuccess:@"加载成功" afterDelay:1.0];
+            //[SVProgressHUD show];
+            //[SVProgressHUD dismissWithSuccess:@"加载成功" afterDelay:1.0];
             
             
         } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2003"]) {

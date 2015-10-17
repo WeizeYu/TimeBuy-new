@@ -26,7 +26,13 @@
     
     //priceTextField.text = price;
     priceTextField.delegate = self;
+    priceTextField.text = price;
     
+    [confirmButton setTitleColor:[UIColor colorWithWhite:10.0f alpha:0.3f] forState:UIControlStateDisabled];
+    
+    if (![price isEqualToString:@"请输入价格"] && ![price isEqualToString:@""] && price != nil) {
+        confirmButton.enabled = YES;
+    }
 }
 
 - (IBAction)cancel:(id)sender {
@@ -58,17 +64,21 @@
     
     [textField resignFirstResponder];
     
-    if ([priceTextField.text isEqualToString:@"0.0"]) {
-        [self showErrorWithTitle:@"" WithMessage:@"请输入大于0元的金额"];
+    if ([priceTextField.text isEqualToString:@""]) {
+        confirmButton.enabled = NO;
     } else {
-        if ([self checkNum:priceTextField.text]) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
-                                                                object:self
-                                                              userInfo:@{@"type":@"price",@"value":priceTextField.text}];
+        if ([priceTextField.text isEqualToString:@"0.0"]) {
+            [self showErrorWithTitle:@"" WithMessage:@"请输入大于0元的金额"];
         } else {
-            [self showErrorWithTitle:@"修改失败" WithMessage:@"请输入正确的价格"];
+            if ([self checkNum:priceTextField.text]) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
+                                                                    object:self
+                                                                  userInfo:@{@"type":@"price",@"value":priceTextField.text}];
+            } else {
+                [self showErrorWithTitle:@"修改失败" WithMessage:@"请输入正确的价格"];
+            }
         }
     }
     
@@ -77,7 +87,35 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    confirmButton.enabled = YES;
+    if ([priceTextField.text isEqualToString:@""]) {
+        confirmButton.enabled = NO;
+    } else {
+        confirmButton.enabled = YES;
+    }
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if ([priceTextField.text isEqualToString:@""]) {
+        confirmButton.enabled = NO;
+    } else {
+        confirmButton.enabled = YES;
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
+    NSString *getStr = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    if ([getStr isEqualToString:@""]) {
+        confirmButton.enabled = NO;
+    } else {
+        confirmButton.enabled = YES;
+    }
+    
+    return YES;
 }
 
 // 点击编辑区以外的地方 取消键盘

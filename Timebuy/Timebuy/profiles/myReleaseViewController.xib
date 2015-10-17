@@ -32,22 +32,22 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNt-Bv-Bez">
-                            <rect key="frame" x="56" y="28" width="42.5" height="5"/>
+                            <rect key="frame" x="56" y="28" width="43" height="5"/>
                             <animations/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bA-x1-keg">
-                            <rect key="frame" x="129.5" y="28" width="42.5" height="5"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bA-x1-keg">
+                            <rect key="frame" x="130" y="28" width="43" height="5"/>
                             <animations/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-YF-8j9">
-                            <rect key="frame" x="276.5" y="28" width="42.5" height="5"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-YF-8j9">
+                            <rect key="frame" x="277" y="28" width="43" height="5"/>
                             <animations/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDm-1j-T90">
-                            <rect key="frame" x="203" y="28" width="42.5" height="5"/>
+                            <rect key="frame" x="203" y="28" width="43" height="5"/>
                             <animations/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
@@ -69,7 +69,7 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="000000.png" translatesAutoresizingMaskIntoConstraints="NO" id="RrJ-sY-tX2">
-                            <rect key="frame" x="245.5" y="28" width="31" height="4"/>
+                            <rect key="frame" x="246" y="28" width="31" height="4"/>
                             <animations/>
                             <color key="tintColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -87,7 +87,7 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="000000.png" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-Yg-n4N">
-                            <rect key="frame" x="98.5" y="28" width="31" height="4"/>
+                            <rect key="frame" x="99" y="28" width="31" height="4"/>
                             <animations/>
                             <color key="tintColor" red="0.31372549020000001" green="0.89019607840000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -104,16 +104,16 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88P-Ct-e6F">
-                                    <rect key="frame" x="131.5" y="0.0" width="38" height="25"/>
+                                    <rect key="frame" x="132" y="0.0" width="38" height="25"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Am-jX-Rvn">
-                                    <rect key="frame" x="279.5" y="0.0" width="37.5" height="25"/>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Am-jX-Rvn">
+                                    <rect key="frame" x="280" y="0.0" width="38" height="25"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCU-kO-e0F">
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCU-kO-e0F">
                                     <rect key="frame" x="206" y="0.0" width="38" height="25"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,7 +135,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0E-7b-21q">
-                                    <rect key="frame" x="95.5" y="7" width="36" height="11"/>
+                                    <rect key="frame" x="96" y="7" width="36" height="11"/>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="36" id="8zl-jS-Rvj"/>
@@ -166,8 +166,8 @@
                                         <action selector="buttonClick:" destination="-1" eventType="touchUpInside" id="ioI-c9-Khj"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-8P-fk8">
-                                    <rect key="frame" x="243.5" y="7" width="36" height="11"/>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-8P-fk8">
+                                    <rect key="frame" x="244" y="7" width="36" height="11"/>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="36" id="Tfy-xg-OcH"/>

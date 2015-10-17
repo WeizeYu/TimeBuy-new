@@ -38,6 +38,8 @@
 @property (strong, nonatomic) NSArray *POIArray;
 @property (strong, nonatomic) NSMutableArray *tipsResultArray;
 
+@property (strong, nonatomic) MAUserLocation *userLocation;
+
 - (IBAction)cancel:(id)sender;
 
 @end

@@ -22,6 +22,8 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "userConfiguration.h"
+//#import "SVProgressHUD.h"
+#import "SVProgressHUD.h"
 
 #import "taskModel.h"
 
@@ -56,6 +58,7 @@
 @property (strong, nonatomic) UIDatePicker *datePicker;
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) AMapGeoPoint *location;
+@property (strong, nonatomic) MAUserLocation *userLocation;
 
 @property (strong, nonatomic) taskModel *taskModel;
 

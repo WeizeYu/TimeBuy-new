@@ -105,10 +105,12 @@
         getLocationName = [getDic objectForKey:@"name"];
         
         location = [getDic objectForKey:@"location"];
+        userLocation = [getDic objectForKey:@"userLocation"];
         
         releaseRootViewController *releaseMainVC = [[releaseRootViewController alloc] init];
         releaseMainVC.locationName = getLocationName;
         releaseMainVC.location = location;
+        releaseMainVC.userLocation = userLocation;
         [self presentViewController:releaseMainVC animated:YES completion:nil];
     }
 }
