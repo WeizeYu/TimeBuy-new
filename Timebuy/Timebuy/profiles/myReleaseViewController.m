@@ -20,6 +20,8 @@
 #import "waitingDetailViewController.h"
 #import "doneDetailViewController.h"
 #import "ingDetailViewController.h"
+#import "MTConst.h"
+#import "CommentController.h"
 #define kDuration 0.4  // 动画持续时间(秒)
 
 @interface myReleaseViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -187,8 +189,14 @@
     _leftTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(left)];
     _leftTap.direction=UISwipeGestureRecognizerDirectionRight;
     [_backView addGestureRecognizer:_leftTap];
- 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushCommentController) name:pushCommentNotification object:nil];
+    self.hidesBottomBarWhenPushed = YES;
+
     // Do any additional setup after loading the view from its nib.
+}
+-(void)pushCommentController{
+    CommentController *vc= [[CommentController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

@@ -7,6 +7,7 @@
 //
 
 #import "doneTableViewCell.h"
+#import "MTConst.h"
 
 @implementation doneTableViewCell
 
@@ -22,6 +23,9 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+- (IBAction)btnClick:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:pushCommentNotification object:nil];
 }
 
 @end

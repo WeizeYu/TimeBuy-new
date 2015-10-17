@@ -10,7 +10,7 @@ NSString *const CommonDidChangeNotification = @"CommonDidChangeNotification";
 NSString *const CommenKey = @"CommenKey";
 NSString *const CellTag = @"CellTag";
 
-NSString *const MTRegionDidChangeNotification = @"MTRegionDidChangeNotification";
+NSString *const pushCommentNotification = @"pushCommentNotification";
 NSString *const MTSelectRegion = @"MTSelectRegion";
 NSString *const MTSelectSubregionName = @"MTSelectSubregionName";
 

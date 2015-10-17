@@ -10,6 +10,16 @@
 		1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840D4D71BBAAD45006141A9 /* loginViewController.m */; };
 		1840D4DA1BBAAD45006141A9 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840D4D81BBAAD45006141A9 /* loginViewController.xib */; };
 		1876649E1BB972810033A35C /* NFXIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876649D1BB972810033A35C /* NFXIntroViewController.m */; };
+		3B649BDC1BD2235C00471765 /* PayCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649BDA1BD2235C00471765 /* PayCellTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		3B649BDD1BD2235C00471765 /* PayCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B649BDB1BD2235C00471765 /* PayCellTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3B649BE11BD232AD00471765 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649BDF1BD232AD00471765 /* CommentController.m */; settings = {ASSET_TAGS = (); }; };
+		3B649BE21BD232AD00471765 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B649BE01BD232AD00471765 /* CommentController.xib */; settings = {ASSET_TAGS = (); }; };
+		3B649BE51BD233B100471765 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B649BE31BD233B100471765 /* area.plist */; settings = {ASSET_TAGS = (); }; };
+		3B649BE61BD233B100471765 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B649BE41BD233B100471765 /* city.plist */; settings = {ASSET_TAGS = (); }; };
+		3B649BEE1BD24AA800471765 /* addressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649BE91BD24AA800471765 /* addressDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3B649BEF1BD24AA800471765 /* addressDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B649BEA1BD24AA800471765 /* addressDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3B649BF01BD24AA800471765 /* addressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649BEC1BD24AA800471765 /* addressViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3B649BF11BD24AA800471765 /* addressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B649BED1BD24AA800471765 /* addressViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		3B86E52F1BD0F13F0056E28E /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B86E51F1BD0F13F0056E28E /* MJRefresh.bundle */; settings = {ASSET_TAGS = (); }; };
 		3B86E5301BD0F13F0056E28E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86E5221BD0F13F0056E28E /* MJRefreshBaseView.m */; settings = {ASSET_TAGS = (); }; };
 		3B86E5311BD0F13F0056E28E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B86E5241BD0F13F0056E28E /* MJRefreshConst.m */; settings = {ASSET_TAGS = (); }; };
@@ -514,6 +524,20 @@
 		1840D4D81BBAAD45006141A9 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
 		1876649C1BB972810033A35C /* NFXIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFXIntroViewController.h; sourceTree = "<group>"; };
 		1876649D1BB972810033A35C /* NFXIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFXIntroViewController.m; sourceTree = "<group>"; };
+		3B649BD91BD2235C00471765 /* PayCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayCellTableViewCell.h; sourceTree = "<group>"; };
+		3B649BDA1BD2235C00471765 /* PayCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayCellTableViewCell.m; sourceTree = "<group>"; };
+		3B649BDB1BD2235C00471765 /* PayCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayCellTableViewCell.xib; sourceTree = "<group>"; };
+		3B649BDE1BD232AD00471765 /* CommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
+		3B649BDF1BD232AD00471765 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
+		3B649BE01BD232AD00471765 /* CommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
+		3B649BE31BD233B100471765 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		3B649BE41BD233B100471765 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		3B649BE81BD24AA800471765 /* addressDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addressDetailViewController.h; sourceTree = "<group>"; };
+		3B649BE91BD24AA800471765 /* addressDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addressDetailViewController.m; sourceTree = "<group>"; };
+		3B649BEA1BD24AA800471765 /* addressDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addressDetailViewController.xib; sourceTree = "<group>"; };
+		3B649BEB1BD24AA800471765 /* addressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addressViewController.h; sourceTree = "<group>"; };
+		3B649BEC1BD24AA800471765 /* addressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addressViewController.m; sourceTree = "<group>"; };
+		3B649BED1BD24AA800471765 /* addressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addressViewController.xib; sourceTree = "<group>"; };
 		3B86E51F1BD0F13F0056E28E /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		3B86E5201BD0F13F0056E28E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		3B86E5211BD0F13F0056E28E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -1243,6 +1267,19 @@
 			path = localImageBrowser;
 			sourceTree = "<group>";
 		};
+		3B649BE71BD24AA800471765 /* addressDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3B649BE81BD24AA800471765 /* addressDetailViewController.h */,
+				3B649BE91BD24AA800471765 /* addressDetailViewController.m */,
+				3B649BEA1BD24AA800471765 /* addressDetailViewController.xib */,
+				3B649BEB1BD24AA800471765 /* addressViewController.h */,
+				3B649BEC1BD24AA800471765 /* addressViewController.m */,
+				3B649BED1BD24AA800471765 /* addressViewController.xib */,
+			);
+			path = addressDetail;
+			sourceTree = "<group>";
+		};
 		3B86E51E1BD0F13F0056E28E /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1413,6 +1450,9 @@
 				3BAE9A1E1BCDFD69000FBB11 /* OtherCell.h */,
 				3BAE9A1F1BCDFD69000FBB11 /* OtherCell.m */,
 				3BAE9A201BCDFD69000FBB11 /* OtherCell.xib */,
+				3B649BD91BD2235C00471765 /* PayCellTableViewCell.h */,
+				3B649BDA1BD2235C00471765 /* PayCellTableViewCell.m */,
+				3B649BDB1BD2235C00471765 /* PayCellTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1998,6 +2038,8 @@
 			children = (
 				70535EDB1BB2B7FE00091EE6 /* Image */,
 				7045A4421BCAA81F00B15244 /* Info.plist */,
+				3B649BE31BD233B100471765 /* area.plist */,
+				3B649BE41BD233B100471765 /* city.plist */,
 				70860B6C1BB01CF100E54EEF /* main.m */,
 				70E6B87B1BCBD9C00081CED9 /* Timebuy-Prefix.pch */,
 			);
@@ -2172,6 +2214,7 @@
 		70860C201BB1660A00E54EEF /* profiles */ = {
 			isa = PBXGroup;
 			children = (
+				3B649BE71BD24AA800471765 /* addressDetail */,
 				3BAE9A301BCE31BB000FBB11 /* MTConst.h */,
 				3BAE9A311BCE31BB000FBB11 /* MTConst.m */,
 				3BAE99FB1BCDEA32000FBB11 /* Controller */,
@@ -2425,6 +2468,9 @@
 				7323502F1BB5570500C9E325 /* myReleaseViewController.h */,
 				732350301BB5570500C9E325 /* myReleaseViewController.m */,
 				732350311BB5570500C9E325 /* myReleaseViewController.xib */,
+				3B649BDE1BD232AD00471765 /* CommentController.h */,
+				3B649BDF1BD232AD00471765 /* CommentController.m */,
+				3B649BE01BD232AD00471765 /* CommentController.xib */,
 			);
 			name = ProfilesDetailTableViewCells;
 			sourceTree = "<group>";
@@ -2693,6 +2739,8 @@
 				70E587B21BB2DD8B00915DD6 /* location1.png in Resources */,
 				70535F6B1BB2B7FE00091EE6 /* dingwei1@2x.png in Resources */,
 				70535F9F1BB2B7FE00091EE6 /* 导航条320x64@2x.png in Resources */,
+				3B649BE51BD233B100471765 /* area.plist in Resources */,
+				3B649BEF1BD24AA800471765 /* addressDetailViewController.xib in Resources */,
 				70535FB01BB2B7FE00091EE6 /* 爱心1@3x.png in Resources */,
 				70535FA11BB2B7FE00091EE6 /* 导航条375x64.png in Resources */,
 				70E587B51BB2DD8B00915DD6 /* location2.png in Resources */,
@@ -2737,6 +2785,7 @@
 				70860C331BB166A200E54EEF /* newsRootViewController.xib in Resources */,
 				70535FE21BB2B7FE00091EE6 /* xianshikongxian@2x.png in Resources */,
 				700289D01BC2AFA500E62B5A /* 陪伴.png in Resources */,
+				3B649BDD1BD2235C00471765 /* PayCellTableViewCell.xib in Resources */,
 				73CA21D71BCBD66B000A6C41 /* myWalletViewController.xib in Resources */,
 				3BAE9A271BCE07B1000FBB11 /* ConmonController.xib in Resources */,
 				70535F711BB2B7FE00091EE6 /* yes@2x.png in Resources */,
@@ -2746,6 +2795,7 @@
 				70535FC71BB2B7FE00091EE6 /* fabu@3x.png in Resources */,
 				700289C71BC2AFA500E62B5A /* hardworking@3x.png in Resources */,
 				73F809961BC546B2003A5B0B /* 时钟.png in Resources */,
+				3B649BF11BD24AA800471765 /* addressViewController.xib in Resources */,
 				70535FD81BB2B7FE00091EE6 /* wodericheng.png in Resources */,
 				70535F7A1BB2B7FE00091EE6 /* back@2x.png in Resources */,
 				70535F6A1BB2B7FE00091EE6 /* dingwei1.png in Resources */,
@@ -2865,6 +2915,7 @@
 				700289771BC0FF8900E62B5A /* ZYQAssetPicker.Bundle in Resources */,
 				70535F8E1BB2B7FE00091EE6 /* showImg2.png in Resources */,
 				70535FA71BB2B7FE00091EE6 /* 推送.png in Resources */,
+				3B649BE61BD233B100471765 /* city.plist in Resources */,
 				700F8CEC1BC4DB5700165A93 /* V2@3x.png in Resources */,
 				3BBE86A91BCF84B400AAE366 /* SecondCell.xib in Resources */,
 				70535F9B1BB2B7FE00091EE6 /* 导航字体.png in Resources */,
@@ -2938,6 +2989,7 @@
 				70028A361BC378C500E62B5A /* center.png in Resources */,
 				700F8CF21BC4DB5700165A93 /* V4@3x.png in Resources */,
 				70535FD31BB2B7FE00091EE6 /* meiritixing@3x.png in Resources */,
+				3B649BE21BD232AD00471765 /* CommentController.xib in Resources */,
 				70535FDE1BB2B7FE00091EE6 /* wodezuji.png in Resources */,
 				700289C91BC2AFA500E62B5A /* help@2x.png in Resources */,
 				7045A40F1BC9DA1700B15244 /* teamTableViewCell.xib in Resources */,
@@ -3049,6 +3101,7 @@
 				73CA21CA1BC92C7A000A6C41 /* RcancelBigTableViewCell.m in Sources */,
 				3BEB5C2A1BCA3AC40085C946 /* MJPhotoLoadingView.m in Sources */,
 				7323501D1BB41A7E00C9E325 /* waitBigTableViewCell.m in Sources */,
+				3B649BEE1BD24AA800471765 /* addressDetailViewController.m in Sources */,
 				73509CA11BCD2FF1005566D2 /* UserModel.m in Sources */,
 				70860C0B1BB041AF00E54EEF /* MKAnnotationView+WebCache.m in Sources */,
 				3BAE9A541BCE76FE000FBB11 /* MJPropertyKey.m in Sources */,
@@ -3093,6 +3146,8 @@
 				70860C091BB041AF00E54EEF /* KLCPopup.m in Sources */,
 				700289791BC0FF8900E62B5A /* labelsTableViewCell.m in Sources */,
 				7045A3F31BC9487D00B15244 /* welfareDetailsViewController.m in Sources */,
+				3B649BDC1BD2235C00471765 /* PayCellTableViewCell.m in Sources */,
+				3B649BE11BD232AD00471765 /* CommentController.m in Sources */,
 				3BBE869E1BCF841000AAE366 /* SystemMessageController.m in Sources */,
 				7045A40E1BC9DA1700B15244 /* teamTableViewCell.m in Sources */,
 				3B86E5301BD0F13F0056E28E /* MJRefreshBaseView.m in Sources */,
@@ -3118,6 +3173,7 @@
 				7045A3ED1BC9487D00B15244 /* programDetailsTableViewCell.m in Sources */,
 				70860C1C1BB041AF00E54EEF /* VPImageCropperViewController.m in Sources */,
 				3BBE86A31BCF842200AAE366 /* ActivityController.m in Sources */,
+				3B649BF01BD24AA800471765 /* addressViewController.m in Sources */,
 				1840D4D91BBAAD45006141A9 /* loginViewController.m in Sources */,
 				73509C7F1BCD1654005566D2 /* TBHttpError.m in Sources */,
 				7045A4401BCA8BD100B15244 /* CACustomTextLayer.m in Sources */,
