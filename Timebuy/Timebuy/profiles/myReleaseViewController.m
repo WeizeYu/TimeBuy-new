@@ -20,6 +20,7 @@
 #import "doneDetailViewController.h"
 #import "ingDetailViewController.h"
 #import "HMSegmentedControl.h"
+#import "MJRefresh.h"
 #define kDuration 0.4  // 动画持续时间(秒)
 
 @interface myReleaseViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -31,6 +32,7 @@
 @property (nonatomic) UITableView *tableview4;
 @property (nonatomic) UITableView *tableview5;
 @property (nonatomic) NSInteger pageTag;
+@property (nonatomic) NSInteger refreshTag;
 #pragma -----------------------tableview的字典数组----------------------------
 @property (nonatomic) NSMutableDictionary *dataSourceDic;
 @end
@@ -56,9 +58,48 @@
     }
     self.tabBarController.tabBar.hidden = NO;
 }
+#pragma mark 下拉刷新数据
+- (void)loadData
+{
+    NSLog(@"下拉");
+    CGFloat pageWidth = _scrollView.frame.size.width;
+    NSInteger page = _scrollView.contentOffset.x / pageWidth;
+    _pageTag=page;
+    _refreshTag=1;
+    //结束刷新
+    //[self.tableview1.header endRefreshing];
+    if(_pageTag==0)
+    {
+        [self.tableview1 headerEndRefreshing];
+        [self.tableview1 reloadData];
+        [self.segmentedControl4 setSelectedSegmentIndex:0];
+    }
+    else if(_pageTag==1)
+    {
+        [self.tableview2 headerEndRefreshing];
+        [self.segmentedControl4 setSelectedSegmentIndex:1];
+       // [self.tableview2 reloadData];
+    }
+    else if(_pageTag==2)
+    {
+        [self.tableview3 headerEndRefreshing];
+        [self.tableview3 reloadData];
+    }
+    else if(_pageTag==3)
+    {
+        [self.tableview4 headerEndRefreshing];
+        [self.tableview4 reloadData];
+    }
+    else if(_pageTag==4)
+    {
+        [self.tableview5 headerEndRefreshing];
+        [self.tableview5 reloadData];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pageTag=0;
+    _refreshTag=0;
     self.title=@"我的发布";
 #pragma -----------------------------segment设置------------------------------------------------
     CGFloat viewWidth = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
@@ -73,38 +114,38 @@
     self.segmentedControl4.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
     self.segmentedControl4.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
 #pragma -----------------------------scrollview设置------------------------------------------
-    self.segmentedControl4.tag = 5;
+    self.segmentedControl4.tag = 3;
     __weak typeof(self) weakSelf = self;
     [self.segmentedControl4 setIndexChangeBlock:^(NSInteger index) {
         [weakSelf.scrollView scrollRectToVisible:CGRectMake(viewWidth * index, 0, viewWidth, self.view.frame.size.height-90) animated:YES];
     }];
     [self.view addSubview:self.segmentedControl4];
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 32, viewWidth, self.view.frame.size.height-60)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 32, viewWidth, self.view.frame.size.height-70)];
     self.scrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.contentSize = CGSizeMake(viewWidth * 5, self.view.frame.size.height-60);
+    self.scrollView.contentSize = CGSizeMake(viewWidth * 5, self.view.frame.size.height-70);
     self.scrollView.delegate = self;
-    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-60) animated:YES];
+    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-70) animated:YES];
     [self.view addSubview:self.scrollView];
 #pragma ------------------------------scrollview内容添加------------------------------------
-    self.tableview1=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-60)];
+    self.tableview1=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-70)];
     [self setApperanceForTableview:_tableview1];
     [self.scrollView addSubview:_tableview1];
     
-    self.tableview2=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth, 0, viewWidth, self.view.frame.size.height-60)];
+    self.tableview2=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth, 0, viewWidth, self.view.frame.size.height-70)];
     [self setApperanceForTableview:_tableview2];
     [self.scrollView addSubview:_tableview2];
     
-    self.tableview3=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*2, 0, viewWidth, self.view.frame.size.height-60)];
+    self.tableview3=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*2, 0, viewWidth, self.view.frame.size.height-70)];
     [self setApperanceForTableview:_tableview3];
     [self.scrollView addSubview:_tableview3];
     
-    self.tableview4=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*3, 0, viewWidth, self.view.frame.size.height-60)];
+    self.tableview4=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*3, 0, viewWidth, self.view.frame.size.height-70)];
     [self setApperanceForTableview:_tableview4];
     [self.scrollView addSubview:_tableview4];
     
-    self.tableview5=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*4, 0, viewWidth, self.view.frame.size.height-60)];
+    self.tableview5=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*4, 0, viewWidth, self.view.frame.size.height-70)];
     [self setApperanceForTableview:_tableview5];
     [self.scrollView addSubview:_tableview5];
     //自定义返回按钮
@@ -122,7 +163,7 @@
     [tableview setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     tableview.delegate=self;
     tableview.dataSource=self;
-    [tableview reloadData];
+    [tableview addHeaderWithTarget:self action:@selector(loadData)];
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -131,23 +172,23 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[UITableViewCell alloc];
-    if(_pageTag==0)
+    if(tableView==self.tableview1)
     {
         cell = [self tableView:self.tableview1 cellForRowAtIndexPath:indexPath];
     }
-    else if(_pageTag==1)
+    else if(tableView==self.tableview2)
     {
         cell = [self tableView:self.tableview2 cellForRowAtIndexPath:indexPath];
     }
-    else if(_pageTag==2)
+    else if(tableView==self.tableview3)
     {
         cell = [self tableView:self.tableview3 cellForRowAtIndexPath:indexPath];
     }
-    else if(_pageTag==3)
+    else if(tableView==self.tableview4)
     {
         cell = [self tableView:self.tableview4 cellForRowAtIndexPath:indexPath];
     }
-    else if(_pageTag==4)
+    else if(tableView==self.tableview5)
     {
         cell = [self tableView:self.tableview5 cellForRowAtIndexPath:indexPath];
     }
@@ -155,6 +196,26 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    if(tableView==self.tableview1)
+    {
+        _pageTag=0;
+    }
+    else if(tableView==self.tableview2)
+    {
+        _pageTag=1;
+    }
+    else if(tableView==self.tableview3)
+    {
+        _pageTag=2;
+    }
+    else if(tableView==self.tableview4)
+    {
+        _pageTag=3;
+    }
+    else if(tableView==self.tableview5)
+    {
+        _pageTag=4;
+    }
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 6)];
     UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-31*5)/10+(_pageTag*(self.view.frame.size.width/5))+17-5, 0, 10, 6)];
     [sanjiao setImage:[UIImage imageNamed:@"sanjiao.png"]];
@@ -170,7 +231,7 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     if(indexPath.row==0)
     {
-        if(_pageTag==0)
+        if(tableView==self.tableview1)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"waitimageCell%ld",(long)indexPath.row];
             waitBigTableViewCell *waitcell = (waitBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -181,7 +242,7 @@
             }
             cell=waitcell;
         }
-        else if(_pageTag==1)
+        else if(tableView==self.tableview2)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"ingimageCell%ld",(long)indexPath.row];
             ingBigTableViewCell *ingcell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -198,7 +259,7 @@
             };
             cell=ingcell;
         }
-        else if(_pageTag==2)
+        else if(tableView==self.tableview3)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"doneimageCell%ld",(long)indexPath.row];
             doneBigTableViewCell *donecell = (doneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -209,7 +270,7 @@
             }
             cell=donecell;
         }
-        else if(_pageTag==3)
+        else if(tableView==self.tableview4)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
             complainTableViewCell *comcell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -220,7 +281,7 @@
             }
             cell=comcell;
         }
-        else if(_pageTag==4)
+        else if(tableView==self.tableview5)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"cancelimageCell%ld",(long)indexPath.row];
             cancelBigTableViewCell *cancelcell = (cancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -236,7 +297,7 @@
     {
 #pragma -----------------------------进行中界面-初始化--------------------------------
     //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"1"])
-        if(_pageTag==1){
+        if(tableView==self.tableview2){
             NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",(long)indexPath.row];
             __weak typeof(self) weakSelf = self;
             if([self.dataSourceDic objectForKey:@"pics"])
@@ -275,7 +336,7 @@
         }
 #pragma -----------------------------等待中界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"0"])
-        if(_pageTag==0){
+        if(tableView==self.tableview1){
             NSString *CellIdentifier =[NSString stringWithFormat:@"waitCell%ld",(long)indexPath.row];
             if([self.dataSourceDic objectForKey:@"pics"])
                 {
@@ -302,7 +363,7 @@
         }
     #pragma -----------------------------已完成界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"2"])
-    if(_pageTag==2)
+    if(tableView==self.tableview3)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"dongCell%ld",(long)indexPath.row];
             if([self.dataSourceDic objectForKey:@"pics"]){
@@ -329,7 +390,7 @@
         }
 #pragma -----------------------------申诉中界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"3"])
-    if(_pageTag==3)
+    if(tableView==self.tableview4)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
             complainTableViewCell *comcell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -344,7 +405,7 @@
         }
 #pragma -----------------------------已取消界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"4"])
-    if(_pageTag==4)
+    if(tableView==self.tableview5)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"cancelCell%ld",(long)indexPath.row];
             if([self.dataSourceDic objectForKey:@"pics"])
@@ -376,9 +437,14 @@
 }
 #pragma mark ------------------------ UIScrollViewDelegate----------------------------
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    CGFloat pageWidth = scrollView.frame.size.width;
-    NSInteger page = scrollView.contentOffset.x / pageWidth;
-    _pageTag=page;
+    if(_refreshTag==0)
+    {
+        CGFloat pageWidth = scrollView.frame.size.width;
+        NSInteger page = scrollView.contentOffset.x / pageWidth;
+        _pageTag=page;
+        
+    }
+    _refreshTag=0;
     if(_pageTag==0)
     {
         [self.tableview1 reloadData];
@@ -399,7 +465,7 @@
     {
         [self.tableview5 reloadData];
     }
-    [self.segmentedControl4 setSelectedSegmentIndex:page animated:YES];
+    [self.segmentedControl4 setSelectedSegmentIndex:_pageTag animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
