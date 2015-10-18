@@ -16,6 +16,7 @@
 #import "RingBigTableViewCell.h"
 #import "RcancelBigTableViewCell.h"
 #import "RdoneBigTableViewCell.h"
+#import "MJRefresh.h"
 @interface myResponseViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl4;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -49,9 +50,22 @@
     }
     self.tabBarController.tabBar.hidden = NO;
 }
+#pragma mark 下拉刷新数据
+- (void)loadData
+{
+    NSLog(@"下拉");
+    //结束刷新
+    //[self.tableview1.header endRefreshing];
+    [self.tableview1 headerEndRefreshing];
+//    CGFloat pageWidth = _scrollView.frame.size.width;
+//    NSInteger page = _scrollView.contentOffset.x / pageWidth;
+//    _pageTag=page;
+//    [self.tableview1 reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pageTag=0;
+    
     self.title=@"我的响应";
 #pragma -----------------------------segment设置------------------------------------------------
     CGFloat viewWidth = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
@@ -59,7 +73,7 @@
     self.segmentedControl4.sectionTitles = @[@"在进行", @"已完成", @"申诉中",@"已取消"];
     self.segmentedControl4.selectedSegmentIndex = 0;
     self.segmentedControl4.backgroundColor = [UIColor whiteColor];
-    UIFont* font = [UIFont fontWithName:@"Arial-ItalicMT" size:11.0];
+    UIFont* font = [UIFont fontWithName:@"Arial-ItalicMT" size:14.0];
     self.segmentedControl4.titleTextAttributes = @{NSFontAttributeName:font,NSForegroundColorAttributeName:[UIColor blackColor]};
     self.segmentedControl4.selectionIndicatorHeight = 4.0f;
     self.segmentedControl4.selectionIndicatorColor = [UIColor colorWithRed:12.0 / 255.0f green:228.0 / 255.0f blue:225.0 / 255.0f alpha:1];
@@ -96,6 +110,13 @@
     self.tableview4=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*3, 0, viewWidth, self.view.frame.size.height-65)];
     [self setApperanceForTableview:_tableview4];
     [self.scrollView addSubview:_tableview4];
+    //自定义返回按钮
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem  = backButton;
+    // Do any additional setup after loading the view from its nib.
+}
+- (void)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)setApperanceForTableview:(UITableView *)tableview {
     [tableview setRowHeight:106];
@@ -104,6 +125,10 @@
     [tableview setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     tableview.delegate=self;
     tableview.dataSource=self;
+    [tableview addHeaderWithTarget:self action:@selector(loadData)];
+    CGFloat pageWidth = _scrollView.frame.size.width;
+    NSInteger page = _scrollView.contentOffset.x / pageWidth;
+    _pageTag=page;
     [tableview reloadData];
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
@@ -134,7 +159,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 6)];
-    //UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake(45+21+((self.view.frame.size.width-90-42*4)/4+45)*(_pageTag)-5, 0, 10, 6)];
     UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-41*4)/8+(_pageTag*(self.view.frame.size.width/4))+20-5, 0, 10, 6)];
     [sanjiao setImage:[UIImage imageNamed:@"sanjiao.png"]];
     [view addSubview:sanjiao];

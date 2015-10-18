@@ -567,7 +567,7 @@
             CGFloat widthToStartOfSelectedIndex = (self.segmentWidth * self.selectedSegmentIndex);
             
             CGFloat x = ((widthToEndOfSelectedSegment - widthToStartOfSelectedIndex) / 2) + (widthToStartOfSelectedIndex - sectionWidth / 2);
-            return CGRectMake(x + self.selectionIndicatorEdgeInsets.left, indicatorYOffset, sectionWidth - self.selectionIndicatorEdgeInsets.right, self.selectionIndicatorHeight);
+            return CGRectMake(x + self.selectionIndicatorEdgeInsets.left+5, indicatorYOffset, 31.f, self.selectionIndicatorHeight);
         } else {
             if (self.segmentWidthStyle == HMSegmentedControlSegmentWidthStyleDynamic) {
                 CGFloat selectedSegmentOffset = 0.0f;
