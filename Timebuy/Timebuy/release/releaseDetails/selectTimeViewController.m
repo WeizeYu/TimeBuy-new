@@ -28,6 +28,8 @@
     
     flag = 0;
     
+    [confirmButton setTitleColor:[UIColor colorWithWhite:10.0f alpha:0.3f] forState:UIControlStateDisabled];
+    
     [startTimeTextField addTarget:self action:@selector(startTimeEvent:) forControlEvents:UIControlEventTouchDown];
     [endTimeTextField addTarget:self action:@selector(endTimeEvent:) forControlEvents:UIControlEventTouchDown];
     
@@ -39,8 +41,7 @@
     [self.view addSubview:shadowView];
     shadowView.hidden = YES;
     
-    UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actiondo:)];
-    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actiondo:)];
     [shadowView addGestureRecognizer:tapGesture];
     
     transition1 = [CATransition animation];
@@ -56,7 +57,21 @@
     transition2.timingFunction = UIViewAnimationCurveEaseInOut;
     transition2.type = kCATransitionFade;
     
+    //NSLog(@"====,%@,====,%@,===",self.startTimeStr,self.endTimeStr);
     
+    if (self.startTimeStr == nil || self.endTimeStr == nil) {
+        startTimeTextField.placeholder = @"点击选择开始时间";
+        endTimeTextField.placeholder = @"点击选择结束时间";
+    } else {
+        startTimeTextField.text = self.startTimeStr;
+        endTimeTextField.text = self.endTimeStr;
+    }
+    
+    if (![startTimeTextField.text isEqualToString:@""] && ![endTimeTextField.text isEqualToString:@""]) {
+        confirmButton.enabled = YES;
+    } else {
+        confirmButton.enabled = NO;
+    }
 }
 
 - (IBAction)cancel:(id)sender {
@@ -70,7 +85,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd HH:mm"]; //设置日期格式
     
-    NSString *timeStr = [NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:startTimeDate],[dateFormatter stringFromDate:endTimeDate]];
+    NSString *timeStr = [NSString stringWithFormat:@"%@ ~ %@", [startTimeTextField.text substringFromIndex:5],[endTimeTextField.text substringFromIndex:5]];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"passModifyInRelease"
                                                         object:self
@@ -86,24 +101,20 @@
     UIDatePicker* control = (UIDatePicker*)sender;
     controlDate = control.date;
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
-    NSString *curDateTime = [formatter stringFromDate:controlDate];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
+//    NSString *curDateTime = [formatter stringFromDate:controlDate];
     
     if (flag == 1) {
-        startTimeTextField.text = curDateTime;
+        //startTimeTextField.text = curDateTime;
         startTimeDate = controlDate;
         
     } else if (flag == 2) {
-        endTimeTextField.text = curDateTime;
+        //endTimeTextField.text = curDateTime;
         endTimeDate = controlDate;
     }
     
-    if (![startTimeTextField.text isEqualToString:@""] && ![endTimeTextField.text isEqualToString:@""]) {
-        confirmButton.enabled = YES;
-    } else {
-        confirmButton.enabled = NO;
-    }
+    //NSLog(@"====,%@,====,%@,===",startTimeTextField.text,endTimeTextField.text);
     
 }
 
@@ -113,21 +124,20 @@
     shadowView.hidden = YES;
     //[shadowView removeFromSuperview];
     [datePicker removeFromSuperview];
+    [navView removeFromSuperview];
 }
 
 - (void)startTimeEvent:(id)sender {
-    NSLog(@"start");
+    //NSLog(@"start");
     
     shadowView.hidden = NO;
     [self.view addSubview:shadowView];
     
-    NSDate* date = [NSDate date];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
-    NSString *curDateTime = [formatter stringFromDate:date];
-    
-    startTimeTextField.text = curDateTime;
+//    NSDate* date = [NSDate date];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
+//    NSString *curDateTime = [formatter stringFromDate:date];
+//    startTimeTextField.text = curDateTime;
     
     flag = 1;
     
@@ -146,12 +156,23 @@
     [datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged ];
     [self.view addSubview:datePicker];
     
+    navView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275 + 64 - 30, [[UIScreen mainScreen] bounds].size.width, 30)];
+    navView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:navView];
+    
+    UIButton *sureButton = [[UIButton alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - 60 - 15, 0, 60, 30)];
+    [sureButton setTitle:@"确定" forState:UIControlStateNormal];
+    [sureButton setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    [sureButton addTarget:self action:@selector(sure:) forControlEvents:UIControlEventTouchUpInside];
+    [navView addSubview:sureButton];
+    
     [[datePicker layer] addAnimation:transition1 forKey:nil];
+    [[navView    layer] addAnimation:transition1 forKey:nil];
     [[shadowView layer] addAnimation:transition2 forKey:nil];
 }
 
 - (void)endTimeEvent:(id)sender {
-    NSLog(@"end");
+    //NSLog(@"end");
     
     shadowView.hidden = NO;
     //[self.view addSubview:shadowView];
@@ -178,8 +199,51 @@
     [datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged ];
     [self.view addSubview:datePicker];
     
+    navView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 275 + 64 - 30, [[UIScreen mainScreen] bounds].size.width, 30)];
+    navView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:navView];
+    
+    UIButton *sureButton = [[UIButton alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - 60 - 15, 0, 60, 30)];
+    [sureButton setTitle:@"确定" forState:UIControlStateNormal];
+    [sureButton setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    [sureButton addTarget:self action:@selector(sure:) forControlEvents:UIControlEventTouchUpInside];
+    [navView addSubview:sureButton];
+    
     [[datePicker layer] addAnimation:transition1 forKey:nil];
+    [[navView    layer] addAnimation:transition1 forKey:nil];
     [[shadowView layer] addAnimation:transition2 forKey:nil];
+}
+
+- (void)sure:(id)sender
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
+    NSString *curDateTime = [formatter stringFromDate:datePicker.date];
+    
+    if (flag == 1) {
+
+        
+        startTimeTextField.text = curDateTime;
+        //startTimeDate = controlDate;
+        
+    } else if (flag == 2) {
+
+        endTimeTextField.text = curDateTime;
+        //endTimeDate = controlDate;
+    }
+    
+    shadowView.hidden = YES;
+    //[shadowView removeFromSuperview];
+    [datePicker removeFromSuperview];
+    [navView removeFromSuperview];
+    
+    //NSLog(@"====,%@,====,%@,===",startTimeTextField.text,endTimeTextField.text);
+    
+    if (![startTimeTextField.text isEqualToString:@""] && ![endTimeTextField.text isEqualToString:@""]) {
+        confirmButton.enabled = YES;
+    } else {
+        confirmButton.enabled = NO;
+    }
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField

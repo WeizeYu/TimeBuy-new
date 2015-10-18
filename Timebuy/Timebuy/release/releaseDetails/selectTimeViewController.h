@@ -20,6 +20,8 @@
     NSDate* controlDate;
     NSDate* startTimeDate;
     NSDate* endTimeDate;
+    
+    UIView *navView;    //导航视图，用来存放确定按钮
 
 }
 
@@ -27,6 +29,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *endTimeTextField;
 @property (strong, nonatomic) UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIButton *confirmButton;
+
+@property (strong, nonatomic) NSString *startTimeStr;
+@property (strong, nonatomic) NSString *endTimeStr;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;

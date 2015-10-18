@@ -25,6 +25,8 @@
     NSString *getState;
     NSString *getLocationName;
     AMapGeoPoint *location;
+    
+    MAUserLocation *userLocation;
 }
 
 @property (strong, nonatomic) UITabBar *myTabBar;

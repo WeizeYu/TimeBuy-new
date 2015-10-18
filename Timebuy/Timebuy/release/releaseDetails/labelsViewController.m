@@ -21,13 +21,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    candidateButton1.layer.masksToBounds = YES;
+    candidateButton1.layer.cornerRadius = 8.0f;
+    
+    candidateButton2.layer.masksToBounds = YES;
+    candidateButton2.layer.cornerRadius = 8.0f;
+    
+    candidateButton3.layer.masksToBounds = YES;
+    candidateButton3.layer.cornerRadius = 8.0f;
+    
+    candidateButton4.layer.masksToBounds = YES;
+    candidateButton4.layer.cornerRadius = 8.0f;
+    
 }
 
 - (IBAction)cancel:(id)sender {
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)save:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)button1Event:(id)sender
+{
+    
+}
+
+- (IBAction)button2Event:(id)sender
+{
+    
+}
+
+- (IBAction)button3Event:(id)sender
+{
+    
+}
+
+- (IBAction)button4Event:(id)sender
+{
     
 }
 

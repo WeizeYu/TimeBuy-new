@@ -16,8 +16,10 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "userConfiguration.h"
+#import "SVProgressHUD.h"
 
 #import "taskModel.h"
+#import "AFNetNewsBusi.h"
 
 @interface homeMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,JScrollViewViewDelegate,MBProgressHUDDelegate>
 {
@@ -27,5 +29,6 @@
 
 @property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) IBOutlet UITableView *homeTableView;
+@property (strong, nonatomic) taskModel *taskModel;
 
 @end

@@ -22,17 +22,21 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "userConfiguration.h"
+//#import "SVProgressHUD.h"
+#import "SVProgressHUD.h"
+
+#import "taskModel.h"
 
 @interface releaseRootViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,MBProgressHUDDelegate>
 {
     NSString *msgStr;
-    NSString *placeStr;
+    //NSString *placeStr;
     CGFloat *latitude;
     CGFloat *longtitude;
     NSString *timeStr;
-    NSString *startTime;
-    NSString *endTime;
-    NSString *priceStr;
+    //NSString *startTime;
+    //NSString *endTime;
+    //NSString *priceStr;
     NSString *phone;
     NSString *label;
   
@@ -54,6 +58,9 @@
 @property (strong, nonatomic) UIDatePicker *datePicker;
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) AMapGeoPoint *location;
+@property (strong, nonatomic) MAUserLocation *userLocation;
+
+@property (strong, nonatomic) taskModel *taskModel;
 
 - (IBAction)cancel:(id)sender;
 

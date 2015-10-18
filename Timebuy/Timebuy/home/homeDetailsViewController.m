@@ -35,13 +35,14 @@
 @implementation homeDetailsViewController
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
     for (UIView *v in self.tabBarController.view.subviews) {
-        if ([v isKindOfClass:[UIButton class]]) {
+        if ([v isKindOfClass:[UIButton class]] || [v isKindOfClass:[UITabBar class]]) {
             v.hidden = YES;
         }
     }
     self.tabBarController.tabBar.hidden = YES;
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
@@ -56,6 +57,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.title=@"详情";
     self.headImage.layer.masksToBounds=true;
     [self.headImage.layer setCornerRadius:20];

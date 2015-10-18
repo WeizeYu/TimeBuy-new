@@ -33,9 +33,16 @@
     
     myRow = -1;
     
-    placeStr = @"杭州小和山";
+    self.taskModel = [[taskModel alloc] init];
+    self.taskModel.taskCoordx = [NSString stringWithFormat:@"%f",self.location.latitude];
+    self.taskModel.taskCoordy = [NSString stringWithFormat:@"%f",self.location.longitude];
+    self.taskModel.taskUserCoordx = [NSString stringWithFormat:@"%f",self.userLocation.coordinate.latitude];
+    self.taskModel.taskUserCoordy = [NSString stringWithFormat:@"%f",self.userLocation.coordinate.longitude];
+    self.taskModel.taskCoordname = @"杭州小和山";
+    //self.taskModel.taskCoordname = self.locationName;
+    self.taskModel.taskMoney = @"请输入价格";
+    
     timeStr = @"请确定合适开始和结束";
-    priceStr = @"输入价格";
     phone = @"18767122229";
     
     shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 275 + 64)];
@@ -69,8 +76,11 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recModifyInRelease:) name:@"passModifyInRelease" object:nil];
     
+//    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+//    [releaseTableView addGestureRecognizer:tapGestureRecognizer];
+    
     //定位地址名称
-    //placeStr = locationName;
+    //self.taskModel.taskCoordname = locationName;
     
 }
 
@@ -79,62 +89,64 @@
     NSString *getType = [getDic objectForKey:@"type"];
     NSString *getValue = [getDic objectForKey:@"value"];
     
-    if ([getType isEqualToString:@"price"]) {
+    if ([getType isEqualToString:@"price"])
+    {
         NSString *str = @"￥";
-        priceStr = getValue;
+        self.taskModel.taskMoney = getValue;
         
         priceTableViewCell *cell= (priceTableViewCell *)[releaseTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
         cell.priceLabel.text = [str stringByAppendingString:getValue];
-    }  else if ([getType isEqualToString:@"time"]) {
+    }  else if ([getType isEqualToString:@"time"])
+    {
         
         timeStr = getValue;
         
         selectTimeTableViewCell *cell= (selectTimeTableViewCell *)[releaseTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
         cell.timeLabel.text = timeStr;
+        
+        self.taskModel.taskStarttime  = [getDic objectForKey:@"startTime"];
+        self.taskModel.taskFinishtime = [getDic objectForKey:@"endTime"];
     }
-    
-}
-
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
-    
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    
-    UIGraphicsBeginImageContext(rect.size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return image;
     
 }
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 - (void)send:(id)sender {
     //[self sendMgs];
-    confirmViewController *confirmVC = [[confirmViewController alloc] init];
-    [self presentViewController:confirmVC animated:YES completion:nil];
     
-    titleTextField = (UITextField *)[releaseTableView viewWithTag:1];
-    NSLog(@"get text = %@",titleTextField.text);
+    if ([self.taskModel.taskMoney isEqualToString:@"请输入价格"] || [timeStr isEqualToString:@"请输入价格"] || [self.taskModel.taskNews isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入相应内容"];
+    } else {
+        //[self sendMgs];
+        detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+        self.taskModel.taskNews = detailsTextView.text;
+        
+        confirmViewController *confirmVC = [[confirmViewController alloc] init];
+        confirmVC.taskModel = self.taskModel;
+        [self presentViewController:confirmVC animated:YES completion:nil];
+    }
     
-    detailsTextView = (UITextView *)[releaseTableView viewWithTag:2];
-    NSLog(@"get text from textview = %@", detailsTextView.text);
-    releaseDetailsTableViewCell *cell =(releaseDetailsTableViewCell*)[releaseTableView viewWithTag:108];
-    confirmVC.pics = cell.getImageArray;
-    confirmVC.money = priceStr;
-    confirmVC.phone = phone;
-    confirmVC.news = detailsTextView.text;
-//    NSLog(@"  1111-- %@--1111",confirmVC.news );
+//    confirmViewController *confirmVC = [[confirmViewController alloc] init];
+//    [self presentViewController:confirmVC animated:YES completion:nil];
+//    
+//    detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+//    
+//    if (![detailsTextView.text isEqualToString:@""]) {
+//        
+//        self.taskModel.taskNews = detailsTextView.text;
+//        
+////        releaseDetailsTableViewCell *cell =(releaseDetailsTableViewCell*)[releaseTableView viewWithTag:108];
+////        confirmVC.pics = cell.getImageArray;
+////        confirmVC.money = self.taskModel.taskMoney;
+////        confirmVC.phone = phone;
+////        confirmVC.news = detailsTextView.text;
+////        //NSLog(@"  1111-- %@--1111",confirmVC.news );
+//    } else {
+//        
+//    }
 
 }
 
@@ -142,6 +154,17 @@
 -(void)Actiondo:(id)sender{
     [shadowView removeFromSuperview];
     [datePicker removeFromSuperview];
+}
+
+#pragma mark - tap view
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+    
+    if (![tap.view isEqual:detailsTextView]) {
+        [detailsTextView resignFirstResponder];
+    }
+    
+    //[textFiled resignFirstResponder];
 }
 
 #pragma mark - tableViewDelegate
@@ -235,7 +258,8 @@
 
             }
             
-            [cell.placeButton setTitle:placeStr forState:UIControlStateNormal];
+            [cell.placeButton setTitle:self.taskModel.taskCoordname forState:UIControlStateNormal];
+            
             return cell;
             
             break;
@@ -252,7 +276,7 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = [[[NSBundle mainBundle] loadNibNamed:@"priceTableViewCell" owner:self options:nil] lastObject];
                 }
-                cell.priceLabel.text = priceStr;
+                cell.priceLabel.text = self.taskModel.taskMoney;
                 
                 return cell;
                 
@@ -315,19 +339,27 @@
     myRow = indexPath.row;
     mySection = indexPath.section;
     
+    //点击后灰色消失
+    [releaseTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     switch (mySection) {
         case 1:
         {
             if (myRow == 0) {
 
                 priceViewController *priceVC = [[priceViewController alloc] init];
-                priceVC.price = priceStr;
+                
+                if (![self.taskModel.taskMoney isEqual:@"请输入价格"]) {
+                    priceVC.price = self.taskModel.taskMoney;
+                }
                 
                 //[self.navigationController pushViewController:priceVC animated:YES];
                 [self presentViewController:priceVC animated:YES completion:nil];
                 
             } else if (myRow == 1) {
                 selectTimeViewController *selectTimeVC = [[selectTimeViewController alloc] init];
+                selectTimeVC.startTimeStr = self.taskModel.taskStarttime;
+                selectTimeVC.endTimeStr   = self.taskModel.taskFinishtime;
                 
                 //[self.navigationController pushViewController:selectTimeVC animated:YES];
                 [self presentViewController:selectTimeVC animated:YES completion:nil];
@@ -353,82 +385,80 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if ([shadowView isExclusiveTouch]) {
         NSLog(@"hello");
+        
     }
+    
+    detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+    
+    [detailsTextView resignFirstResponder];
 }
 
 - (void)sendMgs
 {
-    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    HUD.delegate = self;
+    //获取
+    NSDate *curDate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    NSString *curDateTime = [formatter stringFromDate:curDate];
     
     //上传至服务器
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:@"d6089681f79c7627bbac829307e041a7" forHTTPHeaderField:@"x-timebuy-sid"];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     //2.设置登录参数
     NSDictionary *dict = @{ @"userid":[userConfiguration getStringValueForConfigurationKey:@"userId"],
-                            @"pic":@"123",
                             @"phone":phone,
                             @"news":@"测试内容",
-                            @"starttime":timeStr,
-                            //@"finishtime":finishTimeStr,
-                            @"label":@"测试label",
-                            @"money":priceStr,
-                            @"coordname":placeStr,
+                            @"starttime":self.taskModel.taskStarttime,
+                            @"finishtime":self.taskModel.taskFinishtime,
+                            @"label":@"1",   // 需要返回数字
+                            @"money":self.taskModel.taskMoney,
+                            @"coordname":self.taskModel.taskCoordname,
                             @"coordx":@"30.124546",
-                            @"coordy":@"120.214126"};
+                            @"coordy":@"120.214126",
+                            @"timeNow":curDateTime,
+                            @"coordnameNow":@"测试当前用户地点",
+                            @"coordxNow":@"30.12122",
+                            @"coordyNow":@"120.12122",
+                            @"worry":@"0"
+                            };
     
-    /*
-     NSDictionary *dict = @{ @"userId":@"27",
-     @"headIcon":@"123",
-     @"nickName":@"oj",
-     @"sex":@"0",
-     @"birthDay":@"2011-10-2",
-     @"profession":@"123",
-     @"address":@"111",
-     @"phone":@"18767122229",
-     @"signature":@"hello"};
-     */
+    [SVProgressHUD showWithStatus:@"发布中..."];
+    
     //3.请求
     NSString *url = [NSString stringWithFormat:@"%@%@",timebuyUrl,@"news/info"];
-    [manager GET:url parameters:dict success: ^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"GET --> %@", responseObject); //自动返回主线程
+    
+    NSData *data1 = UIImagePNGRepresentation([UIImage imageNamed:@"showImg.png"]);
+    //NSData *data2 = UIImagePNGRepresentation([UIImage imageNamed:@"showImg2.png"]);
+    //NSData *data3 = UIImagePNGRepresentation([UIImage imageNamed:@"showImg3.png"]);
+    
+    [manager POST:url parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
-        [HUD hide:YES];
+        [formData appendPartWithFileData:data1 name:@"pics" fileName:@"1230" mimeType:@"image/png"];
+        //[formData appendPartWithFileData:data2 name:@"pics" fileName:@"1231" mimeType:@"image/png"];
+        //[formData appendPartWithFileData:data3 name:@"pics" fileName:@"1232" mimeType:@"image/png"];
+        
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"POST --> %@", responseObject); //自动返回主线程
         NSString *getStatus = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"success"]];
         NSString *getCode = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]];
+        NSString *getMsg = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"msg"]];
+        
         if ([getStatus isEqualToString:@"1"] && [getCode isEqualToString:@"1000"]) {
+            //[SVProgressHUD dismiss];
             
-            HUDinSuccess = [[MBProgressHUD alloc] initWithView:self.view];
-            [self.view addSubview:HUDinSuccess];
-            HUDinSuccess.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-            HUDinSuccess.mode = MBProgressHUDModeCustomView;
-            HUDinSuccess.delegate = self;
-            HUDinSuccess.labelText = @"发布成功";
-            [HUDinSuccess show:YES];
-            [HUDinSuccess hide:YES afterDelay:1];
-            
-        } else if ([getStatus isEqualToString:@"0"] && [getCode isEqualToString:@"2005"]) {
-            [self showErrorWithTitle:@"发布失败" WithMessage:@"错误"];
+            [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+
         } else {
-            [self showErrorWithTitle:@"发布失败" WithMessage:@"系统错误"];
+            [SVProgressHUD showErrorWithStatus:getMsg];
         }
         
-    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"%@", error);
-        [HUD hide:YES];
-        [self showErrorWithTitle:@"发布失败" WithMessage:@"网络连接失败，请检查网络设置"];
+        //[SVProgressHUD show];
+        //[SVProgressHUD dismissWithError:error.description afterDelay:1.0];
+        [SVProgressHUD showErrorWithStatus:error.description];
     }];
-}
-
-#pragma mark - MBProgressHUDDelegate
-- (void)hudWasHidden:(MBProgressHUD *)hud {
-    // Remove HUD from screen when the HUD was hidded
-    [hud removeFromSuperview];
     
 }
 
@@ -436,6 +466,26 @@
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titile message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+}
+
+# pragma mark - image background
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,6 +19,7 @@
     // Override point for customization after application launch.
     
     [SMS_SDK registerApp:@"ad991866932e" withSecret:@"a86078bc1458dbdcddfa1ad554d9fdfd"];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     
     return YES;
 }

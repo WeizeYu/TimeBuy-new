@@ -18,6 +18,8 @@
 @property(nonatomic) NSString *taskCoordname;  //任务坐标名称
 @property(nonatomic) NSString *taskCoordx;     //任务坐标x
 @property(nonatomic) NSString *taskCoordy;     //任务坐标y
+@property(nonatomic) NSString *taskUserCoordx; //用户当前位置坐标x
+@property(nonatomic) NSString *taskUserCoordy; //用户当前位置坐标y
 @property(nonatomic) NSString *taskPic;        //任务图片，多张图片逗号隔开
 @property(nonatomic) NSString *taskUserid;     //用户主键
 @property(nonatomic) NSString *taskAcceptUserid;//接受消息用户主键

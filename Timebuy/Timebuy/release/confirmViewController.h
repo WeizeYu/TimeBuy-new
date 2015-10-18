@@ -14,6 +14,8 @@
 #import "alipayTableViewCell.h"
 #import "MBProgressHUD.h"
 
+#import "taskModel.h"
+
 @interface confirmViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
     UIButton *sendButton;
@@ -25,6 +27,8 @@
 @property(nonatomic,copy)NSString *money;
 @property(nonatomic,copy)NSString *phone;
 @property (strong, nonatomic) IBOutlet UITableView *confirmTableView;
+
+@property (nonatomic, strong) taskModel *taskModel;
 
 - (IBAction)cancel:(id)sender;
 

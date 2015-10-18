@@ -14,7 +14,7 @@
 #import "HomePageController.h"
 #import "AFNetworking.h"
 #import "MJExtension.h"
-
+#import "UIImageView+WebCache.h"
 #import "TBNetLoginBusi.h"
 #import "UserModel.h"
 @interface profilesRootViewController ()<UITableViewDataSource,UITableViewDelegate,TBNetLoginBusiDelegate>
@@ -50,7 +50,11 @@
         }
     }
     self.tabBarController.tabBar.hidden = NO;
-    [self.rootTableview reloadData];
+    
+ ProfileDetailCell *cell = (ProfileDetailCell *)[self.rootTableview viewWithTag:101];
+    NSData *iconData = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+    cell.profileView.image = [UIImage imageWithData:iconData];
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,8 +86,7 @@
         self.profileModal = modal;
 //        NSLog(@" 111---  %@ ---111",self.profileModal );
 //        NSLog(@" 111---  %@ ---111",modal.headIcon );
-        [self saveTheHeadIcon:modal.headIcon];
-
+        
         NSString *timeStr = [responseObject[@"data"] objectForKey:@"birthDay"] ;
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[timeStr doubleValue] / 1000];
         modal.birthDay = date;
@@ -117,22 +120,19 @@
 }
 
 
--(void)saveTheHeadIcon:(UIImage *)image{
-    NSData *data = [[NSData alloc] init];
 
-   
-        
-        data = UIImagePNGRepresentation(image);
-    
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"iconData"];
-}
 
 -(void)loginFail:(NSError *)error{
     if ([ErrorHandleUtil handleError:error]) {
         if (error.code == -1) {
-            [SVProgressHUD dismissWithError:@"用户名或密码错误，请重试" afterDelay:AlertTime];
+            //[SVProgressHUD dismissWithError:@"用户名或密码错误，请重试" afterDelay:AlertTime];
+            
+            [SVProgressHUD showErrorWithStatus:@"用户名或密码错误，请重试"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }else{
-            [SVProgressHUD dismissWithError:@"服务器繁忙，请重试" afterDelay:AlertTime];
+            //[SVProgressHUD dismissWithError:@"服务器繁忙，请重试" afterDelay:AlertTime];
+            [SVProgressHUD showErrorWithStatus:@"服务器繁忙，请重试"];
+            [SVProgressHUD dismissWithDelay:1.0];
         }
     }
 }
@@ -148,6 +148,7 @@
     NSString *address = modal.address;
     NSString *sex = modal.sex;
     NSString *userId = modal.userId;
+    
    
    
 //    NSArray *path1=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
@@ -209,6 +210,7 @@
     static NSString *ID = @"ID";
     if (indexPath.row == 0 && indexPath.section == 0) {
         ProfileDetailCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ProfileDetailCell" owner:nil options:nil] lastObject];
+        cell.tag = 101;
         [self cellWithData:cell];
 
          return cell;
@@ -290,11 +292,25 @@
 
 -(void)cellWithData:(ProfileDetailCell *)cell{
     NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
-    if (data) {
-        UIImage *image = [UIImage imageWithData:data];
-        cell.profileView.image = image;
-    }
+//    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+//    if (data) {
+//        UIImage *image = [UIImage imageWithData:data];
+//        cell.profileView.image = image;
+//    }
+    NSString *urlStr = [NSString stringWithFormat:@"%@upload/%@",timebuyUrl,self.profileModal.headIcon];
+    [cell.profileView sd_setImageWithURL:[NSURL URLWithString:urlStr] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        NSData *data;
+        if (UIImagePNGRepresentation(image) == nil) {
+            
+            data = UIImageJPEGRepresentation(image, 1);
+            
+        } else {
+            
+            data = UIImagePNGRepresentation(image);
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"iconData"];
+        
+    }];
     cell.profleNameLabel.text = array[0];
     cell.phoneLabel.text = array[5];
     cell.vipView.backgroundColor = [UIColor blueColor];

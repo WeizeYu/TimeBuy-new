@@ -19,8 +19,13 @@
 #import "waitingDetailViewController.h"
 #import "doneDetailViewController.h"
 #import "ingDetailViewController.h"
+
+#import "MTConst.h"
+#import "CommentController.h"
+
 #import "HMSegmentedControl.h"
 #import "MJRefresh.h"
+
 #define kDuration 0.4  // 动画持续时间(秒)
 
 @interface myReleaseViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -100,6 +105,7 @@
     [super viewDidLoad];
     _pageTag=0;
     _refreshTag=0;
+    
     self.title=@"我的发布";
 #pragma -----------------------------segment设置------------------------------------------------
     CGFloat viewWidth = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
@@ -164,6 +170,7 @@
     tableview.delegate=self;
     tableview.dataSource=self;
     [tableview addHeaderWithTarget:self action:@selector(loadData)];
+
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

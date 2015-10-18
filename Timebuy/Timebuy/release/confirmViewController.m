@@ -17,6 +17,7 @@
 @implementation confirmViewController
 
 @synthesize confirmTableView;
+@synthesize taskModel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -212,8 +213,9 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = [[[NSBundle mainBundle] loadNibNamed:@"confirmDetailsTableViewCell" owner:self options:nil] lastObject];
                 }
-                //cell.priceLabel.text = priceStr;
-                //cell.textLabel.text = @"Hello";
+                
+                cell.detailsTextLabel.text = self.taskModel.taskNews;
+                cell.locationName.text = self.taskModel.taskCoordname;
                 
                 return cell;
                 break;
@@ -242,8 +244,9 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell = [[[NSBundle mainBundle] loadNibNamed:@"confirmPriceTableViewCell" owner:self options:nil] lastObject];
                 }
-                //cell.priceLabel.text = priceStr;
-                //cell.textLabel.text = @"Hello";
+                
+                cell.priceLabel.text = self.taskModel.taskMoney;
+                
                 return cell;
                 break;
             }
