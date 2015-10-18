@@ -15,6 +15,8 @@
 #import "ConmonController.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "PayCellTableViewCell.h"
+#import "addressViewController.h"
 
 @interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
@@ -36,7 +38,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sexChanged:) name:SexDidChangedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signChanged:) name:SignatureDidChangedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commonChange:) name:CommonDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(passModify:) name:@"passModify" object:nil];
     // Do any additional setup after loading the view from its nib.
+}
+
+
+-(void)passModify:(NSNotification *)notification{
+    NSString *addresStr = notification.userInfo[@"value"];
+    NSMutableArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+    NSMutableArray *array2 = [NSMutableArray arrayWithArray:array];
+    [array2 replaceObjectAtIndex:4 withObject:addresStr];
+    [self saveData:array2];
 }
 
 -(void)commonChange:(NSNotification *)notification{
@@ -52,14 +64,15 @@
           NSMutableArray *array2 = [NSMutableArray arrayWithArray:array];
        [array2 replaceObjectAtIndex:index withObject:commonStr];
         [self saveData:array2];
-       }else{
-       NSInteger index = HYTag - 5;
-           NSMutableArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
-           NSMutableArray *array2 = [NSMutableArray arrayWithArray:array];
+    }
+//       }else{
+//       NSInteger index = HYTag - 5;
+//           NSMutableArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+//           NSMutableArray *array2 = [NSMutableArray arrayWithArray:array];
+//
+//           [array2 replaceObjectAtIndex:index withObject:commonStr];
+//           [self saveData:array2];
 
-           [array2 replaceObjectAtIndex:index withObject:commonStr];
-           [self saveData:array2];
-}
     
     
 }
@@ -102,7 +115,7 @@
 
 -(NSArray *)leftAry{
     if (!_leftAry) {
-        _leftAry = [NSArray arrayWithObjects:@"姓名",@"性别",@"年龄",@"职业",@"故乡",@"账号",@"个性签名", nil];
+        _leftAry = [NSArray arrayWithObjects:@"姓名",@"性别",@"年龄",@"职业",@"故乡",@"个性签名", nil];
     }
     return  _leftAry;
 }
@@ -120,11 +133,6 @@
     [self.infoTableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -132,7 +140,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 6;
+        return 7;
     }
     return 2;
 }
@@ -151,6 +159,8 @@
     }
     else if(indexPath.section == 0 && indexPath.row > 0)
     {
+       
+        
         OtherCell *cell2 = [[[NSBundle mainBundle] loadNibNamed:@"OtherCell" owner:nil options:nil] lastObject];
         cell2.name1Label.text = self.leftAry[indexPath.row - 1];
         if (indexPath.row == 2) {
@@ -161,24 +171,46 @@
             }else{
                 cell2.name2Label.text = @"女";
             }
+            if ([str isEqualToString:@"男"]) {
+                cell2.name2Label.text = @"男";
+            }else if ([str isEqualToString:@"女"]){
+                cell2.name2Label.text = @"女";
+            }
         }else{
+            if (indexPath.row == 6) {
+                cell2.name2Label.text = self.rightArray[indexPath.row];
+            }else{
             cell2.name2Label.text = self.rightArray[indexPath.row - 1];
+            }
         }
         
         NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
         NSInteger tag = [strTag integerValue];
         cell2.tag = tag;
+        
         return cell2;
     }
     else if (indexPath.section == 1 ){
-        OtherCell *cell3 = [[[NSBundle mainBundle] loadNibNamed:@"OtherCell" owner:nil options:nil] lastObject];
-        cell3.name1Label.text = self.leftAry[indexPath.row + 5];
-
-        cell3.name2Label.text = self.rightArray[indexPath.row + 5];
-        NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
-        NSInteger tag = [strTag integerValue];
-        cell3.tag = tag;
-        return cell3;
+        if (indexPath.row ==0) {
+            PayCellTableViewCell *cell3 = [[[NSBundle mainBundle] loadNibNamed:@"PayCellTableViewCell" owner:nil options:nil] lastObject];
+            cell3.txtLabel.text = @"支付宝";
+            
+            //            cell3.name2Label.text = self.rightArray[indexPath.row + 5];
+            NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
+            NSInteger tag = [strTag integerValue];
+            cell3.tag = tag;
+            return cell3;
+        }else{
+            PayCellTableViewCell *cell3 = [[[NSBundle mainBundle] loadNibNamed:@"PayCellTableViewCell" owner:nil options:nil] lastObject];
+            cell3.txtLabel.text = @"微信支付";
+            
+//            cell3.name2Label.text = self.rightArray[indexPath.row + 5];
+            NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
+            NSInteger tag = [strTag integerValue];
+            cell3.tag = tag;
+            return cell3;
+        }
+       
     }
     return nil;
 }
@@ -200,11 +232,15 @@
     }else if (indexPath.section == 0 && indexPath.row == 2){
         SexController *VC = [[SexController alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
-    }else if (indexPath.section == 1 &&indexPath.row == 1){
+    }else if (indexPath.section == 0 &&indexPath.row == 6){
         SignatureController *VC = [[SignatureController alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
         
-    }else {
+    }else if (indexPath.section == 0 && indexPath.row == 5){
+        addressViewController *vc = [[addressViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else {
         ConmonController *VC = [[ConmonController alloc] init];
                 NSString *strTag = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
                   NSInteger tag = [strTag integerValue];
@@ -257,6 +293,7 @@
     picker.delegate = self;
     //设置选择后的图片可被编辑
     picker.allowsEditing = YES;
+
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -291,13 +328,11 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
 
         params[@"userId"] =array[7];
-    NSLog(@" 111---  %@ ---111",array[7] );
-
         params[@"nickName"] = array[0];
         params[@"sex"] = array[1];
         params[@"birthDay"] = array[9];
         params[@"profession"] = array[3];
-        params[@"signature"] = array[6];
+        params[@"signature"] = array[5];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [NSString stringWithFormat:@"%@user/update",timebuyUrl];
@@ -305,7 +340,7 @@
         UIImage* image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
        
         NSData *data = UIImageJPEGRepresentation(image, 1.0);
-         [formData appendPartWithFileData:data name:@"headIcon" fileName:@"21323827163.jpg" mimeType:@"image/jpeg"];
+         [formData appendPartWithFileData:data name:@"headIcon" fileName:@"21323827163.png" mimeType:@"image/png"];
 //        NSData *imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
 
 //         [formData appendPartWithFileData:data name:@"pic" fileName:@"test.jpg" mimeType:@"image/jpeg"];

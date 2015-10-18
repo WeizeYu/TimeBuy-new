@@ -8,6 +8,7 @@
 
 #import "SexController.h"
 #import "MTConst.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface SexController ()
 @property (weak, nonatomic) IBOutlet UIView *manView;
@@ -48,10 +49,32 @@
 }
 
 -(void)confirm{
-   
+    NSDictionary *params = [self appendingTheParams];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:SexDidChangedNotification object:nil userInfo:@{SexKey : _selectedSex}];
-    [self.navigationController popViewControllerAnimated:YES];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *url = [NSString stringWithFormat:@"%@user/update",timebuyUrl];
+//        [manager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//             NSLog(@" 111---  %@ ---111",responseObject );
+//        } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+//    
+//        }];
+    [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+        [formData appendPartWithFileData:data name:@"headIcon" fileName:@"123321213.jpg" mimeType:@"image/jpeg"];
+        
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@" 111---  %@ ---111",responseObject );
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:SexDidChangedNotification object:nil userInfo:@{SexKey : _selectedSex}];
+      
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+    }];
+//
+   
+ 
+
     
 }
 
@@ -61,13 +84,13 @@
     if (gesture.view == self.manView) {
         self.womanMarkView.hidden = YES;
         self.manMarkView.hidden = NO;
-        self.selectedSex = @"0";
+        self.selectedSex = @"男";
 //        NSLog(@" 111---  %@ ---111",self.manLabel.text );
 
     }else{
         self.womanMarkView.hidden = NO;
         self.manMarkView.hidden = YES;
-        self.selectedSex = @"1";
+        self.selectedSex = @"女";
 //        NSLog(@" 111---  %@ ---111",self.womanLabel.text);
 
 
@@ -75,13 +98,29 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSDictionary *)appendingTheParams{
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"rightArray"];
+    NSString *sex;
+    if ([self.selectedSex isEqualToString:@"男"]) {
+        sex = @"0";
+    }else{
+        sex = @"1";
+    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+ 
+        params[@"userId"] = array[7];
+        params[@"nickName"] = array[0];
+        params[@"sex"] = sex;
+        params[@"birthDay"] = array[9];
+        params[@"profession"] = array[3];
+        params[@"signature"] = array[6];
+ ;
+    
+    return params;
+    
+    
 }
-
-
-
 
 /*
 #pragma mark - Navigation

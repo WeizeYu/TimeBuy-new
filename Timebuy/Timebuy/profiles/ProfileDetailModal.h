@@ -16,7 +16,8 @@
 @property(nonatomic,copy)NSString *hometown;
 @property(nonatomic,copy)NSString *phone;
 @property(nonatomic,copy)NSString *signature;
-@property(nonatomic,strong)UIImage *headIcon;//头像
+
+@property(nonatomic,strong)NSString *headIcon;//头像
 @property(nonatomic,copy)NSString *address;//地址
 @property(nonatomic,copy)NSString *userName;//用户名
 @property(nonatomic,copy)NSString *userId;//用户id

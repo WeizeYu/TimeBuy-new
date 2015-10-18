@@ -21,7 +21,7 @@ extern NSString *const CommonDidChangeNotification;
 extern NSString *const CommenKey;
 extern NSString *const CellTag;
 
-extern NSString *const MTRegionDidChangeNotification;
+extern NSString *const pushCommentNotification;
 extern NSString *const MTSelectRegion;
 extern NSString *const MTSelectSubregionName;
 

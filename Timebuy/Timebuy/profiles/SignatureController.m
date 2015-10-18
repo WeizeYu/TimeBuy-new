@@ -9,6 +9,7 @@
 #import "SignatureController.h"
 #import "MTConst.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "PayCellTableViewCell.h"
 @interface SignatureController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *txtView;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
@@ -50,32 +51,23 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [NSString stringWithFormat:@"%@user/update",timebuyUrl];
     [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
-//        UIImage* image = [UIImage imageWithData:data];
-//        
-//        NSData *data2;
-//        if (UIImagePNGRepresentation(image) == nil) {
-//            
-//            data2 = UIImageJPEGRepresentation(image, 1);
-//            
-//        } else {
-//            
-//            data2 = UIImagePNGRepresentation(image);
-//        }
-//
-//        [formData appendPartWithFileData:data2 name:@"headIcon" fileName:@"2332232333434.jpg" mimeType:@"image/jpeg"];
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"iconData"];
+
+
+        [formData appendPartWithFileData:data name:@"headIcon" fileName:@"2332232333434.jpg" mimeType:@"image/jpeg"];
         
     } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@" 111---  %@ ---111",responseObject );
+        
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:SignatureDidChangedNotification object:nil userInfo:@{SignKey : self.txtView.text}];
+        [self.navigationController popViewControllerAnimated:YES];
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         
     }];
 
     
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:SignatureDidChangedNotification object:nil userInfo:@{SignKey : self.txtView.text}];
-    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
