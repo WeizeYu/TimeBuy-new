@@ -22,4 +22,9 @@
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;
 
+- (IBAction)button1Event:(id)sender;
+- (IBAction)button2Event:(id)sender;
+- (IBAction)button3Event:(id)sender;
+- (IBAction)button4Event:(id)sender;
+
 @end

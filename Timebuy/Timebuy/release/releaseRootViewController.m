@@ -120,7 +120,13 @@
     if ([self.taskModel.taskMoney isEqualToString:@"请输入价格"] || [timeStr isEqualToString:@"请输入价格"] || [self.taskModel.taskNews isEqualToString:@""]) {
         [SVProgressHUD showErrorWithStatus:@"请输入相应内容"];
     } else {
-        [self sendMgs];
+        //[self sendMgs];
+        detailsTextView = (UITextView *)[releaseTableView viewWithTag:1102];
+        self.taskModel.taskNews = detailsTextView.text;
+        
+        confirmViewController *confirmVC = [[confirmViewController alloc] init];
+        confirmVC.taskModel = self.taskModel;
+        [self presentViewController:confirmVC animated:YES completion:nil];
     }
     
 //    confirmViewController *confirmVC = [[confirmViewController alloc] init];
