@@ -5,7 +5,6 @@
 //  Created by yuweize on 15/9/25.
 //  Copyright (c) 2015年 com.CraftDream. All rights reserved.
 //
-
 #import "myReleaseViewController.h"
 #import "waitTableViewCell.h"
 #import "waitBigTableViewCell.h"
@@ -20,137 +19,30 @@
 #import "waitingDetailViewController.h"
 #import "doneDetailViewController.h"
 #import "ingDetailViewController.h"
+
 #import "MTConst.h"
 #import "CommentController.h"
+
+#import "HMSegmentedControl.h"
+#import "MJRefresh.h"
+
 #define kDuration 0.4  // 动画持续时间(秒)
 
-@interface myReleaseViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic) IBOutlet UITableView *releasetableview;
-@property (strong, nonatomic) IBOutlet UIView *releaseRootview;
-@property (strong, nonatomic) IBOutlet UIView *backView;
-@property (strong, nonatomic) IBOutlet UIButton *button0;
-@property (strong, nonatomic) IBOutlet UIButton *button2;
-@property (strong, nonatomic) IBOutlet UIButton *button3;
-@property (strong, nonatomic) IBOutlet UIButton *button4;
-@property (strong, nonatomic) IBOutlet UIButton *button5;
-@property (nonatomic) NSArray *lightArray;
-@property (strong, nonatomic) IBOutlet UIImageView *light0;
-@property (strong, nonatomic) IBOutlet UIImageView *light1;
-@property (strong, nonatomic) IBOutlet UIImageView *light2;
-@property (strong, nonatomic) IBOutlet UIImageView *light3;
-@property (strong, nonatomic) IBOutlet UIImageView *light4;
-@property (nonatomic) UISwipeGestureRecognizer *rightTap;
-@property (nonatomic) UISwipeGestureRecognizer *leftTap;
+@interface myReleaseViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) HMSegmentedControl *segmentedControl4;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic) UITableView *tableview1;
+@property (nonatomic) UITableView *tableview2;
+@property (nonatomic) UITableView *tableview3;
+@property (nonatomic) UITableView *tableview4;
+@property (nonatomic) UITableView *tableview5;
 @property (nonatomic) NSInteger pageTag;
+@property (nonatomic) NSInteger refreshTag;
 #pragma -----------------------tableview的字典数组----------------------------
 @property (nonatomic) NSMutableDictionary *dataSourceDic;
-#pragma -----------------------5个segment的字典数组----------------------------
-@property (nonatomic) NSMutableDictionary *ingSourceDic;//进行中
-@property (nonatomic) NSMutableDictionary *waitSourceDic;//等待中
-@property (nonatomic) NSMutableDictionary *doneSourceDic;//已完成
-@property (nonatomic) NSMutableDictionary *complainSourceDic;//申诉中
-@property (nonatomic) NSMutableDictionary *cancelSourceDic;//已取消
 @end
 
 @implementation myReleaseViewController
-#pragma ----------------------------tableview数据初始化--------------------------------
--(void)createData:(NSInteger) buttonTag{
-    
-    _pageTag=buttonTag;
-    [self showlight];
-    [self.releasetableview reloadData];
-    //[self.dataSourceDic setObject:(buttonTag-1) forKey:@"tag"];
-}
-#pragma ----------------------------segment 图标移动----------------------------------
--(void) showlight{
-    int i=0;
-    for(UIImageView *object in _lightArray)
-    {
-        if(_pageTag==i)
-        {
-            object.hidden=false;
-            i++;
-            continue;
-        }
-        object.hidden=true;
-        i++;
-    }
-}
-#pragma ----------------------------segment click------------------------------------
--(IBAction)buttonClick:(id)sender{
-    UIButton *button = (UIButton *)sender;
-    NSInteger tag = button.tag;
-    if(tag==_pageTag)
-    {
-        return;
-    }
-    switch (tag) {
-        case 0:
-            [self createData:tag];
-            break;
-        case 1:
-            [self createData:tag];
-            break;
-        case 2:
-            [self createData:tag];
-            break;
-        case 3:
-            [self createData:tag];
-            break;
-        case 4:
-            [self createData:tag];
-            break;
-    }
-}
-#pragma -----------------------------手势左右移动------------------------------------
--(void)right{
-    _pageTag++;
-    NSLog(@"%ld",(long)_pageTag);
-    if(_pageTag>4)
-    {
-        _pageTag--;
-        return;
-    }
-    CATransition *animation = [CATransition animation];
-    animation.delegate = self;
-    animation.duration = kDuration;
-    animation.timingFunction = UIViewAnimationCurveEaseInOut;
-    animation.type = kCATransitionPush;
-    animation.subtype = kCATransitionFromRight;
-    [[self.backView layer] addAnimation:animation forKey:@"animation"];
-    [UIView setAnimationDelegate:self];
-    // 动画完毕后调用某个方法
-    //[UIView setAnimationDidStopSelector:@selector(animationFinished:)];
-    [UIView commitAnimations];
-    //[_backView addGestureRecognizer:_singleTap1];
-    [self showlight];
-    [self.view addSubview:_backView];
-    [self.releasetableview reloadData];
-}
--(void)left{
-    _pageTag--;
-    NSLog(@"%ld",(long)_pageTag);
-    if(_pageTag<0)
-    {
-        _pageTag++;
-        return;
-    }
-    CATransition *animation = [CATransition animation];
-    animation.delegate = self;
-    animation.duration = kDuration;
-    animation.timingFunction = UIViewAnimationCurveEaseInOut;
-    animation.type = kCATransitionPush;
-    animation.subtype = kCATransitionFromLeft;
-    [[self.backView layer] addAnimation:animation forKey:@"animation"];
-    [UIView setAnimationDelegate:self];
-    // 动画完毕后调用某个方法
-    //[UIView setAnimationDidStopSelector:@selector(animationFinished:)];
-    [UIView commitAnimations];
-    [self showlight];
-    [self.view addSubview:_backView];
-    [self.releasetableview reloadData];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
@@ -171,32 +63,114 @@
     }
     self.tabBarController.tabBar.hidden = NO;
 }
-
+#pragma mark 下拉刷新数据
+- (void)loadData
+{
+    NSLog(@"下拉");
+    CGFloat pageWidth = _scrollView.frame.size.width;
+    NSInteger page = _scrollView.contentOffset.x / pageWidth;
+    _pageTag=page;
+    _refreshTag=1;
+    //结束刷新
+    //[self.tableview1.header endRefreshing];
+    if(_pageTag==0)
+    {
+        [self.tableview1 headerEndRefreshing];
+        [self.tableview1 reloadData];
+        [self.segmentedControl4 setSelectedSegmentIndex:0];
+    }
+    else if(_pageTag==1)
+    {
+        [self.tableview2 headerEndRefreshing];
+        [self.segmentedControl4 setSelectedSegmentIndex:1];
+       // [self.tableview2 reloadData];
+    }
+    else if(_pageTag==2)
+    {
+        [self.tableview3 headerEndRefreshing];
+        [self.tableview3 reloadData];
+    }
+    else if(_pageTag==3)
+    {
+        [self.tableview4 headerEndRefreshing];
+        [self.tableview4 reloadData];
+    }
+    else if(_pageTag==4)
+    {
+        [self.tableview5 headerEndRefreshing];
+        [self.tableview5 reloadData];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self createData];
-    self.title=@"我的发布";
     _pageTag=0;
-    _lightArray=[[NSArray alloc]initWithObjects:_light0,_light1,_light2,_light3,_light4, nil];
-    [self showlight];
-    self.releasetableview.delegate=self;
-    self.releasetableview.dataSource=self;
-    //设置view的点击手势
-    _backView.userInteractionEnabled = YES;
-    _rightTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(right)];
-    _rightTap.direction=UISwipeGestureRecognizerDirectionLeft;
-    [_backView addGestureRecognizer:_rightTap];
-    _leftTap = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(left)];
-    _leftTap.direction=UISwipeGestureRecognizerDirectionRight;
-    [_backView addGestureRecognizer:_leftTap];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushCommentController) name:pushCommentNotification object:nil];
-    self.hidesBottomBarWhenPushed = YES;
-
+    _refreshTag=0;
+    
+    self.title=@"我的发布";
+#pragma -----------------------------segment设置------------------------------------------------
+    CGFloat viewWidth = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
+    self.segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 2, viewWidth, 30)];
+    self.segmentedControl4.sectionTitles = @[@"等待中", @"在进行", @"已完成",@"申诉中",@"已取消"];
+    self.segmentedControl4.selectedSegmentIndex = 0;
+    self.segmentedControl4.backgroundColor = [UIColor whiteColor];
+    UIFont* font = [UIFont fontWithName:@"Arial-ItalicMT" size:14.0];
+    self.segmentedControl4.titleTextAttributes = @{NSFontAttributeName:font,NSForegroundColorAttributeName:[UIColor blackColor]};
+    self.segmentedControl4.selectionIndicatorHeight = 4.0f;
+    self.segmentedControl4.selectionIndicatorColor = [UIColor colorWithRed:12.0 / 255.0f green:228.0 / 255.0f blue:225.0 / 255.0f alpha:1];
+    self.segmentedControl4.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
+    self.segmentedControl4.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+#pragma -----------------------------scrollview设置------------------------------------------
+    self.segmentedControl4.tag = 3;
+    __weak typeof(self) weakSelf = self;
+    [self.segmentedControl4 setIndexChangeBlock:^(NSInteger index) {
+        [weakSelf.scrollView scrollRectToVisible:CGRectMake(viewWidth * index, 0, viewWidth, self.view.frame.size.height-90) animated:YES];
+    }];
+    [self.view addSubview:self.segmentedControl4];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 32, viewWidth, self.view.frame.size.height-70)];
+    self.scrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.contentSize = CGSizeMake(viewWidth * 5, self.view.frame.size.height-70);
+    self.scrollView.delegate = self;
+    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-70) animated:YES];
+    [self.view addSubview:self.scrollView];
+#pragma ------------------------------scrollview内容添加------------------------------------
+    self.tableview1=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, viewWidth, self.view.frame.size.height-70)];
+    [self setApperanceForTableview:_tableview1];
+    [self.scrollView addSubview:_tableview1];
+    
+    self.tableview2=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth, 0, viewWidth, self.view.frame.size.height-70)];
+    [self setApperanceForTableview:_tableview2];
+    [self.scrollView addSubview:_tableview2];
+    
+    self.tableview3=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*2, 0, viewWidth, self.view.frame.size.height-70)];
+    [self setApperanceForTableview:_tableview3];
+    [self.scrollView addSubview:_tableview3];
+    
+    self.tableview4=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*3, 0, viewWidth, self.view.frame.size.height-70)];
+    [self setApperanceForTableview:_tableview4];
+    [self.scrollView addSubview:_tableview4];
+    
+    self.tableview5=[[UITableView alloc]initWithFrame:CGRectMake(viewWidth*4, 0, viewWidth, self.view.frame.size.height-70)];
+    [self setApperanceForTableview:_tableview5];
+    [self.scrollView addSubview:_tableview5];
+    //自定义返回按钮
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头9x17px"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem  = backButton;
     // Do any additional setup after loading the view from its nib.
 }
--(void)pushCommentController{
-    CommentController *vc= [[CommentController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)setApperanceForTableview:(UITableView *)tableview {
+    [tableview setRowHeight:106];
+    [tableview setSectionHeaderHeight:6];
+    [tableview setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [tableview setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    tableview.delegate=self;
+    tableview.dataSource=self;
+    [tableview addHeaderWithTarget:self action:@selector(loadData)];
+
 }
 #pragma ----------------------------TableviewDelegate---------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -204,34 +178,59 @@
     return 3;//self.dataSourceDic.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [self tableView:self.releasetableview cellForRowAtIndexPath:indexPath];
+    UITableViewCell *cell=[UITableViewCell alloc];
+    if(tableView==self.tableview1)
+    {
+        cell = [self tableView:self.tableview1 cellForRowAtIndexPath:indexPath];
+    }
+    else if(tableView==self.tableview2)
+    {
+        cell = [self tableView:self.tableview2 cellForRowAtIndexPath:indexPath];
+    }
+    else if(tableView==self.tableview3)
+    {
+        cell = [self tableView:self.tableview3 cellForRowAtIndexPath:indexPath];
+    }
+    else if(tableView==self.tableview4)
+    {
+        cell = [self tableView:self.tableview4 cellForRowAtIndexPath:indexPath];
+    }
+    else if(tableView==self.tableview5)
+    {
+        cell = [self tableView:self.tableview5 cellForRowAtIndexPath:indexPath];
+    }
     return cell.frame.size.height;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    if(tableView==self.tableview1)
+    {
+        _pageTag=0;
+    }
+    else if(tableView==self.tableview2)
+    {
+        _pageTag=1;
+    }
+    else if(tableView==self.tableview3)
+    {
+        _pageTag=2;
+    }
+    else if(tableView==self.tableview4)
+    {
+        _pageTag=3;
+    }
+    else if(tableView==self.tableview5)
+    {
+        _pageTag=4;
+    }
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 6)];
-    UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake(22+18+((self.view.frame.size.width-45-36*5)/4+36)*(_pageTag)-5, 0, 10, 6)];
+    UIImageView *sanjiao=[[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-31*5)/10+(_pageTag*(self.view.frame.size.width/5))+17-5, 0, 10, 6)];
     [sanjiao setImage:[UIImage imageNamed:@"sanjiao.png"]];
     [view addSubview:sanjiao];
     return view;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(_pageTag==0)
-    {
-        waitingDetailViewController *vc=[[waitingDetailViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:true];
-    }
-    else if(_pageTag==1)
-    {
-        ingDetailViewController *vc=[[ingDetailViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:true];
-
-    }
-    else if(_pageTag==2)
-    {
-        doneDetailViewController *vc=[[doneDetailViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:true];
-    }
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[[UITableViewCell alloc]init];
@@ -239,7 +238,7 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     if(indexPath.row==0)
     {
-        if(_pageTag==0)
+        if(tableView==self.tableview1)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"waitimageCell%ld",(long)indexPath.row];
             waitBigTableViewCell *waitcell = (waitBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -250,7 +249,7 @@
             }
             cell=waitcell;
         }
-        else if(_pageTag==1)
+        else if(tableView==self.tableview2)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"ingimageCell%ld",(long)indexPath.row];
             ingBigTableViewCell *ingcell = (ingBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -267,7 +266,7 @@
             };
             cell=ingcell;
         }
-        else if(_pageTag==2)
+        else if(tableView==self.tableview3)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"doneimageCell%ld",(long)indexPath.row];
             doneBigTableViewCell *donecell = (doneBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -278,7 +277,7 @@
             }
             cell=donecell;
         }
-        else if(_pageTag==3)
+        else if(tableView==self.tableview4)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
             complainTableViewCell *comcell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -289,7 +288,7 @@
             }
             cell=comcell;
         }
-        else if(_pageTag==4)
+        else if(tableView==self.tableview5)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"cancelimageCell%ld",(long)indexPath.row];
             cancelBigTableViewCell *cancelcell = (cancelBigTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -305,7 +304,7 @@
     {
 #pragma -----------------------------进行中界面-初始化--------------------------------
     //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"1"])
-        if(_pageTag==1){
+        if(tableView==self.tableview2){
             NSString *CellIdentifier =[NSString stringWithFormat:@"ingCell%ld",(long)indexPath.row];
             __weak typeof(self) weakSelf = self;
             if([self.dataSourceDic objectForKey:@"pics"])
@@ -344,7 +343,7 @@
         }
 #pragma -----------------------------等待中界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"0"])
-        if(_pageTag==0){
+        if(tableView==self.tableview1){
             NSString *CellIdentifier =[NSString stringWithFormat:@"waitCell%ld",(long)indexPath.row];
             if([self.dataSourceDic objectForKey:@"pics"])
                 {
@@ -371,7 +370,7 @@
         }
     #pragma -----------------------------已完成界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"2"])
-    if(_pageTag==2)
+    if(tableView==self.tableview3)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"dongCell%ld",(long)indexPath.row];
             if([self.dataSourceDic objectForKey:@"pics"]){
@@ -398,7 +397,7 @@
         }
 #pragma -----------------------------申诉中界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"3"])
-    if(_pageTag==3)
+    if(tableView==self.tableview4)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"complainCell%ld",(long)indexPath.row];
             complainTableViewCell *comcell = (complainTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -413,7 +412,7 @@
         }
 #pragma -----------------------------已取消界面-初始化--------------------------------
         //if([[self.dataSourceDic objectForKey:@"tag"] isEqual:@"4"])
-    if(_pageTag==4)
+    if(tableView==self.tableview5)
         {
             NSString *CellIdentifier =[NSString stringWithFormat:@"cancelCell%ld",(long)indexPath.row];
             if([self.dataSourceDic objectForKey:@"pics"])
@@ -442,6 +441,38 @@
     }
     return cell;
     // Configure the cell.
+}
+#pragma mark ------------------------ UIScrollViewDelegate----------------------------
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if(_refreshTag==0)
+    {
+        CGFloat pageWidth = scrollView.frame.size.width;
+        NSInteger page = scrollView.contentOffset.x / pageWidth;
+        _pageTag=page;
+        
+    }
+    _refreshTag=0;
+    if(_pageTag==0)
+    {
+        [self.tableview1 reloadData];
+    }
+    else if(_pageTag==1)
+    {
+        [self.tableview2 reloadData];
+    }
+    else if(_pageTag==2)
+    {
+        [self.tableview3 reloadData];
+    }
+    else if(_pageTag==3)
+    {
+        [self.tableview4 reloadData];
+    }
+    else if(_pageTag==4)
+    {
+        [self.tableview5 reloadData];
+    }
+    [self.segmentedControl4 setSelectedSegmentIndex:_pageTag animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

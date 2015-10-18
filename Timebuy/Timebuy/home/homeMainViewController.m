@@ -11,15 +11,10 @@
 
 @interface homeMainViewController ()
 @property(nonatomic,strong)ImageCellModal *imageCellModal;
-
 @end
-
 @implementation homeMainViewController
-
 @synthesize button;
 @synthesize homeTableView;
-
-
 -(ImageCellModal *)imageCellModal{
     if (_imageCellModal == nil) {
         _imageCellModal = [[ImageCellModal alloc] init];
@@ -27,23 +22,19 @@
     return _imageCellModal;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-    
     for (UIView *v in self.tabBarController.view.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
             v.hidden = NO;
         }
     }
-    
     self.tabBarController.tabBar.hidden = NO;
-    
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.hidesBottomBarWhenPushed = YES;
     // Do any additional setup after loading the view from its nib.
     /*
     UIBarButtonItem *registerButton = [[UIBarButtonItem alloc] initWithTitle:@"进入" style:UIBarButtonItemStylePlain target:self action:@selector(enter:)];
